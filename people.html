@@ -149,6 +149,36 @@ body {
     width: 100%;
   }
 }
+    .profile {
+        display: flex; /* Make child elements sit next to each other */
+        align-items: center; /* Align items vertically in the center */
+    }
+
+    .profile-photo1 {
+        width: 250px; /* Adjust as necessary */
+        height: 200px; /* Adjust as necessary */
+        margin-right: 50px; /* Space between photo and bio */
+        border-radius: 10%; /* Makes the photo circular */
+    }
+    
+    .profile-photo2 {
+        width: 250px; /* Adjust as necessary */
+        height: 250px; /* Adjust as necessary */
+        margin-right: 50px; /* Space between photo and bio */
+        border-radius: 10%; /* Makes the photo circular */
+    }
+    
+    .profile-photo {
+        width: 250px; /* Adjust as necessary */
+        height: 267px; /* Adjust as necessary */
+        margin-right: 50px; /* Space between photo and bio */
+        border-radius: 10%; /* Makes the photo circular */
+    }
+
+
+    .profile-bio {
+        flex-grow: 1; /* Let the bio take the rest of the available space */
+    }
 </style>
 </head>
 <body>
@@ -171,18 +201,68 @@ body {
 <div class="row">
   <div class="main">
     
-    <p>Mayank Kejriwal, PhD is the director of AICS. He holds joint appointments as a research assistant professor in the University of Southern California (USC) Department of Industrial & Systems Engineering, and a research team leader in the USC Information Sciences Institute.</p>
-    <br>
-    <p>Min-Hsueh Chiu, MSc is a research engineer in AICS. His expertise includes knowledge graphs, open-world learning, and systems engineering. He has served as key personnel in three funded projects, including the DARPA-funded... </p>
-    <br>
-    <p>Ke Shen, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. Her expertise is in [x] and she has co-authored over [x] publications.</p>
-    <br>
-    <p>Yidan Sun, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal.</p>
+    <div class="profile">
+       <img src="people/mkejriwal.png" alt="Profile Photo" class="profile-photo1">
+       <div class="profile-bio">
+           <h3>Mayank Kejriwal</h3>
+           <p>Mayank Kejriwal, PhD is the director of AICS. He holds joint appointments as a research assistant professor in the University of Southern California (USC) Department of Industrial & Systems Engineering, and a research team leader in the USC Information Sciences Institute. His research has been funded by the US Department of Defense (DARPA), corporations, and philanthropic foundations. He is also affiliated with the USC Center on Knowledge Graphs, and with the AI4Health initiative at ISI.</p>
+           <!-- Add more bio details here -->
+       </div>
+   </div>
+    <p></p>
     <br>
     
-    <p>Zhisheng Tang, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal.</p><br>
+    <div class="profile">
+       <img src="people/minhsueh.jpeg" alt="Profile Photo" class="profile-photo2">
+       <div class="profile-bio">
+           <h3>Min-Hsueh Chiu</h3>
+           <p>Min-Hsueh Chiu, MSc is a research engineer in AICS. His expertise includes knowledge graphs, open-world learning, and systems engineering. He has served as key personnel in two funded projects, including the DARPA-funded Science of Artificial Intelligence Learning with Open-World Novelty (SAIL-ON), and the Healthcare Knowledge Graphs (HKG) project funded by Kaiser Permanente Digital.</p>
+           <!-- Add more bio details here -->
+       </div>
+   </div>
+    
+    <br><br><br>
     
 
+     <div class="profile">
+        <img src="people/keshen.png" alt="Profile Photo" class="profile-photo">
+        <div class="profile-bio">
+            <h3>Ke Shen</h3>
+            <p>Ke Shen, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. Her experience is in machine commonsense reasoning, especially using neurosymbolic techniques that combine knowledge graphs and semantics with large language models.</p>
+            <!-- Add more bio details here -->
+        </div>
+    </div>
+    <br><br><br>
+    
+    <div class="profile">
+       <img src="people/yidansun.png" alt="Profile Photo" class="profile-photo2">
+       <div class="profile-bio">
+           <h3>Yidan Sun</h3>
+           <p>Yidan Sun, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. Her interests are in computational social science, visualization, and network science.</p>
+           <!-- Add more bio details here -->
+       </div>
+   </div>
+    
+    <br>
+    
+    
+    <div class="profile">
+       <img src="people/ztang.jpeg" alt="Profile Photo" class="profile-photo2">
+       <div class="profile-bio">
+           <h3>Zhisheng Tang</h3>
+           <p>Zhisheng Tang, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. His research interests are in large language models and their emergent abilities, such as decision making and chain-of-thought reasoning. </p>
+           <!-- Add more bio details here -->
+       </div>
+   </div>
+    
+    <br>
+    
+
+    <h2>Alumni</h2>
+    
+    <p>AICS is fortunate to have hosted several valuable research contributors and students, including undergraduate students from other campuses, over the last five years. In the summer of 2023, we were delighted to have with us...</p>
+    
+    <p>Some of our other alumni from previous years include...</p>
 </div>
 
 </div>
