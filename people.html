@@ -4,289 +4,393 @@
 <title>AICS People</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+
 <style>
 * {
   box-sizing: border-box;
 }
 
-/* Style the body */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
-/* Header/logo Title */
 .header {
-  padding: 80px;
-  text-align: center;
-  background: #1abc9c;
+  padding: 20px;
+  background: #000; 
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-    
-    .container {
-            display: flex;
-            align-items: left;
-            justify-content: left
-          }
-          img {
-            max-width: 100%
-          }
-          .image {
-            flex-basis: 10%
-          }
-          .text {
-            font-size: 15px;
-            padding-left: 20px;
-          }
-    
-    
-    .container2 {
-            display: flex;
-            align-items: center;
-            justify-content: center
-          }
-          img {
-            max-width: 100%
-          }
-          .image2 {
-            flex-basis: 50%
-          }
-          .text {
-            font-size: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-          }
-    
-    
-    .container1 {
-            display: flex;
-            align-items: center;
-            justify-content: center
-          }
 
-/* Increase the font size of the heading */
+.header .left-content {
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin-left: 20px;
+  margin-bottom: 0; 
+}
+
+.logo {
+  height: 100%;
+  object-fit: contain;
+}
+
+#logo1{
+  margin-left: -20px;
+  height: 115px; 
+  width: auto; 
+}
+#logo2{
+  height: 115px; 
+  width: auto; 
+}
+
+
 .header h1 {
   font-size: 40px;
 }
 
-/* Style the top navigation bar */
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
 
-/* Style the navigation bar links */
+
 .navbar a {
   float: left;
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 20px;
+  padding: 20px 20px;
   text-decoration: none;
+  font-size: 20px;
 }
 
-/* Right-aligned link */
 .navbar a.right {
   float: right;
 }
 
-/* Change color on hover */
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Column container */
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
 .side {
-  -ms-flex: 30%; /* IE10 */
+  -ms-flex: 30%; 
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
 }
-
-/* Main column */
-.main {
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Footer */
 .footer {
   padding: 20px;
   text-align: center;
   background: #ddd;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
   }
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
   .navbar a {
     float: none;
     width: 100%;
   }
 }
-    .profile {
-        display: flex; /* Make child elements sit next to each other */
-        align-items: center; /* Align items vertically in the center */
-    }
 
-    .profile-photo1 {
-        width: 250px; /* Adjust as necessary */
-        height: 200px; /* Adjust as necessary */
-        margin-right: 50px; /* Space between photo and bio */
-        border-radius: 10%; /* Makes the photo circular */
-    }
-    
-    .profile-photo2 {
-        width: 250px; /* Adjust as necessary */
-        height: 250px; /* Adjust as necessary */
-        margin-right: 50px; /* Space between photo and bio */
-        border-radius: 10%; /* Makes the photo circular */
-    }
-    
-    .profile-photo4 {
-        width: 250px; /* Adjust as necessary */
-        height: 300px; /* Adjust as necessary */
-        margin-right: 50px; /* Space between photo and bio */
-        border-radius: 10%; /* Makes the photo circular */
-    }
-    
-    .profile-photo {
-        width: 250px; /* Adjust as necessary */
-        height: 267px; /* Adjust as necessary */
-        margin-right: 50px; /* Space between photo and bio */
-        border-radius: 10%; /* Makes the photo circular */
-    }
+@media (max-width: 768px) {
+  .profile {
+    width: 100%; 
+    margin: 20px 0; 
+  }
+}
+
+.profile-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  align-items: flex-start; 
+  gap: 30px; 
+}
 
 
-    .profile-bio {
-        flex-grow: 1; /* Let the bio take the rest of the available space */
-    }
+
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 370px; 
+  height: 600px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FFF;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+
+.profile-photo {
+  width: 100%; 
+  height: 300px; 
+  object-fit: cover; 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.profile-bio {
+  width: 100%; 
+  padding: 5px;
+  text-align: left;
+  margin-top: 0px;
+  line-height: 1.2;
+  font-family: 'Sunflower', sans-serif;
+  font-size: 20px;
+}
+
+
+.profile-bio em {
+  font-style: italic; 
+  font-family: cursive; 
+  font-size: 20px;
+}
+
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  gap: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+  width: 100%; 
+  margin-top: auto; 
+}
+
+.social-icons a {
+    margin-right: 2px; 
+    color: black; 
+    font-size: 24px; 
+}
+
+.social-icons a:hover {
+    color: #873e23; 
+}
+
+.alumni p{
+    font-family: 'Sunflower', sans-serif;
+    font-size: 24px; 
+}
+
+.partner-badge {
+  background-color: #000; 
+  color: white; 
+  padding: 50px; 
+  text-align: left; 
+  font-size: 28px; 
+  font-weight: bold; 
+}
+.email-button {
+  background: transparent; 
+  display: inline-block;
+  color: white; 
+  padding: 10px 15px; 
+  margin-top: 10px;
+  text-decoration: none; 
+  border-radius: 5px; 
+  font-size: 30px; 
+  cursor: pointer; 
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Artificial Intelligence and Complex Systems</h1>
-  <p style="font-size: 26px">Ex nihilo nihil fit</p>
+  <div class="left-content">
+    <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
+    <h1>Artificial Intelligence and Complex Systems</h1>
+  </div>
+  <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2">
 </div>
 
 <div class="navbar">
     <a href="index.html">Home</a>
     <!--  <a href="projects.html">Projects</a> -->
   <a href="people.html">People</a>
+    <a href="projects.html">Projects</a>
+
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
   <a href="talks.html"> Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
 
-<div class="row">
-  <div class="main">
-    
-    <div class="profile">
-       <img src="people/mkejriwal.png" alt="Profile Photo" class="profile-photo1">
-       <div class="profile-bio">
-           <h3>Mayank Kejriwal</h3>
-           <p>Mayank Kejriwal, PhD is the director of AICS. He holds joint appointments as a research assistant professor in the University of Southern California (USC) Department of Industrial & Systems Engineering, and a research team leader in the USC Information Sciences Institute. His research has been funded by the US Department of Defense (DARPA), corporations, and philanthropic foundations. He is also affiliated with the <a href="https://usc-isi-i2.github.io/">USC Center on Knowledge Graphs</a>, and with the <a href="https://www.isi.edu/centers-ai4health/">AI4Health</a> initiative at ISI.</p>
-           <!-- Add more bio details here -->
-       </div>
-   </div>
-    <p></p>
-    <br>
-    
-    <div class="profile">
-       <img src="people/minhsueh.jpeg" alt="Profile Photo" class="profile-photo2">
-       <div class="profile-bio">
-           <h3>Min-Hsueh Chiu</h3>
-           <p>Min-Hsueh Chiu, MSc is a research engineer in AICS. His expertise includes knowledge graphs, open-world learning, and systems engineering. He has served as key personnel in two funded projects, including the DARPA-funded Science of Artificial Intelligence Learning with Open-World Novelty (SAIL-ON), and the Healthcare Knowledge Graphs (HKG) project funded by Kaiser Permanente Digital.</p>
-           <!-- Add more bio details here -->
-       </div>
-   </div>
-    
-    <br><br><br>
-    
-    <div class="profile">
-       <img src="people/navapat.png" alt="Profile Photo" class="profile-photo4">
-       <div class="profile-bio">
-           <h3>Navapat Nananukul</h3>
-           <p>Navapat Nananukul, MSc is a research intern in the AICS group. He received his master's from USC in Computer Science in 2023. His research interests are in large language models and knowledge graphs. </p>
-           <!-- Add more bio details here -->
-       </div>
-   </div>
-    <br><br><br>
-    
 
-     <div class="profile">
-        <img src="people/keshen.png" alt="Profile Photo" class="profile-photo">
-        <div class="profile-bio">
-            <h3>Ke Shen</h3>
-            <p>Ke Shen, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. Her experience is in machine commonsense reasoning, especially using neurosymbolic techniques that combine knowledge graphs and semantics with large language models.</p>
-            <!-- Add more bio details here -->
-        </div>
+
+<div class="main">
+    <div class="profile-list">
+        <div class="profile">
+           <img src="people/mkejriwal.png" alt="Profile Photo" class="profile-photo">
+           <div class="profile-bio">
+               <h3>Mayank Kejriwal</h3>
+               <p>Director of AICS <br>
+               Research Assistant Professor, Department of Industrial & Systems Engineering, USC<br>
+               Ph.D. in Computer Science, University of Texas at Austin (2016)</p>
+           </div>
+           <div class="social-icons">
+                    <a href="https://github.com/mayankkejriwal" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mayankkejriwal/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?user=fetkEu4AAAAJ&hl=en&oi=ao" target="_blank"><i class="fab fa-google"></i></a>
+                    <a href="mailto:kejriwal@isi.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://viterbi.usc.edu/directory/faculty/Kejriwal/Mayank" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="http://dblp.uni-trier.de/pers/hd/k/Kejriwal:Mayank" target="_blank"><i class="fas fa-database"></i></a>
+
+                    <a href="https://usc-isi-i2.github.io/kejriwal/doc/kejriwal-CV-public.pdf" target="_blank"><i class="fas fa-file"></i></a>
+
+                </div>
+       </div>
+
+
+        <div class="profile">
+                   <img src="people/minhsueh.jpeg" alt="Profile Photo" class="profile-photo">
+                   <div class="profile-bio">
+                       <h3>Min-Hsueh Chiu</h3>
+                       <p>Research Engineer in AICS<br>
+                       M.S. in Analytics, USC</p>
+                   </div>
+                   <div class="social-icons">
+                            <a href="https://github.com/minhsueh" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/minhsuehchiu" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://scholar.google.com/citations?user=snc23rAAAAAJ&hl=zh-TW" target="_blank"><i class="fab fa-google"></i></a>
+                            <a href="mailto:minhsueh@isi.edu"><i class="fas fa-envelope"></i></a>
+                            <a href="https://minhsueh.github.io/" target="_blank"><i class="fas fa-home"></i></a>
+                            <!-- <a href="http://dblp.uni-trier.de/pers/hd/k/Kejriwal:Mayank" target="_blank"><i class="fas fa-database"></i></a> -->
+
+                            <a href="https://minhsueh.github.io/cv.html" target="_blank"><i class="fas fa-file"></i></a>
+
+                        </div>
+               </div>
+
+        
+        <div class="profile">
+                   <img src="people/navapat.png" alt="Profile Photo" class="profile-photo">
+                   <div class="profile-bio">
+                       <h3>Navapat Nananukul</h3>
+                       <p>Research Intern in AICS<br>
+                       M.S. in Computer Science, USC</p>
+                   </div>
+                   <div class="social-icons">
+                            <a href="https://github.com/navapatn" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/navapat/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://scholar.google.com/citations?user=h_YWvdAAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+                            <a href="mailto:nananuku@usc.edu"><i class="fas fa-envelope"></i></a>
+                            <a href="https://navapatn.github.io/" target="_blank"><i class="fas fa-home"></i></a>
+
+                        </div>
+               </div>
+
+        
+
+        <div class="profile">
+           <img src="people/keshen.png" alt="Profile Photo" class="profile-photo">
+           <div class="profile-bio">
+               <h3>Ke Shen</h3>
+               <p>Research Assistant in AICS <br>
+               Ph.D. Candidate in Industrial & Systems Engineering, USC</p>
+           </div>
+           <div class="social-icons">
+                    <a href="https://github.com/kahy-shen" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ke-shen-604046179/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?user=-D05LWQAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+                    <a href="mailto:keshen@isi.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.keshenkswl.net/home.html" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="https://dblp.org/pid/22/6778-3.html" target="_blank"><i class="fas fa-database"></i></a>
+
+                    <a href="https://www.keshenkswl.net/CV/Ke_Shen_Resume.pdf" target="_blank"><i class="fas fa-file"></i></a>
+
+                </div>
+       </div>
+
+        
+
+        <div class="profile">
+           <img src="people/yidansun.png" alt="Profile Photo" class="profile-photo">
+           <div class="profile-bio">
+               <h3>Yidan Sun</h3>
+               <p>Research Assistant in AICS <br>
+               Ph.D. Student in Industrial & Systems Engineering, USC</p>
+           </div>
+           <div class="social-icons">
+                    <a href="https://github.com/yidans" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yidansun07/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
+                    <a href="mailto:yidans@isi.edu"><i class="fas fa-envelope"></i></a>
+
+                    
+                </div>
+       </div>
+
+        
+        
+        
+        <div class="profile">
+           <img src="people/ztang.jpeg" alt="Profile Photo" class="profile-photo">
+           <div class="profile-bio">
+               <h3>Zhisheng Tang</h3>
+               <p>Research Assistant in AICS <br>
+               Ph.D. Student in Industrial & Systems Engineering, USC</p>
+           </div>
+           <div class="social-icons">
+                    <!-- <a href="https://github.com/yidans" target="_blank"><i class="fab fa-github"></i></a> -->
+                    <a href="https://www.linkedin.com/in/zhisheng-tang-560b64232/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <!-- <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank"><i class="fab fa-google"></i></a> -->
+                    <!-- <a href="mailto:yidans@isi.edu"><i class="fas fa-envelope"></i></a> -->
+
+                    
+                </div>
+       </div>
     </div>
-    <br><br><br>
-    
-    <div class="profile">
-       <img src="people/yidansun.png" alt="Profile Photo" class="profile-photo2">
-       <div class="profile-bio">
-           <h3>Yidan Sun</h3>
-           <p>Yidan Sun, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. Her interests are in computational social science, visualization, and network science.</p>
-           <!-- Add more bio details here -->
-       </div>
-   </div>
     
     <br>
     
-    
-    <div class="profile">
-       <img src="people/ztang.jpeg" alt="Profile Photo" class="profile-photo2">
-       <div class="profile-bio">
-           <h3>Zhisheng Tang</h3>
-           <p>Zhisheng Tang, MSc is currently a PhD student in the USC Department of Industrial & Systems Engineering, advised by Dr. Kejriwal. His research interests are in large language models and their emergent abilities, such as decision making and chain-of-thought reasoning. </p>
-           <!-- Add more bio details here -->
-       </div>
-   </div>
-    
-    <br>
-    
-
-    <h2>Alumni</h2>
-    
-    <p>AICS is fortunate to have hosted several valuable research contributors and students, including students from other campuses, over the last five years. In the summer of 2023, we were delighted to have with us Adin Aberbach (undergrad, Swarthmore), John Lim (undergrad, Northwestern), Anik Mandal (undergrad, IIT Kharagpur), and Khanin Sisaengsuwanchai (grad, USC).</p>
-    
-    <p>Some of our other alumni (but this is not an exhaustive list!) from previous years include David Cody Lingan (Michigan State), Junyu Ren (Tsinghua), Gwen Fang (USC), Stephanie Kim (University of Chicago), Maia Nkonabang (USC) and Daisy Zhou (USC).</p>
+    <div class="alumni">
+        <h2>Alumni</h2>
+        
+        <p>AICS is fortunate to have hosted several valuable research contributors and students, including students from other campuses, over the last five years. In the summer of 2023, we were delighted to have with us Adin Aberbach (undergrad, Swarthmore), John Lim (undergrad, Northwestern), Anik Mandal (undergrad, IIT Kharagpur), and Khanin Sisaengsuwanchai (grad, USC).</p>
+        
+        <p>Some of our other alumni (but this is not an exhaustive list!) from previous years include David Cody Lingan (Michigan State), Junyu Ren (Tsinghua), Gwen Fang (USC), Stephanie Kim (University of Chicago), Maia Nkonabang (USC) and Daisy Zhou (USC).</p>
+    </div>
 </div>
 
+<div class="partner-badge">
+        We are always looking for good collaborations and directed research students
+and interns. If you're interested, drop us a note!
 </div>
 
-<div class="footer">
-  <div class="container1">&copy; 2023 Mayank Kejriwal</div>
-</div>
 
 </body>
 </html>
