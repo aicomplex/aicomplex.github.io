@@ -8,55 +8,46 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
-
 .header {
   padding: 20px;
-  background: #000; 
+  background: #000;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .header .left-content {
   display: flex;
   align-items: center;
 }
-
 .header h1 {
-  margin-left: 20px; 
+  margin-left: 20px;
   margin-bottom: 0;
+  font-size: 36px;
 }
-
 .logo {
   height: 100%;
   object-fit: contain;
 }
-
-#logo1{
+#logo1 {
   margin-left: -20px;
-  height: 115px; 
-  width: auto; 
+  height: 115px;
+  width: auto;
 }
-#logo2{
-  height: 115px; 
-  width: auto; 
+#logo2 {
+  height: 115px;
+  width: auto;
 }
-
-.header h1 {
-  font-size: 40px;
-}
-
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
-
 .navbar a {
   float: left;
   display: block;
@@ -64,77 +55,70 @@ body {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
-
-.navbar a.right {
-  float: right;
-}
-
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .row {
-  display: -ms-flexbox; 
   display: flex;
-  -ms-flex-wrap: wrap; 
   flex-wrap: wrap;
 }
-
-
-.side {
-  -ms-flex: 30%; 
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
 .main {
-  -ms-flex: 70%; 
-  flex: 70%;
+  flex: 100%;
   background-color: white;
-  padding: 20px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
 }
-
-
-.partner-badge {
-  background-color: #000;
-  color: white;
-  padding: 50px; 
-  text-align: left; 
-  font-size: 28px; 
-  font-weight: bold;
+h2 {
+  font-size: 32px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
 }
-.email-button {
-  background: transparent; 
-  display: inline-block; 
-  color: white; 
-  padding: 10px 15px; 
-  margin-top: 10px; 
-  text-decoration: none; 
-  border-radius: 5px; 
-  font-size: 30px; 
-  cursor: pointer; 
+h3 {
+  font-size: 24px;
+  margin-top: 40px;
+  color: #444;
+  border-left: 5px solid #666;
+  padding-left: 10px;
 }
-
+ul.publication-list {
+  list-style: none;
+  padding-left: 0;
+}
+ul.publication-list li {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
+}
+.publication-links a {
+  margin-right: 10px;
+  color: #1a0dab;
+  text-decoration: none;
+}
+.publication-links a:hover {
+  text-decoration: underline;
+}
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 400px) {
+  .main {
+    padding: 20px;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
   .navbar a {
-    float: none;
-    width: 100%;
+    font-size: 16px;
+    padding: 15px;
   }
 }
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="left-content">
     <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
@@ -142,2125 +126,1040 @@ body {
   </div>
   <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2">
 </div>
-
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <!--  <a href="projects.html">Projects</a> -->
+  <a href="index.html">Home</a>
   <a href="people.html">People</a>
   <a href="projects.html">Projects</a>
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
-  <a href="talks.html"> Academic Outreach</a>
+  <a href="talks.html">Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
-
-
-
 <div class="row">
   <div class="main">
     <h2>Publications</h2>
-    <table>
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:books/sp/Kejriwal23">1</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     <em>Artificial Intelligence for Industries of the Future - Beyond
-      Facebook, Amazon, Microsoft and Google</em>.
-     Springer, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:books/sp/Kejriwal23">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-031-19039-1">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-031-19039-1">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/es/ShenK23">2</a>]
-    </td>
-    <td class="bibtexitem">
-    Ke&nbsp;Shen and Mayank Kejriwal.
-     An experimental study measuring the generalization of fine-tuned
-      language representation models across commonsense reasoning benchmarks.
-     <em>Expert Syst. J. Knowl. Eng.</em>, 40(5), 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/es/ShenK23">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1111/exsy.13243">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1111/exsy.13243">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/agi/KejriwalSSMM23">3</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Henrique Santos, Ke&nbsp;Shen, Alice&nbsp;M. Mulvehill, and Deborah&nbsp;L.
-      McGuinness.
-     Context-rich evaluation of machine common sense.
-     In Patrick Hammer, Marjan Alirezaie, and Claes Stranneg&aring;rd,
-      editors, <em>Artificial General Intelligence - 16th International
-      Conference, AGI 2023, Stockholm, Sweden, June 16-19, 2023, Proceedings</em>,
-      volume 13921 of <em>Lecture Notes in Computer Science</em>, pages 167-176.
-      Springer, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/agi/KejriwalSSMM23">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-031-33469-6\_17">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-031-33469-6\_17">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/agi/TangK23">4</a>]
-    </td>
-    <td class="bibtexitem">
-    Zhisheng Tang and Mayank Kejriwal.
-     Can language models be used in multistep commonsense planning
-      domains?
-     In Patrick Hammer, Marjan Alirezaie, and Claes Stranneg&aring;rd,
-      editors, <em>Artificial General Intelligence - 16th International
-      Conference, AGI 2023, Stockholm, Sweden, June 16-19, 2023, Proceedings</em>,
-      volume 13921 of <em>Lecture Notes in Computer Science</em>, pages 276-285.
-      Springer, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/agi/TangK23">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-031-33469-6\_28">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-031-33469-6\_28">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/2023text2kg">5</a>]
-    </td>
-    <td class="bibtexitem">
-    Sanju Tiwari, Nandana Mihindukulasooriya, Francesco Osborne, Dimitris
-      Kontokostas, Jennifer D'Souza, Mayank Kejriwal, and Edgard Marx, editors.
-     <em>Joint Proceedings of the Second International Workshop on
-      Knowledge Graph Generation From Text and the First International BiKE
-      Challenge co-located with 20th Extended Semantic Conference (ESWC 2023),
-      Hersonissos, Greece, May 29th, 2023</em>, volume 3447 of <em>CEUR Workshop
-      Proceedings</em>. CEUR-WS.org, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/2023text2kg">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-3447">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2302-09068">6</a>]
-    </td>
-    <td class="bibtexitem">
-    Zhisheng Tang and Mayank Kejriwal.
-     A pilot evaluation of chatgpt and DALL-E 2 on decision making and
-      spatial reasoning.
-     <em>CoRR</em>, abs/2302.09068, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2302-09068">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2302.09068">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2302.09068">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2302.09068">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2303-04141">7</a>]
-    </td>
-    <td class="bibtexitem">
-    Katarina Doctor, Christine Task, Eric&nbsp;J. Kildebeck, Mayank Kejriwal, Lawrence
-      Holder, and Russell Leong.
-     Toward defining a domain complexity measure across domains.
-     <em>CoRR</em>, abs/2303.04141, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2303-04141">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2303.04141">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2303.04141">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2303.04141">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2307-07920">8</a>]
-    </td>
-    <td class="bibtexitem">
-    Yidan Sun and Mayank Kejriwal.
-     A structural study of big tech firm-switching of inventors in the
-      post-recession era.
-     <em>CoRR</em>, abs/2307.07920, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2307-07920">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2307.07920">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2307.07920">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2307.07920">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2307-12173">9</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Named entity resolution in personal knowledge graphs.
-     <em>CoRR</em>, abs/2307.12173, 2023.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2307-12173">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2307.12173">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2307.12173">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2307.12173">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/eaai/KejriwalSNT22">10</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Ke&nbsp;Shen, Chien-Chun Ni, and Nicolas Torzec.
-     Transfer-based taxonomy induction over concept labels.
-     <em>Eng. Appl. Artif. Intell.</em>, 108:104548, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/eaai/KejriwalSNT22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1016/j.engappai.2021.104548">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1016/j.engappai.2021.104548">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/information/Kejriwal22">11</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Knowledge graphs: A practical review of the research landscape.
-     <em>Inf.</em>, 13(4):161, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/information/Kejriwal22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3390/info13040161">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3390/info13040161">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/jocss/HuK22">12</a>]
-    </td>
-    <td class="bibtexitem">
-    Minda Hu and Mayank Kejriwal.
-     Measuring spatio-textual affinities in twitter between two urban
-      metropolises.
-     <em>J. Comput. Soc. Sci.</em>, 5(1):227-252, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/jocss/HuK22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/s42001-021-00129-5">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/s42001-021-00129-5">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/natmi/KejriwalSMM22">13</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Henrique Santos, Alice&nbsp;M. Mulvehill, and Deborah&nbsp;L.
-      McGuinness.
-     Designing a strong test for measuring true common-sense reasoning.
-     <em>Nat. Mach. Intell.</em>, 4(4):318-322, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/natmi/KejriwalSMM22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1038/s42256-022-00478-4">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1038/s42256-022-00478-4">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/tbd/KejriwalS22">14</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Knowledge graphs for social good: An entity-centric search engine for
-      the human trafficking domain.
-     <em>IEEE Trans. Big Data</em>, 8(3):592-606, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/tbd/KejriwalS22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/TBDATA.2017.2763164">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/TBDATA.2017.2763164">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/tetci/BonjourHATLAKB22">15</a>]
-    </td>
-    <td class="bibtexitem">
-    Trevor Bonjour, Marina Haliem, Aala&nbsp;Oqab Alsalem, Shilpa Thomas, Hongyu Li,
-      Vaneet Aggarwal, Mayank Kejriwal, and Bharat&nbsp;K. Bhargava.
-     Decision making in monopoly using a hybrid deep reinforcement
-      learning approach.
-     <em>IEEE Trans. Emerg. Top. Comput. Intell.</em>, 6(6):1335-1344,
-      2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/tetci/BonjourHATLAKB22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/TETCI.2022.3166555">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/TETCI.2022.3166555">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sai/LuoK22">16</a>]
-    </td>
-    <td class="bibtexitem">
-    Yuesheng Luo and Mayank Kejriwal.
-     Understanding COVID-19 vaccine reaction through comparative
-      analysis on twitter.
-     In Kohei Arai, editor, <em>Intelligent Computing - Proceedings of
-      the 2022 Computing Conference, Volume 1, SAI 2022, Virtual Event, 14-15
-      July 2022</em>, volume 506 of <em>Lecture Notes in Networks and Systems</em>, pages
-      846-864. Springer, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sai/LuoK22">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-031-10461-9\_58">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-031-10461-9\_58">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/2022text2kg">17</a>]
-    </td>
-    <td class="bibtexitem">
-    Sanju Tiwari, Nandana Mihindukulasooriya, Francesco Osborne, Dimitris
-      Kontokostas, Jennifer D'Souza, Mayank Kejriwal, Loris Bozzato,
-      Valentina&nbsp;Anita Carriero, Torsten Hahmann, and Antoine Zimmermann, editors.
-     <em>Proceedings of the 1st International Workshop on Knowledge Graph
-      Generation From Text and the 1st International Workshop on Modular Knowledge
-      co-located with 19th Extended Semantic Conference (ESWC 2022), Hersonissos,
-      Greece, May 30th, 2022</em>, volume 3184 of <em>CEUR Workshop Proceedings</em>.
-      CEUR-WS.org, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/2022text2kg">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-3184">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2203-06491">18</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Ke&nbsp;Shen.
-     Can scale-free network growth with triad formation capture simplicial
-      complex distributions in real communication networks?
-     <em>CoRR</em>, abs/2203.06491, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2203-06491">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2203.06491">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2203.06491">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2203.06491">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2203-12184">19</a>]
-    </td>
-    <td class="bibtexitem">
-    Henrique Santos, Ke&nbsp;Shen, Alice&nbsp;M. Mulvehill, Yasaman Razeghi, Deborah&nbsp;L.
-      McGuinness, and Mayank Kejriwal.
-     A theoretically grounded benchmark for evaluating machine
-      commonsense.
-     <em>CoRR</em>, abs/2203.12184, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2203-12184">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2203.12184">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2203.12184">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2203.12184">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2204-05872">20</a>]
-    </td>
-    <td class="bibtexitem">
-    Akarsh Nagaraj and Mayank Kejriwal.
-     Robust quantification of gender disparity in pre-modern english
-      literature using natural language processing.
-     <em>CoRR</em>, abs/2204.05872, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2204-05872">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2204.05872">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2204.05872">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2204.05872">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2210-01258">21</a>]
-    </td>
-    <td class="bibtexitem">
-    Ke&nbsp;Shen and Mayank Kejriwal.
-     Understanding prior bias and choice paralysis in transformer-based
-      language representation models through four experimental probes.
-     <em>CoRR</em>, abs/2210.01258, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2210-01258">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2210.01258">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2210.01258">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2210.01258">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2210-01263">22</a>]
-    </td>
-    <td class="bibtexitem">
-    Ke&nbsp;Shen and Mayank Kejriwal.
-     Understanding substructures in commonsense relations in conceptnet.
-     <em>CoRR</em>, abs/2210.01263, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2210-01263">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2210.01263">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2210.01263">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2210.01263">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2210-07519">23</a>]
-    </td>
-    <td class="bibtexitem">
-    Zhisheng Tang and Mayank Kejriwal.
-     Can language representation models think in bets?
-     <em>CoRR</em>, abs/2210.07519, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2210-07519">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2210.07519">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2210.07519">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2210.07519">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2211-13117">24</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Yuesheng Luo.
-     On the empirical association between trade network complexity and
-      global gross domestic product.
-     <em>CoRR</em>, abs/2211.13117, 2022.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2211-13117">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.48550/arXiv.2211.13117">DOI</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2211.13117">arXiv</a>&nbsp;|
-    <a href="https://doi.org/10.48550/arXiv.2211.13117">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/cii/KejriwalSNT21">25</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Ke&nbsp;Shen, Chien-Chun Ni, and Nicolas Torzec.
-     An evaluation and annotation methodology for product category
-      matching in e-commerce.
-     <em>Comput. Ind.</em>, 131:103497, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/cii/KejriwalSNT21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1016/j.compind.2021.103497">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1016/j.compind.2021.103497">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/data/MelotteK21">26</a>]
-    </td>
-    <td class="bibtexitem">
-    Sara Melotte and Mayank Kejriwal.
-     A geo-tagged COVID-19 twitter dataset for 10 north american
-      metropolitan areas over a 255-day period.
-     <em>Data</em>, 6(6):64, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/data/MelotteK21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3390/data6060064">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3390/data6060064">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/fdata/Kejriwal21">27</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Link prediction between structured geopolitical events: Models and
-      experiments.
-     <em>Frontiers Big Data</em>, 4:779792, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/fdata/Kejriwal21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3389/fdata.2021.779792">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3389/fdata.2021.779792">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/fi/HuRKL21">28</a>]
-    </td>
-    <td class="bibtexitem">
-    Minda Hu, Ashwin Rao, Mayank Kejriwal, and Kristina Lerman.
-     Socioeconomic correlates of anti-science attitudes in the US.
-     <em>Future Internet</em>, 13(6):160, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/fi/HuRKL21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3390/fi13060160">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3390/fi13060160">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/information/Kejriwal21">29</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Unsupervised DNF blocking for efficient linking of knowledge graphs
-      and tables.
-     <em>Inf.</em>, 12(3):134, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/information/Kejriwal21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3390/info12030134">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3390/info12030134">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/osnm/KejriwalWLW21">30</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Qile Wang, Hongyu Li, and Lu&nbsp;Wang.
-     An empirical study of emoji usage on twitter in linguistic and
-      national contexts.
-     <em>Online Soc. Networks Media</em>, 24:100149, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/osnm/KejriwalWLW21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1016/j.osnem.2021.100149">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1016/j.osnem.2021.100149">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/simpa/Kejriwal21">31</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     A meta-engine for building domain-specific search engines.
-     <em>Softw. Impacts</em>, 7:100052, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/simpa/Kejriwal21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1016/j.simpa.2020.100052">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1016/j.simpa.2020.100052">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/simpra/KejriwalT21">32</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Shilpa Thomas.
-     A multi-agent simulator for generating novelty in monopoly.
-     <em>Simul. Model. Pract. Theory</em>, 112:102364, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/simpra/KejriwalT21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1016/j.simpat.2021.102364">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1016/j.simpat.2021.102364">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/aaai/KejriwalSNT21">33</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Ravi&nbsp;Kiran Selvam, Chien-Chun Ni, and Nicolas Torzec.
-     Empirical best practices on using product-specific schema.org.
-     In <em>Thirty-Fifth AAAI Conference on Artificial Intelligence,
-      AAAI 2021, Thirty-Third Conference on Innovative Applications of Artificial
-      Intelligence, IAAI 2021, The Eleventh Symposium on Educational Advances in
-      Artificial Intelligence, EAAI 2021, Virtual Event, February 2-9, 2021</em>,
-      pages 15452-15457. AAAI Press, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/aaai/KejriwalSNT21">bib</a>&nbsp;|
-    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17816">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/asunam/Kejriwal021">34</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Ke&nbsp;Shen.
-     Unsupervised real-time induction and interactive visualization of
-      taxonomies over domain-specific concepts.
-     In Michele Coscia, Alfredo Cuzzocrea, Kai Shu, Ralf Klamma, Sharyn
-      O'Halloran, and Jon&nbsp;G. Rokne, editors, <em>ASONAM '21: International
-      Conference on Advances in Social Networks Analysis and Mining, Virtual Event,
-      The Netherlands, November 8 - 11, 2021</em>, pages 301-304. ACM, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/asunam/Kejriwal021">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3487351.3489481">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3487351.3489481">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sgai/0003K21">35</a>]
-    </td>
-    <td class="bibtexitem">
-    Ke&nbsp;Shen and Mayank Kejriwal.
-     On the generalization abilities of fine-tuned commonsense language
-      representation models.
-     In Max Bramer and Richard Ellis, editors, <em>Artificial
-      Intelligence XXXVIII - 41st SGAI International Conference on Artificial
-      Intelligence, AI 2021, Cambridge, UK, December 14-16, 2021, Proceedings</em>,
-      volume 13101 of <em>Lecture Notes in Computer Science</em>, pages 3-16.
-      Springer, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sgai/0003K21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-030-91100-3\_1">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-030-91100-3\_1">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/ssci/KejriwalFZ21">36</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Ge&nbsp;Fang, and Ying Zhou.
-     A feasibility study of open-source sentiment analysis and text
-      classification systems on disaster-specific social media data.
-     In <em>IEEE Symposium Series on Computational Intelligence, SSCI
-      2021, Orlando, FL, USA, December 5-7, 2021</em>, pages 1-8. IEEE, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/ssci/KejriwalFZ21">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/SSCI50451.2021.9660089">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/SSCI50451.2021.9660089">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2103-00683">37</a>]
-    </td>
-    <td class="bibtexitem">
-    Marina Haliem, Trevor Bonjour, Aala&nbsp;Oqab Alsalem, Shilpa Thomas, Hongyu Li,
-      Vaneet Aggarwal, Bharat&nbsp;K. Bhargava, and Mayank Kejriwal.
-     Learning monopoly gameplay: A hybrid model-free deep reinforcement
-      learning and imitation learning approach.
-     <em>CoRR</em>, abs/2103.00683, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2103-00683">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2103.00683">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2103.00683">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2108-01699">38</a>]
-    </td>
-    <td class="bibtexitem">
-    Sara Melotte and Mayank Kejriwal.
-     Predicting zip code-level vaccine hesitancy in US metropolitan
-      areas using machine learning models on public tweets.
-     <em>CoRR</em>, abs/2108.01699, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2108-01699">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2108.01699">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2108.01699">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2111-05823">39</a>]
-    </td>
-    <td class="bibtexitem">
-    Yuesheng Luo and Mayank Kejriwal.
-     Understanding COVID-19 vaccine reaction through comparative
-      analysis on twitter.
-     <em>CoRR</em>, abs/2111.05823, 2021.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2111-05823">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2111.05823">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2111.05823">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/ans/KejriwalG20">40</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Yao Gu.
-     Network-theoretic modeling of complex activity using UK online sex
-      advertisements.
-     <em>Appl. Netw. Sci.</em>, 5(1):30, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/ans/KejriwalG20">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/s41109-020-00275-1">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/s41109-020-00275-1">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/ans/KejriwalD20">41</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Akarsh Dang.
-     Structural studies of the global networks exposed in the panama
-      papers.
-     <em>Appl. Netw. Sci.</em>, 5(1):63, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/ans/KejriwalD20">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/s41109-020-00313-y">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/s41109-020-00313-y">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/snam/KejriwalZ20">42</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Peilin Zhou.
-     On detecting urgency in short crisis messages using minimal
-      supervision and transfer learning.
-     <em>Soc. Netw. Anal. Min.</em>, 10(1):58, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/snam/KejriwalZ20">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/s13278-020-00670-7">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/s13278-020-00670-7">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/asunam/KejriwalSNT20">43</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Ravi&nbsp;Kiran Selvam, Chien-Chun Ni, and Nicolas Torzec.
-     Locally constructing product taxonomies from scratch using
-      representation learning.
-     In Martin Atzm&uuml;ller, Michele Coscia, and Rokia Missaoui,
-      editors, <em>IEEE/ACM International Conference on Advances in Social
-      Networks Analysis and Mining, ASONAM 2020, The Hague, Netherlands, December
-      7-10, 2020</em>, pages 507-514. IEEE, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/asunam/KejriwalSNT20">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/ASONAM49781.2020.9381320">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/ASONAM49781.2020.9381320">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2007-13829">44</a>]
-    </td>
-    <td class="bibtexitem">
-    Ravi&nbsp;Kiran Selvam and Mayank Kejriwal.
-     On using product-specific schema.org from web data commons: An
-      empirical set of best practices.
-     <em>CoRR</em>, abs/2007.13829, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2007-13829">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2007.13829">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2007.13829">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2007-15066">45</a>]
-    </td>
-    <td class="bibtexitem">
-    Jiayuan Ding and Mayank Kejriwal.
-     An experimental study of the effects of position bias on emotion
-      causeextraction.
-     <em>CoRR</em>, abs/2007.15066, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2007-15066">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2007.15066">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2007.15066">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2011-09159">46</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Ke&nbsp;Shen.
-     Do fine-tuned commonsense language models really generalize?
-     <em>CoRR</em>, abs/2011.09159, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2011-09159">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2011.09159">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2011.09159">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-2011-14084">47</a>]
-    </td>
-    <td class="bibtexitem">
-    Ke&nbsp;Shen and Mayank Kejriwal.
-     A data-driven study of commonsense knowledge using the conceptnet
-      knowledge base.
-     <em>CoRR</em>, abs/2011.14084, 2020.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-2011-14084">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/2011.14084">arXiv</a>&nbsp;|
-    <a href="https://arxiv.org/abs/2011.14084">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:series/sbcs/Kejriwal19">48</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     <em>Domain-Specific Knowledge Graph Construction</em>.
-     Springer Briefs in Computer Science. Springer, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:series/sbcs/Kejriwal19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-030-12375-8">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-030-12375-8">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/ans/KejriwalK19">49</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Rahul Kapoor.
-     Network-theoretic information extraction quality assessment in the
-      human trafficking domain.
-     <em>Appl. Netw. Sci.</em>, 4(1):44:1-44:26, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/ans/KejriwalK19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/s41109-019-0154-z">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/s41109-019-0154-z">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/fi/KejriwalS19">50</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     mydig: Personalized illicit domain-specific knowledge discovery with
-      no programming.
-     <em>Future Internet</em>, 11(3):59, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/fi/KejriwalS19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3390/fi11030059">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3390/fi11030059">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/semweb/KejriwalSL19">51</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Juan&nbsp;F. Sequeda, and Vanessa Lopez.
-     Knowledge graphs: Construction, management and querying.
-     <em>Semantic Web</em>, 10(6):961-962, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/semweb/KejriwalSL19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3233/SW-190370">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3233/SW-190370">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/asunam/KejriwalZ19">52</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Peilin Zhou.
-     Low-supervision urgency detection and transfer in short crisis
-      messages.
-     In Francesca Spezzano, Wei Chen, and Xiaokui Xiao, editors, <em>
-      ASONAM '19: International Conference on Advances in Social Networks
-      Analysis and Mining, Vancouver, British Columbia, Canada, 27-30 August,
-      2019</em>, pages 353-356. ACM, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/asunam/KejriwalZ19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3341161.3342936">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3341161.3342936">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/asunam/ZhangK19">53</a>]
-    </td>
-    <td class="bibtexitem">
-    Shuo Zhang and Mayank Kejriwal.
-     Concept drift in bias and sensationalism detection: an experimental
-      study.
-     In Francesca Spezzano, Wei Chen, and Xiaokui Xiao, editors, <em>
-      ASONAM '19: International Conference on Advances in Social Networks
-      Analysis and Mining, Vancouver, British Columbia, Canada, 27-30 August,
-      2019</em>, pages 601-604. ACM, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/asunam/ZhangK19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3341161.3343690">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3341161.3343690">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/asunam/KejriwalZ19a">54</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Peilin Zhou.
-     SAVIZ: interactive exploration and visualization of situation
-      labeling classifiers over crisis social media data.
-     In Francesca Spezzano, Wei Chen, and Xiaokui Xiao, editors, <em>
-      ASONAM '19: International Conference on Advances in Social Networks
-      Analysis and Mining, Vancouver, British Columbia, Canada, 27-30 August,
-      2019</em>, pages 705-708. ACM, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/asunam/KejriwalZ19a">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3341161.3343703">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3341161.3343703">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalS19">55</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Co-lod: Continuous space linked open data.
-     In Mari&nbsp;Carmen Su&aacute;rez-Figueroa, Gong Cheng, Anna&nbsp;Lisa
-      Gentile, Christophe Gu&eacute;ret, C.&nbsp;Maria Keet, and Abraham Bernstein,
-      editors, <em>Proceedings of the ISWC 2019 Satellite Tracks (Posters &amp;
-      Demonstrations, Industry, and Outrageous Ideas) co-located with 18th
-      International Semantic Web Conference (ISWC 2019), Auckland, New Zealand,
-      October 26-30, 2019</em>, volume 2456 of <em>CEUR Workshop Proceedings</em>, pages
-      333-337. CEUR-WS.org, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalS19">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-2456/paper94.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sigir/GheiniK19">56</a>]
-    </td>
-    <td class="bibtexitem">
-    Mozhdeh Gheini and Mayank Kejriwal.
-     Unsupervised product entity resolution using graph representation
-      learning.
-     In Jon Degenhardt, Surya Kallumadi, Utkarsh Porwal, and Andrew
-      Trotman, editors, <em>Proceedings of the SIGIR 2019 Workshop on eCommerce,
-      co-located with the 42st International ACM SIGIR Conference on Research
-      and Development in Information Retrieval, eCom@SIGIR 2019, Paris, France,
-      July 25, 2019</em>, volume 2410 of <em>CEUR Workshop Proceedings</em>.
-      CEUR-WS.org, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sigir/GheiniK19">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-2410/paper26.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sigir/KejriwalSS19">57</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Runqi Shao, and Pedro&nbsp;A. Szekely.
-     Expert-guided entity extraction using expressive rules.
-     In Benjamin Piwowarski, Max Chevalier, &Eacute;ric Gaussier, Yoelle
-      Maarek, Jian-Yun Nie, and Falk Scholer, editors, <em>Proceedings of the
-      42nd International ACM SIGIR Conference on Research and Development in
-      Information Retrieval, SIGIR 2019, Paris, France, July 21-25, 2019</em>, pages
-      1353-1356. ACM, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sigir/KejriwalSS19">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3331184.3331392">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3331184.3331392">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/kcap/2019">58</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Pedro&nbsp;A. Szekely, and Rapha&euml;l Troncy, editors.
-     <em>Proceedings of the 10th International Conference on Knowledge
-      Capture, K-CAP 2019, Marina Del Rey, CA, USA, November 19-21, 2019</em>. ACM,
-      2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/kcap/2019">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3360901">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3360901">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-1907-06745">59</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Peilin Zhou.
-     Low-supervision urgency detection and transfer in short crisis
-      messages.
-     <em>CoRR</em>, abs/1907.06745, 2019.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-1907-06745">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1907.06745">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1907.06745">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/computer/NamK18">60</a>]
-    </td>
-    <td class="bibtexitem">
-    Daye Nam and Mayank Kejriwal.
-     How do organizations publish semantic markup? three case studies
-      using public schema.org crawls.
-     <em>Computer</em>, 51(6):42-51, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/computer/NamK18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/MC.2018.2701635">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/MC.2018.2701635">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/expert/KejriwalSK18">61</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Pedro&nbsp;A. Szekely, and Craig&nbsp;A. Knoblock.
-     Investigative knowledge discovery for combating illicit activities.
-     <em>IEEE Intell. Syst.</em>, 33(1):53-63, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/expert/KejriwalSK18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/MIS.2018.111144556">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/MIS.2018.111144556">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/aaai/KejriwalS18">62</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Constructing domain-specific search engines with no programming.
-     In Sheila&nbsp;A. McIlraith and Kilian&nbsp;Q. Weinberger, editors, <em>
-      Proceedings of the Thirty-Second AAAI Conference on Artificial
-      Intelligence, (AAAI-18), the 30th innovative Applications of Artificial
-      Intelligence (IAAI-18), and the 8th AAAI Symposium on Educational Advances
-      in Artificial Intelligence (EAAI-18), New Orleans, Louisiana, USA, February
-      2-7, 2018</em>, pages 8204-8205. AAAI Press, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/aaai/KejriwalS18">bib</a>&nbsp;|
-    <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16990">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/aies/HundmanGKB18">63</a>]
-    </td>
-    <td class="bibtexitem">
-    Kyle Hundman, Thamme Gowda, Mayank Kejriwal, and Benedikt Boecking.
-     Always lurking: Understanding and mitigating bias in online human
-      trafficking detection.
-     In Jason Furman, Gary&nbsp;E. Marchant, Huw Price, and Francesca Rossi,
-      editors, <em>Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics,
-      and Society, AIES 2018, New Orleans, LA, USA, February 02-03, 2018</em>, pages
-      137-143. ACM, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/aies/HundmanGKB18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3278721.3278782">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3278721.3278782">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/chi/KejriwalS18">64</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Technology-assisted investigative search: A case study from an
-      illicit domain.
-     In Regan&nbsp;L. Mandryk, Mark Hancock, Mark Perry, and Anna&nbsp;L. Cox,
-      editors, <em>Extended Abstracts of the 2018 CHI Conference on Human
-      Factors in Computing Systems, CHI 2018, Montreal, QC, Canada, April 21-26,
-      2018</em>. ACM, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/chi/KejriwalS18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3170427.3174364">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3170427.3174364">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalPZS18">65</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Jing Peng, Haotian Zhang, and Pedro&nbsp;A. Szekely.
-     Structured event entity resolution in humanitarian domains.
-     In Denny Vrandecic, Kalina Bontcheva, Mari&nbsp;Carmen
-      Su&aacute;rez-Figueroa, Valentina Presutti, Irene Celino, Marta Sabou,
-      Lucie-Aim&eacute;e Kaffee, and Elena Simperl, editors, <em>The Semantic Web
-      - ISWC 2018 - 17th International Semantic Web Conference, Monterey, CA,
-      USA, October 8-12, 2018, Proceedings, Part I</em>, volume 11136 of <em>Lecture
-      Notes in Computer Science</em>, pages 233-249. Springer, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalPZS18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-030-00671-6\_14">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-030-00671-6\_14">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/www/KejriwalGSC18">66</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Daniel Gilley, Pedro&nbsp;A. Szekely, and Jill Crisman.
-     THOR: text-enabled analytics for humanitarian operations.
-     In Pierre-Antoine Champin, Fabien Gandon, Mounia Lalmas, and
-      Panagiotis&nbsp;G. Ipeirotis, editors, <em>Companion of the The Web Conference
-      2018 on The Web Conference 2018, WWW 2018, Lyon , France, April 23-27,
-      2018</em>, pages 147-150. ACM, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/www/KejriwalGSC18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3184558.3186965">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3184558.3186965">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/www/SzekelyK18">67</a>]
-    </td>
-    <td class="bibtexitem">
-    Pedro&nbsp;A. Szekely and Mayank Kejriwal.
-     Domain-specific insight graphs (DIG).
-     In Pierre-Antoine Champin, Fabien Gandon, Mounia Lalmas, and
-      Panagiotis&nbsp;G. Ipeirotis, editors, <em>Companion of the The Web Conference
-      2018 on The Web Conference 2018, WWW 2018, Lyon , France, April 23-27,
-      2018</em>, pages 433-434. ACM, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/www/SzekelyK18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3184558.3186203">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3184558.3186203">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/www/0001VDMCKR18">68</a>]
-    </td>
-    <td class="bibtexitem">
-    Jie Tang, Michalis Vazirgiannis, Yuxiao Dong, Fragkiskos&nbsp;D. Malliaros, Michael
-      Cochez, Mayank Kejriwal, and Achim Rettinger.
-     Bignet 2018 chairs' welcome &amp; organization.
-     In Pierre-Antoine Champin, Fabien Gandon, Mounia Lalmas, and
-      Panagiotis&nbsp;G. Ipeirotis, editors, <em>Companion of the The Web Conference
-      2018 on The Web Conference 2018, WWW 2018, Lyon , France, April 23-27,
-      2018</em>, pages 943-944. ACM, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/www/0001VDMCKR18">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3184558.3192293">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3184558.3192293">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/2018dl4kgs">69</a>]
-    </td>
-    <td class="bibtexitem">
-    Michael Cochez, Thierry Declerck, Gerard de&nbsp;Melo, Luis&nbsp;Espinosa Anke, Besnik
-      Fetahu, Dagmar Gromann, Mayank Kejriwal, Maria Koutraki, Freddy
-      L&eacute;cu&eacute;, Enrico Palumbo, and Harald Sack, editors.
-     <em>Proceedings of the First Workshop on Deep Learning for Knowledge
-      Graphs and Semantic Technologies (DL4KGS) co-located with the 15th Extended
-      Semantic Web Conerence (ESWC 2018), Heraklion, Crete, Greece, June 4,
-      2018</em>, volume 2106 of <em>CEUR Workshop Proceedings</em>. CEUR-WS.org, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/2018dl4kgs">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-2106">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/tac/ZhangSSHLPLZWWJ18">70</a>]
-    </td>
-    <td class="bibtexitem">
-    Tongtao Zhang, Ananya Subburathinam, Ge&nbsp;Shi, Lifu Huang, Di&nbsp;Lu, Xiaoman Pan,
-      Manling Li, Boliang Zhang, Qingyun Wang, Spencer Whitehead, Heng Ji, Alireza
-      Zareian, Hassan Akbari, Brian Chen, Ruiqi Zhong, Steven Shao, Emily Allaway,
-      Shih-Fu Chang, Kathleen&nbsp;R. McKeown, Dongyu Li, Xin Huang, Kexuan Sun, Xujun
-      Peng, Ryan Gabbard, Marjorie Freedman, Mayank Kejriwal, Ram Nevatia, Pedro&nbsp;A.
-      Szekely, T.&nbsp;K.&nbsp;Satish Kumar, Ali Sadeghian, Giacomo Bergami, Sourav Dutta,
-      Miguel&nbsp;E. Rodr&iacute;guez, and Daisy&nbsp;Zhe Wang.
-     GAIA - A multi-media multi-lingual knowledge extraction and
-      hypothesis generation system.
-     In <em>Proceedings of the 2018 Text Analysis Conference, TAC 2018,
-      Gaithersburg, Maryland, USA, November 13-14, 2018</em>. NIST, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/tac/ZhangSSHLPLZWWJ18">bib</a>&nbsp;|
-    <a href="https://tac.nist.gov/publications/2018/participant.papers/TAC2018.GAIA.proceedings.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-1801-05881">71</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Yao Gu.
-     A pipeline for post-crisis twitter data acquisition.
-     <em>CoRR</em>, abs/1801.05881, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-1801-05881">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1801.05881">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1801.05881">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-1801-05906">72</a>]
-    </td>
-    <td class="bibtexitem">
-    Yao Gu and Mayank Kejriwal.
-     Unsupervised hashtag retrieval and visualization for crisis
-      informatics.
-     <em>CoRR</em>, abs/1801.05906, 2018.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-1801-05906">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1801.05906">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1801.05906">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:series/ssw/Kejriwal17">73</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     <em>Populating a Linked Data Entity Name System - A Big Data
-      Solution to Unsupervised Instance Matching</em>, volume&nbsp;27 of <em>Studies on the
-      Semantic Web</em>.
-     IOS Press, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:series/ssw/Kejriwal17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.3233/978-1-61499-692-7-i">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.3233/978-1-61499-692-7-i">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/aimatters/Kejriwal17">74</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Populating a linked data entity name system.
-     <em>AI Matters</em>, 3(2):22-23, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/aimatters/Kejriwal17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3098888.3098897">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3098888.3098897">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/ojsw/KejriwalS17">75</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Scalable generation of type embeddings using the abox.
-     <em>Open J. Semantic Web</em>, 4(1):20-34, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/ojsw/KejriwalS17">bib</a>&nbsp;|
-    <a href="https://www.ronpub.com/ojsw/OJSW\_2017v4i1n02\_Kejriwal.html">.html</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalS17">76</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Neural embeddings for populated geonames locations.
-     In Claudia d'Amato, Miriam Fern&aacute;ndez, Valentina A.&nbsp;M. Tamma,
-      Freddy L&eacute;cu&eacute;, Philippe Cudr&eacute;-Mauroux, Juan&nbsp;F. Sequeda,
-      Christoph Lange, and Jeff Heflin, editors, <em>The Semantic Web - ISWC
-      2017 - 16th International Semantic Web Conference, Vienna, Austria, October
-      21-25, 2017, Proceedings, Part II</em>, volume 10588 of <em>Lecture Notes in
-      Computer Science</em>, pages 139-146. Springer, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalS17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-68204-4\_14">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-68204-4\_14">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalS17a">77</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     An investigative search engine for the human trafficking domain.
-     In Claudia d'Amato, Miriam Fern&aacute;ndez, Valentina A.&nbsp;M. Tamma,
-      Freddy L&eacute;cu&eacute;, Philippe Cudr&eacute;-Mauroux, Juan&nbsp;F. Sequeda,
-      Christoph Lange, and Jeff Heflin, editors, <em>The Semantic Web - ISWC
-      2017 - 16th International Semantic Web Conference, Vienna, Austria, October
-      21-25, 2017, Proceedings, Part II</em>, volume 10588 of <em>Lecture Notes in
-      Computer Science</em>, pages 247-262. Springer, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalS17a">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-68204-4\_25">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-68204-4\_25">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalSS17">78</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Thomas Schellenberg, and Pedro&nbsp;A. Szekely.
-     A semantic search engine for investigating human trafficking.
-     In Nadeschda Nikitina, Dezhao Song, Achille Fokoue, and Peter Haase,
-      editors, <em>Proceedings of the ISWC 2017 Posters &amp; Demonstrations and
-      Industry Tracks co-located with 16th International Semantic Web Conference
-      (ISWC 2017), Vienna, Austria, October 23rd - to - 25th, 2017</em>, volume 1963
-      of <em>CEUR Workshop Proceedings</em>. CEUR-WS.org, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalSS17">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-1963/paper613.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sigmod/KapoorKS17">79</a>]
-    </td>
-    <td class="bibtexitem">
-    Rahul Kapoor, Mayank Kejriwal, and Pedro&nbsp;A. Szekely.
-     Using contexts and constraints for improved geotagging of human
-      trafficking webpages.
-     In Panagiotis Bouros and Mohamed Sarwat, editors, <em>Proceedings of
-      the Fourth International ACM Workshop on Managing and Mining Enriched
-      Geo-Spatial Data, Chicago, IL, USA, May 14, 2017</em>, pages 3:1-3:6. ACM,
-      2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sigmod/KapoorKS17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3080546.3080547">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3080546.3080547">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sigmod/KejriwalS17">80</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Supervised typing of big graphs using semantic embeddings.
-     In Sven Groppe and Le&nbsp;Gruenwald, editors, <em>Proceedings of The
-      International Workshop on Semantic Big Data, SBD@SIGMOD 2017, Chicago, IL,
-      USA, May 19, 2017</em>, pages 3:1-3:6. ACM, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sigmod/KejriwalS17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3066911.3066918">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3066911.3066918">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sigmod/Kejriwal17">81</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Predicting role relevance with minimal domain expertise in a
-      financial domain.
-     In <em>Proceedings of the 3rd International Workshop on Data Science
-      for Macro-Modeling with Financial and Economic Datasets, DSMM@SIGMOD 2017,
-      Chicago, IL, USA, May 14, 2017</em>, pages 10:1-10:2. ACM, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sigmod/Kejriwal17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3077240.3077249">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3077240.3077249">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/www/KejriwalS17">82</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Information extraction in illicit web domains.
-     In Rick Barrett, Rick Cummings, Eugene Agichtein, and Evgeniy
-      Gabrilovich, editors, <em>Proceedings of the 26th International Conference
-      on World Wide Web, WWW 2017, Perth, Australia, April 3-7, 2017</em>, pages
-      997-1006. ACM, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/www/KejriwalS17">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/3038912.3052642">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/3038912.3052642">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/2017hybridsemstats">83</a>]
-    </td>
-    <td class="bibtexitem">
-    Sarven Capadisli, Franck Cotton, Xin&nbsp;Luna Dong, Ramanathan&nbsp;V. Guha, Armin
-      Haller, Pascal Hitzler, Evangelos Kalampokis, Mayank Kejriwal, Freddy
-      L&eacute;cu&eacute;, D.&nbsp;Sivakumar, Pedro&nbsp;A. Szekely, Rapha&euml;l Troncy, and
-      Michael Witbrock, editors.
-     <em>Joint Proceedings of the International Workshops on Hybrid
-      Statistical Semantic Understanding and Emerging Semantics, and Semantic
-      Statistics co-located with 16th International Semantic Web Conference,
-      HybridSemStats@ISWC 2017, Vienna, Austria October 22nd, 2017</em>, CEUR
-      Workshop Proceedings. CEUR-WS.org, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/2017hybridsemstats">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-1923">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KejriwalS17">84</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Information extraction in illicit domains.
-     <em>CoRR</em>, abs/1703.03097, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KejriwalS17">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1703.03097">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1703.03097">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KejriwalS17a">85</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Pedro&nbsp;A. Szekely.
-     Supervised typing of big graphs using semantic embeddings.
-     <em>CoRR</em>, abs/1703.07805, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KejriwalS17a">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1703.07805">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1703.07805">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KapoorKS17">86</a>]
-    </td>
-    <td class="bibtexitem">
-    Rahul Kapoor, Mayank Kejriwal, and Pedro&nbsp;A. Szekely.
-     Using contexts and constraints for improved geotagging of human
-      trafficking webpages.
-     <em>CoRR</em>, abs/1704.05569, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KapoorKS17">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1704.05569">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1704.05569">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/Kejriwal17">87</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Predicting role relevance with minimal domain expertise in a
-      financial domain.
-     <em>CoRR</em>, abs/1704.05571, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/Kejriwal17">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1704.05571">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1704.05571">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-1712-00846">88</a>]
-    </td>
-    <td class="bibtexitem">
-    Kyle Hundman, Thamme Gowda, Mayank Kejriwal, and Benedikt Boecking.
-     Always lurking: Understanding and mitigating bias in online human
-      trafficking detection.
-     <em>CoRR</em>, abs/1712.00846, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-1712-00846">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1712.00846">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1712.00846">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/abs-1712-03086">89</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Jiayuan Ding, Runqi Shao, Anoop Kumar, and Pedro&nbsp;A. Szekely.
-     Flagit: A system for minimally supervised human trafficking
-      indicator mining.
-     <em>CoRR</em>, abs/1712.03086, 2017.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/abs-1712-03086">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1712.03086">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1712.03086">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/cikm/KejriwalM16">90</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Local, domain-independent heuristics for the FEIII challenge:
-      Lessons and observations.
-     In <em>Proceedings of the Second International Workshop on Data
-      Science for Macro-Modeling, DSMM@SIGMOD 2016, San Francisco, CA, USA, June 26
-      - July 1, 2016</em>, pages 17:1-17:2. ACM, 2016.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/cikm/KejriwalM16">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/2951894.2951911">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/2951894.2951911">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/Kejriwal16">91</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Disjunctive normal form schemes for heterogeneous attributed graphs.
-     <em>CoRR</em>, abs/1605.00686, 2016.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/Kejriwal16">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1605.00686">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1605.00686">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KejriwalM16">92</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Self-contained nosql resources for cross-domain RDF.
-     <em>CoRR</em>, abs/1608.04437, 2016.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KejriwalM16">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1608.04437">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1608.04437">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KejriwalM16a">93</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Experience: Type alignment on dbpedia and freebase.
-     <em>CoRR</em>, abs/1608.04442, 2016.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KejriwalM16a">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1608.04442">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1608.04442">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/BalajiJKMSO16">94</a>]
-    </td>
-    <td class="bibtexitem">
-    Janani Balaji, Faizan Javed, Mayank Kejriwal, Chris Min, Sam Sander, and Ozgur
-      Ozturk.
-     An ensemble blocking scheme for entity resolution of large and sparse
-      datasets.
-     <em>CoRR</em>, abs/1609.06265, 2016.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/BalajiJKMSO16">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1609.06265">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1609.06265">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/ws/KejriwalM15">95</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     An unsupervised instance matcher for schema-free RDF data.
-     <em>J. Web Semant.</em>, 35:102-123, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/ws/KejriwalM15">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1016/j.websem.2015.07.002">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1016/j.websem.2015.07.002">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/aaai/Kejriwal15">96</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Sorted neighborhood for the semantic web.
-     In Blai Bonet and Sven Koenig, editors, <em>Proceedings of the
-      Twenty-Ninth AAAI Conference on Artificial Intelligence, January 25-30,
-      2015, Austin, Texas, USA</em>, pages 4174-4175. AAAI Press, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/aaai/Kejriwal15">bib</a>&nbsp;|
-    <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9295">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/aaai/Kejriwal15a">97</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Entity resolution in a big data framework.
-     In Blai Bonet and Sven Koenig, editors, <em>Proceedings of the
-      Twenty-Ninth AAAI Conference on Artificial Intelligence, January 25-30,
-      2015, Austin, Texas, USA</em>, pages 4243-4244. AAAI Press, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/aaai/Kejriwal15a">bib</a>&nbsp;|
-    <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9294">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/bigdataconf/KejriwalLJJ15">98</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal, Qiaoling Liu, Ferosh Jacob, and Faizan Javed.
-     A pipeline for extracting and deduplicating domain-specific knowledge
-      bases.
-     In <em>2015 IEEE International Conference on Big Data (IEEE
-      BigData 2015), Santa Clara, CA, USA, October 29 - November 1, 2015</em>, pages
-      1144-1153. IEEE Computer Society, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/bigdataconf/KejriwalLJJ15">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/BigData.2015.7363868">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/BigData.2015.7363868">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/KejriwalM15">99</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Sorted neighborhood for schema-free RDF data.
-     In Johanna V&ouml;lker, Heiko Paulheim, Jens Lehmann, and Vojtech
-      Sv&aacute;tek, editors, <em>Proceedings of the 4th Workshop on Knowledge
-      Discovery and Data Mining Meets Linked Open Data co-located with 12th
-      Extended Semantic Web Conference (ESWC 2015), Portoroz, Slovenia, May 31,
-      2015</em>, volume 1365 of <em>CEUR Workshop Proceedings</em>. CEUR-WS.org, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/KejriwalM15">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-1365/preface.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/KejriwalM15b">100</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Minimally supervised instance matching: An alternate approach.
-     In Fabien Gandon, Christophe Gu&eacute;ret, Serena Villata, John&nbsp;G.
-      Breslin, Catherine Faron-Zucker, and Antoine Zimmermann, editors, <em>The
-      Semantic Web: ESWC 2015 Satellite Events - ESWC 2015 Satellite Events
-      Portoro&#382;, Slovenia, May 31 - June 4, 2015, Revised Selected Papers</em>,
-      volume 9341 of <em>Lecture Notes in Computer Science</em>, pages 72-76.
-      Springer, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/KejriwalM15b">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-25639-9\_14">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-25639-9\_14">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/KejriwalM15c">101</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Sorted neighborhood for schema-free RDF data.
-     In Fabien Gandon, Christophe Gu&eacute;ret, Serena Villata, John&nbsp;G.
-      Breslin, Catherine Faron-Zucker, and Antoine Zimmermann, editors, <em>The
-      Semantic Web: ESWC 2015 Satellite Events - ESWC 2015 Satellite Events
-      Portoro&#382;, Slovenia, May 31 - June 4, 2015, Revised Selected Papers</em>,
-      volume 9341 of <em>Lecture Notes in Computer Science</em>, pages 217-229.
-      Springer, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/KejriwalM15c">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-25639-9\_38">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-25639-9\_38">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/esws/KejriwalM15a">102</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Semi-supervised instance matching using boosted classifiers.
-     In Fabien Gandon, Marta Sabou, Harald Sack, Claudia d'Amato, Philippe
-      Cudr&eacute;-Mauroux, and Antoine Zimmermann, editors, <em>The Semantic
-      Web. Latest Advances and New Domains - 12th European Semantic Web Conference,
-      ESWC 2015, Portoroz, Slovenia, May 31 - June 4, 2015. Proceedings</em>, volume
-      9088 of <em>Lecture Notes in Computer Science</em>, pages 388-402. Springer,
-      2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/esws/KejriwalM15a">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-18818-8\_24">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-18818-8\_24">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalM15">103</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     Decision-making bias in instance matching model selection.
-     In Marcelo Arenas, &Oacute;scar Corcho, Elena Simperl, Markus
-      Strohmaier, Mathieu d'Aquin, Kavitha Srinivas, Paul Groth, Michel Dumontier,
-      Jeff Heflin, Krishnaprasad Thirunarayan, and Steffen Staab, editors, <em>The
-      Semantic Web - ISWC 2015 - 14th International Semantic Web Conference,
-      Bethlehem, PA, USA, October 11-15, 2015, Proceedings, Part I</em>, volume 9366
-      of <em>Lecture Notes in Computer Science</em>, pages 392-407. Springer, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalM15">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-25007-6\_23">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-25007-6\_23">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KejriwalM15">104</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     A DNF blocking scheme learner for heterogeneous datasets.
-     <em>CoRR</em>, abs/1501.01694, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KejriwalM15">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1501.01694">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1501.01694">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:journals/corr/KejriwalM15a">105</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     On the complexity of sorted neighborhood.
-     <em>CoRR</em>, abs/1501.01696, 2015.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:journals/corr/KejriwalM15a">bib</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1501.01696">arXiv</a>&nbsp;|
-    <a href="http://arxiv.org/abs/1501.01696">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalM14a">106</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     A two-step blocking scheme learner for scalable link discovery.
-     In Pavel Shvaiko, J&eacute;r&ocirc;me Euzenat, Ming Mao, Ernesto
-      Jim&eacute;nez-Ruiz, Juanzi Li, and Axel Ngonga, editors, <em>Proceedings
-      of the 9th International Workshop on Ontology Matching collocated with the
-      13th International Semantic Web Conference (ISWC 2014), Riva del Garda,
-      Trentino, Italy, October 20, 2014</em>, volume 1317 of <em>CEUR Workshop
-      Proceedings</em>, pages 49-60. CEUR-WS.org, 2014.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalM14a">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-1317/om2014\_Tpaper5.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/KejriwalM14">107</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     On linking heterogeneous dataset collections.
-     In Matthew Horridge, Marco Rospocher, and Jacco van Ossenbruggen,
-      editors, <em>Proceedings of the ISWC 2014 Posters &amp; Demonstrations
-      Track a track within the 13th International Semantic Web Conference, ISWC
-      2014, Riva del Garda, Italy, October 21, 2014</em>, volume 1272 of <em>CEUR
-      Workshop Proceedings</em>, pages 217-220. CEUR-WS.org, 2014.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/KejriwalM14">bib</a>&nbsp;|
-    <a href="https://ceur-ws.org/Vol-1272/paper\_17.pdf">.pdf</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/semweb/Kejriwal14">108</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal.
-     Populating entity name systems for big data integration.
-     In Peter Mika, Tania Tudorache, Abraham Bernstein, Chris Welty,
-      Craig&nbsp;A. Knoblock, Denny Vrandecic, Paul Groth, Natasha&nbsp;F. Noy, Krzysztof
-      Janowicz, and Carole&nbsp;A. Goble, editors, <em>The Semantic Web - ISWC 2014 -
-      13th International Semantic Web Conference, Riva del Garda, Italy, October
-      19-23, 2014. Proceedings, Part II</em>, volume 8797 of <em>Lecture Notes in
-      Computer Science</em>, pages 521-528. Springer, 2014.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/semweb/Kejriwal14">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1007/978-3-319-11915-1\_34">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1007/978-3-319-11915-1\_34">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/ssdbm/TianKM14">109</a>]
-    </td>
-    <td class="bibtexitem">
-    Aibo Tian, Mayank Kejriwal, and Daniel&nbsp;P. Miranker.
-     Schema matching over relations, attributes, and data values.
-     In Christian&nbsp;S. Jensen, Hua Lu, Torben&nbsp;Bach Pedersen, Christian
-      Thomsen, and Kristian Torp, editors, <em>Conference on Scientific and
-      Statistical Database Management, SSDBM '14, Aalborg, Denmark, June 30 -
-      July 02, 2014</em>, pages 28:1-28:12. ACM, 2014.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/ssdbm/TianKM14">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1145/2618243.2618248">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1145/2618243.2618248">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/icdm/KejriwalM13">110</a>]
-    </td>
-    <td class="bibtexitem">
-    Mayank Kejriwal and Daniel&nbsp;P. Miranker.
-     An unsupervised algorithm for learning blocking schemes.
-     In Hui Xiong, George Karypis, Bhavani Thuraisingham, Diane&nbsp;J. Cook,
-      and Xindong Wu, editors, <em>2013 IEEE 13th International Conference on
-      Data Mining, Dallas, TX, USA, December 7-10, 2013</em>, pages 340-349. IEEE
-      Computer Society, 2013.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/icdm/KejriwalM13">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/ICDM.2013.60">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/ICDM.2013.60">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/ijcnn/ZhouKM13">111</a>]
-    </td>
-    <td class="bibtexitem">
-    Zihao Zhou, Mayank Kejriwal, and Risto Miikkulainen.
-     Extended scaled neural predictor for improved branch prediction.
-     In <em>The 2013 International Joint Conference on Neural Networks,
-      IJCNN 2013, Dallas, TX, USA, August 4-9, 2013</em>, pages 1-7. IEEE, 2013.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/ijcnn/ZhouKM13">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/IJCNN.2013.6707059">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/IJCNN.2013.6707059">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/eScience/DiesendruckMKKM12">112</a>]
-    </td>
-    <td class="bibtexitem">
-    Liana Diesendruck, Luigi Marini, Rob Kooper, Mayank Kejriwal, and Kenton
-      McHenry.
-     A framework to access handwritten information within large digitized
-      paper collections.
-     In <em>8th IEEE International Conference on E-Science, e-Science
-      2012, Chicago, IL, USA, October 8-12, 2012</em>, pages 1-10. IEEE Computer
-      Society, 2012.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/eScience/DiesendruckMKKM12">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/eScience.2012.6404434">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/eScience.2012.6404434">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/eScience/DiesendruckMKKM12a">113</a>]
-    </td>
-    <td class="bibtexitem">
-    Liana Diesendruck, Luigi Marini, Rob Kooper, Mayank Kejriwal, and Kenton
-      McHenry.
-     Digitization and search: A non-traditional use of HPC.
-     In <em>8th IEEE International Conference on E-Science, e-Science
-      2012, Chicago, IL, USA, October 8-12, 2012</em>, pages 1-6. IEEE Computer
-      Society, 2012.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/eScience/DiesendruckMKKM12a">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/eScience.2012.6404445">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/eScience.2012.6404445">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sc/DiesendruckMKKM12">114</a>]
-    </td>
-    <td class="bibtexitem">
-    Liana Diesendruck, Luigi Marini, Rob Kooper, Mayank Kejriwal, and Kenton
-      McHenry.
-     Abstract: Digitization and search: A non-traditional use of HPC.
-     In <em>2012 SC Companion: High Performance Computing, Networking
-      Storage and Analysis, Salt Lake City, UT, USA, November 10-16, 2012</em>, pages
-      1460-1461. IEEE Computer Society, 2012.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sc/DiesendruckMKKM12">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/SC.Companion.2012.259">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/SC.Companion.2012.259">http</a>&nbsp;]
-
-    </td>
-    </tr>
-
-
-    <tr valign="top">
-    <td align="right" class="bibtexnumber">
-    [<a name="DBLP:conf/sc/DiesendruckMKKM12a">115</a>]
-    </td>
-    <td class="bibtexitem">
-    Liana Diesendruck, Luigi Marini, Rob Kooper, Mayank Kejriwal, and Kenton
-      McHenry.
-     Poster: Digitization and search: A non-traditional use of HPC.
-     In <em>2012 SC Companion: High Performance Computing, Networking
-      Storage and Analysis, Salt Lake City, UT, USA, November 10-16, 2012</em>, page
-      1462. IEEE Computer Society, 2012.
-    [&nbsp;<a href="kejriwal_bib.html#DBLP:conf/sc/DiesendruckMKKM12a">bib</a>&nbsp;|
-    <a href="http://dx.doi.org/10.1109/SC.Companion.2012.260">DOI</a>&nbsp;|
-    <a href="https://doi.org/10.1109/SC.Companion.2012.260">http</a>&nbsp;]
-
-    </td>
-    </tr>
-    </table>
-    
-
+<h3>2025</h3>
+<ul class="publication-list">
+<li>
+<strong>Cole Gawin,                   Yidan Sun,                   Mayank Kejriwal</strong>.<br>
+<em>Navigating Semantic Relations: Challenges for Language Models in Abstract
+                  Common-Sense Reasoning</em>.<br>
+<em>CoRR</em>, abs/2502.14086, 2025.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2502.14086">DOI</a> <a href="http://arxiv.org/abs/2502.14086">arXiv</a></span>
+</li>
+</ul>
+<h3>2024</h3>
+<ul class="publication-list">
+<li>
+<strong>Navapat Nananukul,                   Khanin Sisaengsuwanchai,                   Mayank Kejriwal</strong>.<br>
+<em>Cost-efficient prompt engineering for unsupervised entity resolution
+                  in the product matching domain</em>.<br>
+<em>Discov. Artif. Intell.</em>, 4(1):56, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S44163-024-00159-8">DOI</a></span>
+</li>
+<li>
+<strong>Henrique Santos,                   Ke Shen,                   Alice M. Mulvehill,                   Mayank Kejriwal,                   Deborah L. McGuinness</strong>.<br>
+<em>A Theoretically Grounded Question Answering Data Set for Evaluating
+                  Machine Common Sense</em>.<br>
+<em>Data Intell.</em>, 6(1):1--28, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1162/DINT\_A\_00234">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Eric J. Kildebeck,                   Robert J. Steininger,                   Abhinav Shrivastava</strong>.<br>
+<em>Challenges, evaluation and opportunities for open-world learning</em>.<br>
+<em>Nat. Mac. Intell.</em>, 6(6):580--588, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1038/S42256-024-00852-4">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Victoria Petryshyn</strong>.<br>
+<em>Advancing computational sustainability in higher education</em>.<br>
+<em>Nat. Comput. Sci.</em>, 4(6):382--383, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1038/S43588-024-00638-Z">DOI</a></span>
+</li>
+<li>
+<strong>Adin Aberbach,                   Mayank Kejriwal,                   Ke Shen</strong>.<br>
+<em>Multipartite Entity Resolution: Motivating a K-Tuple Perspective (Student
+                  Abstract)</em>.<br>
+<em>Thirty-Eighth {AAAI</em>:23434--23435, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1609/AAAI.V38I21.30417">DOI</a></span>
+</li>
+<li>
+<strong>Xiyao Cheng,                   Lakshmi Srinivas Edara,                   Yuanxun Zhang,                   Mayank Kejriwal,                   Prasad Calyam</strong>.<br>
+<em>Influence Role Recognition and LLM-Based Scholar Recommendation in
+                  Academic Social Networks</em>.<br>
+<em>11th {IEEE</em>:1--11, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/DSAA61799.2024.10722780">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Designing Social Good Semantic Computing Architectures for the Long
+                  Tail: Case Studies, Evaluation, and Challenges</em>.<br>
+<em>18th {IEEE</em>:253--260, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/ICSC59802.2024.00047">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Hamid Haidarian,                   Min{-</strong>.<br>
+<em>A Semantic Search Engine for Helping Patients Find Doctors and Locations
+                  in a Large Healthcare Organization</em>.<br>
+<em>Proceedings of the 47th International {ACM</em>:2945--2949, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3626772.3661349">DOI</a></span>
+</li>
+<li>
+<strong>Unknown</strong>.<br>
+<em>Joint proceedings of the 3rd International workshop on knowledge graph
+                  generation from text {(TEXT2KG)</em>.<br>
+2024.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-3747">Link</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>An Evaluation of Estimative Uncertainty in Large Language Models</em>.<br>
+<em>CoRR</em>, abs/2405.15185, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2405.15185">DOI</a> <a href="http://arxiv.org/abs/2405.15185">arXiv</a></span>
+</li>
+<li>
+<strong>Yongyi Ji,                   Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>Is persona enough for personality? Using ChatGPT to reconstruct an
+                  agent's latent personality from simple descriptions</em>.<br>
+<em>CoRR</em>, abs/2406.12216, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2406.12216">DOI</a> <a href="http://arxiv.org/abs/2406.12216">arXiv</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>{GRASP:</em>.<br>
+<em>CoRR</em>, abs/2407.01892, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2407.01892">DOI</a> <a href="http://arxiv.org/abs/2407.01892">arXiv</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>Defining and Evaluating Decision and Composite Risk in Language Models
+                  Applied to Natural Language Inference</em>.<br>
+<em>CoRR</em>, abs/2408.01935, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2408.01935">DOI</a> <a href="http://arxiv.org/abs/2408.01935">arXiv</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>SelECT-SQL: Self-correcting ensemble Chain-of-Thought for Text-to-SQL</em>.<br>
+<em>CoRR</em>, abs/2409.10007, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2409.10007">DOI</a> <a href="http://arxiv.org/abs/2409.10007">arXiv</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>Humanlike Cognitive Patterns as Emergent Phenomena in Large Language
+                  Models</em>.<br>
+<em>CoRR</em>, abs/2412.15501, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2412.15501">DOI</a> <a href="http://arxiv.org/abs/2412.15501">arXiv</a></span>
+</li>
+<li>
+<strong>Bruce Deng,                   Mayank Kejriwal</strong>.<br>
+<em>Modeling and Simulating Agent-Based City Migration Using Conway's
+                  Game of Life</em>.<br>
+<em>CoRR</em>, abs/2412.20691, 2024.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2412.20691">DOI</a> <a href="http://arxiv.org/abs/2412.20691">arXiv</a></span>
+</li>
+</ul>
+<h3>2023</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Artificial Intelligence for Industries of the Future - Beyond Facebook,
+                  Amazon, Microsoft and Google</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-19039-1">DOI</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>Evaluating deep generative models on cognitive tasks: a case study</em>.<br>
+<em>Discov. Artif. Intell.</em>, 3(1), 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S44163-023-00067-3">DOI</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>An experimental study measuring the generalization of fine-tuned language
+                  representation models across commonsense reasoning benchmarks</em>.<br>
+<em>Expert Syst. J. Knowl. Eng.</em>, 40(5), 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1111/EXSY.13243">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Henrique Santos,                   Ke Shen,                   Alice M. Mulvehill,                   Deborah L. McGuinness</strong>.<br>
+<em>Context-Rich Evaluation of Machine Common Sense</em>.<br>
+<em>Artificial General Intelligence - 16th International Conference, {AGI</em>, 13921:167--176, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-33469-6\_17">DOI</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>Can Language Models Be Used in Multistep Commonsense Planning Domains?</em>.<br>
+<em>Artificial General Intelligence - 16th International Conference, {AGI</em>, 13921:276--285, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-33469-6\_28">DOI</a></span>
+</li>
+<li>
+<strong>Prasad Calyam,                   Mayank Kejriwal,                   Praveen Rao,                   Jianlin Cheng,                   Weichao Wang,                   Linquan Bai,                   V. Sriram Siddhardh Nadendla,                   Sanjay Madria,                   Sajal K. Das,                   Rohit Chadha,                   Khaza Anuarul Hoque,                   Kannappan Palaniappan,                   Kiran Neupane,                   Roshan Lal Neupane,                   Sankeerth Gandhari,                   Mukesh Singhal,                   Lotfi Ben Othmane,                   Meng Yu,                   Vijay Anand,                   Bharat K. Bhargava,                   Brett Robertson,                   Kerk F. Kee,                   Patrice Buzzanell,                   Natalie A. Bolton,                   Harsh Taneja</strong>.<br>
+<em>Towards a Domain-Agnostic Knowledge Graph-as-a-Service Infrastructure
+                  for Active Cyber Defense with Intelligent Agents</em>.<br>
+<em>52nd {IEEE</em>:1--8, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/AIPR60534.2023.10440708">DOI</a></span>
+</li>
+<li>
+<strong>Yidan Sun,                   Mayank Kejriwal</strong>.<br>
+<em>DeepGraph: Multi-Cluster Interactive Visualization of Complex Networks
+                  in a Learned Representation Space</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3625007.3627515">DOI</a></span>
+</li>
+<li>
+<strong>Yidan Sun,                   Mayank Kejriwal</strong>.<br>
+<em>A structural study of Big Tech firm-switching of inventors in the
+                  post-recession era</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3625007.3627599">DOI</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>An Analytical Approximation of Simplicial Complex Distributions in
+                  Communication Networks</em>.<br>
+<em>Complex Networks {\&</em>, 1144:16--26, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-53503-1\_2">DOI</a></span>
+</li>
+<li>
+<strong>Min{-</strong>.<br>
+<em>A Model and Structural Analysis of Networked Bitcoin Transaction Flows</em>.<br>
+<em>Complex Networks {\&</em>, 1143:456--467, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-53472-0\_38">DOI</a></span>
+</li>
+<li>
+<strong>Xiyao Cheng,                   Yuanxun Zhang,                   Harsh Joshi,                   Mayank Kejriwal,                   Prasad Calyam</strong>.<br>
+<em>Knowledge Graph-based Embedding for Connecting Scholars in Academic
+                  Social Networks</em>.<br>
+<em>10th {IEEE</em>:1--10, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/DSAA60987.2023.10302507">DOI</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>Substructure Discovery in Commonsense Relations Using Graph Representation
+                  Learning</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-47721-8\_48">DOI</a></span>
+</li>
+<li>
+<strong>Xinyu Liu,                   Tiancheng Sun,                   Diantian Fu,                   Zijue Li,                   Sheng Qian,                   Ruyue Meng,                   Mayank Kejriwal</strong>.<br>
+<em>Automatic Semantic Typing of Pet E-commerce Products Using Crowdsourced
+                  Reviews: An Experimental Study</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-47745-4\_12">DOI</a></span>
+</li>
+<li>
+<strong>Unknown</strong>.<br>
+<em>Joint Proceedings of the Second International Workshop on Knowledge
+                  Graph Generation From Text and the First International BiKE Challenge
+                  co-located with 20th Extended Semantic Conference {(ESWC</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-3447">Link</a></span>
+</li>
+<li>
+<strong>Henrique Santos,                   Alice M. Mulvehill,                   Ke Shen,                   Mayank Kejriwal,                   Deborah L. McGuinness</strong>.<br>
+<em>{TG-CSR</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.5281/ZENODO.7908824">DOI</a></span>
+</li>
+<li>
+<strong>Henrique Santos,                   Ke Shen,                   Alice M. Mulvehill,                   Mayank Kejriwal,                   Deborah L. McGuinness</strong>.<br>
+<em>{TG-CSR:</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.5281/ZENODO.7569647">DOI</a></span>
+</li>
+<li>
+<strong>Henrique Santos,                   Ke Shen,                   Alice M. Mulvehill,                   Mayank Kejriwal,                   Deborah L. McGuinness</strong>.<br>
+<em>{TG-CSR:</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.5281/ZENODO.8269364">DOI</a></span>
+</li>
+<li>
+<strong>Henrique Santos,                   Ke Shen,                   Alice M. Mulvehill,                   Mayank Kejriwal,                   Deborah L. McGuinness</strong>.<br>
+<em>{TG-CSR:</em>.<br>
+2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.5281/ZENODO.8279823">DOI</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>A Pilot Evaluation of ChatGPT and {DALL-E</em>.<br>
+<em>CoRR</em>, abs/2302.09068, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2302.09068">DOI</a> <a href="http://arxiv.org/abs/2302.09068">arXiv</a></span>
+</li>
+<li>
+<strong>Katarina Doctor,                   Christine Task,                   Eric J. Kildebeck,                   Mayank Kejriwal,                   Lawrence Holder,                   Russell Leong</strong>.<br>
+<em>Toward Defining a Domain Complexity Measure Across Domains</em>.<br>
+<em>CoRR</em>, abs/2303.04141, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2303.04141">DOI</a> <a href="http://arxiv.org/abs/2303.04141">arXiv</a></span>
+</li>
+<li>
+<strong>Yidan Sun,                   Mayank Kejriwal</strong>.<br>
+<em>A structural study of Big Tech firm-switching of inventors in the
+                  post-recession era</em>.<br>
+<em>CoRR</em>, abs/2307.07920, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2307.07920">DOI</a> <a href="http://arxiv.org/abs/2307.07920">arXiv</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Named Entity Resolution in Personal Knowledge Graphs</em>.<br>
+<em>CoRR</em>, abs/2307.12173, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2307.12173">DOI</a> <a href="http://arxiv.org/abs/2307.12173">arXiv</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>A Formalism and Approach for Improving Robustness of Large Language
+                  Models Using Risk-Adjusted Confidence Scores</em>.<br>
+<em>CoRR</em>, abs/2310.03283, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2310.03283">DOI</a> <a href="http://arxiv.org/abs/2310.03283">arXiv</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Hamid Haidarian,                   Min{-</strong>.<br>
+<em>A Knowledge Graph-Based Search Engine for Robustly Finding Doctors
+                  and Locations in the Healthcare Domain</em>.<br>
+<em>CoRR</em>, abs/2310.05258, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2310.05258">DOI</a> <a href="http://arxiv.org/abs/2310.05258">arXiv</a></span>
+</li>
+<li>
+<strong>Khanin Sisaengsuwanchai,                   Navapat Nananukul,                   Mayank Kejriwal</strong>.<br>
+<em>How does prompt engineering affect ChatGPT performance on unsupervised
+                  entity resolution?</em>.<br>
+<em>CoRR</em>, abs/2310.06174, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2310.06174">DOI</a> <a href="http://arxiv.org/abs/2310.06174">arXiv</a></span>
+</li>
+<li>
+<strong>Navapat Nananukul,                   Mayank Kejriwal</strong>.<br>
+<em>{HALO:</em>.<br>
+<em>CoRR</em>, abs/2312.05209, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2312.05209">DOI</a> <a href="http://arxiv.org/abs/2312.05209">arXiv</a></span>
+</li>
+<li>
+<strong>Katarina Doctor,                   Mayank Kejriwal,                   Lawrence Holder,                   Eric J. Kildebeck,                   Emma Resmini,                   Christopher Pereyda,                   Robert J. Steininger,                   Daniel V. Oliven{\c{c</strong>.<br>
+<em>Understanding and Estimating Domain Complexity Across Domains</em>.<br>
+<em>CoRR</em>, abs/2312.13487, 2023.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2312.13487">DOI</a> <a href="http://arxiv.org/abs/2312.13487">arXiv</a></span>
+</li>
+</ul>
+<h3>2022</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Ke Shen,                   Chien{-</strong>.<br>
+<em>Transfer-based taxonomy induction over concept labels</em>.<br>
+<em>Eng. Appl. Artif. Intell.</em>, 108:104548, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1016/J.ENGAPPAI.2021.104548">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Knowledge Graphs: {A</em>.<br>
+<em>Inf.</em>, 13(4):161, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.3390/INFO13040161">DOI</a></span>
+</li>
+<li>
+<strong>Minda Hu,                   Mayank Kejriwal</strong>.<br>
+<em>Measuring spatio-textual affinities in twitter between two urban metropolises</em>.<br>
+<em>J. Comput. Soc. Sci.</em>, 5(1):227--252, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S42001-021-00129-5">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Henrique Santos,                   Alice M. Mulvehill,                   Deborah L. McGuinness</strong>.<br>
+<em>Designing a strong test for measuring true common-sense reasoning</em>.<br>
+<em>Nat. Mach. Intell.</em>, 4(4):318--322, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1038/S42256-022-00478-4">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Knowledge Graphs for Social Good: An Entity-Centric Search Engine
+                  for the Human Trafficking Domain</em>.<br>
+<em>{IEEE</em>, 8(3):592--606, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/TBDATA.2017.2763164">DOI</a></span>
+</li>
+<li>
+<strong>Trevor Bonjour,                   Marina Haliem,                   Aala Oqab Alsalem,                   Shilpa Thomas,                   Hongyu Li,                   Vaneet Aggarwal,                   Mayank Kejriwal,                   Bharat K. Bhargava</strong>.<br>
+<em>Decision Making in Monopoly Using a Hybrid Deep Reinforcement Learning
+                  Approach</em>.<br>
+<em>{IEEE</em>, 6(6):1335--1344, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/TETCI.2022.3166555">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Zhisheng Tang</strong>.<br>
+<em>Evaluating Language Representation Models on Approximately Rational
+                  Decision Making Problems</em>.<br>
+2022.<br>
+<span class="publication-links"><a href="https://escholarship.org/uc/item/7mm190b9">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Yuesheng Luo</strong>.<br>
+<em>On the Empirical Association Between Trade Network Complexity and
+                  Global Gross Domestic Product</em>.<br>
+<em>Complex Networks and Their Applications {XI</em>, 1077:456--466, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-21127-0\_37">DOI</a></span>
+</li>
+<li>
+<strong>Yuesheng Luo,                   Mayank Kejriwal</strong>.<br>
+<em>Understanding {COVID-19</em>.<br>
+2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-031-10461-9\_58">DOI</a></span>
+</li>
+<li>
+<strong>Unknown</strong>.<br>
+<em>Proceedings of the 1st International Workshop on Knowledge Graph Generation
+                  From Text and the 1st International Workshop on Modular Knowledge
+                  co-located with 19th Extended Semantic Conference {(ESWC</em>.<br>
+2022.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-3184">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Ke Shen</strong>.<br>
+<em>Can Scale-free Network Growth with Triad Formation Capture Simplicial
+                  Complex Distributions in Real Communication Networks?</em>.<br>
+<em>CoRR</em>, abs/2203.06491, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2203.06491">DOI</a> <a href="http://arxiv.org/abs/2203.06491">arXiv</a></span>
+</li>
+<li>
+<strong>Henrique Santos,                   Ke Shen,                   Alice M. Mulvehill,                   Yasaman Razeghi,                   Deborah L. McGuinness,                   Mayank Kejriwal</strong>.<br>
+<em>A Theoretically Grounded Benchmark for Evaluating Machine Commonsense</em>.<br>
+<em>CoRR</em>, abs/2203.12184, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2203.12184">DOI</a> <a href="http://arxiv.org/abs/2203.12184">arXiv</a></span>
+</li>
+<li>
+<strong>Akarsh Nagaraj,                   Mayank Kejriwal</strong>.<br>
+<em>Robust Quantification of Gender Disparity in Pre-Modern English Literature
+                  using Natural Language Processing</em>.<br>
+<em>CoRR</em>, abs/2204.05872, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2204.05872">DOI</a> <a href="http://arxiv.org/abs/2204.05872">arXiv</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>Understanding Prior Bias and Choice Paralysis in Transformer-based
+                  Language Representation Models through Four Experimental Probes</em>.<br>
+<em>CoRR</em>, abs/2210.01258, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2210.01258">DOI</a> <a href="http://arxiv.org/abs/2210.01258">arXiv</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>Understanding Substructures in Commonsense Relations in ConceptNet</em>.<br>
+<em>CoRR</em>, abs/2210.01263, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2210.01263">DOI</a> <a href="http://arxiv.org/abs/2210.01263">arXiv</a></span>
+</li>
+<li>
+<strong>Zhisheng Tang,                   Mayank Kejriwal</strong>.<br>
+<em>Can Language Representation Models Think in Bets?</em>.<br>
+<em>CoRR</em>, abs/2210.07519, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2210.07519">DOI</a> <a href="http://arxiv.org/abs/2210.07519">arXiv</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Yuesheng Luo</strong>.<br>
+<em>On the Empirical Association between Trade Network Complexity and
+                  Global Gross Domestic Product</em>.<br>
+<em>CoRR</em>, abs/2211.13117, 2022.<br>
+<span class="publication-links"><a href="https://doi.org/10.48550/ARXIV.2211.13117">DOI</a> <a href="http://arxiv.org/abs/2211.13117">arXiv</a></span>
+</li>
+</ul>
+<h3>2021</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Ke Shen,                   Chien{-</strong>.<br>
+<em>An evaluation and annotation methodology for product category matching
+                  in e-commerce</em>.<br>
+<em>Comput. Ind.</em>, 131:103497, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1016/J.COMPIND.2021.103497">DOI</a></span>
+</li>
+<li>
+<strong>Sara Melotte,                   Mayank Kejriwal</strong>.<br>
+<em>A Geo-Tagged {COVID-19</em>.<br>
+<em>Data</em>, 6(6):64, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.3390/DATA6060064">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Link Prediction Between Structured Geopolitical Events: Models and
+                  Experiments</em>.<br>
+<em>Frontiers Big Data</em>, 4:779792, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.3389/FDATA.2021.779792">DOI</a></span>
+</li>
+<li>
+<strong>Minda Hu,                   Ashwin Rao,                   Mayank Kejriwal,                   Kristina Lerman</strong>.<br>
+<em>Socioeconomic Correlates of Anti-Science Attitudes in the {US</em>.<br>
+<em>Future Internet</em>, 13(6):160, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.3390/FI13060160">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Unsupervised {DNF</em>.<br>
+<em>Inf.</em>, 12(3):134, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.3390/INFO12030134">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Qile Wang,                   Hongyu Li,                   Lu Wang</strong>.<br>
+<em>An empirical study of emoji usage on Twitter in linguistic and national
+                  contexts</em>.<br>
+<em>Online Soc. Networks Media</em>, 24:100149, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1016/J.OSNEM.2021.100149">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>A meta-engine for building domain-specific search engines</em>.<br>
+<em>Softw. Impacts</em>, 7:100052, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1016/J.SIMPA.2020.100052">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Shilpa Thomas</strong>.<br>
+<em>A multi-agent simulator for generating novelty in monopoly</em>.<br>
+<em>Simul. Model. Pract. Theory</em>, 112:102364, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1016/J.SIMPAT.2021.102364">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Ravi Kiran Selvam,                   Chien{-</strong>.<br>
+<em>Empirical Best Practices On Using Product-Specific Schema.org</em>.<br>
+<em>Thirty-Fifth {AAAI</em>:15452--15457, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1609/AAAI.V35I17.17816">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Ke Shen</strong>.<br>
+<em>Unsupervised real-time induction and interactive visualization of
+                  taxonomies over domain-specific concepts</em>.<br>
+<em>{ASONAM</em>:301--304, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3487351.3489481">DOI</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>On the Generalization Abilities of Fine-Tuned Commonsense Language
+                  Representation Models</em>.<br>
+<em>Artificial Intelligence {XXXVIII</em>, 13101:3--16, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-030-91100-3\_1">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Ge Fang,                   Ying Zhou</strong>.<br>
+<em>A Feasibility Study of Open-Source Sentiment Analysis and Text Classification
+                  Systems on Disaster-Specific Social Media Data</em>.<br>
+<em>{IEEE</em>:1--8, 2021.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/SSCI50451.2021.9660089">DOI</a></span>
+</li>
+<li>
+<strong>Marina Haliem,                   Trevor Bonjour,                   Aala Oqab Alsalem,                   Shilpa Thomas,                   Hongyu Li,                   Vaneet Aggarwal,                   Bharat K. Bhargava,                   Mayank Kejriwal</strong>.<br>
+<em>Learning Monopoly Gameplay: {A</em>.<br>
+<em>CoRR</em>, abs/2103.00683, 2021.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2103.00683">arXiv</a> <a href="https://arxiv.org/abs/2103.00683">Link</a></span>
+</li>
+<li>
+<strong>Sara Melotte,                   Mayank Kejriwal</strong>.<br>
+<em>Predicting Zip Code-Level Vaccine Hesitancy in {US</em>.<br>
+<em>CoRR</em>, abs/2108.01699, 2021.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2108.01699">arXiv</a> <a href="https://arxiv.org/abs/2108.01699">Link</a></span>
+</li>
+<li>
+<strong>Yuesheng Luo,                   Mayank Kejriwal</strong>.<br>
+<em>Understanding {COVID-19</em>.<br>
+<em>CoRR</em>, abs/2111.05823, 2021.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2111.05823">arXiv</a> <a href="https://arxiv.org/abs/2111.05823">Link</a></span>
+</li>
+</ul>
+<h3>2020</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Yao Gu</strong>.<br>
+<em>Network-theoretic modeling of complex activity using {UK</em>.<br>
+<em>Appl. Netw. Sci.</em>, 5(1):30, 2020.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S41109-020-00275-1">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Akarsh Dang</strong>.<br>
+<em>Structural studies of the global networks exposed in the Panama papers</em>.<br>
+<em>Appl. Netw. Sci.</em>, 5(1):63, 2020.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S41109-020-00313-Y">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Peilin Zhou</strong>.<br>
+<em>On detecting urgency in short crisis messages using minimal supervision
+                  and transfer learning</em>.<br>
+<em>Soc. Netw. Anal. Min.</em>, 10(1):58, 2020.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S13278-020-00670-7">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Ravi Kiran Selvam,                   Chien{-</strong>.<br>
+<em>Locally Constructing Product Taxonomies from Scratch Using Representation
+                  Learning</em>.<br>
+<em>{IEEE/ACM</em>:507--514, 2020.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/ASONAM49781.2020.9381320">DOI</a></span>
+</li>
+<li>
+<strong>Ravi Kiran Selvam,                   Mayank Kejriwal</strong>.<br>
+<em>On using Product-Specific Schema.org from Web Data Commons: An Empirical
+                  Set of Best Practices</em>.<br>
+<em>CoRR</em>, abs/2007.13829, 2020.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2007.13829">arXiv</a> <a href="https://arxiv.org/abs/2007.13829">Link</a></span>
+</li>
+<li>
+<strong>Jiayuan Ding,                   Mayank Kejriwal</strong>.<br>
+<em>An Experimental Study of The Effects of Position Bias on Emotion CauseExtraction</em>.<br>
+<em>CoRR</em>, abs/2007.15066, 2020.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2007.15066">arXiv</a> <a href="https://arxiv.org/abs/2007.15066">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Ke Shen</strong>.<br>
+<em>Do Fine-tuned Commonsense Language Models Really Generalize?</em>.<br>
+<em>CoRR</em>, abs/2011.09159, 2020.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2011.09159">arXiv</a> <a href="https://arxiv.org/abs/2011.09159">Link</a></span>
+</li>
+<li>
+<strong>Ke Shen,                   Mayank Kejriwal</strong>.<br>
+<em>A Data-Driven Study of Commonsense Knowledge using the ConceptNet
+                  Knowledge Base</em>.<br>
+<em>CoRR</em>, abs/2011.14084, 2020.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/2011.14084">arXiv</a> <a href="https://arxiv.org/abs/2011.14084">Link</a></span>
+</li>
+</ul>
+<h3>2019</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Domain-Specific Knowledge Graph Construction</em>.<br>
+2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-030-12375-8">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Rahul Kapoor</strong>.<br>
+<em>Network-theoretic information extraction quality assessment in the
+                  human trafficking domain</em>.<br>
+<em>Appl. Netw. Sci.</em>, 4(1):44:1--44:26, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/S41109-019-0154-Z">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>myDIG: Personalized Illicit Domain-Specific Knowledge Discovery with
+                  No Programming</em>.<br>
+<em>Future Internet</em>, 11(3):59, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.3390/FI11030059">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Juan F. Sequeda,                   Vanessa L{\'{o</strong>.<br>
+<em>Knowledge graphs: Construction, management and querying</em>.<br>
+<em>Semantic Web</em>, 10(6):961--962, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.3233/SW-190370">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Peilin Zhou</strong>.<br>
+<em>Low-supervision urgency detection and transfer in short crisis messages</em>.<br>
+<em>{ASONAM</em>:353--356, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3341161.3342936">DOI</a></span>
+</li>
+<li>
+<strong>Shuo Zhang,                   Mayank Kejriwal</strong>.<br>
+<em>Concept drift in bias and sensationalism detection: an experimental
+                  study</em>.<br>
+<em>{ASONAM</em>:601--604, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3341161.3343690">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Peilin Zhou</strong>.<br>
+<em>{SAVIZ:</em>.<br>
+<em>{ASONAM</em>:705--708, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3341161.3343703">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Co-LOD: Continuous Space Linked Open Data</em>.<br>
+<em>Proceedings of the {ISWC</em>, 2456:333--337, 2019.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-2456/paper94.pdf">Link</a></span>
+</li>
+<li>
+<strong>Mozhdeh Gheini,                   Mayank Kejriwal</strong>.<br>
+<em>Unsupervised Product Entity Resolution using Graph Representation
+                  Learning</em>.<br>
+<em>Proceedings of the {SIGIR</em>, 2410, 2019.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-2410/paper26.pdf">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Runqi Shao,                   Pedro A. Szekely</strong>.<br>
+<em>Expert-Guided Entity Extraction using Expressive Rules</em>.<br>
+<em>Proceedings of the 42nd International {ACM</em>:1353--1356, 2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3331184.3331392">DOI</a></span>
+</li>
+<li>
+<strong>Unknown</strong>.<br>
+<em>Proceedings of the 10th International Conference on Knowledge Capture,
+                  {K-CAP</em>.<br>
+2019.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3360901">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Peilin Zhou</strong>.<br>
+<em>Low-supervision urgency detection and transfer in short crisis messages</em>.<br>
+<em>CoRR</em>, abs/1907.06745, 2019.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1907.06745">arXiv</a> <a href="http://arxiv.org/abs/1907.06745">Link</a></span>
+</li>
+</ul>
+<h3>2018</h3>
+<ul class="publication-list">
+<li>
+<strong>Daye Nam,                   Mayank Kejriwal</strong>.<br>
+<em>How Do Organizations Publish Semantic Markup? Three Case Studies Using
+                  Public Schema.org Crawls</em>.<br>
+<em>Computer</em>, 51(6):42--51, 2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/MC.2018.2701635">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely,                   Craig A. Knoblock</strong>.<br>
+<em>Investigative Knowledge Discovery for Combating Illicit Activities</em>.<br>
+<em>{IEEE</em>, 33(1):53--63, 2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/MIS.2018.111144556">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Constructing Domain-Specific Search Engines With No Programming</em>.<br>
+<em>Proceedings of the Thirty-Second {AAAI</em>:8204--8205, 2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1609/AAAI.V32I1.11379">DOI</a></span>
+</li>
+<li>
+<strong>Kyle Hundman,                   Thamme Gowda,                   Mayank Kejriwal,                   Benedikt Boecking</strong>.<br>
+<em>Always Lurking: Understanding and Mitigating Bias in Online Human
+                  Trafficking Detection</em>.<br>
+<em>Proceedings of the 2018 {AAAI/ACM</em>:137--143, 2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3278721.3278782">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Technology-assisted Investigative Search: {A</em>.<br>
+<em>Extended Abstracts of the 2018 {CHI</em>, 2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3170427.3174364">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Jing Peng,                   Haotian Zhang,                   Pedro A. Szekely</strong>.<br>
+<em>Structured Event Entity Resolution in Humanitarian Domains</em>.<br>
+<em>The Semantic Web - {ISWC</em>, 11136:233--249, 2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-030-00671-6\_14">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel Gilley,                   Pedro A. Szekely,                   Jill Crisman</strong>.<br>
+<em>{THOR:</em>.<br>
+2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3184558.3186965">DOI</a></span>
+</li>
+<li>
+<strong>Pedro A. Szekely,                   Mayank Kejriwal</strong>.<br>
+<em>Domain-specific Insight Graphs {(DIG)</em>.<br>
+2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3184558.3186203">DOI</a></span>
+</li>
+<li>
+<strong>Jie Tang,                   Michalis Vazirgiannis,                   Yuxiao Dong,                   Fragkiskos D. Malliaros,                   Michael Cochez,                   Mayank Kejriwal,                   Achim Rettinger</strong>.<br>
+<em>BigNet 2018 Chairs' Welcome {\&</em>.<br>
+2018.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3184558.3192293">DOI</a></span>
+</li>
+<li>
+<strong>Unknown</strong>.<br>
+<em>Proceedings of the First Workshop on Deep Learning for Knowledge Graphs
+                  and Semantic Technologies {(DL4KGS)</em>.<br>
+2018.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-2106">Link</a></span>
+</li>
+<li>
+<strong>Tongtao Zhang,                   Ananya Subburathinam,                   Ge Shi,                   Lifu Huang,                   Di Lu,                   Xiaoman Pan,                   Manling Li,                   Boliang Zhang,                   Qingyun Wang,                   Spencer Whitehead,                   Heng Ji,                   Alireza Zareian,                   Hassan Akbari,                   Brian Chen,                   Ruiqi Zhong,                   Steven Shao,                   Emily Allaway,                   Shih{-</strong>.<br>
+<em>{GAIA</em>.<br>
+<em>Proceedings of the 2018 Text Analysis Conference, {TAC</em>, 2018.<br>
+<span class="publication-links"><a href="https://tac.nist.gov/publications/2018/participant.papers/TAC2018.GAIA.proceedings.pdf">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Yao Gu</strong>.<br>
+<em>A Pipeline for Post-Crisis Twitter Data Acquisition</em>.<br>
+<em>CoRR</em>, abs/1801.05881, 2018.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1801.05881">arXiv</a> <a href="http://arxiv.org/abs/1801.05881">Link</a></span>
+</li>
+<li>
+<strong>Yao Gu,                   Mayank Kejriwal</strong>.<br>
+<em>Unsupervised Hashtag Retrieval and Visualization for Crisis Informatics</em>.<br>
+<em>CoRR</em>, abs/1801.05906, 2018.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1801.05906">arXiv</a> <a href="http://arxiv.org/abs/1801.05906">Link</a></span>
+</li>
+</ul>
+<h3>2017</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Populating a Linked Data Entity Name System - {A</em>.<br>
+2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.3233/978-1-61499-692-7-I">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Populating a linked data entity name system</em>.<br>
+<em>{AI</em>, 3(2):22--23, 2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3098888.3098897">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Scalable Generation of Type Embeddings Using the ABox</em>.<br>
+<em>Open J. Semantic Web</em>, 4(1):20--34, 2017.<br>
+<span class="publication-links"><a href="https://www.ronpub.com/ojsw/OJSW\_2017v4i1n02\_Kejriwal.html">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Neural Embeddings for Populated Geonames Locations</em>.<br>
+<em>The Semantic Web - {ISWC</em>, 10588:139--146, 2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-68204-4\_14">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>An Investigative Search Engine for the Human Trafficking Domain</em>.<br>
+<em>The Semantic Web - {ISWC</em>, 10588:247--262, 2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-68204-4\_25">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Thomas Schellenberg,                   Pedro A. Szekely</strong>.<br>
+<em>A Semantic Search Engine For Investigating Human Trafficking</em>.<br>
+<em>Proceedings of the {ISWC</em>, 1963, 2017.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-1963/paper613.pdf">Link</a></span>
+</li>
+<li>
+<strong>Rahul Kapoor,                   Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Using contexts and constraints for improved geotagging of human trafficking
+                  webpages</em>.<br>
+<em>Proceedings of the Fourth International {ACM</em>:3:1--3:6, 2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3080546.3080547">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Supervised typing of big graphs using semantic embeddings</em>.<br>
+2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3066911.3066918">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Predicting Role Relevance with Minimal Domain Expertise in a Financial
+                  Domain</em>.<br>
+2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3077240.3077249">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Information Extraction in Illicit Web Domains</em>.<br>
+2017.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/3038912.3052642">DOI</a></span>
+</li>
+<li>
+<strong>Unknown</strong>.<br>
+<em>Joint Proceedings of the International Workshops on Hybrid Statistical
+                  Semantic Understanding and Emerging Semantics, and Semantic Statistics
+                  co-located with 16th International Semantic Web Conference, HybridSemStats@ISWC
+                  2017, Vienna, Austria October 22nd, 2017</em>.<br>
+2017.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-1923">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Information Extraction in Illicit Domains</em>.<br>
+<em>CoRR</em>, abs/1703.03097, 2017.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1703.03097">arXiv</a> <a href="http://arxiv.org/abs/1703.03097">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Supervised Typing of Big Graphs using Semantic Embeddings</em>.<br>
+<em>CoRR</em>, abs/1703.07805, 2017.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1703.07805">arXiv</a> <a href="http://arxiv.org/abs/1703.07805">Link</a></span>
+</li>
+<li>
+<strong>Rahul Kapoor,                   Mayank Kejriwal,                   Pedro A. Szekely</strong>.<br>
+<em>Using Contexts and Constraints for Improved Geotagging of Human Trafficking
+                  Webpages</em>.<br>
+<em>CoRR</em>, abs/1704.05569, 2017.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1704.05569">arXiv</a> <a href="http://arxiv.org/abs/1704.05569">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Predicting Role Relevance with Minimal Domain Expertise in a Financial
+                  Domain</em>.<br>
+<em>CoRR</em>, abs/1704.05571, 2017.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1704.05571">arXiv</a> <a href="http://arxiv.org/abs/1704.05571">Link</a></span>
+</li>
+<li>
+<strong>Kyle Hundman,                   Thamme Gowda,                   Mayank Kejriwal,                   Benedikt Boecking</strong>.<br>
+<em>Always Lurking: Understanding and Mitigating Bias in Online Human
+                  Trafficking Detection</em>.<br>
+<em>CoRR</em>, abs/1712.00846, 2017.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1712.00846">arXiv</a> <a href="http://arxiv.org/abs/1712.00846">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Jiayuan Ding,                   Runqi Shao,                   Anoop Kumar,                   Pedro A. Szekely</strong>.<br>
+<em>FlagIt: {A</em>.<br>
+<em>CoRR</em>, abs/1712.03086, 2017.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1712.03086">arXiv</a> <a href="http://arxiv.org/abs/1712.03086">Link</a></span>
+</li>
+</ul>
+<h3>2016</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Local, Domain-independent Heuristics for the {FEIII</em>.<br>
+2016.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/2951894.2951911">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Disjunctive Normal Form Schemes for Heterogeneous Attributed Graphs</em>.<br>
+<em>CoRR</em>, abs/1605.00686, 2016.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1605.00686">arXiv</a> <a href="http://arxiv.org/abs/1605.00686">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Self-contained NoSQL Resources for Cross-Domain {RDF</em>.<br>
+<em>CoRR</em>, abs/1608.04437, 2016.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1608.04437">arXiv</a> <a href="http://arxiv.org/abs/1608.04437">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Experience: Type alignment on DBpedia and Freebase</em>.<br>
+<em>CoRR</em>, abs/1608.04442, 2016.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1608.04442">arXiv</a> <a href="http://arxiv.org/abs/1608.04442">Link</a></span>
+</li>
+<li>
+<strong>Janani Balaji,                   Faizan Javed,                   Mayank Kejriwal,                   Chris Min,                   Sam Sander,                   Ozgur Ozturk</strong>.<br>
+<em>An Ensemble Blocking Scheme for Entity Resolution of Large and Sparse
+                  Datasets</em>.<br>
+<em>CoRR</em>, abs/1609.06265, 2016.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1609.06265">arXiv</a> <a href="http://arxiv.org/abs/1609.06265">Link</a></span>
+</li>
+</ul>
+<h3>2015</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>An unsupervised instance matcher for schema-free {RDF</em>.<br>
+<em>J. Web Semant.</em>, 35:102--123, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1016/J.WEBSEM.2015.07.002">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Sorted Neighborhood for the Semantic Web</em>.<br>
+<em>Proceedings of the Twenty-Ninth {AAAI</em>:4174--4175, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1609/AAAI.V29I1.9707">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Entity Resolution in a Big Data Framework</em>.<br>
+<em>Proceedings of the Twenty-Ninth {AAAI</em>:4243--4244, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1609/AAAI.V29I1.9256">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Qiaoling Liu,                   Ferosh Jacob,                   Faizan Javed</strong>.<br>
+<em>A pipeline for extracting and deduplicating domain-specific knowledge
+                  bases</em>.<br>
+<em>2015 {IEEE</em>:1144--1153, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/BIGDATA.2015.7363868">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Sorted Neighborhood for Schema-free {RDF</em>.<br>
+2015.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-1365/preface.pdf">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Minimally Supervised Instance Matching: An Alternate Approach</em>.<br>
+<em>The Semantic Web: {ESWC</em>, 9341:72--76, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-25639-9\_14">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Sorted Neighborhood for Schema-Free {RDF</em>.<br>
+<em>The Semantic Web: {ESWC</em>, 9341:217--229, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-25639-9\_38">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Semi-supervised Instance Matching Using Boosted Classifiers</em>.<br>
+2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-18818-8\_24">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Decision-Making Bias in Instance Matching Model Selection</em>.<br>
+<em>The Semantic Web - {ISWC</em>, 9366:392--407, 2015.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-25007-6\_23">DOI</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>A {DNF</em>.<br>
+<em>CoRR</em>, abs/1501.01694, 2015.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1501.01694">arXiv</a> <a href="http://arxiv.org/abs/1501.01694">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>On the Complexity of Sorted Neighborhood</em>.<br>
+<em>CoRR</em>, abs/1501.01696, 2015.<br>
+<span class="publication-links"><a href="http://arxiv.org/abs/1501.01696">arXiv</a> <a href="http://arxiv.org/abs/1501.01696">Link</a></span>
+</li>
+</ul>
+<h3>2014</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>A two-step blocking scheme learner for scalable link discovery</em>.<br>
+2014.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-1317/om2014\_Tpaper5.pdf">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>On Linking Heterogeneous Dataset Collections</em>.<br>
+<em>Proceedings of the {ISWC</em>, 1272:217--220, 2014.<br>
+<span class="publication-links"><a href="https://ceur-ws.org/Vol-1272/paper\_17.pdf">Link</a></span>
+</li>
+<li>
+<strong>Mayank Kejriwal</strong>.<br>
+<em>Populating Entity Name Systems for Big Data Integration</em>.<br>
+<em>The Semantic Web - {ISWC</em>, 8797:521--528, 2014.<br>
+<span class="publication-links"><a href="https://doi.org/10.1007/978-3-319-11915-1\_34">DOI</a></span>
+</li>
+<li>
+<strong>Aibo Tian,                   Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>Schema matching over relations, attributes, and data values</em>.<br>
+<em>Conference on Scientific and Statistical Database Management, {SSDBM</em>:28:1--28:12, 2014.<br>
+<span class="publication-links"><a href="https://doi.org/10.1145/2618243.2618248">DOI</a></span>
+</li>
+</ul>
+<h3>2013</h3>
+<ul class="publication-list">
+<li>
+<strong>Mayank Kejriwal,                   Daniel P. Miranker</strong>.<br>
+<em>An Unsupervised Algorithm for Learning Blocking Schemes</em>.<br>
+<em>2013 {IEEE</em>:340--349, 2013.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/ICDM.2013.60">DOI</a></span>
+</li>
+<li>
+<strong>Zihao Zhou,                   Mayank Kejriwal,                   Risto Miikkulainen</strong>.<br>
+<em>Extended scaled neural predictor for improved branch prediction</em>.<br>
+<em>The 2013 International Joint Conference on Neural Networks, {IJCNN</em>:1--7, 2013.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/IJCNN.2013.6707059">DOI</a></span>
+</li>
+</ul>
+<h3>2012</h3>
+<ul class="publication-list">
+<li>
+<strong>Liana Diesendruck,                   Luigi Marini,                   Rob Kooper,                   Mayank Kejriwal,                   Kenton McHenry</strong>.<br>
+<em>A framework to access handwritten information within large digitized
+                  paper collections</em>.<br>
+<em>8th {IEEE</em>:1--10, 2012.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/ESCIENCE.2012.6404434">DOI</a></span>
+</li>
+<li>
+<strong>Liana Diesendruck,                   Luigi Marini,                   Rob Kooper,                   Mayank Kejriwal,                   Kenton McHenry</strong>.<br>
+<em>Digitization and search: {A</em>.<br>
+<em>8th {IEEE</em>:1--6, 2012.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/ESCIENCE.2012.6404445">DOI</a></span>
+</li>
+<li>
+<strong>Liana Diesendruck,                   Luigi Marini,                   Rob Kooper,                   Mayank Kejriwal,                   Kenton McHenry</strong>.<br>
+<em>Abstract: Digitization and Search: {A</em>.<br>
+<em>2012 {SC</em>:1460--1461, 2012.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/SC.COMPANION.2012.259">DOI</a></span>
+</li>
+<li>
+<strong>Liana Diesendruck,                   Luigi Marini,                   Rob Kooper,                   Mayank Kejriwal,                   Kenton McHenry</strong>.<br>
+<em>Poster: Digitization and Search: {A</em>.<br>
+<em>2012 {SC</em>:1462, 2012.<br>
+<span class="publication-links"><a href="https://doi.org/10.1109/SC.COMPANION.2012.260">DOI</a></span>
+</li>
+</ul>
+
+  </div>
 </div>
-
-</div>
-<div class="partner-badge">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
-</div>
-
 </body>
 </html>
-
