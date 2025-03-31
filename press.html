@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS Publicity</title>
+<title>AICS Press</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 .header {
   padding: 20px;
-  background: #000; 
+  background: #000;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .header .left-content {
   display: flex;
   align-items: center;
 }
-
 .header h1 {
-  margin-left: 20px; 
-  margin-bottom: 0; 
+  margin-left: 20px;
+  margin-bottom: 0;
+  font-size: 36px;
 }
-
 .logo {
   height: 100%;
   object-fit: contain;
 }
-
-#logo1{
+#logo1 {
   margin-left: -20px;
-  height: 115px; 
-  width: auto; 
+  height: 115px;
+  width: auto;
 }
-#logo2{
-  height: 115px; 
-  width: auto; 
+#logo2 {
+  height: 115px;
+  width: auto;
 }
-
-
-.header h1 {
-  font-size: 40px;
-}
-
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
-
 .navbar a {
   float: left;
   display: block;
@@ -64,87 +55,70 @@ body {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
-
-.navbar a.right {
-  float: right;
-}
-
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-
-/* Column container */
 .row {
-  display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
 }
-
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
 .main {
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
+  flex: 100%;
   background-color: white;
-  padding: 20px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
 }
-
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+h2 {
+  font-size: 32px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
 }
-
-.partner-badge {
-  background-color: #000; 
-  color: white;
-  padding: 50px; 
-  text-align: left;
-  font-size: 28px; 
-  font-weight: bold; 
+h3 {
+  font-size: 24px;
+  margin-top: 40px;
+  color: #444;
+  border-left: 5px solid #666;
+  padding-left: 10px;
 }
-.email-button {
-  background: transparent; 
-  display: inline-block; 
-  color: white; 
-  padding: 10px 15px; 
-  margin-top: 10px; 
-  text-decoration: none; 
-  border-radius: 5px; 
-  font-size: 30px; 
-  cursor: pointer; 
+ul.publication-list {
+  list-style: none;
+  padding-left: 0;
 }
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
+ul.publication-list li {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
 }
-
+.publication-links a {
+  margin-right: 10px;
+  color: #1a0dab;
+  text-decoration: none;
+}
+.publication-links a:hover {
+  text-decoration: underline;
+}
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 400px) {
+  .main {
+    padding: 20px;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
   .navbar a {
-    float: none;
-    width: 100%;
+    font-size: 16px;
+    padding: 15px;
   }
 }
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="left-content">
     <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
@@ -152,126 +126,62 @@ body {
   </div>
   <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2">
 </div>
-
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <!--  <a href="projects.html">Projects</a> -->
+  <a href="index.html">Home</a>
   <a href="people.html">People</a>
   <a href="projects.html">Projects</a>
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
-  <a href="talks.html"> Academic Outreach</a>
+  <a href="talks.html">Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
-
 <div class="row">
   <div class="main">
-    <h2>Selected Press</h2>
-    <table>
-        
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[July 2023]</b> <a href="https://www.route-fifty.com/emerging-tech/2022/07/-crowds-power-couples-network-science-uncovers-hidden-structure-community-dynamics/374812/" target="_blank">From in-crowds to power couples, network science uncovers the hidden structure of community dynamics</a><br>
-            <FONT COLOR=black> GCN<br>
-                Re-published in The Conversation, Houston Chronicle, phys.org<br><br>
-            
-        </td>
-        </tr>
+    <h2>Press</h2>
+<h3>2023</h3>
+<ul class="publication-list">
+<li>
+<strong>[July 2023]</strong> <a href="https://www.route-fifty.com/emerging-tech/2022/07/-crowds-power-couples-network-science-uncovers-hidden-structure-community-dynamics/374812/" target="_blank">From in-crowds to power couples, network science uncovers the hidden structure of community dynamics</a><br>
+<em>GCN</em><br>Republished in The Conversation, Houston Chronicle, phys.org<br></li>
+<li>
+<strong>[May 2023]</strong> <a href="https://www.isi.edu/news/56585/putting-the-rational-thinking-skills-of-language-models-to-the-test/" target="_blank">Putting the Rational Thinking Skills of Language Models to the Test</a><br>
+<em>USC Viterbi Information Sciences Institute Research News</em><br></li>
+<li>
+<strong>[April 2023]</strong> <a href="https://theconversation.com/dont-bet-with-chatgpt-study-shows-language-ais-often-make-irrational-decisions-202936" target="_blank">Don’t bet with ChatGPT – study shows language AIs often make irrational decisions</a><br>
+<em>The Conversation</em><br>Republished in Gizmodo, NextGov, Lifehacker (Australia), Wyborcza (Poland), MyBroadBand (South Africa)<br></li>
+</ul>
+<h3>2022</h3>
+<ul class="publication-list">
+<li>
+<strong>[September 2022]</strong> <a href="https://www.theguardian.com/books/2022/apr/27/four-times-more-male-characters-in-literature-than-female-research-suggests" target="_blank">AI study finds that males are represented four times more than females in literature</a><br>
+<em>The Guardian</em><br>Republished in The Print, Free Press Journal, National Herald, Daily Mail, Paneta, BBC, SBS News (Korea), World Economic Forum and Press Trust of India<br></li>
+</ul>
+<h3>2021</h3>
+<ul class="publication-list">
+<li>
+<strong>[November 2021]</strong> <a href="https://theconversation.com/matching-tweets-to-zip-codes-can-spotlight-hot-spots-of-covid-19-vaccine-hesitancy-169596" target="_blank">Matching tweets to ZIP codes can spotlight hot spots of COVID-19 vaccine hesitancy</a><br>
+<em>The Conversation</em><br>Republished in 20+ press outlets<br></li>
+<li>
+<strong>[August 2021]</strong> <a href="https://bigthink.com/the-future/ai-common-sense/" target="_blank">An AI expert explains why it’s hard to give computers something you take for granted: Common sense</a><br>
+<em>Big Think</em><br>Republished in The Conversation, TechXPlore, Code Project Insider Daily Newsletter, HowStuffWorks, Britannica’s Forum, The Next Web<br></li>
+<li>
+<strong>[July 2021]</strong> <a href="https://www.popsci.com/technology/most-popular-emojis-twitter/" target="_blank">The world uses one emoji more than all others. Here’s why</a><br>
+<em>Popular Science</em><br>Republished in Global News Canada, CNN Indonesia, IT-daily.net, Diario De Cuyo (Argentina), Scientias.nl, phys.org, PresseText, then24.com, Market Research Telecast, FTD (Germany), Forosocuellamos (Spain), exame.com, Upgrade Magazine, Psychomedia, Samachar Central (Canada), NewsBeezer, IFL Science, studyfinds.org, UniVistaTV<br></li>
+<li>
+<strong>[April 2021]</strong> <a href="https://www.weforum.org/agenda/2021/04/reinforcement-learning-how-board-games-could-help-ai-handle-the-unexpected/" target="_blank">How Monopoly is helping create the AI of the future</a><br>
+<em>World Economic Forum</em><br>Republished in The Conversation newsletter, reposted in 20+ press outlets<br></li>
+</ul>
+<h3>2020</h3>
+<ul class="publication-list">
+<li>
+<strong>[October 2020]</strong> <a href="https://www.fastcompany.com/90558559/computer-scientists-tracked-sophisticated-money-networks-to-learn-how-rich-people-hide-fortunes-offshore?icid=dan902:754:0:editRecirc" target="_blank">Computer scientists tracked sophisticated money networks to learn how rich people hide fortunes offshore</a><br>
+<em>Fast Company</em><br></li>
+<li>
+<strong>[August 2020]</strong> <a href="https://techxplore.com/news/2020-08-sex-trafficking-networks.html" target="_blank">New Research May Help Identify Trafficking Networks</a><br>
+<em>TechXplore</em><br>Republished in EurekAlert, USC Viterbi News<br></li>
+</ul>
 
-    <tr valign="top">
-    
-    <td class="bibtexitem">
-        <b><FONT COLOR=teal>[May 2023]</b> <a href="https://www.isi.edu/news/56585/putting-the-rational-thinking-skills-of-language-models-to-the-test/" target="_blank">Putting the Rational Thinking Skills of Language Models to the Test</a><br>
-        <FONT COLOR=black> USC Viterbi Information Sciences Institute Research News<br><br>
-        
-    </td>
-    </tr>
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[April 2023]</b> <a href="https://theconversation.com/dont-bet-with-chatgpt-study-shows-language-ais-often-make-irrational-decisions-202936" target="_blank">Don’t bet with ChatGPT – study shows language AIs often make irrational decisions</a><br>
-    <FONT COLOR=black> The Conversation<br>
-        Republished in Gizmodo, NextGov, Lifehacker (Australia), Wyborcza (Poland), MyBroadBand (South Africa)<br><br>
-    </td>
-    </tr>
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[September 2022]</b> <a href="https://www.theguardian.com/books/2022/apr/27/four-times-more-male-characters-in-literature-than-female-research-suggests" target="_blank">AI study finds that males are represented four times more than females in literature</a><br>
-    <FONT COLOR=black> The Guardian<br>
-        Republished in The Print, Free Press Journal, National Herald, Daily Mail, Paneta, BBC, SBS News (Korea), World Economic Forum and Press Trust of India<br><br>
-    </td>
-    </tr>
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[November 2021]</b> <a href="https://theconversation.com/matching-tweets-to-zip-codes-can-spotlight-hot-spots-of-covid-19-vaccine-hesitancy-169596" target="_blank">Matching tweets to ZIP codes can spotlight hot spots of COVID-19 vaccine hesitancy</a><br>
-    <FONT COLOR=black> The Conversation<br>
-        Republished in 20+ press outlets<br><br>
-    </td>
-    </tr>
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[August 2021]</b> <a href="https://bigthink.com/the-future/ai-common-sense/" target="_blank">An AI expert explains why it’s hard to give computers something you take for granted: Common sense</a><br>
-    <FONT COLOR=black> Big Think<br>
-        Also featured in The Conversation, TechXPlore, Code Project Insider Daily Newsletter (August 18, 2021),
-        HowStuffWorks, Britannica’s Forum (August 19, 2021), The Next Web
-<br><br>
-    </td>
-    </tr>
-    
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[July 2021]</b> <a href="https://www.popsci.com/technology/most-popular-emojis-twitter/" target="_blank">The world uses one emoji more than all others. Here’s why</a><br>
-    <FONT COLOR=black> Popular Science<br>
-        Research also featured in Global News Canada, CNN Indonesia, IT-daily.net, Diario De Cuyo (Argentina),
-        Scientias.nl,  phys.org, PresseText, then24.com, Market Research Telecast, FTD (Germany),
-        Forosocuellamos (Spain), exame.com, Upgrade Magazine, Psychomedia, Samachar Central (Canada),
-        NewsBeezer, IFL Science, studyfinds.org, UniVistaTV
-<br><br>
-    </td>
-    </tr>
-    
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[April 2021]</b> <a href="https://www.weforum.org/agenda/2021/04/reinforcement-learning-how-board-games-could-help-ai-handle-the-unexpected/" target="_blank">How Monopoly is helping create the AI of the future</a><br>
-    <FONT COLOR=black> World Economic Forum<br>
-        Featured in The Conversation newsletter on April 7, 2021, and reposted in 20+ press outlets
-<br><br>
-    </td>
-    </tr>
-    
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[October 2020]</b> <a href="https://www.fastcompany.com/90558559/computer-scientists-tracked-sophisticated-money-networks-to-learn-how-rich-people-hide-fortunes-offshore?icid=dan902:754:0:editRecirc" target="_blank">Computer scientists tracked sophisticated money networks to learn how rich people hide fortunes offshore</a><br>
-    <FONT COLOR=black> Fast Company<br><br>
-    </td>
-    </tr>
-    
-    
-    <tr valign="top">
-    <td class="bibtexitem">
-    <b><FONT COLOR=teal>[August 2020]</b> <a href="https://techxplore.com/news/2020-08-sex-trafficking-networks.html" target="_blank">New Research May Help Identify Trafficking Networks</a><br>
-    <FONT COLOR=black> TechXplore<br>
-        Re-published in EurekAlert, USC Viterbi News<br>
-    </td>
-    </tr>
-    
-    </table>
-</div>
-
-</div>
-
-<div class="partner-badge">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
+  </div>
 </div>
 </body>
 </html>
-
