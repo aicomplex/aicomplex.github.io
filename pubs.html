@@ -109,21 +109,26 @@ ul.publication-list li {
   width: 150px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   z-index: 1000;
-  transition: top 0.3s ease; /* 👈 smooth transition */
+  transition: transform 0.25s ease-out; /* smooth feel */
+}
+
+.year-sidebar:hover {
+  transform: translateY(-5px); /* a little bounce up */
 }
 
 .year-sidebar-header {
   font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-align: center;
+  font-size: 16px;
+  margin: 0 -10px 10px -10px; 
+  padding: 10px;
   background-color: #333;
   color: white;
-  padding: 8px;
-  border-radius: 6px;
+  border-radius: 0;          
+  text-align: center;
+  border-bottom: 1px solid #ccc;
 }
 
 .year-sidebar ul {
@@ -192,7 +197,7 @@ ul.publication-list li {
 
 
 <div class="year-sidebar">
-  <div class="year-sidebar-header">Jump to Year</div>
+  <div class="year-sidebar-header">Browse by Year</div>
   <ul>
     <li><a href="#year-2025" class="year-link">2025</a></li>
     <li><a href="#year-2024" class="year-link">2024</a></li>
