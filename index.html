@@ -15,6 +15,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 .header {
@@ -34,7 +36,9 @@ body {
 
 .header h1 {
   margin-left: 20px;
-  margin-bottom: 0; 
+  margin-bottom: 0;
+  font-size: 36px;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .logo {
@@ -42,19 +46,14 @@ body {
   object-fit: contain;
 }
 
-#logo1{
+#logo1 {
   margin-left: -20px;
   height: 115px; 
   width: auto; 
 }
-#logo2{
+#logo2 {
   height: 115px; 
   width: auto; 
-}
-
-
-.header h1 {
-  font-size: 40px;
 }
 
 .navbar {
@@ -70,7 +69,7 @@ body {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Sunflower', sans-serif;
 }
 
@@ -89,7 +88,6 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
 
 .side {
   -ms-flex: 30%;
@@ -131,7 +129,6 @@ body {
   display: block; 
   margin: 0 auto; 
 }
-/* Replace the existing news-line related CSS with this */
 .news-line {
   background-color: transparent; 
   color: #333; 
@@ -140,7 +137,6 @@ body {
   align-items: center; 
   gap: 15px; 
   justify-content: center;
-  /* border-bottom: 1px solid #e0e0e0; */ /* Removed this line */
 }
 
 .news-line i.fa-bell {
@@ -165,7 +161,6 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* In the CSS section, update the substack-link a style */
 .substack-link a {
   color: #333;
   text-decoration: none !important;
@@ -173,7 +168,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Sunflower', sans-serif;
 }
 
@@ -186,17 +181,6 @@ body {
   color: #007bff !important;
 }
 
-/* Remove these conflicting styles if they exist elsewhere in your CSS */
-/* 
-.news-line a {
-    color: #007bff;
-    text-decoration: underline;
-}
-
-.news-line a:hover {
-    color: #0056b3; 
-}
-*/
 .learn-more-btn {
   display: inline-block; 
   margin: 20px auto;
@@ -208,13 +192,8 @@ body {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
-}
-.main p {
-  font-size: 24px; 
-  color: black;
+  font-size: 18px;
   font-family: 'Sunflower', sans-serif;
-  line-height: 1.4;
 }
 
 .partner-badge {
@@ -226,6 +205,7 @@ body {
   font-weight: bold;
   font-family: 'Sunflower', sans-serif;
 }
+
 .email-button {
   background: transparent; 
   display: inline-block; 
@@ -238,18 +218,23 @@ body {
   cursor: pointer; 
 }
 
-
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
   }
+  .header h1 {
+    font-size: 28px;
+  }
 }
-
 
 @media screen and (max-width: 400px) {
   .navbar a {
     float: none;
     width: 100%;
+  }
+  .navbar a {
+    font-size: 16px;
+    padding: 15px;
   }
 }
 </style>
@@ -307,14 +292,14 @@ body {
       
       <!-- Rest of the main content remains the same -->
       <img src="venn_updated.png" alt="Ai and css" style="max-width:90%; height:auto; display:block; margin:30px auto;">
-      <button onclick="window.location.href='projects.html';" style="display: block; margin: 20px auto; padding: 15px 20px; background-color: #3c4c4e; color: white; border: none; border-radius: 5px; cursor: pointer;" class="learn-more-btn">Learn More</button>
+      <button onclick="window.location.href='projects.html';" style="display: block; margin: 20px auto; padding: 15px 20px; background-color: #3c4c4e; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Sunflower', sans-serif;" class="learn-more-btn">Learn More</button>
   </div>
 
 <!-- </div> -->
 
 </div>
 
-<div class="partner-badge">
+<div class="partner-badge" style="padding: 30px; font-size: 22px;">
         We are always looking for good collaborations, directed research students
 and interns. If you're interested, drop us a note!
 </div>
