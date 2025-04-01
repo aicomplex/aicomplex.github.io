@@ -1168,17 +1168,22 @@ ul.publication-list li {
 </ul>
   </div>
 </div>
-  <script>
+<script>
   const sidebar = document.querySelector('.year-sidebar');
-  let currentTop = 180; // initial top position
-  let targetTop = 180;
+  let currentTop = 180;
+  let velocity = 0;
+  const stiffness = 0.1;   // spring stiffness
+  const damping = 0.08;    // resistance/friction
 
   const animateSidebar = () => {
     const scrollY = window.scrollY;
-    targetTop = Math.max(180, scrollY + 100); // follow scroll but with a buffer
+    const targetTop = Math.max(180, scrollY + 100); // anchor scroll
 
-    // Easing: move a small step toward the targetTop
-    currentTop += (targetTop - currentTop) * 0.1;
+    const displacement = targetTop - currentTop;
+    const springForce = displacement * stiffness;
+    velocity += springForce;
+    velocity *= (1 - damping);
+    currentTop += velocity;
 
     sidebar.style.top = `${currentTop}px`;
 
@@ -1187,6 +1192,7 @@ ul.publication-list li {
 
   animateSidebar();
 </script>
+
 
 </body>
 </html>
