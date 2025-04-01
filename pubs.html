@@ -103,8 +103,8 @@ ul.publication-list li {
 }
 
 .year-sidebar {
-  position: fixed;
-  top: 240px;
+  position: absolute;             
+  top: 240px;                     
   left: 20px;
   width: 150px;
   background-color: #fff;
@@ -112,8 +112,9 @@ ul.publication-list li {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   z-index: 1000;
-  transition: transform 0.25s ease-out; /* smooth feel */
+  transition: top 0.3s ease-out; 
 }
+
 
 .year-sidebar:hover {
   transform: translateY(-5px); /* a little bounce up */
@@ -1173,6 +1174,21 @@ ul.publication-list li {
 </ul>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector(".year-sidebar");
+    const baseOffset = 240;
+
+    const updateSidebarPosition = () => {
+      const scrollY = window.scrollY;
+      sidebar.style.top = `${scrollY + baseOffset}px`;
+    };
+
+    window.addEventListener("scroll", () => {
+      window.requestAnimationFrame(updateSidebarPosition);
+    });
+  });
+</script>
 
 </body>
 </html>
