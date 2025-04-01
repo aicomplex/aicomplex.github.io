@@ -8,139 +8,46 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
-
 .header {
   padding: 20px;
-  text-align: center;
-  color: white;
   background: #000;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .header .left-content {
   display: flex;
   align-items: center;
 }
-
 .header h1 {
-  margin-left: 20px; 
-  margin-bottom: 0; 
+  margin-left: 20px;
+  margin-bottom: 0;
+  font-size: 36px;
 }
-
 .logo {
-  height: 100%; 
+  height: 100%;
   object-fit: contain;
 }
-
-#logo1{
+#logo1 {
   margin-left: -20px;
-  height: 115px; 
-  width: auto; 
-}
-#logo2{
-  height: 115px; 
+  height: 115px;
   width: auto;
 }
-
-    
-    img {
-      vertical-align: middle;
-    }
-
-    
-    * {
-      box-sizing: border-box;
-    }
-
-    .container {
-      position: relative;
-    }
-
-    .mySlides {
-      display: none;
-    }
-
-    .cursor {
-      cursor: pointer;
-    }
-
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 40%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
-
-    .caption-container {
-      text-align: center;
-      background-color: #222;
-      padding: 2px 16px;
-      color: white;
-    }
-
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    .column {
-      float: left;
-      width: 16.66%;
-    }
-
-    .demo {
-      opacity: 0.6;
-    }
-
-    .active,
-    .demo:hover {
-      opacity: 1;
-    }
-
-.header h1 {
-  font-size: 40px;
+#logo2 {
+  height: 115px;
+  width: auto;
 }
-
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
-
 .navbar a {
   float: left;
   display: block;
@@ -148,34 +55,114 @@ body {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
-
-.navbar a.right {
-  float: right;
-}
-
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-
-
-.side {
-  -ms-flex: 30%;
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
+img {
+  vertical-align: middle;
 }
-
-/* Main column */
-.main {
-  -ms-flex: 70%; 
-  flex: 70%;
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 30px auto;
   background-color: white;
-  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 20px;
 }
-
+.mySlides {
+  display: none;
+  padding: 30px 0;
+}
+.cursor {
+  cursor: pointer;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 0 0 5px 0;
+}
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 10px 16px;
+  color: white;
+  font-size: 16px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  justify-content: center;
+}
+.column {
+  flex: 1 0 16.66%;
+  max-width: 16.66%;
+  padding: 5px;
+}
+.demo {
+  opacity: 0.6;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.active,
+.demo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.main-image {
+  width: 70%;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.main-image:hover {
+  transform: scale(1.02);
+}
 .partner-badge {
   background-color: #000; 
   color: white;
@@ -183,35 +170,37 @@ body {
   text-align: left;
   font-size: 28px; 
   font-weight: bold; 
+  margin-top: 30px;
 }
-.email-button {
-  background: transparent; 
-  display: inline-block;
-  color: white; 
-  padding: 10px 15px; 
-  margin-top: 10px; 
-  text-decoration: none; 
-  border-radius: 5px;
-  font-size: 30px; 
-  cursor: pointer; 
-}
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
+@media screen and (max-width: 1000px) {
+  .column {
+    flex: 1 0 25%;
+    max-width: 25%;
   }
 }
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: row;
+  }
+  .column {
+    flex: 1 0 33.33%;
+    max-width: 33.33%;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
+  .main-image {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
   .navbar a {
-    float: none;
-    width: 100%;
+    font-size: 16px;
+    padding: 15px;
   }
 }
 </style>
@@ -227,13 +216,12 @@ body {
 </div>
 
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <!--  <a href="projects.html">Projects</a> -->
+  <a href="index.html">Home</a>
   <a href="people.html">People</a>
   <a href="projects.html">Projects</a>
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
-  <a href="talks.html"> Academic Outreach</a>
+  <a href="talks.html">Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
 
@@ -243,130 +231,118 @@ body {
   <!-- Full-width images with number text -->
   <div class="mySlides">
     <div class="numbertext">1 / 12</div>
-      <center><img src="gallery/AI-Ethics-N-Safety-Retreat.jpeg" style="width:70%"></center>
+    <center><img src="gallery/AI-Ethics-N-Safety-Retreat.jpeg" class="main-image"></center>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 12</div>
-      <center><img src="gallery/USC1-summer-2023.jpeg" style="width:70%"></center>
+    <center><img src="gallery/USC1-summer-2023.jpeg" class="main-image"></center>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 12</div>
-    <center><img src="gallery/JohnLim-ICT-summer2023.png" style="width:70%"></center>
+    <center><img src="gallery/JohnLim-ICT-summer2023.png" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">4 / 12</div>
-    <center><img src="gallery/annenberg-microseminar-1.jpg" style="width:70%"></center>
+    <center><img src="gallery/annenberg-microseminar-1.jpg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">5 / 12</div>
-    <center><img src="gallery/public-goods-july14-2023.jpg" style="width:70%"></center>
+    <center><img src="gallery/public-goods-july14-2023.jpg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">6 / 12</div>
-    <center><img src="gallery/viterbi-poster-1.jpg" style="width:70%"></center>
+    <center><img src="gallery/viterbi-poster-1.jpg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">7 / 12</div>
-      <center><img src="gallery/group-lunch-spring-2023-1.jpg" style="width:70%"></center>
+    <center><img src="gallery/group-lunch-spring-2023-1.jpg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">8 / 12</div>
-      <center><img src="gallery/group-lunch-spring-2023-2.jpg" style="width:70%"></center>
+    <center><img src="gallery/group-lunch-spring-2023-2.jpg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">9 / 12</div>
-      <center><img src="gallery/ke-shen-CSS-1.jpeg" style="width:70%"></center>
+    <center><img src="gallery/ke-shen-CSS-1.jpeg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">10 / 12</div>
-      <center><img src="gallery/DISI2022-group.jpeg" style="width:70%"></center>
+    <center><img src="gallery/DISI2022-group.jpeg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">11 / 12</div>
-      <center><img src="gallery/NUJS-1.jpg" style="width:70%"></center>
+    <center><img src="gallery/NUJS-1.jpg" class="main-image"></center>
   </div>
   
   <div class="mySlides">
     <div class="numbertext">12 / 12</div>
-      <center><img src="gallery/DISI2022-mini.png" style="width:70%"></center>
+    <center><img src="gallery/DISI2022-mini.png" class="main-image"></center>
   </div>
   
   <!-- Next and previous buttons -->
-   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-   <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-   <!-- Image text -->
-   <div class="caption-container">
-     <p id="caption"></p>
-   </div>
-
-   <!-- Thumbnail images -->
-   <div class="row">
-    <div class="column">
-       <img class="demo cursor" src="gallery/thumbnails/AI-Ethics-N-Safety-Retreat.jpeg" style="width:100%" onclick="currentSlide(1)" alt="AI Ethics and Safety Retreat (Mayank Kejriwal; back-left), April 2023">
-     </div>
-     <div class="column">
-       <img class="demo cursor" src="gallery/thumbnails/USC1-summer-2023.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Viterbi IUSSTF Presentation Lunch (AICS group; partial), Summer 2023">
-     </div>
-     <div class="column">
-       <img class="demo cursor" src="gallery/thumbnails/JohnLim-ICT-summer2023.png" style="width:100%" onclick="currentSlide(3)" alt="ICT Poster Session (John Lim), Summer 2023">
-     </div>
-     <div class="row">
-       <div class="column">
-         <img class="demo cursor" src="gallery/thumbnails/annenberg-microseminar-1.jpg" style="width:100%" onclick="currentSlide(4)" alt="Annenberg Microseminar on AGI (Mayank Kejriwal), Summer 2023">
-       </div>
-       <div class="row">
-         <div class="column">
-           <img class="demo cursor" src="gallery/thumbnails/public-goods-july14-2023.jpg" style="width:100%" onclick="currentSlide(5)" alt="Public goods game played during an AICS group session, Summer 2023">
-         </div>
-       <div class="row">
-         <div class="column">
-           <img class="demo cursor" src="gallery/thumbnails/viterbi-poster-1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Viterbi Poster Session (Adin Aberbach), Summer 2023">
-         </div>
-         
-         <div class="row">
-           <div class="column">
-             <img class="demo cursor" src="gallery/thumbnails/group-lunch-spring-2023-1.jpg" style="width:100%" onclick="currentSlide(7)" alt="AICS Group Lunch (Tiramisu edition), Spring 2023">
-           </div>
-           
-           <div class="row">
-             <div class="column">
-               <img class="demo cursor" src="gallery/thumbnails/group-lunch-spring-2023-2.jpg" style="width:100%" onclick="currentSlide(8)" alt="AICS Group Lunch (Chocolate Mousse edition), Spring 2023">
-             </div>
-             
-             <div class="row">
-               <div class="column">
-                 <img class="demo cursor" src="gallery/thumbnails/ke-shen-CSS-1.jpeg" style="width:100%" onclick="currentSlide(9)" alt="Summer Institute in Computational Social Science (Ke Shen; middle), Spring 2023">
-               </div>
-               
-               <div class="row">
-                 <div class="column">
-                   <img class="demo cursor" src="gallery/thumbnails/DISI2022-group.jpeg" style="width:100%" onclick="currentSlide(10)" alt="Diverse Intelligences Summer Institute (Mayank Kejriwal; back-middle in black turtleneck), Summer 2022">
-                 </div>
-                 
-                   
-                   <div class="row">
-                     <div class="column">
-                       <img class="demo cursor" src="gallery/thumbnails/NUJS-1-thumbnail.jpg" style="width:100%" onclick="currentSlide(11)" alt="NUJS + IIT Kharagpur Combating Human Trafficking Panel (Mayank Kejriwal; right), Winter 2019">
-                     </div>
-                     
-                     <div class="row">
-                       <div class="column">
-                         <img class="demo cursor" src="gallery/thumbnails/DISI2022-mini.png" style="width:100%" onclick="currentSlide(12)" alt="Diverse Intelligences Summer Institute (Mayank Kejriwal; left), Summer 2022">
-                       </div>
-     
-   </div>
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
   </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/AI-Ethics-N-Safety-Retreat.jpeg" onclick="currentSlide(1)" alt="AI Ethics and Safety Retreat (Mayank Kejriwal; back-left), April 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/USC1-summer-2023.jpeg" onclick="currentSlide(2)" alt="Viterbi IUSSTF Presentation Lunch (AICS group; partial), Summer 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/JohnLim-ICT-summer2023.png" onclick="currentSlide(3)" alt="ICT Poster Session (John Lim), Summer 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/annenberg-microseminar-1.jpg" onclick="currentSlide(4)" alt="Annenberg Microseminar on AGI (Mayank Kejriwal), Summer 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/public-goods-july14-2023.jpg" onclick="currentSlide(5)" alt="Public goods game played during an AICS group session, Summer 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/viterbi-poster-1.jpg" onclick="currentSlide(6)" alt="Viterbi Poster Session (Adin Aberbach), Summer 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/group-lunch-spring-2023-1.jpg" onclick="currentSlide(7)" alt="AICS Group Lunch (Tiramisu edition), Spring 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/group-lunch-spring-2023-2.jpg" onclick="currentSlide(8)" alt="AICS Group Lunch (Chocolate Mousse edition), Spring 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/ke-shen-CSS-1.jpeg" onclick="currentSlide(9)" alt="Summer Institute in Computational Social Science (Ke Shen; middle), Spring 2023">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/DISI2022-group.jpeg" onclick="currentSlide(10)" alt="Diverse Intelligences Summer Institute (Mayank Kejriwal; back-middle in black turtleneck), Summer 2022">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/NUJS-1-thumbnail.jpg" onclick="currentSlide(11)" alt="NUJS + IIT Kharagpur Combating Human Trafficking Panel (Mayank Kejriwal; right), Winter 2019">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/thumbnails/DISI2022-mini.png" onclick="currentSlide(12)" alt="Diverse Intelligences Summer Institute (Mayank Kejriwal; left), Summer 2022">
+    </div>
+  </div>
+</div>
+
+<div class="partner-badge">
+  We are always looking for good collaborations, directed research students
+  and interns. If you're interested, drop us a note!
+</div>
 
 <script>
 let slideIndex = 1;
@@ -397,15 +373,23 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+// Auto-advance slides every 7 seconds
+let slideTimer = setInterval(function() { 
+  plusSlides(1);
+}, 7000);
+
+// Pause auto-advance when hovering over the main container
+document.querySelector('.container').addEventListener('mouseenter', function() {
+  clearInterval(slideTimer);
+});
+
+// Resume auto-advance when mouse leaves the container
+document.querySelector('.container').addEventListener('mouseleave', function() {
+  slideTimer = setInterval(function() { 
+    plusSlides(1);
+  }, 7000);
+});
 </script>
-    
-
-<div class="partner-badge">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
-</div>
-
-
 </body>
 </html>
-
