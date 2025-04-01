@@ -4,10 +4,8 @@
 <title>AICS Home</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 
 <style>
 * {
@@ -26,6 +24,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .header .left-content {
@@ -61,6 +60,7 @@ body {
 .navbar {
   overflow: hidden;
   background-color: #333;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .navbar a {
@@ -71,6 +71,7 @@ body {
   padding: 20px 20px;
   text-decoration: none;
   font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .navbar a.right {
@@ -100,8 +101,29 @@ body {
 .main {
   -ms-flex: 70%;
   flex: 70%;
-  background-color:white;
-  padding: 20px;
+  background-color: white;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main p {
+  font-size: 22px;
+  color: #333;
+  font-family: 'Sunflower', sans-serif;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  text-align: justify;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #3c4c4e;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main p strong {
+  color: #2a3638;
 }
 .main img {
   max-width: 100%; 
@@ -109,26 +131,63 @@ body {
   display: block; 
   margin: 0 auto; 
 }
+/* Replace the existing news-line related CSS with this */
 .news-line {
-    background-color: #f0f0f0; 
-    color: #333; 
-    padding: 5px; 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    justify-content: center; 
+  background-color: transparent; 
+  color: #333; 
+  padding: 10px 15px; 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+  justify-content: center;
+  /* border-bottom: 1px solid #e0e0e0; */ /* Removed this line */
 }
 
-.news-line i {
-    color: gold;
-    font-size: 20px; 
-    text-shadow: 0px 0px 1px #ffd700, 
-                 0px 0px 3px #ffd700, 
-                 0px 0px 1px #ffbf00, 
-                 0px 0px 5px #ffbf00; 
+.news-line i.fa-bell {
+  color: gold;
+  font-size: 20px; 
+  text-shadow: 0px 0px 1px #ffd700, 
+               0px 0px 3px #ffd700, 
+               0px 0px 1px #ffbf00, 
+               0px 0px 5px #ffbf00; 
 }
 
+.substack-link {
+  background: linear-gradient(to right, #f8f8f8, #ffffff);
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
 
+.substack-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* In the CSS section, update the substack-link a style */
+.substack-link a {
+  color: #333;
+  text-decoration: none !important;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+}
+
+.substack-link a i {
+  color: #FF6B00;
+  font-size: 18px;
+}
+
+.substack-link a:hover {
+  color: #007bff !important;
+}
+
+/* Remove these conflicting styles if they exist elsewhere in your CSS */
+/* 
 .news-line a {
     color: #007bff;
     text-decoration: underline;
@@ -137,6 +196,7 @@ body {
 .news-line a:hover {
     color: #0056b3; 
 }
+*/
 .learn-more-btn {
   display: inline-block; 
   margin: 20px auto;
@@ -163,7 +223,8 @@ body {
   padding: 50px; 
   text-align: left;
   font-size: 28px; 
-  font-weight: bold; 
+  font-weight: bold;
+  font-family: 'Sunflower', sans-serif;
 }
 .email-button {
   background: transparent; 
@@ -214,30 +275,40 @@ body {
   <a href="gallery.html">Gallery</a>
 </div>
 
-  <div class="news-line">
-    <i class="fa fa-bell"></i>  
-    <span> <a href="https://aiscientist.substack.com/" style="color: #000;">Stay ahead in AI with our regular Substack posts!</a></span>
+<div class="news-line">
+  <span class="substack-link">
+    <a href="https://aiscientist.substack.com/">
+      <i class="fa fa-newspaper-o"></i> Stay ahead in AI with our regular Substack posts!
+    </a>
+  </span>
+</div>
 
-  </div>
+<!-- In the body section, update the paragraph: -->
   <div class="main">
-    <p>AICS conducts interdisciplinary research at the frontier of AI and complex 
-systems, in domains ranging from healthcare and e-commerce to social good
-applications like fighting human trafficking. We develop AI systems that 
-perform well, while still being robust and trustworthy, by combining the best 
-of knowledge representation research (such as knowledge graphs, 
-ontologies, and symbolic reasoning) with more recent large language models
-(LLMs). Our fundamental AI research in open-world learning and common 
-sense reasoning are important elements in eventually building an artificial 
-general intelligence (AGI).  We also use AI and systems engineering for 
-computational social science. Our work in complex systems has been used to
-study illicit financial networks, model political campaign finance dynamics, 
-and better understand policy impacts during COVID-19. Our work has been 
-published and presented across almost a hundred peer-reviewed venues and 
-broadly covered in scientific press.</p>
-    
-
-    <img src="venn_updated.png" alt="Ai and css" style="max-width:75%; height:auto; display:block; margin:30px auto;">
-    <button onclick="window.location.href='projects.html';" style="display: block; margin: 20px auto; padding: 15px 20px; background-color: #3c4c4e; color: white; border: none; border-radius: 5px; cursor: pointer;" class="learn-more-btn">Learn More</button>
+      <p><strong>AICS</strong> conducts interdisciplinary research at the frontier of <strong>AI and complex 
+  systems</strong>, in domains ranging from healthcare and e-commerce to social good
+  applications like fighting human trafficking. 
+  
+  We develop AI systems that perform well, while still being robust and trustworthy, by combining the best 
+  of knowledge representation research (such as <strong>knowledge graphs, 
+  ontologies, and symbolic reasoning</strong>) with more recent <strong>large language models
+  (LLMs)</strong>. 
+  
+  Our fundamental AI research in open-world learning and common 
+  sense reasoning are important elements in eventually building an artificial 
+  general intelligence (AGI). We also use AI and systems engineering for 
+  computational social science. 
+  
+  Our work in complex systems has been used to
+  study illicit financial networks, model political campaign finance dynamics, 
+  and better understand policy impacts during COVID-19. Our work has been 
+  published and presented across almost a hundred peer-reviewed venues and 
+  broadly covered in scientific press.</p>
+      
+      <!-- Rest of the main content remains the same -->
+      <img src="venn_updated.png" alt="Ai and css" style="max-width:90%; height:auto; display:block; margin:30px auto;">
+      <button onclick="window.location.href='projects.html';" style="display: block; margin: 20px auto; padding: 15px 20px; background-color: #3c4c4e; color: white; border: none; border-radius: 5px; cursor: pointer;" class="learn-more-btn">Learn More</button>
+  </div>
 
 <!-- </div> -->
 

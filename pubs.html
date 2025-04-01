@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS Publications</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+        <title>AICS Publications</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Add Google Fonts import for Sunflower -->
+        <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+        <style>
 * {
   box-sizing: border-box;
 }
@@ -21,6 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Sunflower', sans-serif;
 }
 .header .left-content {
   display: flex;
@@ -30,6 +33,7 @@ body {
   margin-left: 20px;
   margin-bottom: 0;
   font-size: 36px;
+  font-family: 'Sunflower', sans-serif;
 }
 .logo {
   height: 100%;
@@ -47,6 +51,7 @@ body {
 .navbar {
   overflow: hidden;
   background-color: #333;
+  font-family: 'Sunflower', sans-serif;
 }
 .navbar a {
   float: left;
@@ -56,6 +61,7 @@ body {
   padding: 20px 20px;
   text-decoration: none;
   font-size: 18px;
+  font-family: 'Sunflower', sans-serif;
 }
 .navbar a:hover {
   background-color: #ddd;
@@ -76,6 +82,7 @@ h2 {
   font-size: 32px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
+  font-family: 'Sunflower', sans-serif;
 }
 h3 {
   font-size: 24px;
@@ -83,6 +90,7 @@ h3 {
   color: #444;
   border-left: 5px solid #666;
   padding-left: 10px;
+  font-family: 'Sunflower', sans-serif;
 }
 ul.publication-list {
   list-style: none;
@@ -113,6 +121,7 @@ ul.publication-list li {
   padding: 0;
   z-index: 1000;
   transition: top 0.3s ease-out;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .year-sidebar-header {
@@ -124,6 +133,7 @@ ul.publication-list li {
   color: white;
   border-radius: 8px 8px 0 0;
   text-align: center;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .year-sidebar ul {
@@ -148,6 +158,7 @@ ul.publication-list li {
   text-align: center;
   transition: all 0.2s ease;
   border-left: 4px solid #ccc;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .year-link:hover {
@@ -155,8 +166,6 @@ ul.publication-list li {
   transform: translateX(3px);
   border-left: 4px solid #666;
 }
-
-
 
 @media screen and (max-width: 700px) {
   .row {
@@ -1173,20 +1182,43 @@ ul.publication-list li {
   </div>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.querySelector(".year-sidebar");
-    const baseOffset = 240;
-
-    const updateSidebarPosition = () => {
-      const scrollY = window.scrollY;
-      sidebar.style.top = `${scrollY + baseOffset}px`;
-    };
-
-    window.addEventListener("scroll", () => {
-      window.requestAnimationFrame(updateSidebarPosition);
-    });
-  });
-</script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const sidebar = document.querySelector(".year-sidebar");
+          const baseOffset = 240;
+          let lastScrollY = window.scrollY;
+          let ticking = false;
+          
+          // Add smooth transition to the sidebar
+          sidebar.style.transition = "top 0.2s ease-out";
+      
+          const updateSidebarPosition = () => {
+            // Calculate the difference between current scroll and last position
+            const diff = Math.abs(window.scrollY - lastScrollY);
+            
+            // Only update if scrolled more than 5px to reduce small bounces
+            if (diff > 5) {
+              sidebar.style.top = `${window.scrollY + baseOffset}px`;
+              lastScrollY = window.scrollY;
+            }
+            
+            ticking = false;
+          };
+      
+          window.addEventListener("scroll", () => {
+            if (!ticking) {
+              // Throttle the scroll event
+              window.requestAnimationFrame(() => {
+                updateSidebarPosition();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          });
+          
+          // Set initial position
+          sidebar.style.top = `${window.scrollY + baseOffset}px`;
+        });
+      </script>
 
 </body>
 </html>
