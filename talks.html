@@ -100,18 +100,48 @@ h3 {
   font-weight: bold;
   font-family: 'Sunflower', sans-serif;
 }
+.talk-type {
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.talk-type.invited {
+  background-color: #e8f4ff;
+  color: #2c5282;
+  border-left: 3px solid #4299e1;
+}
+
+.talk-type.tutorial {
+  background-color: #e6f6ef;
+  color: #276749;
+  border-left: 3px solid #48bb78;
+}
+
+.talk-type.demo {
+  background-color: #f5eeff;
+  color: #553c9a;
+  border-left: 3px solid #9f7aea;
+}
+
 ul.talk-list {
   list-style: none;
   padding-left: 0;
 }
+
 ul.talk-list li {
   margin-bottom: 20px;
   padding-bottom: 15px;
   border-bottom: 1px dashed #ddd;
 }
-.talk-type {
-  color: #1a0dab;
-  font-weight: bold;
+
+/* Remove these hover styles */
+ul.talk-list li:hover {
+  background-color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transform: none;
 }
 .talk-type.invited {
   color: blue;
@@ -170,95 +200,95 @@ ul.talk-list li {
 <h3>2023</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type invited">[Research Presentation: INAS Conference, Princeton 2023]</span><br>
+        <span class="talk-type invited">Research Presentation: INAS Conference, Princeton</span><br>
         A mathematical model of social utility under variable conditions of innovation and copying
 </li>
 <li>
-        <span class="talk-type invited">[Invited Talk: Enabling Edge Computing Summit 2023]</span><br>
+        <span class="talk-type invited">Invited Talk: Enabling Edge Computing Summit</span><br>
         Open-world learning at the edge: the next stage of machine intelligence
 </li>
 <li>
-        <span class="talk-type tutorial">[Tutorial: AGI 2023]</span><br>
+        <span class="talk-type tutorial">Tutorial: AGI</span><br>
         Machine Intelligence for Open Worlds: A Multi-Domain Tutorial of Challenges and Opportunities
 </li>
 <li>
-        <span class="talk-type invited">[Invited Talk: Fidelity AI Center 2023]</span><br>
+        <span class="talk-type invited">Invited Talk: Fidelity AI Center</span><br>
         Knowledge Graphs and Large Language Models: Friends or Foes?
 </li>
 </ul>
 <h3>2022</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type invited">[Invited Keynote Talk: IEEE ICDM International Workshop on Knowledge Graphs, 2022]</span><br>
+        <span class="talk-type invited">Invited Keynote Talk: IEEE ICDM International Workshop on Knowledge Graphs</span><br>
         Domain-Specific Knowledge Graph Construction: Opportunities and Challenges
 </li>
 <li>
-        <span class="talk-type invited">[Invited Talk: Netflix 2022]</span><br>
+        <span class="talk-type invited">Invited Talk: Netflix</span><br>
         Knowledge Graphs: Search, Personalization, and Analytics
 </li>
 </ul>
 <h3>2021</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type demo">[Demo: IEEE/ASONAM 2021]</span><br>
+        <span class="talk-type demo">Demo: IEEE/ASONAM</span><br>
         Unsupervised real-time induction and interactive visualization of taxonomies over
                 domain-specific concepts
 </li>
 <li>
-        <span class="talk-type tutorial">[Tutorial: AAAI 2021]</span><br>
+        <span class="talk-type tutorial">Tutorial: AAAI</span><br>
         Commonsense Knowledge Acquisition and Representation<br>Co-tutors: Antoine Bosselut, Filip Ilievsky, and Simon Razniewski
 </li>
 <li>
-        <span class="talk-type tutorial">[Tutorial: IEEE SSCI 2021; ASONAM 2020]</span><br>
+        <span class="talk-type tutorial">Tutorial: IEEE SSCI; ASONAM 2020</span><br>
         Knowledge Graphs: A Practical Introduction across Disciplines
 </li>
 <li>
-        <span class="talk-type invited">[Invited Talk: SAP Inspiration Sessions Community 2021]</span><br>
+        <span class="talk-type invited">Invited Talk: SAP Inspiration Sessions Community</span><br>
         Artificial General Intelligence
 </li>
 <li>
-        <span class="talk-type invited">[Invited Talk: ITU Focus Group on AI for Natural Disaster Management 2021]</span><br>
+        <span class="talk-type invited">Invited Talk: ITU Focus Group on AI for Natural Disaster Management</span><br>
         Detecting situational needs from digital messaging in real-time
 </li>
 </ul>
 <h3>2020</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type tutorial">[Tutorial: ISWC 2020]</span><br>
+        <span class="talk-type tutorial">Tutorial: ISWC</span><br>
         Commonsense Knowledge Graphs<br>Co-tutors: Pedro Szekely and Filip Ilievsky
 </li>
 <li>
-        <span class="talk-type demo">[Demo: NeurIPS 2020]</span><br>
+        <span class="talk-type demo">Demo: NeurIPS</span><br>
         Generating Novelty in Open-World Multi-Agent Environments
 </li>
 </ul>
 <h3>2019</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type demo">[Demo: IEEE/ASONAM 2019]</span><br>
+        <span class="talk-type demo">Demo: IEEE/ASONAM</span><br>
         SAVIZ: Interactive Exploration and Visualization of Social Media over Crisis Data
 </li>
 <li>
-        <span class="talk-type invited">[Invited Talk: National University for Juridical Sciences (NUJS), Kolkata, India  2019]</span><br>
+        <span class="talk-type invited">Invited Talk: National University for Juridical Sciences (NUJS), Kolkata, India</span><br>
         Fighting Human Trafficking with Technology
 </li>
 <li>
-        <span class="talk-type demo">[Demo: ACM SIGIR 2019]</span><br>
+        <span class="talk-type demo">Demo: ACM SIGIR</span><br>
         Expert-Guided Entity Extraction using Expressive Rules
 </li>
 </ul>
 <h3>2018</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type tutorial">[Tutorial: AAAI 2018]</span><br>
+        <span class="talk-type tutorial">Tutorial: AAAI</span><br>
         Knowledge Graph Construction from Web Corpora<br>Co-tutors: Pedro Szekely and Craig Knoblock
 </li>
 <li>
-        <span class="talk-type demo">[Demo: ACM WebConf 2018]</span><br>
+        <span class="talk-type demo">Demo: ACM WebConf</span><br>
         THOR: Text-enabled Humanitarian Operations in Real-time
 </li>
 <li>
-        <span class="talk-type demo">[Demo: AAAI 2018]</span><br>
+        <span class="talk-type demo">Demo: AAAI</span><br>
         Constructing Domain-specific Search Engines with No Programming<br>
                 <b>Nominated for best demo</b>
 </li>
@@ -266,15 +296,15 @@ ul.talk-list li {
 <h3>2017</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type tutorial">[Tutorial: ISWC 2017]</span><br>
+        <span class="talk-type tutorial">Tutorial: ISWC</span><br>
         Constructing Domain-Specific Knowledge Graphs<br>Co-tutors: Pedro Szekely, Craig Knoblock
 </li>
 <li>
-        <span class="talk-type demo">[Demo: ISWC 2017]</span><br>
+        <span class="talk-type demo">Demo: ISWC</span><br>
         A Semantic Search Engine for Investigating Human Trafficking
 </li>
 <li>
-        <span class="talk-type tutorial">[Tutorial: KDD 2017]</span><br>
+        <span class="talk-type tutorial">Tutorial: KDD</span><br>
         Data Mining in Unusual Domains with Information-rich Knowledge Graph Construction, Inference and Search<br>Co-tutor: Pedro Szekely
 </li>
 </ul>
