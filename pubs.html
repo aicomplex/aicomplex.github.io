@@ -103,43 +103,37 @@ ul.publication-list li {
 }
 
 .year-sidebar {
-  position: absolute;             
-  top: 240px;                     
+  position: absolute;
+  top: 240px;
   left: 20px;
   width: 150px;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 8px; /* outer box roundness */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 0; /* remove top padding */
   z-index: 1000;
-  transition: top 0.3s ease-out; 
-}
-
-
-.year-sidebar:hover {
-  transform: translateY(-5px); /* a little bounce up */
+  transition: top 0.3s ease-out; /* smooth scroll-following */
 }
 
 .year-sidebar-header {
   font-weight: bold;
   font-size: 16px;
-  margin: 0 -10px 10px -10px; 
+  margin: 0;
   padding: 10px;
   background-color: #333;
   color: white;
-  border-radius: 0;          
+  border-radius: 0; /* square header */
   text-align: center;
-  border-bottom: 1px solid #ccc;
 }
 
 .year-sidebar ul {
   list-style: none;
-  padding-left: 0;
   margin: 0;
+  padding: 10px; /* now applies only to the list area */
 }
 
 .year-sidebar li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .year-link {
@@ -147,17 +141,18 @@ ul.publication-list li {
   background-color: #ccc;
   color: black;
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 13px;
-  text-align: center;
-  transition: background-color 0.2s;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
   font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s ease;
 }
 
 .year-link:hover {
   background-color: #bbb;
 }
+
 
 
 @media screen and (max-width: 700px) {
