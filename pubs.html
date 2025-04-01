@@ -101,6 +101,22 @@ ul.publication-list li {
 .publication-links a:hover {
   text-decoration: underline;
 }
+
+.year-button {
+  background-color: #ccc;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+.year-button:hover {
+  background-color: #bbb;
+}
+
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
@@ -136,9 +152,11 @@ ul.publication-list li {
   <a href="gallery.html">Gallery</a>
 </div>
 <div class="row">
+  
+  <div class="main">
+    <h2>Publications</h2>
 
-
-<div style="width: 160px; margin-top: 40px; margin-left: 30px;">
+    <div style="width: 160px; margin-top: 30px; margin-bottom: 30px;">
   <div style="font-weight: bold; margin-bottom: 10px;">Jump to Year</div>
   <div style="display: flex; flex-direction: column; gap: 10px;">
     <a href="#year-2025" class="year-button">2025</a>
@@ -149,13 +167,10 @@ ul.publication-list li {
     <a href="#year-2020" class="year-button">2020</a>
     <a href="#year-2019" class="year-button">2019</a>
     <a href="#year-2018" class="year-button">2018</a>
-    <a href="#year-2017" class="year-button">2017 and before </a>
+    <a href="#year-2017" class="year-button">2017 and before</a>
   </div>
 </div>
 
-  
-  <div class="main">
-    <h2>Publications</h2>
 <h3 id="year-2025">2025</h3>
 <ul class="publication-list">
 <li>
