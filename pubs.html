@@ -103,7 +103,7 @@ ul.publication-list li {
 }
 
 .year-sidebar {
-  position: absolute;
+  position: fixed;
   top: 240px;
   left: 20px;
   width: 150px;
@@ -171,16 +171,7 @@ ul.publication-list li {
 }
 </style>
 </head>
-<script>
-  const sidebar = document.querySelector('.year-sidebar');
-  let lastScrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const targetTop = Math.max(180, scrollY + 100); // Adjust anchor point
-    sidebar.style.top = targetTop + 'px';
-  });
-</script>
 <body>
 <div class="header">
   <div class="left-content">
