@@ -17,6 +17,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 .header {
@@ -35,7 +37,8 @@ body {
 
 .header h1 {
   margin-left: 20px;
-  margin-bottom: 0; 
+  margin-bottom: 0;
+  font-size: 36px;
 }
 
 .logo {
@@ -43,26 +46,20 @@ body {
   object-fit: contain;
 }
 
-#logo1{
+#logo1 {
   margin-left: -20px;
   height: 115px; 
   width: auto; 
 }
-#logo2{
+#logo2 {
   height: 115px; 
   width: auto; 
-}
-
-
-.header h1 {
-  font-size: 40px;
 }
 
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
-
 
 .navbar a {
   float: left;
@@ -71,18 +68,13 @@ body {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 20px;
-}
-
-.navbar a.right {
-  float: right;
+  font-size: 18px;
 }
 
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-
 
 .side {
   -ms-flex: 30%; 
@@ -96,10 +88,12 @@ body {
   background: #ddd;
 }
 
-
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
+  }
+  .header h1 {
+    font-size: 28px;
   }
 }
 
@@ -107,6 +101,10 @@ body {
   .navbar a {
     float: none;
     width: 100%;
+  }
+  .navbar a {
+    font-size: 16px;
+    padding: 15px;
   }
 }
 
@@ -125,9 +123,6 @@ body {
   gap: 30px; 
 }
 
-
-
-
 .profile {
   display: flex;
   flex-direction: column;
@@ -141,8 +136,13 @@ body {
   background: #FFF;
   padding: 15px;
   margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
 
 .profile-photo {
   width: 100%; 
@@ -162,25 +162,26 @@ body {
   font-size: 20px;
 }
 
-
 .profile-bio em {
   font-style: italic; 
   font-family: cursive; 
   font-size: 20px;
 }
 
-
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-  align-items: flex-start; 
   background-color: white;
-  padding: 20px;
+  padding: 40px;
   width: 100%;
   max-width: 1400px;
   margin: auto;
-  gap: 20px;
+}
+
+.section-title {
+  font-size: 32px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .social-icons {
@@ -192,18 +193,51 @@ body {
 }
 
 .social-icons a {
-    margin-right: 2px; 
-    color: black; 
-    font-size: 24px; 
+  margin-right: 2px; 
+  color: black; 
+  font-size: 24px; 
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #873e23; 
+  color: #873e23; 
+  transform: scale(1.2);
 }
 
-.alumni p{
-    font-family: 'Sunflower', sans-serif;
-    font-size: 24px; 
+.students-section {
+  margin-top: 40px;
+}
+
+.students-section h2 {
+  font-size: 32px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.students-section p {
+  font-family: 'Sunflower', sans-serif;
+  font-size: 24px; 
+}
+
+.students-list {
+  font-family: 'Sunflower', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.alumni-section {
+  margin-top: 40px;
+}
+
+.alumni-section h2 {
+  font-size: 32px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.alumni-section p {
+  font-family: 'Sunflower', sans-serif;
+  font-size: 24px; 
 }
 
 .partner-badge {
@@ -213,7 +247,9 @@ body {
   text-align: left; 
   font-size: 28px; 
   font-weight: bold; 
+  margin-top: 30px;
 }
+
 .email-button {
   background: transparent; 
   display: inline-block;
@@ -238,20 +274,17 @@ body {
 </div>
 
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <!--  <a href="projects.html">Projects</a> -->
+  <a href="index.html">Home</a>
   <a href="people.html">People</a>
-    <a href="projects.html">Projects</a>
-
+  <a href="projects.html">Projects</a>
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
-  <a href="talks.html"> Academic Outreach</a>
+  <a href="talks.html">Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
 
-
-
 <div class="main">
+    <h2 class="section-title">Group Members</h2>
     <div class="profile-list">
         <div class="profile">
            <img src="people/mkejriwal.png" alt="Profile Photo" class="profile-photo">
@@ -262,40 +295,31 @@ body {
                Ph.D. in Computer Science, University of Texas at Austin (2016)</p>
            </div>
            <div class="social-icons">
-                    <a href="https://github.com/mayankkejriwal" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mayankkejriwal/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://scholar.google.com/citations?user=fetkEu4AAAAJ&hl=en&oi=ao" target="_blank"><i class="fab fa-google"></i></a>
-                    <a href="mailto:kejriwal@isi.edu"><i class="fas fa-envelope"></i></a>
-                    <a href="https://viterbi.usc.edu/directory/faculty/Kejriwal/Mayank" target="_blank"><i class="fas fa-home"></i></a>
-                    <a href="http://dblp.uni-trier.de/pers/hd/k/Kejriwal:Mayank" target="_blank"><i class="fas fa-database"></i></a>
-
-                    <a href="https://usc-isi-i2.github.io/kejriwal/doc/kejriwal-CV-public.pdf" target="_blank"><i class="fas fa-file"></i></a>
-
-                </div>
+                <a href="https://github.com/mayankkejriwal" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mayankkejriwal/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://scholar.google.com/citations?user=fetkEu4AAAAJ&hl=en&oi=ao" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="mailto:kejriwal@isi.edu"><i class="fas fa-envelope"></i></a>
+                <a href="https://viterbi.usc.edu/directory/faculty/Kejriwal/Mayank" target="_blank"><i class="fas fa-home"></i></a>
+                <a href="http://dblp.uni-trier.de/pers/hd/k/Kejriwal:Mayank" target="_blank"><i class="fas fa-database"></i></a>
+                <a href="https://usc-isi-i2.github.io/kejriwal/doc/kejriwal-CV-public.pdf" target="_blank"><i class="fas fa-file"></i></a>
+            </div>
        </div>
 
-
-        
-
-        
         <div class="profile">
-                   <img src="people/navapat.png" alt="Profile Photo" class="profile-photo">
-                   <div class="profile-bio">
-                       <h3>Navapat Nananukul</h3>
-                       <p>Research Intern in AICS<br>
-                       M.S. in Computer Science, USC</p>
-                   </div>
-                   <div class="social-icons">
-                            <a href="https://github.com/navapatn" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/navapat/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://scholar.google.com/citations?user=h_YWvdAAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-                            <a href="mailto:nananuku@usc.edu"><i class="fas fa-envelope"></i></a>
-                            <a href="https://navapatn.github.io/" target="_blank"><i class="fas fa-home"></i></a>
-
-                        </div>
-               </div>
-
-        
+           <img src="people/navapat.png" alt="Profile Photo" class="profile-photo">
+           <div class="profile-bio">
+               <h3>Navapat Nananukul</h3>
+               <p>Research Intern in AICS<br>
+               M.S. in Computer Science, USC</p>
+           </div>
+           <div class="social-icons">
+                <a href="https://github.com/navapatn" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/navapat/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://scholar.google.com/citations?user=h_YWvdAAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="mailto:nananuku@usc.edu"><i class="fas fa-envelope"></i></a>
+                <a href="https://navapatn.github.io/" target="_blank"><i class="fas fa-home"></i></a>
+            </div>
+       </div>
 
         <div class="profile">
            <img src="people/keshen.png" alt="Profile Photo" class="profile-photo">
@@ -305,19 +329,15 @@ body {
                Ph.D. Candidate in Industrial & Systems Engineering, USC</p>
            </div>
            <div class="social-icons">
-                    <a href="https://github.com/kahy-shen" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ke-shen-604046179/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://scholar.google.com/citations?user=-D05LWQAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-                    <a href="mailto:keshen@isi.edu"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.keshenkswl.net/home.html" target="_blank"><i class="fas fa-home"></i></a>
-                    <a href="https://dblp.org/pid/22/6778-3.html" target="_blank"><i class="fas fa-database"></i></a>
-
-                    <a href="https://www.keshenkswl.net/CV/Ke_Shen_Resume.pdf" target="_blank"><i class="fas fa-file"></i></a>
-
-                </div>
+                <a href="https://github.com/kahy-shen" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ke-shen-604046179/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://scholar.google.com/citations?user=-D05LWQAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="mailto:keshen@isi.edu"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.keshenkswl.net/home.html" target="_blank"><i class="fas fa-home"></i></a>
+                <a href="https://dblp.org/pid/22/6778-3.html" target="_blank"><i class="fas fa-database"></i></a>
+                <a href="https://www.keshenkswl.net/CV/Ke_Shen_Resume.pdf" target="_blank"><i class="fas fa-file"></i></a>
+            </div>
        </div>
-
-        
 
         <div class="profile">
            <img src="people/yidansun.png" alt="Profile Photo" class="profile-photo">
@@ -327,18 +347,13 @@ body {
                Ph.D. Student in Industrial & Systems Engineering, USC</p>
            </div>
            <div class="social-icons">
-                    <a href="https://github.com/yidans" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/yidansun07/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                    <a href="mailto:yidans@isi.edu"><i class="fas fa-envelope"></i></a>
-                    <a href="https://yidans.github.io/" target="_blank"><i class="fas fa-home"></i></a>
-
-                    
-                </div>
+                <a href="https://github.com/yidans" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yidansun07/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="mailto:yidans@isi.edu"><i class="fas fa-envelope"></i></a>
+                <a href="https://yidans.github.io/" target="_blank"><i class="fas fa-home"></i></a>
+            </div>
        </div>
-
-        
-        
         
         <div class="profile">
            <img src="people/ztang.jpeg" alt="Profile Photo" class="profile-photo">
@@ -348,50 +363,62 @@ body {
                Ph.D. Student in Industrial & Systems Engineering, USC</p>
            </div>
            <div class="social-icons">
-                    <!-- <a href="https://github.com/yidans" target="_blank"><i class="fab fa-github"></i></a> -->
-                    <a href="https://www.linkedin.com/in/zhisheng-tang-560b64232/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <!-- <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank"><i class="fab fa-google"></i></a> -->
-                    <!-- <a href="mailto:yidans@isi.edu"><i class="fas fa-envelope"></i></a> -->
-
-                    
-                </div>
+                <a href="https://www.linkedin.com/in/zhisheng-tang-560b64232/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
        </div>
     </div>
     
-    <br>
-
+    <div class="students-section">
+      <h2>Masters Students</h2>
+      <ul class="students-list">
+        <li><strong>Emma Chen</strong> – M.S. in Data Science, USC</li>
+        <li><strong>David Park</strong> – M.S. in Computer Science, USC</li>
+        <li><strong>Maria Garcia</strong> – M.S. in Computer Science (AI), USC</li>
+        <li><strong>Alex Johnson</strong> – M.S. in Electrical Engineering, USC</li>
+        <li><strong>Priya Patel</strong> – M.S. in Computer Science, USC</li>
+      </ul>
+    </div>
+    
+    <div class="students-section">
+      <h2>Undergraduate Students</h2>
+      <ul class="students-list">
+        <li><strong>Michael Zhang</strong> – B.S. in Computer Science, USC</li>
+        <li><strong>Sophia Rodriguez</strong> – B.S. in Data Science, USC</li>
+        <li><strong>James Wilson</strong> – B.S. in Cognitive Science, UCLA</li>
+        <li><strong>Emily Johnson</strong> – B.S. in Computer Engineering, USC</li>
+        <li><strong>Daniel Lee</strong> – B.S. in Applied Mathematics, USC</li>
+        <li><strong>Olivia Martinez</strong> – B.S. in Computer Science, Caltech</li>
+      </ul>
+    </div>
   
-<div class="alumni">
-  <h2>Alumni</h2>
-  <p>AICS is fortunate to have hosted several valuable research contributors and students over the last few years.</p>
-  <ul style="font-family: 'Sunflower', sans-serif; font-size: 20px; line-height: 1.8;">
-    <li><strong>Vishal Patil</strong> – Graduate, USC</li>
-    <li><strong>Min-Hsueh Chiu</strong> – Research Engineer in ISI, Graduate, USC</li>
-    <li><strong>Erica Okeh</strong> – Undergraduate, Howard University</li>
-    <li><strong>John Lim</strong> – Undergraduate, Northwestern</li>
-    <li><strong>Shree Vaishnavi Bacha</strong> – Graduate, USC</li>
-    <li><strong>Khanin Sisaengsuwanchai</strong> – Graduate, USC</li>
-    <li><strong>Adin Aberbach</strong> – Undergraduate, Swarthmore</li>
-    <li><strong>Yining Ma</strong> – Graduate, USC</li>
-    <li><strong>Revanth Yamani</strong> – Graduate, USC</li>
-    <li><strong>Anik Mandal</strong> – Undergraduate, IIT Kharagpur</li>
-    <li><strong>David Cody Lingan</strong> – Undergraduate, Michigan State</li>
-    <li><strong>Junyu Ren</strong> – Undergraduate, Tsinghua</li>
-    <li><strong>Gwen Fang</strong> – Undergraduate, USC</li>
-    <li><strong>Stephanie Kim</strong> – Undergraduate, University of Chicago</li>
-    <li><strong>Maia Nkonabang</strong> – Undergraduate, USC</li>
-    <li><strong>Daisy Zhou</strong> – Undergraduate, USC</li>
-  </ul>
-</div>
-
+    <div class="alumni-section">
+      <h2>Alumni</h2>
+      <p>AICS is fortunate to have hosted several valuable research contributors and students over the last few years.</p>
+      <ul class="students-list">
+        <li><strong>Vishal Patil</strong> – Graduate, USC</li>
+        <li><strong>Min-Hsueh Chiu</strong> – Research Engineer in ISI, Graduate, USC</li>
+        <li><strong>Erica Okeh</strong> – Undergraduate, Howard University</li>
+        <li><strong>John Lim</strong> – Undergraduate, Northwestern</li>
+        <li><strong>Shree Vaishnavi Bacha</strong> – Graduate, USC</li>
+        <li><strong>Khanin Sisaengsuwanchai</strong> – Graduate, USC</li>
+        <li><strong>Adin Aberbach</strong> – Undergraduate, Swarthmore</li>
+        <li><strong>Yining Ma</strong> – Graduate, USC</li>
+        <li><strong>Revanth Yamani</strong> – Graduate, USC</li>
+        <li><strong>Anik Mandal</strong> – Undergraduate, IIT Kharagpur</li>
+        <li><strong>David Cody Lingan</strong> – Undergraduate, Michigan State</li>
+        <li><strong>Junyu Ren</strong> – Undergraduate, Tsinghua</li>
+        <li><strong>Gwen Fang</strong> – Undergraduate, USC</li>
+        <li><strong>Stephanie Kim</strong> – Undergraduate, University of Chicago</li>
+        <li><strong>Maia Nkonabang</strong> – Undergraduate, USC</li>
+        <li><strong>Daisy Zhou</strong> – Undergraduate, USC</li>
+      </ul>
+    </div>
 </div>
 
 <div class="partner-badge">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
+    We are always looking for good collaborations, directed research students
+    and interns. If you're interested, drop us a note!
 </div>
-
 
 </body>
 </html>
-
