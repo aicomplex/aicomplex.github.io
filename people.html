@@ -133,7 +133,8 @@ body {
   justify-content: space-between; 
   align-items: center; 
   width: 370px; 
-  height: 600px;
+  height: auto;
+  min-height: 600px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
@@ -141,6 +142,16 @@ body {
   padding: 15px;
   margin-bottom: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px; 
+  width: 100%; 
+  margin-top: 15px;
+  padding: 10px 0;
 }
 
 .profile:hover {
@@ -158,17 +169,36 @@ body {
 
 .profile-bio {
   width: 100%; 
-  padding: 5px;
+  padding: 15px;
   text-align: left;
-  margin-top: 0px;
-  line-height: 1.2;
+  margin-top: 10px;
+  line-height: 1.6;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .profile-bio h3 {
   font-family: 'Sunflower', sans-serif;
   font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.profile-bio p {
+  margin-top: 0;
+}
+
+.profile-bio h3 {
+  font-family: 'Sunflower', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .profile-bio em {
@@ -413,7 +443,7 @@ body {
   
     <div class="alumni-section">
       <h2>Alumni</h2>
-      <p>AICS is fortunate to have hosted several valuable research contributors and students over the last few years.</p>
+      <p style="font-family: 'Sunflower', sans-serif; font-size: 20px;">AICS is fortunate to have hosted several valuable research contributors and students over the last few years.</p>
       <ul class="students-list">
         <li><strong>Vishal Patil</strong> – Graduate, USC</li>
         <li><strong>Min-Hsueh Chiu</strong> – Research Engineer in ISI, Graduate, USC</li>

@@ -186,15 +186,21 @@ body {
   display: inline-block; 
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #3c4c4e;
+  background-color: #333333c7;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Sunflower', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .partner-badge {
@@ -292,7 +298,7 @@ body {
       </p>
       
       <img src="venn_updated.png" alt="Ai and css" style="max-width:90%; height:auto; display:block; margin:30px auto;">
-      <button onclick="window.location.href='projects.html';" style="display: block; margin: 20px auto; padding: 15px 20px; background-color: #3c4c4e; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Sunflower', sans-serif;" class="learn-more-btn">Learn More</button>
+      <button onclick="window.location.href='projects.html';" class="learn-more-btn" style="display:block; margin:20px auto;">Learn More</button>
   </div>
 
 
