@@ -1,222 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS Projects</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.header {
-  padding: 20px;
-  background: #000; 
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header .left-content {
-  display: flex;
-  align-items: center;
-}
-
-.header h1 {
-  margin-left: 20px; 
-  margin-bottom: 0; 
-}
-
-.logo {
-  height: 100%; 
-  object-fit: contain;
-}
-
-#logo1{
-  margin-left: -20px;
-  height: 115px; 
-  width: auto; 
-}
-#logo2{
-  height: 115px;
-  width: auto; 
-}
-
-.header h1 {
-  font-size: 40px;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.navbar a.right {
-  float: right;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-/* Main column */
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-  align-items: flex-start;
-  background-color: white;
-  padding: 20px;
-  width: 100%;
-  max-width: 1500px;
-  margin: auto;
-  gap: 20px;
-}
-
-.main img {
-  max-width: 100%; 
-  height: auto; 
-  display: block;
-  margin: 0 auto; 
-}
-
-.project-box {
-    position: relative; 
-    z-index: 1; 
-    width: 460px;
-    min-height: 620px; 
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    overflow: hidden; 
-    transition: all 0.3s ease; 
-}
-
-.project-box.expanded {
-    z-index: 2;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    transform: scale(1.02); 
-}
-
-.image-container {
-    width: 100%; 
-    height: 250px; 
-    overflow: hidden;
-}
-
-.image-container img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    object-position: center; 
-}
-.main p{
-    font-size: 24px; 
-    color: black;
-    font-family: 'Sunflower', sans-serif;
-/*    line-height: 1.4;*/
-}
-.short-description, .full-description {
-    margin-bottom: 0; 
-}
-
-.full-description {
-    margin-top: 0px;
-    display: none; 
-}
-.learn-more-btn {
-  color: white;
-  background-color: #3c4c4e;
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px auto;
-  margin-top: 10px; 
-  border: none;
-  font-size: 20px; 
-  border-radius: 5px;
-  text-decoration: none; 
-  text-align: center;
-  font-size: 15px; 
-  cursor: pointer; 
-}
-.button-wrapper {
-    text-align: center; 
-}
-
-.links-container {
-    margin-top: 10px; 
-    display: none; 
-    justify-content: left; 
-    align-items: left; 
-    flex-wrap: wrap; 
-}
-
-.links-container a {
-    color: #007bff; 
-    text-decoration: none; 
-    margin: -5 20px; 
-    display: inline-flex; 
-}
-.links-container a::after {
-    content: ";";
-    margin-right: 10px; 
-}
-
-.links-container a:last-child::after {
-    content: ""; 
-}
-
-.partner-badge {
-  background-color: #000; 
-  color: white; 
-  padding: 50px; 
-  text-align: left; 
-  font-size: 28px; 
-  font-weight: bold; 
-}
-
-
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AICS Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    .header {
+      padding: 20px;
+      background: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header .left-content {
+      display: flex;
+      align-items: center;
+    }
+    .header h1 {
+      margin-left: 20px;
+      margin-bottom: 0;
+      font-size: 40px;
+    }
+    .logo {
+      height: 100%;
+      object-fit: contain;
+    }
+    #logo1 {
+      margin-left: -20px;
+      height: 115px;
+      width: auto;
+    }
+    #logo2 {
+      height: 115px;
+      width: auto;
+    }
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .main {
+      background-color: white;
+      padding: 20px;
+      max-width: 1500px;
+      margin: auto;
+      font-family: 'Sunflower', sans-serif;
+    }
+    .pub-box {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 20px;
+    }
+    .pub-image {
+      flex: 1;
+      max-width: 250px;
+    }
+    .pub-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .pub-content {
+      flex: 3;
+    }
+    .pub-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .pub-description {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .pub-links a {
+      background-color: #3c4c4e;
+      color: white;
+      padding: 8px 15px;
+      margin-right: 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-
-
 <div class="header">
   <div class="left-content">
     <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
@@ -224,176 +118,124 @@ body {
   </div>
   <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2">
 </div>
-
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <!--  <a href="projects.html">Projects</a> -->
+  <a href="index.html">Home</a>
   <a href="people.html">People</a>
   <a href="projects.html">Projects</a>
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
-  <a href="talks.html"> Academic Outreach</a>
+  <a href="talks.html">Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
-
-
 <div class="main">
-  <div class="project-box">
-    <h2>Artificial Intelligence for Social Good</h2>
-    <div class="image-container">
-        <img src="AI4SG.png" alt="AI4SG-icon">
+  <div class="pub-box">
+    <div class="pub-image">
+      <img src="AI4SG.png" alt="AI4SG-icon">
     </div>
-    <p class="short-description">AICS is researching the applied use of Artificial Intelligence for several social good applications. Our work has been used to fight human trafficking, visualize and manage information efficiently during crises, detect illicit networks of finance, and quantify gender bias in literature. </p>
-    <p class="full-description" style="display: none;"> We also regularly collaborate with domain-experts to build such systems to ensure responsible use and transparency. </p>
-    <div class="button-wrapper">
-        <button class="learn-more-btn">Show More</button>
-    </div>
-    <div class="links-container" style="display: none;">
-        <!-- Example links; update with actual URLs -->
-        <a href="https://doi.org/10.1007/978-3-031-19039-1">Example Work 1</a><br>
-        <a href="https://doi.org/10.1109/TBDATA.2017.2763164">Example Work 2</a><br>
-        <a href="https://doi.org/10.1007/s41109-019-0154-z">Example Work 3</a><br>
+    <div class="pub-content">
+      <div class="pub-title">Artificial Intelligence for Social Good</div>
+      <div class="pub-description">
+        AICS is researching the applied use of Artificial Intelligence for several social good applications. Our work has been used to fight human trafficking, visualize and manage information efficiently during crises, detect illicit networks of finance, and quantify gender bias in literature. We also regularly collaborate with domain-experts to build such systems to ensure responsible use and transparency.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1007/978-3-031-19039-1">Example Work 1</a>
+        <a href="https://doi.org/10.1109/TBDATA.2017.2763164">Example Work 2</a>
+        <a href="https://doi.org/10.1007/s41109-019-0154-z">Example Work 3</a>
         <a href="https://doi.org/10.1145/3184558.3186965">Example Work 4</a>
+      </div>
     </div>
   </div>
-  <div class="project-box">
-    <h2>Domain-Specific Knowledge Graphs </h2>
-    <div class="image-container">
-        <img src="DSKG.png" alt="DSKG-icon">
+
+  <div class="pub-box">
+    <div class="pub-image">
+      <img src="DSKG.png" alt="DSKG-icon">
     </div>
-    <p class="short-description">Since the Google Knowledge Graph was publicized in 2011, knowledge graphs (KGs) have become a key component in neurosymbolic AI, with applications ranging from web search to recommendations. Building domain-specific KGs remains a challenging problem, however. </p>
-    <p class="full-description" style="display: none;"> In this interdisciplinary project, we build algorithms, frameworks and tools for semi-automatically constructing domain-specific KGs from raw data. Domains where our methods have been applied include e-commerce, healthcare, and social good applications like human trafficking. 
- </p>
-    <div class="button-wrapper">
-        <button class="learn-more-btn">Show More</button>
-    </div>
-    <div class="links-container" style="display: none;">
-        <!-- Example links; update with actual URLs -->
-        <a href="https://doi.org/10.48550/arXiv.2307.12173">Example Work 1</a><br>
-        <a href="https://doi.org/10.1016/j.engappai.2021.104548">Example Work 2;</a><br>
-        <a href="https://doi.org/10.1109/BigData.2015.7363868">Example Work 3;</a><br>
+    <div class="pub-content">
+      <div class="pub-title">Domain-Specific Knowledge Graphs</div>
+      <div class="pub-description">
+        Since the Google Knowledge Graph was publicized in 2011, knowledge graphs (KGs) have become a key component in neurosymbolic AI, with applications ranging from web search to recommendations. Building domain-specific KGs remains a challenging problem, however. In this interdisciplinary project, we build algorithms, frameworks and tools for semi-automatically constructing domain-specific KGs from raw data. Domains where our methods have been applied include e-commerce, healthcare, and social good applications like human trafficking.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.48550/arXiv.2307.12173">Example Work 1</a>
+        <a href="https://doi.org/10.1016/j.engappai.2021.104548">Example Work 2</a>
+        <a href="https://doi.org/10.1109/BigData.2015.7363868">Example Work 3</a>
         <a href="https://arxiv.org/pdf/2310.05258">Example Work 4</a>
+      </div>
     </div>
-</div>
-<div class="project-box">
-    <h2>Machine Common Sense</h2>
-    <div class="image-container">
-        <img src="MCS.png" alt="MCS-icon">
+  </div>
+
+  <div class="pub-box">
+    <div class="pub-image">
+      <img src="MCS.png" alt="MCS-icon">
     </div>
-    <p class="short-description">Machine common sense (MCS) is the problem of getting computers to understand common sense -- a wide range of simple facts about people and ordinary life -- and has been recognized by many as a grand challenge in AI since the 1950s. It spans abilities ranging from an intuitive </p>
-    <p class="full-description" style="display: none;"> sense of physics, to the everyday sociology we assume when we talk to other people. Recent progress in large language models and generative AI has led to remarkable progress on MCS, yet there is a lack of consensus on how much common sense today’s AI actually possesses. This project, funded by DARPA, looks at the question both scientifically and from an engineering perspective. Ultimately, we aim to both build systems that have MCS, and to prove that they do. 
- </p>
-    
-    <div class="button-wrapper">
-        <button class="learn-more-btn">Show More</button>
-    </div>
-        <div class="links-container" style="display: none;">
-        <!-- Example links; update with actual URLs -->
-        <a href="https://doi.org/10.1111/exsy.13243">Example Work 1</a><br>
-        <a href="https://doi.org/10.1007/978-3-031-33469-6/_28">Example Work 2</a><br>
-        <a href="https://doi.org/10.1038/s42256-022-00478-4">Example Work 3</a><br>
+    <div class="pub-content">
+      <div class="pub-title">Machine Common Sense</div>
+      <div class="pub-description">
+        Machine common sense (MCS) is the problem of getting computers to understand common sense -- a wide range of simple facts about people and ordinary life -- and has been recognized by many as a grand challenge in AI since the 1950s. It spans abilities ranging from an intuitive sense of physics, to the everyday sociology we assume when we talk to other people. Recent progress in large language models and generative AI has led to remarkable progress on MCS, yet there is a lack of consensus on how much common sense today’s AI actually possesses. This project, funded by DARPA, looks at the question both scientifically and from an engineering perspective. Ultimately, we aim to both build systems that have MCS, and to prove that they do.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1111/exsy.13243">Example Work 1</a>
+        <a href="https://doi.org/10.1007/978-3-031-33469-6/_28">Example Work 2</a>
+        <a href="https://doi.org/10.1038/s42256-022-00478-4">Example Work 3</a>
         <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0295925">Example Work 4</a>
+      </div>
     </div>
-</div>
-<div class="project-box">
-    <h2>Open-World Learning</h2>
-    <div class="image-container">
-        <img src="OWL.png" alt="OWL-icon">
-    </div>
-    <p class="short-description">Open-world learning (OWL) has taken on new importance in recent years as AI systems continue to be applied in real-world environments where structural violations of expectation can occur with non-trivial frequency. Such environmental changes can impact AI performance</p>
-    <p class="full-description" style="display: none;"> profoundly, ranging from overt catastrophic failures to non-robust behaviors that do not take changing context into account. Evaluating OWL algorithms is also a fundamental research area. Funded by DARPA, we aim to build OWL simulation environments (e.g., based on games like Monopoly and Poker) and develop scientific approaches to better understanding the nature of OWL itself.  
+  </div>
 
- </p>
-    
-    <div class="button-wrapper">
-        <button class="learn-more-btn">Show More</button>
+  <div class="pub-box">
+    <div class="pub-image">
+      <img src="OWL.png" alt="OWL-icon">
     </div>
-    <div class="links-container" style="display: none;">
-        <!-- Example links; update with actual URLs -->
-        <a href="https://doi.org/10.1109/TETCI.2022.3166555">Example Work 1</a><br>
-        <a href="https://doi.org/10.1016/j.simpat.2021.102364">Example Work 2</a><br>
-        <a href="https://arxiv.org/abs/2103.00683">Example Work 3</a><br>
+    <div class="pub-content">
+      <div class="pub-title">Open-World Learning</div>
+      <div class="pub-description">
+        Open-world learning (OWL) has taken on new importance in recent years as AI systems continue to be applied in real-world environments where structural violations of expectation can occur with non-trivial frequency. Such environmental changes can impact AI performance profoundly, ranging from overt catastrophic failures to non-robust behaviors that do not take changing context into account. Evaluating OWL algorithms is also a fundamental research area. Funded by DARPA, we aim to build OWL simulation environments (e.g., based on games like Monopoly and Poker) and develop scientific approaches to better understanding the nature of OWL itself.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1109/TETCI.2022.3166555">Example Work 1</a>
+        <a href="https://doi.org/10.1016/j.simpat.2021.102364">Example Work 2</a>
+        <a href="https://arxiv.org/abs/2103.00683">Example Work 3</a>
         <a href="https://doi.org/10.1016/j.simpat.2021.102364">Example Work 4</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="project-box">
-    <h2>Computational Social Science and Network Theory</h2>
-    <div class="image-container">
-        <img src="CSS.png" alt="CSS-icon">
+  <div class="pub-box">
+    <div class="pub-image">
+      <img src="CSS.png" alt="CSS-icon">
     </div>
-    <p class="short-description">The broad availability of datasets in complex domains like social media, corporate filings and transportation has led to exciting advances in, and convergence of, research areas like network theory and computational social science.</p>
-    <p class="full-description" style="display: none;"> In this portfolio of projects, we use data and computational methods to study such complex systems. These projects range from developing a better understanding of policy impacts during COVID-19 to quantifying gender bias in literature. Our most recent project aims to study the structure of political campaign finance in the US House of Representatives.  
-
- </p>
-    
-    <div class="button-wrapper">
-        <button class="learn-more-btn">Show More</button>
-    </div>
-
-    <div class="links-container" style="display: none;">
-        <!-- Example links; update with actual URLs -->
-        <a href="https://doi.org/10.1007/s42001-021-00129-5">Example Work 1</a><br>
-        <a href="https://doi.org/10.48550/arXiv.2307.07920">Example Work 2</a><br>
-        <a href="https://doi.org/10.1007/978-3-031-10461-9/_58">Example Work 3</a><br>
+    <div class="pub-content">
+      <div class="pub-title">Computational Social Science and Network Theory</div>
+      <div class="pub-description">
+        The broad availability of datasets in complex domains like social media, corporate filings and transportation has led to exciting advances in, and convergence of, research areas like network theory and computational social science. In this portfolio of projects, we use data and computational methods to study such complex systems. These projects range from developing a better understanding of policy impacts during COVID-19 to quantifying gender bias in literature. Our most recent project aims to study the structure of political campaign finance in the US House of Representatives.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1007/s42001-021-00129-5">Example Work 1</a>
+        <a href="https://doi.org/10.48550/arXiv.2307.07920">Example Work 2</a>
+        <a href="https://doi.org/10.1007/978-3-031-10461-9/_58">Example Work 3</a>
         <a href="https://doi.org/10.3390/fi13060160">Example Work 4</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="project-box">
-    <h2>Generative AI and LLMs</h2>
-    <div class="image-container">
-        <img src="GenAI.png" alt="GenAI-icon">
+  <div class="pub-box">
+    <div class="pub-image">
+      <img src="GenAI.png" alt="GenAI-icon">
     </div>
-    <p class="short-description">Even before the advent of ChatGPT and other such large language models (LLMs), neural language models like BERT had led to impressive performance on a variety of AI tasks. In this portfolio of projects, we study the properties of such models as 'cognitive machines'.</p>
-    <p class="full-description" style="display: none;"> This is a novel area of research, and we expect regular and significant updates to these projects in the foreseeable future. 
-
- </p>
-
-    <div class="button-wrapper">
-        <button class="learn-more-btn">Show More</button>
-    </div>
-    
-    <div class="links-container" style="display: none;">
-        <!-- Example links; update with actual URLs -->
-        <a href="https://doi.org/10.1111/exsy.13243">Example Work 1</a><br>
-        <a href="https://doi.org/10.48550/arXiv.2302.09068">Example Work 2</a><br>
-        <a href="https://doi.org/10.48550/arXiv.2210.07519">Example Work 3</a><br>
+    <div class="pub-content">
+      <div class="pub-title">Generative AI and LLMs</div>
+      <div class="pub-description">
+        Even before the advent of ChatGPT and other such large language models (LLMs), neural language models like BERT had led to impressive performance on a variety of AI tasks. In this portfolio of projects, we study the properties of such models as 'cognitive machines'. This is a novel area of research, and we expect regular and significant updates to these projects in the foreseeable future.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1111/exsy.13243">Example Work 1</a>
+        <a href="https://doi.org/10.48550/arXiv.2302.09068">Example Work 2</a>
+        <a href="https://doi.org/10.48550/arXiv.2210.07519">Example Work 3</a>
         <a href="https://arxiv.org/pdf/2312.05209">Example Work 4</a>
+      </div>
     </div>
+  </div>
+  <!-- All project boxes will be inserted below by code expansion or further updates -->
 </div>
-
-
-</div>
-
-<div class="partner-badge">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
-</div>
-<script>
-  document.querySelectorAll('.learn-more-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const projectBox = this.closest('.project-box');
-        const fullDescription = projectBox.querySelector('.full-description');
-        const linksContainer = projectBox.querySelector('.links-container');
-        const isFullDescriptionVisible = fullDescription.style.display === 'block';
-
-        if (isFullDescriptionVisible) {
-            fullDescription.style.display = 'none';
-            linksContainer.style.display = 'none';
-            this.textContent = 'Show More';
-            projectBox.classList.remove('expanded'); // Remove the visual enhancements
-        } else {
-            fullDescription.style.display = 'block';
-            linksContainer.style.display = 'flex';
-            this.textContent = 'Show Less';
-            projectBox.classList.add('expanded'); // Apply the visual enhancements
-        }
-    });
-});
-
-
-    </script>
 </body>
 </html>
-
