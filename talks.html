@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS Outreach</title>
+<title>AICS Academic Outreach</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
-
 .header {
   padding: 20px;
   background: #000;
@@ -22,41 +22,32 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
 .header .left-content {
   display: flex;
   align-items: center;
 }
-
 .header h1 {
-  margin-left: 20px; 
-  margin-bottom: 0; 
+  margin-left: 20px;
+  margin-bottom: 0;
+  font-size: 36px;
 }
-
 .logo {
-  height: 100%; 
+  height: 100%;
   object-fit: contain;
 }
-
-#logo1{
+#logo1 {
   margin-left: -20px;
-  height: 115px; 
-  width: auto; 
+  height: 115px;
+  width: auto;
 }
-#logo2{
-  height: 115px; 
-  width: auto; 
+#logo2 {
+  height: 115px;
+  width: auto;
 }
-
-.header h1 {
-  font-size: 40px;
-}
-
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
-
 .navbar a {
   float: left;
   display: block;
@@ -64,42 +55,57 @@ body {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
-
-.navbar a.right {
-  float: right;
-}
-
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .row {
-  display: -ms-flexbox; 
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
-
-.side {
-  -ms-flex: 30%;
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-
 .main {
-  -ms-flex: 70%; 
-  flex: 70%;
+  flex: 100%;
   background-color: white;
-  padding: 20px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
 }
-
-
+h2 {
+  font-size: 32px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+h3 {
+  font-size: 24px;
+  margin-top: 40px;
+  color: #444;
+  border-left: 5px solid #666;
+  padding-left: 10px;
+}
+ul.talk-list {
+  list-style: none;
+  padding-left: 0;
+}
+ul.talk-list li {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
+}
+.talk-type {
+  color: #1a0dab;
+  font-weight: bold;
+}
+.talk-type.invited {
+  color: blue;
+}
+.talk-type.tutorial {
+  color: teal;
+}
+.talk-type.demo {
+  color: purple;
+}
 .partner-badge {
   background-color: #000; 
   color: white; 
@@ -108,41 +114,24 @@ body {
   font-size: 28px;
   font-weight: bold; 
 }
-.email-button {
-  background: transparent; 
-  display: inline-block; 
-  color: white;
-  padding: 10px 15px; 
-  margin-top: 10px;
-  text-decoration: none; 
-  border-radius: 5px; 
-  font-size: 30px; 
-  cursor: pointer;
-}
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 400px) {
+  .main {
+    padding: 20px;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
   .navbar a {
-    float: none;
-    width: 100%;
+    font-size: 16px;
+    padding: 15px;
   }
 }
 </style>
 </head>
 <body>
-
-
 <div class="header">
   <div class="left-content">
     <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
@@ -150,230 +139,136 @@ body {
   </div>
   <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2">
 </div>
-
 <div class="navbar">
-    <a href="index.html">Home</a>
+  <a href="index.html">Home</a>
   <a href="people.html">People</a>
   <a href="projects.html">Projects</a>
   <a href="pubs.html">Publications</a>
   <a href="press.html">Press</a>
-  <a href="talks.html"> Academic Outreach</a>
+  <a href="talks.html">Academic Outreach</a>
   <a href="gallery.html">Gallery</a>
 </div>
-
 <div class="row">
   <div class="main">
     <h2>Representative Tutorials, Demonstrations and Other Outreach</h2>
-    <table>
-        
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Research Presentation: INAS Conference, Princeton 2023]</b><FONT COLOR=black> A mathematical model of social utility under variable conditions of innovation and copying<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Talk: Enabling Edge Computing Summit 2023]</b><FONT COLOR=black> Open-world learning at the edge: the next stage of machine intelligence<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: AGI 2023]</b><FONT COLOR=black> Machine Intelligence for Open Worlds: A Multi-Domain Tutorial of Challenges and Opportunities<br><br>
-            
-        </td>
-        </tr>
-        
-        
-            
-            
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Talk: Fidelity AI Center 2023]</b><FONT COLOR=black> Knowledge Graphs and Large Language Models: Friends or Foes?<br><br>
-            
-        </td>
-        </tr>
-        
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Keynote Talk: IEEE ICDM International Workshop on Knowledge Graphs, 2022]</b><FONT COLOR=black> Domain-Specific Knowledge Graph Construction: Opportunities and Challenges<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Talk: Netflix 2022]</b><FONT COLOR=black> Knowledge Graphs: Search, Personalization, and Analytics<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: IEEE/ASONAM 2021]</b><FONT COLOR=black> Unsupervised real-time induction and interactive visualization of taxonomies over
+<h3>2023</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type invited">[Research Presentation: INAS Conference, Princeton 2023]</span><br>
+        A mathematical model of social utility under variable conditions of innovation and copying
+</li>
+<li>
+        <span class="talk-type invited">[Invited Talk: Enabling Edge Computing Summit 2023]</span><br>
+        Open-world learning at the edge: the next stage of machine intelligence
+</li>
+<li>
+        <span class="talk-type tutorial">[Tutorial: AGI 2023]</span><br>
+        Machine Intelligence for Open Worlds: A Multi-Domain Tutorial of Challenges and Opportunities
+</li>
+<li>
+        <span class="talk-type invited">[Invited Talk: Fidelity AI Center 2023]</span><br>
+        Knowledge Graphs and Large Language Models: Friends or Foes?
+</li>
+</ul>
+<h3>2022</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type invited">[Invited Keynote Talk: IEEE ICDM International Workshop on Knowledge Graphs, 2022]</span><br>
+        Domain-Specific Knowledge Graph Construction: Opportunities and Challenges
+</li>
+<li>
+        <span class="talk-type invited">[Invited Talk: Netflix 2022]</span><br>
+        Knowledge Graphs: Search, Personalization, and Analytics
+</li>
+</ul>
+<h3>2021</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type demo">[Demo: IEEE/ASONAM 2021]</span><br>
+        Unsupervised real-time induction and interactive visualization of taxonomies over
                 domain-specific concepts
-<br><br>
-            
-        </td>
-        </tr>
-        
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: AAAI 2021]</b><FONT COLOR=black> Commonsense Knowledge Acquisition and Representation<br>
-            Co-tutors: Antoine Bosselut, Filip Ilievsky, and Simon Razniewski<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: IEEE SSCI 2021; ASONAM 2020]</b><FONT COLOR=black> Knowledge Graphs: A Practical Introduction across Disciplines<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Talk: SAP Inspiration Sessions Community 2021]</b><FONT COLOR=black> Artificial General Intelligence<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Talk: ITU Focus Group on AI for Natural Disaster Management 2021]</b><FONT COLOR=black> Detecting situational needs from digital messaging in real-time<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: ISWC 2020]</b><FONT COLOR=black> Commonsense Knowledge Graphs<br>
-            Co-tutors: Pedro Szekely and Filip Ilievsky<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: NeurIPS 2020]</b><FONT COLOR=black> Generating Novelty in Open-World Multi-Agent Environments
-<br><br>
-            
-        </td>
-        </tr>
-        
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: IEEE/ASONAM 2019]</b><FONT COLOR=black> SAVIZ: Interactive Exploration and Visualization of Social Media over Crisis Data
-<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=blue>[Invited Talk: National University for Juridical Sciences (NUJS), Kolkata, India  2019]</b><FONT COLOR=black> Fighting Human Trafficking with Technology<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: ACM SIGIR 2019]</b><FONT COLOR=black> Expert-Guided Entity Extraction using Expressive Rules
-<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: AAAI 2018]</b><FONT COLOR=black> Knowledge Graph Construction from Web Corpora<br>
-            Co-tutors: Pedro Szekely and Craig Knoblock<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: ACM WebConf 2018]</b><FONT COLOR=black> THOR: Text-enabled Humanitarian Operations in Real-time
-<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: AAAI 2018]</b><FONT COLOR=black> Constructing Domain-specific Search Engines with No Programming<br>
+</li>
+<li>
+        <span class="talk-type tutorial">[Tutorial: AAAI 2021]</span><br>
+        Commonsense Knowledge Acquisition and Representation<br>Co-tutors: Antoine Bosselut, Filip Ilievsky, and Simon Razniewski
+</li>
+<li>
+        <span class="talk-type tutorial">[Tutorial: IEEE SSCI 2021; ASONAM 2020]</span><br>
+        Knowledge Graphs: A Practical Introduction across Disciplines
+</li>
+<li>
+        <span class="talk-type invited">[Invited Talk: SAP Inspiration Sessions Community 2021]</span><br>
+        Artificial General Intelligence
+</li>
+<li>
+        <span class="talk-type invited">[Invited Talk: ITU Focus Group on AI for Natural Disaster Management 2021]</span><br>
+        Detecting situational needs from digital messaging in real-time
+</li>
+</ul>
+<h3>2020</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type tutorial">[Tutorial: ISWC 2020]</span><br>
+        Commonsense Knowledge Graphs<br>Co-tutors: Pedro Szekely and Filip Ilievsky
+</li>
+<li>
+        <span class="talk-type demo">[Demo: NeurIPS 2020]</span><br>
+        Generating Novelty in Open-World Multi-Agent Environments
+</li>
+</ul>
+<h3>2019</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type demo">[Demo: IEEE/ASONAM 2019]</span><br>
+        SAVIZ: Interactive Exploration and Visualization of Social Media over Crisis Data
+</li>
+<li>
+        <span class="talk-type invited">[Invited Talk: National University for Juridical Sciences (NUJS), Kolkata, India  2019]</span><br>
+        Fighting Human Trafficking with Technology
+</li>
+<li>
+        <span class="talk-type demo">[Demo: ACM SIGIR 2019]</span><br>
+        Expert-Guided Entity Extraction using Expressive Rules
+</li>
+</ul>
+<h3>2018</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type tutorial">[Tutorial: AAAI 2018]</span><br>
+        Knowledge Graph Construction from Web Corpora<br>Co-tutors: Pedro Szekely and Craig Knoblock
+</li>
+<li>
+        <span class="talk-type demo">[Demo: ACM WebConf 2018]</span><br>
+        THOR: Text-enabled Humanitarian Operations in Real-time
+</li>
+<li>
+        <span class="talk-type demo">[Demo: AAAI 2018]</span><br>
+        Constructing Domain-specific Search Engines with No Programming<br>
                 <b>Nominated for best demo</b>
-<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: ISWC 2017]</b><FONT COLOR=black> Constructing Domain-Specific Knowledge Graphs<br>
-            Co-tutors: Pedro Szekely, Craig Knoblock<br><br>
-            
-        </td>
-        </tr>
-        
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=purple>[Demo: ISWC 2017]</b><FONT COLOR=black> A Semantic Search Engine for Investigating Human Trafficking
-<br><br>
-            
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        
-        <td class="bibtexitem">
-            <b><FONT COLOR=teal>[Tutorial: KDD 2017]</b><FONT COLOR=black> Data Mining in Unusual Domains with Information-rich Knowledge Graph Construction, Inference and Search<br>
-            Co-tutor: Pedro Szekely<br><br>
-            
-        </td>
-        </tr>
-        </table>
-
-</div>
-
+</li>
+</ul>
+<h3>2017</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type tutorial">[Tutorial: ISWC 2017]</span><br>
+        Constructing Domain-Specific Knowledge Graphs<br>Co-tutors: Pedro Szekely, Craig Knoblock
+</li>
+<li>
+        <span class="talk-type demo">[Demo: ISWC 2017]</span><br>
+        A Semantic Search Engine for Investigating Human Trafficking
+</li>
+<li>
+        <span class="talk-type tutorial">[Tutorial: KDD 2017]</span><br>
+        Data Mining in Unusual Domains with Information-rich Knowledge Graph Construction, Inference and Search<br>Co-tutor: Pedro Szekely
+</li>
+</ul>
+  </div>
 </div>
 
 <div class="partner-badge">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
+    We are always looking for good collaborations, directed research students
+    and interns. If you're interested, drop us a note!
 </div>
 
 </body>
 </html>
-
