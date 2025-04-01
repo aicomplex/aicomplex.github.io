@@ -108,11 +108,11 @@ ul.publication-list li {
   left: 20px;
   width: 150px;
   background-color: #fff;
-  border-radius: 8px; /* outer box roundness */
+  border-radius: 0; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 0; /* remove top padding */
+  padding: 0;
   z-index: 1000;
-  transition: top 0.3s ease-out; /* smooth scroll-following */
+  transition: top 0.3s ease-out;
 }
 
 .year-sidebar-header {
@@ -129,7 +129,7 @@ ul.publication-list li {
 .year-sidebar ul {
   list-style: none;
   margin: 0;
-  padding: 10px; /* now applies only to the list area */
+  padding: 10px;
 }
 
 .year-sidebar li {
@@ -142,7 +142,7 @@ ul.publication-list li {
   color: black;
   text-decoration: none;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 2px; /* softer corners for year buttons */
   font-size: 14px;
   font-weight: bold;
   text-align: center;
@@ -152,6 +152,7 @@ ul.publication-list li {
 .year-link:hover {
   background-color: #bbb;
 }
+
 
 
 
