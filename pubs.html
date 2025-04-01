@@ -1168,5 +1168,25 @@ ul.publication-list li {
 </ul>
   </div>
 </div>
+  <script>
+  const sidebar = document.querySelector('.year-sidebar');
+  let currentTop = 180; // initial top position
+  let targetTop = 180;
+
+  const animateSidebar = () => {
+    const scrollY = window.scrollY;
+    targetTop = Math.max(180, scrollY + 100); // follow scroll but with a buffer
+
+    // Easing: move a small step toward the targetTop
+    currentTop += (targetTop - currentTop) * 0.1;
+
+    sidebar.style.top = `${currentTop}px`;
+
+    requestAnimationFrame(animateSidebar);
+  };
+
+  animateSidebar();
+</script>
+
 </body>
 </html>
