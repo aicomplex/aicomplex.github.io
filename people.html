@@ -54,7 +54,7 @@ body {
   width: auto; 
 }
 #logo2 {
-  height: 115px; 
+  height: 140px; 
   width: auto; 
 }
 
@@ -282,6 +282,37 @@ body {
   font-size: 24px; 
 }
 
+.alumni-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.alumni-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.alumni-column ul {
+  margin-top: 0;
+}
+
+.alumni-column li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #eee;
+}
+
+/* Removing the hover background color effect */
+.alumni-column li:hover {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .alumni-list {
+    flex-direction: column;
+  }
+}
+
 .partner-badge {
   background-color: #000; 
   color: white; 
@@ -430,6 +461,7 @@ body {
       <h2>Masters Students</h2>
       <ul class="students-list">
         <li><strong>Daiqi He</strong> – M.S. in Analytics, USC</li>
+        <li><strong>Ashwath Vaithinathan Aravindan</strong> – M.S. in Computer Science, USC</li>
       </ul>
     </div>
     
@@ -444,24 +476,71 @@ body {
     <div class="alumni-section">
       <h2>Alumni</h2>
       <p style="font-family: 'Sunflower', sans-serif; font-size: 20px;">AICS is fortunate to have hosted several valuable research contributors and students over the last few years.</p>
-      <ul class="students-list">
-        <li><strong>Vishal Patil</strong> – Graduate, USC</li>
-        <li><strong>Min-Hsueh Chiu</strong> – Research Engineer in ISI, Graduate, USC</li>
-        <li><strong>Erica Okeh</strong> – Undergraduate, Howard University</li>
-        <li><strong>John Lim</strong> – Undergraduate, Northwestern</li>
-        <li><strong>Shree Vaishnavi Bacha</strong> – Graduate, USC</li>
-        <li><strong>Khanin Sisaengsuwanchai</strong> – Graduate, USC</li>
-        <li><strong>Adin Aberbach</strong> – Undergraduate, Swarthmore</li>
-        <li><strong>Yining Ma</strong> – Graduate, USC</li>
-        <li><strong>Revanth Yamani</strong> – Graduate, USC</li>
-        <li><strong>Anik Mandal</strong> – Undergraduate, IIT Kharagpur</li>
-        <li><strong>David Cody Lingan</strong> – Undergraduate, Michigan State</li>
-        <li><strong>Junyu Ren</strong> – Undergraduate, Tsinghua</li>
-        <li><strong>Gwen Fang</strong> – Undergraduate, USC</li>
-        <li><strong>Stephanie Kim</strong> – Undergraduate, University of Chicago</li>
-        <li><strong>Maia Nkonabang</strong> – Undergraduate, USC</li>
-        <li><strong>Daisy Zhou</strong> – Undergraduate, USC</li>
-      </ul>
+      <div class="alumni-list">
+        <div class="alumni-column">
+          <ul class="students-list">
+            <li><strong>Vishal Patil</strong> – USC, Graduate</li>
+            <li><strong>Min-Hsueh Chiu</strong> – Research Engineer in ISI, USC, Graduate</li>
+            <li><strong>Shree Vaishnavi Bacha</strong> – USC, Graduate</li>
+            <li><strong>Revanth Yamani</strong> – USC, Graduate</li>
+            <li><strong>Yining Ma</strong> – USC, Graduate</li>
+            <li><strong>Khanin Sisaengsuwanchai</strong> – USC, Graduate</li>
+            <li><strong>Tito Alexandre Trindade Grine</strong> – External, Graduate</li>
+            <li><strong>Zhijie Lin</strong> – USC, Graduate</li>
+            <li><strong>Yongyi Ji</strong> – USC, Graduate</li>
+            <li><strong>Sara Melotte</strong> – USC, Graduate</li>
+            <li><strong>Akarsh Nagaraj</strong> – USC, Graduate</li>
+            <li><strong>Yuesheng Luo</strong> – USC, Graduate</li>
+            <li><strong>Kyle Wang</strong> – USC, Graduate</li>
+            <li><strong>Hongyu Li</strong> – USC, Graduate</li>
+            <li><strong>Lu Wang</strong> – USC, Graduate</li>
+            <li><strong>Shilpa Thomas</strong> – USC, Graduate</li>
+            <li><strong>Akarsh Dang</strong> – USC, Graduate</li>
+            <li><strong>Jiayuan Ding</strong> – USC, Graduate</li>
+            <li><strong>Ravi Kiran Selvam</strong> – USC, Graduate</li>
+            <li><strong>Minda Hu</strong> – USC, Graduate</li>
+            <li><strong>Peilin Zhou</strong> – USC, Graduate</li>
+            <li><strong>Shixiang Zhu</strong> – USC, Graduate</li>
+            <li><strong>Xin Huang</strong> – USC, Graduate</li>
+            <li><strong>Xuefeng Yan</strong> – USC, Graduate</li>
+            <li><strong>Jianheng Hou</strong> – USC, Graduate</li>
+            <li><strong>Bruce Deng</strong> – High School, Intern</li>
+            <li><strong>Sanya Khatter</strong> – USC, Undergraduate</li>
+          </ul>
+        </div>
+        <div class="alumni-column">
+          <ul class="students-list">
+            <li><strong>Shuo Zhang</strong> – USC, Graduate</li>
+            <li><strong>Yao Gu</strong> – USC, Graduate</li>
+            <li><strong>Mozhdeh Gheini</strong> – USC, Graduate</li>
+            <li><strong>Fan Pan</strong> – USC, Graduate</li>
+            <li><strong>Zihao Zhai</strong> – USC, Graduate</li>
+            <li><strong>Haotian Zhang</strong> – USC, Graduate</li>
+            <li><strong>Rahul Kapoor</strong> – USC, Graduate</li>
+            <li><strong>Yixiang Yao</strong> – USC, Graduate</li>
+            <li><strong>Pulkit Manocha</strong> – USC, Graduate</li>
+            <li><strong>Jing Peng</strong> – USC, Graduate</li>
+            <li><strong>Qiaozhi Song</strong> – USC, Graduate</li>
+            <li><strong>Daye Nam</strong> – USC, Graduate</li>
+            <li><strong>Runqi Shao</strong> – USC, Graduate</li>
+            <li><strong>I-Hui Huang</strong> – USC, Graduate</li>
+            <li><strong>Fanghao Luo</strong> – USC, Graduate</li>
+            <li><strong>Pratik Kabara</strong> – USC, Graduate</li>
+            <li><strong>Erica Okeh</strong> – Howard University, Undergraduate</li>
+            <li><strong>John Lim</strong> – Northwestern, Undergraduate</li>
+            <li><strong>Adin Aberbach</strong> – Swarthmore, Undergraduate</li>
+            <li><strong>Anik Mandal</strong> – IIT Kharagpur, Undergraduate</li>
+            <li><strong>David Cody Lingan</strong> – Michigan State, Undergraduate</li>
+            <li><strong>Junyu Ren</strong> – Tsinghua, Undergraduate</li>
+            <li><strong>Gwen Fang</strong> – USC, Undergraduate</li>
+            <li><strong>Stephanie Kim</strong> – University of Chicago, Undergraduate</li>
+            <li><strong>Maia Nkonabang</strong> – USC, Undergraduate</li>
+            <li><strong>Daisy Zhou</strong> – USC, Undergraduate</li>
+            <li><strong>Herry Wang</strong> – USC, Undergraduate</li>
+
+          </ul>
+        </div>
+      </div>
     </div>
 </div>
 
