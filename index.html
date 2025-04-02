@@ -95,7 +95,35 @@ body {
   background-color: #f1f1f1;
   padding: 20px;
 }
+.tooltip {
+  /* position: fixed; - removed */
+  display: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px; /* Increased width for fixed position */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-family: 'Sunflower', sans-serif;
+  transition: opacity 0.3s ease;
+  border-left: 4px solid #3c4c4e;
+  /* pointer-events: none; - removed to allow scrolling if needed */
+}
 
+.tooltip-title {
+  font-size: 22px; /* Increased from 20px */
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2a3638;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.tooltip-content {
+  font-size: 18px; /* Increased from 16px */
+  line-height: 1.4;
+  color: #333;
+}
 .main {
   -ms-flex: 70%;
   flex: 70%;
@@ -277,8 +305,18 @@ body {
   </span>
 </div>
 
-<!-- In the body section, update the paragraph: -->
+<!-- In the body section, update the paragraph placement: -->
   <div class="main">
+      <!-- Replacing static image with interactive Venn diagram -->
+      <div style="max-width:100%; height:650px; display:block; margin:30px auto; position:relative;">
+        <canvas id="vennCanvas" width="1000" height="650" style="max-width:100%; height:auto; display:block; margin:0 auto;"></canvas>
+        <!-- Moved tooltip outside of canvas container and positioned it below -->
+      </div>
+      
+      <!-- Fixed position tooltip below the Venn diagram -->
+      <div id="tooltip" class="tooltip" style="position:static; display:none; margin:0 auto 30px; max-width:600px;"></div>
+      
+      <!-- Moved paragraph to appear below the Venn diagram -->
       <p>
         <strong>AICS</strong> conducts interdisciplinary research at the frontier of <strong>AI and complex 
         systems</strong>, in domains ranging from healthcare and e-commerce to social good
@@ -299,8 +337,8 @@ body {
         broadly covered in scientific press.
       </p>
       
-      <img src="venn_updated.png" alt="Ai and css" style="max-width:90%; height:auto; display:block; margin:30px auto;">
-      <button onclick="window.location.href='projects.html';" class="learn-more-btn" style="display:block; margin:20px auto;">Learn More</button>
+      <!-- Removed spacing div and moved button up -->
+      <button onclick="window.location.href='projects.html';" class="learn-more-btn" style="display:block; margin:20px auto 40px;">Learn More</button>
   </div>
 
 
@@ -312,7 +350,450 @@ body {
 and interns. If you're interested, drop us a note!
 </div>
 
+<!-- Replace the entire script section with this corrected version -->
+<script>
+// Venn diagram script
+document.addEventListener('DOMContentLoaded', function() {
+  const canvas = document.getElementById("vennCanvas");
+  const ctx = canvas.getContext("2d");
+  const tooltip = document.getElementById("tooltip");
 
+  // Enhanced colors and descriptions with grey tones
+  let circles = [
+    { 
+      x: 400, // Adjusted to center the diagram properly
+      y: 325, // Centered on larger canvas
+      r: 220, // Increased radius for bigger diagram
+      baseColor: "rgba(80, 80, 80, 0.4)", 
+      hoverColor: "rgba(80, 80, 80, 0.6)",
+      label: "Artificial Intelligence", 
+      description: "Domain-specific knowledge graphs, generative AI and LLMs, open-world learning, and reasoning systems.", 
+      hovered: false 
+    },
+    { 
+      x: 650, // Adjusted to center the diagram properly
+      y: 325, // Centered on larger canvas
+      r: 220, // Increased radius for bigger diagram
+      baseColor: "rgba(180, 180, 180, 0.2)", 
+      hoverColor: "rgba(180, 180, 180, 0.35)", 
+      label: "Complex Systems", 
+      description: "Network theory, computational social science, and multi-agent systems.", 
+      hovered: false 
+    }
+  ];
+
+  // Intersection description
+  const intersectionDesc = "Combining AI with complex systems for social good applications, and machine common sense reasoning.";
+
+  // Animation variables
+  let animationFrameId;
+  let animationProgress = 0;
+  const animationDuration = 15; // frames
+
+  // Add logo image objects
+  const logos = {
+    ai: new Image(),
+    complex: new Image()
+  };
+
+  // Set logo sources
+  logos.ai.src = "ai-logo.png";
+  logos.complex.src = "complex-logo.png";
+
+  // Flag to track if images are loaded
+  let imagesLoaded = false;
+
+  // Load images before drawing
+  function loadImages() {
+    let loadedCount = 0;
+    const totalImages = Object.keys(logos).length;
+    
+    function onImageLoad() {
+      loadedCount++;
+      if (loadedCount === totalImages) {
+        imagesLoaded = true;
+        draw(); // Redraw once images are loaded
+      }
+    }
+    
+    // Set load handlers for each image
+    logos.ai.onload = onImageLoad;
+    logos.complex.onload = onImageLoad;
+    
+    // Handle potential errors
+    logos.ai.onerror = () => console.error("Error loading AI logo");
+    logos.complex.onerror = () => console.error("Error loading Complex Systems logo");
+  }
+
+  // Call loadImages to start loading
+  loadImages();
+
+  function easeOutQuad(t) {
+    return t * (2 - t);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw intersection first (if both hovered)
+    if (circles[0].hovered && circles[1].hovered) {
+      // Calculate intersection area
+      drawIntersection();
+    }
+
+    // Draw circles
+    circles.forEach((circle, index) => {
+      drawCircle(circle, index);
+    });
+    
+    // Draw labels with better positioning
+    drawLabels();
+  }
+
+  function drawIntersection() {
+    ctx.save();
+    ctx.globalCompositeOperation = "source-over";
+    
+    // Create clipping path for intersection
+    ctx.beginPath();
+    ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
+    ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
+    // Changed to yellow-toned intersection with reduced opacity
+    ctx.fillStyle = "rgba(227, 181, 5, 0.25)";
+    ctx.fill("evenodd");
+    
+    // Add subtle gradient to intersection with yellow tones - reduced contrast
+    const gradient = ctx.createRadialGradient(
+      (circles[0].x + circles[1].x) / 2, 
+      (circles[0].y + circles[1].y) / 2, 
+      0,
+      (circles[0].x + circles[1].x) / 2, 
+      (circles[0].y + circles[1].y) / 2, 
+      80
+    );
+    gradient.addColorStop(0, "rgba(227, 181, 5, 0.3)");
+    gradient.addColorStop(1, "rgba(227, 181, 5, 0.2)");
+    
+    ctx.beginPath();
+    ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
+    ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
+    ctx.fillStyle = gradient;
+    ctx.fill("evenodd");
+    
+    ctx.restore();
+  }
+  function drawCircle(circle, index) {
+      ctx.save();
+      
+      // Calculate current radius based on hover state and animation
+      // Always start with the base radius, not the expanded one
+      let currentRadius = circle.r;
+      
+      if (circle.hovered) {
+        if (animationProgress < animationDuration) {
+          const progress = easeOutQuad(animationProgress / animationDuration);
+          currentRadius = circle.r + (circle.r * 0.1 * progress);
+        } else {
+          currentRadius = circle.r * 1.1;
+        }
+      }
+      
+      // Draw main circle
+      ctx.beginPath();
+      ctx.arc(circle.x, circle.y, currentRadius, 0, Math.PI * 2);
+      
+      // Enhanced gradient fill with more depth and visual interest for static state
+      const gradient = ctx.createRadialGradient(
+        circle.x - currentRadius * 0.3,  // Moved light source for more dramatic effect
+        circle.y - currentRadius * 0.3,
+        0,
+        circle.x,
+        circle.y,
+        currentRadius * 1.2
+      );
+      
+      if (circle.hovered) {
+        gradient.addColorStop(0, circle.hoverColor);
+        gradient.addColorStop(0.7, circle.baseColor);
+        gradient.addColorStop(1, index === 0 ? "rgba(50, 50, 50, 0.3)" : "rgba(150, 150, 150, 0.25)");
+      } else {
+        // More interesting gradient even when not hovering - improved aesthetics
+        if (index === 0) {
+          // AI circle - darker, more sophisticated gradient
+          gradient.addColorStop(0, "rgba(255, 255, 255, 0.15)");
+          gradient.addColorStop(0.4, "rgba(100, 100, 100, 0.35)");
+          gradient.addColorStop(0.8, "rgba(70, 70, 70, 0.4)");
+          gradient.addColorStop(1, "rgba(40, 40, 40, 0.3)");
+        } else {
+          // Complex Systems circle - lighter gradient
+          gradient.addColorStop(0, "rgba(255, 255, 255, 0.2)");
+          gradient.addColorStop(0.4, "rgba(200, 200, 200, 0.25)");
+          gradient.addColorStop(0.8, "rgba(170, 170, 170, 0.3)");
+          gradient.addColorStop(1, "rgba(150, 150, 150, 0.25)");
+        }
+      }
+      
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      
+      // Enhanced shadow effect - slightly stronger for better visibility
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+      ctx.shadowBlur = 25;
+      ctx.shadowOffsetX = 3;
+      ctx.shadowOffsetY = 4;
+      
+      // Draw border with consistent thickness but enhanced style
+      ctx.lineWidth = 7;
+      
+      // Create a subtle gradient for the stroke with more contrast
+      const strokeGradient = ctx.createLinearGradient(
+        circle.x - currentRadius, 
+        circle.y - currentRadius,
+        circle.x + currentRadius, 
+        circle.y + currentRadius
+      );
+      
+      if (index === 1) {
+        strokeGradient.addColorStop(0, "rgba(180, 180, 190, 0.85)");
+        strokeGradient.addColorStop(1, "rgba(130, 130, 150, 0.7)");
+      } else {
+        strokeGradient.addColorStop(0, "rgba(90, 90, 90, 0.9)");
+        strokeGradient.addColorStop(1, "rgba(40, 40, 40, 0.8)");
+      }
+      
+      ctx.strokeStyle = strokeGradient;
+      ctx.stroke();
+      
+      // Draw logo if images are loaded
+      if (imagesLoaded) {
+        // Determine which logo to use based on index
+        const logo = index === 0 ? logos.ai : logos.complex;
+        
+        // Calculate logo size (proportional to circle size)
+        const logoSize = currentRadius * 1.6;
+        
+        // Adjust logo positions to move them further apart
+        let logoX, logoY;
+        if (index === 0) {
+          // Move AI logo to the left
+          logoX = circle.x - 40;
+          logoY = circle.y;
+        } else {
+          // Move Complex Systems logo to the right
+          logoX = circle.x + 40;
+          logoY = circle.y;
+        }
+        
+        // Center the logos in their circles
+        ctx.shadowColor = index === 0 ? 'rgba(60, 60, 60, 0.2)' : 'rgba(80, 80, 100, 0.2)';
+        ctx.shadowBlur = 10;
+        
+        // Set lower opacity to make logos lighter and faded
+        ctx.globalAlpha = 0.5;
+        
+        // Draw the logo with adjusted position
+        ctx.drawImage(
+          logo,
+          logoX - logoSize/2,
+          logoY - logoSize/2,
+          logoSize,
+          logoSize
+        );
+        
+        // Reset opacity
+        ctx.globalAlpha = 1.0;
+      }
+      
+      ctx.restore();
+    }
+
+  function drawLabels() {
+      ctx.save();
+      
+      circles.forEach((circle, index) => {
+        // Increased label sizes significantly - making them even bigger
+        ctx.font = circle.hovered ? "bold 38px 'Sunflower', Arial, sans-serif" : "bold 36px 'Sunflower', Arial, sans-serif";
+        ctx.textAlign = "center";
+        
+        // Position label - AI above circle, Complex Systems below circle
+        let labelY;
+        if (index === 0) {
+          // AI label above circle - grey color
+          labelY = circle.y - circle.r - 30;
+          ctx.fillStyle = "rgba(60, 60, 60, 0.95)";
+        } else {
+          // Complex Systems label below circle - grey color
+          labelY = circle.y + circle.r + 40;
+          ctx.fillStyle = "rgba(60, 60, 60, 0.95)";
+        }
+        
+        // Draw text without the outline for better visibility
+        ctx.fillText(circle.label, circle.x, labelY);
+      });
+      
+      // Draw intersection label if both hovered
+      if (circles[0].hovered && circles[1].hovered) {
+        const centerX = (circles[0].x + circles[1].x) / 2;
+        const centerY = circles[0].y;
+        
+        ctx.font = "bold 38px 'Sunflower', Arial, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#E3B505";
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+        ctx.shadowBlur = 5;
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
+        
+        // Changed to dark grey outline for intersection text
+        ctx.strokeStyle = 'rgba(50, 50, 50, 0.4)';
+        ctx.lineWidth = 9;
+        ctx.strokeText("AI + Complex Systems", centerX, centerY);
+        ctx.fillText("AI + Complex Systems", centerX, centerY);
+      }
+      
+      ctx.restore();
+    }
+
+  function getMousePos(canvas, evt) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: (evt.clientX - rect.left) * (canvas.width / rect.width),
+      y: (evt.clientY - rect.top) * (canvas.height / rect.height)
+    };
+  }
+
+  function updateHoverState(mousePos) {
+      let hoveredA = false, hoveredB = false;
+      let prevHoveredA = circles[0].hovered;
+      let prevHoveredB = circles[1].hovered;
+  
+      const dx0 = mousePos.x - circles[0].x;
+      const dy0 = mousePos.y - circles[0].y;
+      const dist0 = Math.sqrt(dx0 * dx0 + dy0 * dy0);
+      hoveredA = dist0 < circles[0].r;
+  
+      const dx1 = mousePos.x - circles[1].x;
+      const dy1 = mousePos.y - circles[1].y;
+      const dist1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
+      hoveredB = dist1 < circles[1].r;
+  
+      // Only reset animation if hover state changed
+      if (prevHoveredA !== hoveredA || prevHoveredB !== hoveredB) {
+        animationProgress = 0;
+        startAnimation();
+      }
+  
+      circles[0].hovered = hoveredA;
+      circles[1].hovered = hoveredB;
+  
+      // Update tooltip content with improved formatting
+      if (hoveredA && hoveredB) {
+        tooltip.innerHTML = `
+          <div class="tooltip-title">AI + Complex Systems</div>
+          <div class="tooltip-content">${intersectionDesc}</div>
+        `;
+      } else if (hoveredA) {
+        tooltip.innerHTML = `
+          <div class="tooltip-title">${circles[0].label}</div>
+          <div class="tooltip-content">${circles[0].description}</div>
+        `;
+      } else if (hoveredB) {
+        tooltip.innerHTML = `
+          <div class="tooltip-title">${circles[1].label}</div>
+          <div class="tooltip-content">${circles[1].description}</div>
+        `;
+      }
+      
+      // Show/hide tooltip with fade effect
+      if (hoveredA || hoveredB) {
+        tooltip.style.display = "block";
+        tooltip.style.opacity = 1;
+      } else {
+        tooltip.style.opacity = 0;
+        setTimeout(() => {
+          if (!circles[0].hovered && !circles[1].hovered) {
+            tooltip.style.display = "none";
+          }
+        }, 300);
+      }
+    }
+  
+    // Remove the tooltip positioning code from mousemove event
+    canvas.addEventListener("mousemove", function(evt) {
+      const mousePos = getMousePos(canvas, evt);
+      updateHoverState(mousePos);
+      
+      if (!animationFrameId) {
+        draw();
+      }
+    });
+
+  function startAnimation() {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+    
+    function animate() {
+      if (animationProgress < animationDuration) {
+        animationProgress++;
+        draw();
+        animationFrameId = requestAnimationFrame(animate);
+      } else {
+        animationFrameId = null;
+      }
+    }
+    
+    animationFrameId = requestAnimationFrame(animate);
+  }
+
+  // Consolidated mousemove event listener
+  canvas.addEventListener("mousemove", function(evt) {
+    const mousePos = getMousePos(canvas, evt);
+    updateHoverState(mousePos);
+    
+    // Position tooltip with minimal offset and ensure it's in the viewport
+    if (circles[0].hovered || circles[1].hovered) {
+      const tooltipWidth = 350;
+      const tooltipHeight = 170;
+      
+      // Calculate position to ensure tooltip stays in viewport
+      let leftPos = evt.pageX + 5;
+      let topPos = evt.pageY - 5;
+      
+      // Adjust if too close to right edge
+      if (leftPos + tooltipWidth > window.innerWidth) {
+        leftPos = evt.pageX - tooltipWidth - 5;
+      }
+      
+      // Adjust if too close to bottom edge
+      if (topPos + tooltipHeight > window.innerHeight) {
+        topPos = evt.pageY - tooltipHeight - 5;
+      }
+      
+      tooltip.style.left = leftPos + "px";
+      tooltip.style.top = topPos + "px";
+    }
+    
+    if (!animationFrameId) {
+      draw();
+    }
+  });
+
+  canvas.addEventListener("mouseleave", () => {
+    circles.forEach(c => c.hovered = false);
+    tooltip.style.opacity = 0;
+    setTimeout(() => { tooltip.style.display = "none"; }, 300);
+    
+    animationProgress = 0;
+    startAnimation();
+  });
+
+  // Initial draw
+  draw();
+});
+</script>
 </body>
 </html>
+
+
 
