@@ -570,17 +570,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const logo = index === 0 ? logos.ai : logos.complex;
         
         // Calculate logo size (proportional to circle size)
-        const logoSize = currentRadius * 1.6;
+        const logoSize = currentRadius * 1.5;
         
         // Adjust logo positions to move them further apart
         let logoX, logoY;
         if (index === 0) {
           // Move AI logo to the left
-          logoX = circle.x - 40;
-          logoY = circle.y;
+          logoX = circle.x - 30;
+          logoY = circle.y + 10;
         } else {
           // Move Complex Systems logo to the right
-          logoX = circle.x + 40;
+          logoX = circle.x + 30;
           logoY = circle.y;
         }
         
