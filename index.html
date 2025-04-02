@@ -143,9 +143,9 @@ body {
   text-align: justify;
   padding: 25px;
   background-color: #f9f9f9;
-  border-left: 4px solid #3c4c4e;
+  border-left: 4px solid #fed802;  /* Changed from #3c4c4e to #fed802 for yellow accent */
   border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05), 0 0 0 1px rgba(254, 216, 2, 0.1);  /* Added subtle yellow glow */
 }
 
 .main p strong {
@@ -202,7 +202,7 @@ body {
 }
 
 .substack-link a i {
-  color: #FF6B00;
+  color: #fed802;
   font-size: 18px;
 }
 
@@ -216,7 +216,7 @@ body {
   padding: 10px 20px;
   background-color: #333333c7;
   color: white;
-  border: none;
+  border: 2px solid #333333c7;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
@@ -227,6 +227,8 @@ body {
 }
 
 .learn-more-btn:hover {
+  background-color: #fed802;
+  color: #333;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -458,11 +460,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.beginPath();
     ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
     ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-    // Changed to yellow-toned intersection with reduced opacity
-    ctx.fillStyle = "rgba(227, 181, 5, 0.25)";
+    // Changed to brighter yellow with the exact #fed802 color
+    ctx.fillStyle = "rgba(254, 216, 2, 0.25)";
     ctx.fill("evenodd");
     
-    // Add subtle gradient to intersection with yellow tones - reduced contrast
+    // Add subtle gradient to intersection with yellow tones - using #fed802
     const gradient = ctx.createRadialGradient(
       (circles[0].x + circles[1].x) / 2, 
       (circles[0].y + circles[1].y) / 2, 
@@ -471,8 +473,8 @@ document.addEventListener('DOMContentLoaded', function() {
       (circles[0].y + circles[1].y) / 2, 
       80
     );
-    gradient.addColorStop(0, "rgba(227, 181, 5, 0.3)");
-    gradient.addColorStop(1, "rgba(227, 181, 5, 0.2)");
+    gradient.addColorStop(0, "rgba(254, 216, 2, 0.3)");
+    gradient.addColorStop(1, "rgba(254, 216, 2, 0.2)");
     
     ctx.beginPath();
     ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
@@ -570,7 +572,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const logo = index === 0 ? logos.ai : logos.complex;
         
         // Calculate logo size (proportional to circle size)
-        const logoSize = currentRadius * 1.5;
+        const logoSize = currentRadius * 1.7;
         
         // Adjust logo positions to move them further apart
         let logoX, logoY;
@@ -618,13 +620,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Position label - AI above circle, Complex Systems below circle
         let labelY;
         if (index === 0) {
-          // AI label above circle - grey color
+          // AI label above circle - changed to yellow color
           labelY = circle.y - circle.r - 30;
-          ctx.fillStyle = "rgba(60, 60, 60, 0.95)";
+          ctx.fillStyle = "#fed802";
         } else {
-          // Complex Systems label below circle - grey color
+          // Complex Systems label below circle - changed to yellow color
           labelY = circle.y + circle.r + 40;
-          ctx.fillStyle = "rgba(60, 60, 60, 0.95)";
+          ctx.fillStyle = "#fed802";
         }
         
         // Draw text without the outline for better visibility
@@ -633,12 +635,13 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Draw intersection label if both hovered
       if (circles[0].hovered && circles[1].hovered) {
+        // Rest of the intersection label code remains the same
         const centerX = (circles[0].x + circles[1].x) / 2;
         const centerY = circles[0].y;
         
         ctx.font = "bold 38px 'Sunflower', Arial, sans-serif";
         ctx.textAlign = "center";
-        ctx.fillStyle = "#E3B505";
+        ctx.fillStyle = "#fed802";
         ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
         ctx.shadowBlur = 5;
         ctx.shadowOffsetX = 1;
