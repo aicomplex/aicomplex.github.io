@@ -320,23 +320,19 @@ body {
       
       <!-- Moved paragraph to appear below the Venn diagram -->
       <p>
-        <strong>AICS</strong> conducts interdisciplinary research at the frontier of <strong>AI and complex 
+        • At <strong>AICS</strong>, we conducts interdisciplinary research at the frontier of <strong>AI and complex 
         systems</strong>, in domains ranging from healthcare and e-commerce to social good
         applications like fighting human trafficking.<br><br>
         
         • We develop AI systems that perform well, while still being robust and trustworthy, by combining the best 
         of knowledge representation research (such as <strong>knowledge graphs, 
         ontologies, and symbolic reasoning</strong>) with more recent <strong>large language models
-        (LLMs)</strong>.<br><br>
-        
-        • Our fundamental AI research in open-world learning and common 
+        (LLMs)</strong>. Our fundamental AI research in open-world learning and common 
         sense reasoning are important elements in eventually building an artificial 
-        general intelligence (AGI). We also use AI and systems engineering for computational social science.<br><br>
+        general intelligence (AGI).<br><br>
         
-        • Our work in complex systems has been used to
-        study illicit financial networks, model political campaign finance dynamics, 
-        and better understand policy impacts during COVID-19. Our work has been published and presented across almost a hundred peer-reviewed venues and 
-        broadly covered in scientific press.
+        • We also study complex systems at scale, from modeling political campaign finance and illicit financial networks to assessing the impacts of public policy during COVID-19. 
+         Our work has been published and presented across almost a hundred peer-reviewed venues and broadly covered in scientific press.
       </p>
       
       <!-- Removed spacing div and moved button up -->
@@ -363,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Enhanced colors and descriptions with grey tones
   let circles = [
     { 
-      x: 400, // Adjusted to center the diagram properly
+      x: 380, // Adjusted to center the diagram properly
       y: 325, // Centered on larger canvas
       r: 220, // Increased radius for bigger diagram
       baseColor: "rgba(80, 80, 80, 0.4)", 
@@ -373,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
       hovered: false 
     },
     { 
-      x: 650, // Adjusted to center the diagram properly
+      x: 670, // Adjusted to center the diagram properly
       y: 325, // Centered on larger canvas
       r: 220, // Increased radius for bigger diagram
       baseColor: "rgba(180, 180, 180, 0.2)", 
@@ -464,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.fillStyle = "rgba(254, 216, 2, 0.25)";
     ctx.fill("evenodd");
     
-    // Add subtle gradient to intersection with yellow tones - using #fed802
+
     const gradient = ctx.createRadialGradient(
       (circles[0].x + circles[1].x) / 2, 
       (circles[0].y + circles[1].y) / 2, 
@@ -545,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ctx.shadowOffsetY = 4;
       
       // Draw border with consistent thickness but enhanced style
-      ctx.lineWidth = 7;
+      ctx.lineWidth = 9;
       
       // Create a subtle gradient for the stroke with more contrast
       const strokeGradient = ctx.createLinearGradient(
@@ -566,7 +562,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ctx.strokeStyle = strokeGradient;
       ctx.stroke();
       
-      // Draw logo if images are loaded
+      // Draw logo 
       if (imagesLoaded) {
         // Determine which logo to use based on index
         const logo = index === 0 ? logos.ai : logos.complex;
@@ -578,11 +574,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let logoX, logoY;
         if (index === 0) {
           // Move AI logo to the left
-          logoX = circle.x - 30;
+          logoX = circle.x - 20;
           logoY = circle.y + 10;
         } else {
           // Move Complex Systems logo to the right
-          logoX = circle.x + 30;
+          logoX = circle.x + 20;
           logoY = circle.y;
         }
         
@@ -591,7 +587,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.shadowBlur = 10;
         
         // Set lower opacity to make logos lighter and faded
-        ctx.globalAlpha = 0.5;
+        ctx.globalAlpha = 0.4;
         
         // Draw the logo with adjusted position
         ctx.drawImage(
@@ -625,7 +621,7 @@ document.addEventListener('DOMContentLoaded', function() {
           ctx.fillStyle = "#fed802";
         } else {
           // Complex Systems label below circle - changed to yellow color
-          labelY = circle.y + circle.r + 40;
+          labelY = circle.y + circle.r + 55;
           ctx.fillStyle = "#fed802";
         }
         
