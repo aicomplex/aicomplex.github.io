@@ -112,7 +112,7 @@ ul.publication-list li {
 
 .year-sidebar {
   position: absolute;
-  top: 280px; 
+  top: 380px; /* Changed from 280px to 320px to move it lower */
   left: 20px;
   width: 150px;
   background-color: #fff;
@@ -207,19 +207,20 @@ ul.publication-list li {
 
 
 <div class="year-sidebar">
-  <div class="year-sidebar-header">Browse by Year</div>
-  <ul>
-    <li><a href="#year-2025" class="year-link">2025</a></li>
-    <li><a href="#year-2024" class="year-link">2024</a></li>
-    <li><a href="#year-2023" class="year-link">2023</a></li>
-    <li><a href="#year-2022" class="year-link">2022</a></li>
-    <li><a href="#year-2021" class="year-link">2021</a></li>
-    <li><a href="#year-2020" class="year-link">2020</a></li>
-    <li><a href="#year-2019" class="year-link">2019</a></li>
-    <li><a href="#year-2018" class="year-link">2018</a></li>
-    <li><a href="#year-2017" class="year-link">2017 and before</a></li>
-  </ul>
-</div>
+        <div class="year-sidebar-header">Browse by Year</div>
+        <ul>
+          <li><a href="#year-2025" class="year-link">2025</a></li>
+          <li><a href="#year-2024" class="year-link">2024</a></li>
+          <li><a href="#year-2023" class="year-link">2023</a></li>
+          <li><a href="#year-2022" class="year-link">2022</a></li>
+          <li><a href="#year-2021" class="year-link">2021</a></li>
+          <li><a href="#year-2020" class="year-link">2020</a></li>
+          <li><a href="#year-2019" class="year-link">2019</a></li>
+          <li><a href="#year-2018" class="year-link">2018</a></li>
+          <li><a href="#year-2017" class="year-link">2017 and before</a></li>
+          <li><a href="#" style="display: block; text-align: center; padding: 10px; margin-top: 10px; color: #333; text-decoration: none; font-family: 'Sunflower', sans-serif; font-weight: bold;">Return to Top ↑</a></li>
+        </ul>
+      </div>
 
   
 <div class="row">
@@ -1186,41 +1187,39 @@ ul.publication-list li {
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           const sidebar = document.querySelector(".year-sidebar");
-          const baseOffset = 240;
-          let lastScrollY = window.scrollY;
-          let ticking = false;
+          const navbar = document.querySelector(".navbar");
+          const navbarBottom = navbar.getBoundingClientRect().bottom + window.scrollY;
+          const initialOffset = 50; // Extra padding below navbar
+          
+          // Set initial position
+          sidebar.style.top = (navbarBottom + initialOffset) + 'px';
           
           // Add smooth transition to the sidebar
           sidebar.style.transition = "top 0.2s ease-out";
-      
-          const updateSidebarPosition = () => {
-            // Calculate the difference between current scroll and last position
-            const diff = Math.abs(window.scrollY - lastScrollY);
-            
-            // Only update if scrolled more than 5px to reduce small bounces
-            if (diff > 5) {
-              sidebar.style.top = `${window.scrollY + baseOffset}px`;
-              lastScrollY = window.scrollY;
-            }
-            
-            ticking = false;
-          };
-      
+          
+          // Handle scrolling
+          let ticking = false;
+          
           window.addEventListener("scroll", () => {
             if (!ticking) {
-              // Throttle the scroll event
               window.requestAnimationFrame(() => {
-                updateSidebarPosition();
+                // Calculate new position based on scroll
+                const newTop = navbarBottom + initialOffset;
+                
+                // Only update if the sidebar would be visible (not above viewport)
+                if (window.scrollY < navbarBottom) {
+                  sidebar.style.top = newTop + 'px';
+                } else {
+                  // Keep a fixed distance from top of viewport when scrolled past navbar
+                  sidebar.style.top = (window.scrollY + initialOffset) + 'px';
+                }
+                
                 ticking = false;
               });
               ticking = true;
             }
           });
-          
-          // Set initial position
-          sidebar.style.top = `${window.scrollY + baseOffset}px`;
         });
       </script>
-
-</body>
+      </body>
 </html>
