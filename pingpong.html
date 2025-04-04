@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Pong HTML Game</title>
+  <meta charset="UTF-8">
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    border: none;
+    box-shadow: none; /* Removed the shadow effect */
+  }
+  </style>
+</head>
+<body>
+<canvas width="750" height="585" id="game"></canvas>
+<script>
+const canvas = document.getElementById('game');
+const context = canvas.getContext('2d');
+const grid = 20; // Increased from 15 to 20
+const paddleHeight = grid * 5; // 100
+const maxPaddleY = canvas.height - grid - paddleHeight;
+
+var paddleSpeed = 6;
+var ballSpeed = 5;
+
+const leftPaddle = {
+  // start in the middle of the game on the left side
+  x: grid * 2,
+  y: canvas.height / 2 - paddleHeight / 2,
+  width: grid,
+  height: paddleHeight,
+
+  // paddle velocity
+  dy: 0
+};
+const rightPaddle = {
+  // start in the middle of the game on the right side
+  x: canvas.width - grid * 3,
+  y: canvas.height / 2 - paddleHeight / 2,
+  width: grid,
+  height: paddleHeight,
+
+  // paddle velocity
+  dy: 0
+};
+const ball = {
+  // start in the middle of the game
+  x: canvas.width / 2,
+  y: canvas.height / 2,
+  width: grid,
+  height: grid,
+
+  // keep track of when need to reset the ball position
+  resetting: false,
+
+  // ball velocity (start going to the top-right corner)
+  dx: ballSpeed,
+  dy: -ballSpeed
+};
+
+// check for collision between two objects using axis-aligned bounding box (AABB)
+// @see https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+function collides(obj1, obj2) {
+  return obj1.x < obj2.x + obj2.width &&
+         obj1.x + obj1.width > obj2.x &&
+         obj1.y < obj2.y + obj2.height &&
+         obj1.y + obj1.height > obj2.y;
+}
+
+// AI for paddles to follow the ball
+function updatePaddleAI() {
+  // Left paddle AI
+  const leftPaddleCenter = leftPaddle.y + paddleHeight/2;
+  if (ball.dx < 0) { // Only move if ball is coming towards this paddle
+    if (leftPaddleCenter < ball.y - paddleHeight/4) {
+      leftPaddle.dy = paddleSpeed;
+    } else if (leftPaddleCenter > ball.y + paddleHeight/4) {
+      leftPaddle.dy = -paddleSpeed;
+    } else {
+      leftPaddle.dy = 0;
+    }
+  } else {
+    // Return to center when ball is moving away
+    if (leftPaddleCenter < canvas.height/2 - paddleHeight/4) {
+      leftPaddle.dy = paddleSpeed/2;
+    } else if (leftPaddleCenter > canvas.height/2 + paddleHeight/4) {
+      leftPaddle.dy = -paddleSpeed/2;
+    } else {
+      leftPaddle.dy = 0;
+    }
+  }
+  
+  // Right paddle AI
+  const rightPaddleCenter = rightPaddle.y + paddleHeight/2;
+  if (ball.dx > 0) { // Only move if ball is coming towards this paddle
+    if (rightPaddleCenter < ball.y - paddleHeight/4) {
+      rightPaddle.dy = paddleSpeed;
+    } else if (rightPaddleCenter > ball.y + paddleHeight/4) {
+      rightPaddle.dy = -paddleSpeed;
+    } else {
+      rightPaddle.dy = 0;
+    }
+  } else {
+    // Return to center when ball is moving away
+    if (rightPaddleCenter < canvas.height/2 - paddleHeight/4) {
+      rightPaddle.dy = paddleSpeed/2;
+    } else if (rightPaddleCenter > canvas.height/2 + paddleHeight/4) {
+      rightPaddle.dy = -paddleSpeed/2;
+    } else {
+      rightPaddle.dy = 0;
+    }
+  }
+}
+
+// Draw a more detailed, round ball with highlights and shadow
+function drawBall() {
+  // Create a pixelated round ball using even smaller squares for more granularity
+  const pixelSize = 2; // Even smaller pixel size for smoother appearance
+  const ballRadius = grid / 1.4; // Slightly larger radius
+  const centerX = ball.x + ball.width/2;
+  const centerY = ball.y + ball.height/2;
+  
+  // Draw ball shadow first (gray pixels offset from the ball)
+  context.fillStyle = '#777777'; // Lighter gray for shadow
+  for (let y = -ballRadius; y <= ballRadius; y += pixelSize) {
+    for (let x = -ballRadius; x <= ballRadius; x += pixelSize) {
+      // If this pixel is within the circle radius
+      if (x*x + y*y <= ballRadius*ballRadius) {
+        context.fillRect(
+          Math.floor(centerX + x + 4), 
+          Math.floor(centerY + y + 4), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+  
+  // Draw the white ball
+  context.fillStyle = 'white';
+  for (let y = -ballRadius; y <= ballRadius; y += pixelSize) {
+    for (let x = -ballRadius; x <= ballRadius; x += pixelSize) {
+      // If this pixel is within the circle radius
+      if (x*x + y*y <= ballRadius*ballRadius) {
+        context.fillRect(
+          Math.floor(centerX + x), 
+          Math.floor(centerY + y), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+  
+  // Add black pixel highlights for depth and dimension
+  context.fillStyle = 'black';
+  
+  // Top-left shadow (inner part of the ball)
+  for (let y = -ballRadius/2; y < 0; y += pixelSize) {
+    for (let x = -ballRadius/2; x < 0; x += pixelSize) {
+      // Only add highlights in certain areas for a 3D effect
+      if (x*x + y*y <= (ballRadius/2.5)*(ballRadius/2.5) && 
+          x*x + y*y >= (ballRadius/4)*(ballRadius/4)) {
+        context.fillRect(
+          Math.floor(centerX + x), 
+          Math.floor(centerY + y), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+  
+  // Bottom-right highlight (reflection)
+  context.fillStyle = 'white';
+  for (let y = ballRadius/6; y < ballRadius/2; y += pixelSize) {
+    for (let x = ballRadius/6; x < ballRadius/2; x += pixelSize) {
+      // Small bright spot for reflection
+      if (x*x + y*y <= (ballRadius/4)*(ballRadius/4)) {
+        context.fillRect(
+          Math.floor(centerX + x), 
+          Math.floor(centerY + y), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+}
+
+// Draw the court with more detailed pixel art and 3D effects
+function drawCourt() {
+  // Draw gray shadows for 3D effect - using lighter gray
+  context.fillStyle = '#777777'; // Lighter gray for shadows
+  
+  // Shadow for top wall
+  for (let x = 3; x < canvas.width; x += 3) {
+    context.fillRect(x, 3, 3, grid);
+  }
+  
+  // Shadow for bottom wall
+  for (let x = 3; x < canvas.width; x += 3) {
+    context.fillRect(x, canvas.height - grid + 3, 3, grid);
+  }
+  
+  // Now draw the white walls
+  context.fillStyle = 'white';
+  
+  // Pixelated top wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x, 0, 3, grid);
+  }
+  
+  // Pixelated bottom wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x, canvas.height - grid, 3, grid);
+  }
+  
+  // Center line with thicker pixelated dashes (no 3D effect)
+  const dashHeight = grid / 2;
+  const gapHeight = grid;
+  
+  // Draw white center line with thicker dashes
+  context.fillStyle = 'white';
+  for (let y = grid * 1.5; y < canvas.height - grid * 1.5; y += dashHeight + gapHeight) {
+    // Each dash is made of small pixel blocks, but thicker
+    for (let py = 0; py < dashHeight; py += 3) {
+      context.fillRect(canvas.width / 2 - 2, y + py, 4, 3); // Increased width from 2 to 4
+    }
+  }
+  
+  // Draw pixelated "AI" and "CS" text with 3D effect
+  drawPixelText("AI", canvas.width / 4 - 60, 70);
+  drawPixelText("CS", canvas.width * 3/4 - 60, 70);
+}
+
+// Draw a more pixelated paddle with 3D effect
+function drawPaddle(paddle, isLeft) {
+  // Draw gray shadow for 3D effect - using lighter gray
+  context.fillStyle = '#777777'; // Lighter gray for shadows
+  
+  // Draw paddle shadow
+  for (let y = 0; y < paddle.height; y += 3) {
+    for (let x = 0; x < paddle.width; x += 3) {
+      context.fillRect(paddle.x + x + 3, paddle.y + y + 3, 3, 3);
+    }
+  }
+  
+  // Draw the white paddle on top
+  context.fillStyle = 'white';
+  
+  // Draw paddle as a grid of pixels
+  for (let y = 0; y < paddle.height; y += 3) {
+    for (let x = 0; x < paddle.width; x += 3) {
+      context.fillRect(paddle.x + x, paddle.y + y, 3, 3);
+    }
+  }
+}
+
+// Function to draw pixelated text with 3D effect
+function drawPixelText(text, x, y) {
+  const pixelSize = 10; // Large text size
+  
+  // First draw gray shadow for 3D effect - using lighter gray
+  context.fillStyle = '#777777'; // Lighter gray for shadows
+  let shadowX = x + 3;
+  let shadowY = y + 3;
+  
+  // Pixel patterns for letters remain the same
+  const letters = {
+    'A': [
+      [0,1,1,0],
+      [1,0,0,1],
+      [1,1,1,1],
+      [1,0,0,1],
+      [1,0,0,1]
+    ],
+    'I': [
+      [1,1,1],
+      [0,1,0],
+      [0,1,0],
+      [0,1,0],
+      [1,1,1]
+    ],
+    'C': [
+      [0,1,1,1],
+      [1,0,0,0],
+      [1,0,0,0],
+      [1,0,0,0],
+      [0,1,1,1]
+    ],
+    'S': [
+      [0,1,1,1],
+      [1,0,0,0],
+      [0,1,1,0],
+      [0,0,0,1],
+      [1,1,1,0]
+    ]
+  };
+  
+  // Draw shadow first
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
+    if (letters[letter]) {
+      const pattern = letters[letter];
+      
+      // Draw shadow pixel by pixel
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          if (pattern[row][col] === 1) {
+            context.fillRect(
+              shadowX + col * pixelSize,
+              shadowY + row * pixelSize,
+              pixelSize,
+              pixelSize
+            );
+          }
+        }
+      }
+      
+      // Move to the next letter position
+      shadowX += (pattern[0].length + 2) * pixelSize;
+    }
+  }
+  
+  // Now draw the white text on top
+  context.fillStyle = 'white';
+  let currentX = x;
+  
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
+    if (letters[letter]) {
+      const pattern = letters[letter];
+      
+      // Draw the letter pixel by pixel
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          if (pattern[row][col] === 1) {
+            context.fillRect(
+              currentX + col * pixelSize,
+              y + row * pixelSize,
+              pixelSize,
+              pixelSize
+            );
+          }
+        }
+      }
+      
+      // Move to the next letter position
+      currentX += (pattern[0].length + 2) * pixelSize;
+    }
+  }
+}
+
+// game loop
+function loop() {
+  requestAnimationFrame(loop);
+  context.clearRect(0,0,canvas.width,canvas.height);
+
+  // Draw the court first (background)
+  drawCourt();
+  
+  // Update AI for paddles
+  updatePaddleAI();
+
+  // move paddles by their velocity
+  leftPaddle.y += leftPaddle.dy;
+  rightPaddle.y += rightPaddle.dy;
+
+  // prevent paddles from going through walls
+  if (leftPaddle.y < grid) {
+    leftPaddle.y = grid;
+  }
+  else if (leftPaddle.y > maxPaddleY) {
+    leftPaddle.y = maxPaddleY;
+  }
+
+  if (rightPaddle.y < grid) {
+    rightPaddle.y = grid;
+  }
+  else if (rightPaddle.y > maxPaddleY) {
+    rightPaddle.y = maxPaddleY;
+  }
+
+  // Draw paddles with enhanced styling
+  drawPaddle(leftPaddle, true);
+  drawPaddle(rightPaddle, false);
+
+  // move ball by its velocity
+  ball.x += ball.dx;
+  ball.y += ball.dy;
+
+  // prevent ball from going through walls by changing its velocity
+  if (ball.y < grid) {
+    ball.y = grid;
+    ball.dy *= -1;
+  }
+  else if (ball.y + grid * 2 > canvas.height - grid) {
+    ball.y = canvas.height - grid * 3;
+    ball.dy *= -1;
+  }
+
+  // reset ball if it goes past paddle (but only if we haven't already done so)
+  if ((ball.x < 0 || ball.x > canvas.width) && !ball.resetting) {
+    ball.resetting = true;
+
+    // give some time for the player to recover before launching the ball again
+    setTimeout(() => {
+      ball.resetting = false;
+      ball.x = canvas.width / 2;
+      ball.y = canvas.height / 2;
+      
+      // Randomize ball direction after reset
+      ball.dx = (Math.random() > 0.5 ? 1 : -1) * ballSpeed;
+      ball.dy = (Math.random() > 0.5 ? 1 : -1) * ballSpeed;
+    }, 400);
+  }
+
+  // check to see if ball collides with paddle. if they do change x velocity
+  if (collides(ball, leftPaddle)) {
+    ball.dx *= -1;
+    ball.x = leftPaddle.x + leftPaddle.width; // Adjusted for paddle
+    ball.dy = (ball.dy + (Math.random() * 2 - 1)) * 1.05;
+  }
+  else if (collides(ball, rightPaddle)) {
+    ball.dx *= -1;
+    ball.x = rightPaddle.x - ball.width * 2; // Adjusted for larger ball
+    ball.dy = (ball.dy + (Math.random() * 2 - 1)) * 1.05;
+  }
+
+  // draw ball with the new function
+  drawBall();
+}
+
+// start the game
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

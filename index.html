@@ -15,8 +15,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #000; /* Changed from #f9f9f9 to black */
+  color: #fff; /* Changed from #333 to white for better contrast */
 }
 
 .header {
@@ -37,8 +37,10 @@ body {
 .header h1 {
   margin-left: 20px;
   margin-bottom: 0;
-  font-size: 36px;
+  font-size: 36px; /* Increased from 36px to 48px */
   font-family: 'Sunflower', sans-serif;
+  font-weight: 700; /* Added bold weight */
+  letter-spacing: 1px; /* Added letter spacing for better readability */
 }
 
 .logo {
@@ -127,7 +129,7 @@ body {
 .main {
   -ms-flex: 70%;
   flex: 70%;
-  background-color: white;
+  background-color: #000; /* Changed from white to black */
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -135,17 +137,17 @@ body {
 
 .main p {
   font-size: 22px;
-  color: #333;
+  color: #fff; /* Changed from #333 to white */
   font-family: 'Sunflower', sans-serif;
   line-height: 1.6;
   max-width: 900px;
   margin: 0 auto 30px;
   text-align: justify;
   padding: 25px;
-  background-color: #f9f9f9;
-  border-left: 4px solid #fed802;  /* Changed from #3c4c4e to #fed802 for yellow accent */
+  background-color: #111; /* Changed from #f9f9f9 to dark gray */
+  border-left: 4px solid #fed802;
   border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05), 0 0 0 1px rgba(254, 216, 2, 0.1);  /* Added subtle yellow glow */
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05), 0 0 0 1px rgba(254, 216, 2, 0.1);
 }
 
 .main p strong {
@@ -159,7 +161,7 @@ body {
 }
 
 .news-line {
-  background-color: transparent; 
+  background-color: black; /* Changed from transparent to black */
   color: #333; 
   padding: 10px 15px; 
   display: flex; 
@@ -260,7 +262,7 @@ body {
     flex-direction: column;
   }
   .header h1 {
-    font-size: 28px;
+    font-size: 32px; /* Adjusted responsive size */
   }
 }
 
@@ -281,10 +283,10 @@ body {
 <div class="header">
   <div class="left-content">
     <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
-    <h1>Artificial Intelligence and Complex Systems</h1>
+    <h1>Artificial Intelligence and Complex Systems (AICS)</h1>
   </div>
-  <a href="https://www.isi.edu/" target="_blank">
-    <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2">
+  <a href="https://www.isi.edu/" target="_blank" style="display: flex; align-items: center; padding: 0; margin-right: -10px;">
+    <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2" style="height: 160px; width: auto;">
   </a>
 </div>
 
@@ -299,497 +301,672 @@ body {
   <a href="gallery.html">Gallery</a>
 </div>
 
-<div class="news-line">
-  <span class="substack-link">
-    <a href="https://aiscientist.substack.com/">
-      <i class="fa fa-newspaper-o"></i> Stay ahead in AI with our regular Substack posts!
-    </a>
-  </span>
+<!-- In the body section, adding the ping pong game as main content -->
+<!-- Removing the news-line section -->
+
+<!-- Removing padding and margins to eliminate white borders -->
+<div style="display: flex; justify-content: center; align-items: center; background-color: black; padding: 0; margin: 0; height: calc(100vh - 150px); width: 100%;">
+  <canvas width="750" height="585" id="game"></canvas>
 </div>
 
-<!-- In the body section, update the paragraph placement: -->
-  <div class="main">
-      <!-- Replacing static image with interactive Venn diagram -->
-      <div style="max-width:100%; height:650px; display:block; margin:30px auto; position:relative;">
-        <canvas id="vennCanvas" width="1000" height="650" style="max-width:100%; height:auto; display:block; margin:0 auto;"></canvas>
-        <!-- Moved tooltip outside of canvas container and positioned it below -->
-      </div>
+<!-- Adding footer container -->
+<footer style="background-color: #111; color: white; padding: 10px 0; text-align: center; font-family: 'Sunflower', sans-serif; border-top: 1px solid #333;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; padding: 0 20px;">
+    <!-- Button container -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 15px;">
+      <!-- Contact Us button -->
+      <a href="mailto:kejriwal@isi.edu" class="footer-button" style="background-color: #222; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #444;">
+        <i class="fa fa-envelope" style="color: #fed802; margin-right: 10px; font-size: 18px;"></i>
+        <span style="font-size: 16px; font-weight: 500;">Contact Us</span>
+      </a>
       
-      <!-- Fixed position tooltip below the Venn diagram -->
-      <div id="tooltip" class="tooltip" style="position:static; display:none; margin:0 auto 30px; max-width:600px;"></div>
+      <!-- Substack button -->
+      <a href="https://aiscientist.substack.com/" target="_blank" class="footer-button" style="background-color: #222; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #444;">
+        <i class="fa fa-newspaper-o" style="color: #fed802; margin-right: 10px; font-size: 18px;"></i>
+        <span style="font-size: 16px; font-weight: 500;">Substack</span>
+      </a>
       
-      <!-- Moved paragraph to appear below the Venn diagram -->
-      <p>
-        • At <strong>AICS</strong>, we conducts interdisciplinary research at the frontier of <strong>AI and complex 
-        systems</strong>, in domains ranging from healthcare and e-commerce to social good
-        applications like fighting human trafficking.<br><br>
-        
-        • We develop AI systems that perform well, while still being robust and trustworthy, by combining the best 
-        of knowledge representation research (such as <strong>knowledge graphs, 
-        ontologies, and symbolic reasoning</strong>) with more recent <strong>large language models
-        (LLMs)</strong>. Our fundamental AI research in open-world learning and common 
-        sense reasoning are important elements in eventually building an artificial 
-        general intelligence (AGI).<br><br>
-        
-        • We also study complex systems at scale, from modeling political campaign finance and illicit financial networks to assessing the impacts of public policy during COVID-19. 
-         Our work has been published and presented across almost a hundred peer-reviewed venues and broadly covered in scientific press.
-      </p>
-      
-      <!-- Removed spacing div and moved button up -->
-      <button onclick="window.location.href='projects.html';" class="learn-more-btn" style="display:block; margin:20px auto 40px;">Learn More</button>
+      <!-- USC Viterbi button -->
+      <a href="https://viterbischool.usc.edu/" target="_blank" class="footer-button" style="background-color: #222; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #444;">
+        <i class="fa fa-university" style="color: #fed802; margin-right: 10px; font-size: 18px;"></i>
+        <span style="font-size: 16px; font-weight: 500;">USC Viterbi</span>
+      </a>
+    </div>
+    
+    <!-- Copyright info only -->
+    <div style="margin: 5px 0 0;">
+      <p style="margin: 0; font-size: 14px;">© 2025 Artificial Intelligence and Complex Systems</p>
+    </div>
   </div>
+  
+  <!-- Add hover effects for buttons -->
+  <style>
+    .footer-button:hover {
+      background-color: #333 !important;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-color: #fed802 !important;
+    }
+  </style>
+</footer>
 
-
-
-</div>
-
-<div class="partner-badge" style="padding: 30px; font-size: 22px;">
-        We are always looking for good collaborations, directed research students
-and interns. If you're interested, drop us a note!
-</div>
-
-<!-- Replace the entire script section with this corrected version -->
+<!-- Replace the Venn diagram script with the ping pong game script -->
 <script>
-// Venn diagram script
-document.addEventListener('DOMContentLoaded', function() {
-  const canvas = document.getElementById("vennCanvas");
-  const ctx = canvas.getContext("2d");
-  const tooltip = document.getElementById("tooltip");
+const canvas = document.getElementById('game');
+const context = canvas.getContext('2d');
 
-  // Enhanced colors and descriptions with grey tones
-  let circles = [
-    { 
-      x: 380, // Adjusted to center the diagram properly
-      y: 325, // Centered on larger canvas
-      r: 220, // Increased radius for bigger diagram
-      baseColor: "rgba(80, 80, 80, 0.4)", 
-      hoverColor: "rgba(80, 80, 80, 0.6)",
-      label: "Artificial Intelligence", 
-      description: "Domain-specific knowledge graphs, generative AI and LLMs, open-world learning, and reasoning systems.", 
-      hovered: false 
-    },
-    { 
-      x: 670, // Adjusted to center the diagram properly
-      y: 325, // Centered on larger canvas
-      r: 220, // Increased radius for bigger diagram
-      baseColor: "rgba(180, 180, 180, 0.2)", 
-      hoverColor: "rgba(180, 180, 180, 0.35)", 
-      label: "Complex Systems", 
-      description: "Network theory, computational social science, and multi-agent systems.", 
-      hovered: false 
+// Make canvas responsive
+function resizeCanvas() {
+  const container = canvas.parentElement;
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+  
+  // Set canvas to fill the container while maintaining aspect ratio
+  const aspectRatio = 1.5;
+  
+  // Calculate dimensions to fit the container
+  let newWidth, newHeight;
+  
+  if (containerWidth / containerHeight > aspectRatio) {
+    // Container is wider than needed for aspect ratio
+    newHeight = containerHeight;
+    newWidth = newHeight * aspectRatio;
+  } else {
+    // Container is taller than needed for aspect ratio
+    newWidth = containerWidth;
+    newHeight = newWidth / aspectRatio;
+  }
+  
+  // Set canvas size
+  canvas.width = newWidth;
+  canvas.height = newHeight;
+  
+  // Update game parameters after resize
+  updateGameParameters();
+}
+
+// Call resize on page load and window resize
+window.addEventListener('load', resizeCanvas);
+window.addEventListener('resize', resizeCanvas);
+
+// Game parameters that will be updated when canvas resizes
+let grid, paddleHeight, maxPaddleY, paddleSpeed, ballSpeed;
+// Add score tracking
+let leftScore = 0;
+let rightScore = 0;
+// Add particle system
+let particles = [];
+
+function updateGameParameters() {
+  // Scale game elements based on canvas size
+  grid = Math.max(15, Math.floor(canvas.width / 40));
+  paddleHeight = grid * 6;
+  maxPaddleY = canvas.height - grid - paddleHeight;
+  paddleSpeed = Math.max(5, Math.floor(canvas.width / 120));
+  ballSpeed = Math.max(4, Math.floor(canvas.width / 150));
+  
+  // Update paddle and ball positions/sizes
+  leftPaddle.width = grid;
+  leftPaddle.height = paddleHeight;
+  leftPaddle.x = grid * 2;
+  leftPaddle.y = canvas.height / 2 - paddleHeight / 2;
+  
+  rightPaddle.width = grid;
+  rightPaddle.height = paddleHeight;
+  rightPaddle.x = canvas.width - grid * 3;
+  rightPaddle.y = canvas.height / 2 - paddleHeight / 2;
+  
+  ball.width = grid;
+  ball.height = grid;
+  ball.x = canvas.width / 2;
+  ball.y = canvas.height / 2;
+  ball.dx = ball.dx > 0 ? ballSpeed : -ballSpeed;
+  ball.dy = ball.dy > 0 ? ballSpeed : -ballSpeed;
+}
+
+// Initial game parameters (will be updated by resizeCanvas)
+grid = 25;
+paddleHeight = grid * 6;
+maxPaddleY = canvas.height - grid - paddleHeight;
+paddleSpeed = 8;
+ballSpeed = 6;
+
+const leftPaddle = {
+  // start in the middle of the game on the left side
+  x: grid * 2,
+  y: canvas.height / 2 - paddleHeight / 2,
+  width: grid,
+  height: paddleHeight,
+
+  // paddle velocity
+  dy: 0
+};
+const rightPaddle = {
+  // start in the middle of the game on the right side
+  x: canvas.width - grid * 3,
+  y: canvas.height / 2 - paddleHeight / 2,
+  width: grid,
+  height: paddleHeight,
+
+  // paddle velocity
+  dy: 0
+};
+const ball = {
+  // start in the middle of the game
+  x: canvas.width / 2,
+  y: canvas.height / 2,
+  width: grid,
+  height: grid,
+
+  // keep track of when need to reset the ball position
+  resetting: false,
+
+  // ball velocity (start going to the top-right corner)
+  dx: ballSpeed,
+  dy: -ballSpeed
+};
+
+// Add particle class for visual effects
+class Particle {
+  constructor(x, y, dx, dy, size, life) {
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.size = size;
+    this.life = life;
+    this.maxLife = life;
+  }
+  
+  update() {
+    this.x += this.dx;
+    this.y += this.dy;
+    this.life--;
+    return this.life > 0;
+  }
+  
+  draw() {
+    const alpha = this.life / this.maxLife;
+    context.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+    context.fillRect(this.x, this.y, this.size, this.size);
+  }
+}
+
+// Add screen shake effect
+let screenShake = 0;
+function applyScreenShake() {
+  if (screenShake > 0) {
+    const shakeX = (Math.random() - 0.5) * screenShake;
+    const shakeY = (Math.random() - 0.5) * screenShake;
+    context.translate(shakeX, shakeY);
+    screenShake *= 0.9;
+    if (screenShake < 0.5) screenShake = 0;
+  }
+}
+
+// Add slow motion effect when ball is about to score
+let slowMotion = 0;
+function updateSlowMotion() {
+  if (slowMotion > 0) {
+    slowMotion--;
+  }
+}
+
+// Function to create particles when ball hits paddle
+function createHitParticles(x, y, direction) {
+  const particleCount = 15;
+  for (let i = 0; i < particleCount; i++) {
+    const angle = Math.random() * Math.PI - Math.PI/2;
+    const speed = Math.random() * 3 + 2;
+    const dx = Math.cos(angle) * speed * direction;
+    const dy = Math.sin(angle) * speed;
+    const size = Math.random() * 3 + 1;
+    const life = Math.random() * 20 + 10;
+    particles.push(new Particle(x, y, dx, dy, size, life));
+  }
+}
+
+// check for collision between two objects using axis-aligned bounding box (AABB)
+// @see https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+function collides(obj1, obj2) {
+  return obj1.x < obj2.x + obj2.width &&
+         obj1.x + obj1.width > obj2.x &&
+         obj1.y < obj2.y + obj2.height &&
+         obj1.y + obj1.height > obj2.y;
+}
+
+// AI for paddles to follow the ball
+function updatePaddleAI() {
+  // Left paddle AI
+  const leftPaddleCenter = leftPaddle.y + paddleHeight/2;
+  if (ball.dx < 0) { // Only move if ball is coming towards this paddle
+    if (leftPaddleCenter < ball.y - paddleHeight/4) {
+      leftPaddle.dy = paddleSpeed;
+    } else if (leftPaddleCenter > ball.y + paddleHeight/4) {
+      leftPaddle.dy = -paddleSpeed;
+    } else {
+      leftPaddle.dy = 0;
     }
-  ];
-
-  // Intersection description
-  const intersectionDesc = "Combining AI with complex systems for social good applications, and machine common sense reasoning.";
-
-  // Animation variables
-  let animationFrameId;
-  let animationProgress = 0;
-  const animationDuration = 15; // frames
-
-  // Add logo image objects
-  const logos = {
-    ai: new Image(),
-    complex: new Image()
-  };
-
-  // Set logo sources
-  logos.ai.src = "ai-logo.png";
-  logos.complex.src = "complex-logo.png";
-
-  // Flag to track if images are loaded
-  let imagesLoaded = false;
-
-  // Load images before drawing
-  function loadImages() {
-    let loadedCount = 0;
-    const totalImages = Object.keys(logos).length;
-    
-    function onImageLoad() {
-      loadedCount++;
-      if (loadedCount === totalImages) {
-        imagesLoaded = true;
-        draw(); // Redraw once images are loaded
-      }
+  } else {
+    // Return to center when ball is moving away
+    if (leftPaddleCenter < canvas.height/2 - paddleHeight/4) {
+      leftPaddle.dy = paddleSpeed/2;
+    } else if (leftPaddleCenter > canvas.height/2 + paddleHeight/4) {
+      leftPaddle.dy = -paddleSpeed/2;
+    } else {
+      leftPaddle.dy = 0;
     }
-    
-    // Set load handlers for each image
-    logos.ai.onload = onImageLoad;
-    logos.complex.onload = onImageLoad;
-    
-    // Handle potential errors
-    logos.ai.onerror = () => console.error("Error loading AI logo");
-    logos.complex.onerror = () => console.error("Error loading Complex Systems logo");
   }
-
-  // Call loadImages to start loading
-  loadImages();
-
-  function easeOutQuad(t) {
-    return t * (2 - t);
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw intersection first (if both hovered)
-    if (circles[0].hovered && circles[1].hovered) {
-      // Calculate intersection area
-      drawIntersection();
+  
+  // Right paddle AI
+  const rightPaddleCenter = rightPaddle.y + paddleHeight/2;
+  if (ball.dx > 0) { // Only move if ball is coming towards this paddle
+    if (rightPaddleCenter < ball.y - paddleHeight/4) {
+      rightPaddle.dy = paddleSpeed;
+    } else if (rightPaddleCenter > ball.y + paddleHeight/4) {
+      rightPaddle.dy = -paddleSpeed;
+    } else {
+      rightPaddle.dy = 0;
     }
-
-    // Draw circles
-    circles.forEach((circle, index) => {
-      drawCircle(circle, index);
-    });
-    
-    // Draw labels with better positioning
-    drawLabels();
+  } else {
+    // Return to center when ball is moving away
+    if (rightPaddleCenter < canvas.height/2 - paddleHeight/4) {
+      rightPaddle.dy = paddleSpeed/2;
+    } else if (rightPaddleCenter > canvas.height/2 + paddleHeight/4) {
+      rightPaddle.dy = -paddleSpeed/2;
+    } else {
+      rightPaddle.dy = 0;
+    }
   }
+}
 
-  function drawIntersection() {
-    ctx.save();
-    ctx.globalCompositeOperation = "source-over";
-    
-    // Create clipping path for intersection
-    ctx.beginPath();
-    ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
-    ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-    // Changed to brighter yellow with the exact #fed802 color
-    ctx.fillStyle = "rgba(254, 216, 2, 0.25)";
-    ctx.fill("evenodd");
-    
-
-    const gradient = ctx.createRadialGradient(
-      (circles[0].x + circles[1].x) / 2, 
-      (circles[0].y + circles[1].y) / 2, 
-      0,
-      (circles[0].x + circles[1].x) / 2, 
-      (circles[0].y + circles[1].y) / 2, 
-      80
-    );
-    gradient.addColorStop(0, "rgba(254, 216, 2, 0.3)");
-    gradient.addColorStop(1, "rgba(254, 216, 2, 0.2)");
-    
-    ctx.beginPath();
-    ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
-    ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-    ctx.fillStyle = gradient;
-    ctx.fill("evenodd");
-    
-    ctx.restore();
-  }
-  function drawCircle(circle, index) {
-      ctx.save();
-      
-      // Calculate current radius based on hover state and animation
-      // Always start with the base radius, not the expanded one
-      let currentRadius = circle.r;
-      
-      if (circle.hovered) {
-        if (animationProgress < animationDuration) {
-          const progress = easeOutQuad(animationProgress / animationDuration);
-          currentRadius = circle.r + (circle.r * 0.1 * progress);
-        } else {
-          currentRadius = circle.r * 1.1;
-        }
-      }
-      
-      // Draw main circle
-      ctx.beginPath();
-      ctx.arc(circle.x, circle.y, currentRadius, 0, Math.PI * 2);
-      
-      // Enhanced gradient fill with more depth and visual interest for static state
-      const gradient = ctx.createRadialGradient(
-        circle.x - currentRadius * 0.3,  // Moved light source for more dramatic effect
-        circle.y - currentRadius * 0.3,
-        0,
-        circle.x,
-        circle.y,
-        currentRadius * 1.2
-      );
-      
-      if (circle.hovered) {
-        gradient.addColorStop(0, circle.hoverColor);
-        gradient.addColorStop(0.7, circle.baseColor);
-        gradient.addColorStop(1, index === 0 ? "rgba(50, 50, 50, 0.3)" : "rgba(150, 150, 150, 0.25)");
-      } else {
-        // More interesting gradient even when not hovering - improved aesthetics
-        if (index === 0) {
-          // AI circle - darker, more sophisticated gradient
-          gradient.addColorStop(0, "rgba(255, 255, 255, 0.15)");
-          gradient.addColorStop(0.4, "rgba(100, 100, 100, 0.35)");
-          gradient.addColorStop(0.8, "rgba(70, 70, 70, 0.4)");
-          gradient.addColorStop(1, "rgba(40, 40, 40, 0.3)");
-        } else {
-          // Complex Systems circle - lighter gradient
-          gradient.addColorStop(0, "rgba(255, 255, 255, 0.2)");
-          gradient.addColorStop(0.4, "rgba(200, 200, 200, 0.25)");
-          gradient.addColorStop(0.8, "rgba(170, 170, 170, 0.3)");
-          gradient.addColorStop(1, "rgba(150, 150, 150, 0.25)");
-        }
-      }
-      
-      ctx.fillStyle = gradient;
-      ctx.fill();
-      
-      // Enhanced shadow effect - slightly stronger for better visibility
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
-      ctx.shadowBlur = 25;
-      ctx.shadowOffsetX = 3;
-      ctx.shadowOffsetY = 4;
-      
-      // Draw border with consistent thickness but enhanced style
-      ctx.lineWidth = 9;
-      
-      // Create a subtle gradient for the stroke with more contrast
-      const strokeGradient = ctx.createLinearGradient(
-        circle.x - currentRadius, 
-        circle.y - currentRadius,
-        circle.x + currentRadius, 
-        circle.y + currentRadius
-      );
-      
-      if (index === 1) {
-        strokeGradient.addColorStop(0, "rgba(180, 180, 190, 0.85)");
-        strokeGradient.addColorStop(1, "rgba(130, 130, 150, 0.7)");
-      } else {
-        strokeGradient.addColorStop(0, "rgba(90, 90, 90, 0.9)");
-        strokeGradient.addColorStop(1, "rgba(40, 40, 40, 0.8)");
-      }
-      
-      ctx.strokeStyle = strokeGradient;
-      ctx.stroke();
-      
-      // Draw logo 
-      if (imagesLoaded) {
-        // Determine which logo to use based on index
-        const logo = index === 0 ? logos.ai : logos.complex;
-        
-        // Calculate logo size (proportional to circle size)
-        const logoSize = currentRadius * 1.7;
-        
-        // Adjust logo positions to move them further apart
-        let logoX, logoY;
-        if (index === 0) {
-          // Move AI logo to the left
-          logoX = circle.x - 20;
-          logoY = circle.y + 10;
-        } else {
-          // Move Complex Systems logo to the right
-          logoX = circle.x + 20;
-          logoY = circle.y;
-        }
-        
-        // Center the logos in their circles
-        ctx.shadowColor = index === 0 ? 'rgba(60, 60, 60, 0.2)' : 'rgba(80, 80, 100, 0.2)';
-        ctx.shadowBlur = 10;
-        
-        // Set lower opacity to make logos lighter and faded
-        ctx.globalAlpha = 0.4;
-        
-        // Draw the logo with adjusted position
-        ctx.drawImage(
-          logo,
-          logoX - logoSize/2,
-          logoY - logoSize/2,
-          logoSize,
-          logoSize
+// Draw a more detailed, round ball with highlights and shadow
+function drawBall() {
+  // Create a pixelated round ball using even smaller squares for more granularity
+  const pixelSize = 2; // Even smaller pixel size for smoother appearance
+  const ballRadius = grid / 1.4; // Slightly larger radius
+  const centerX = ball.x + ball.width/2;
+  const centerY = ball.y + ball.height/2;
+  
+  // Draw ball shadow first (gray pixels offset from the ball)
+  context.fillStyle = '#777777'; // Lighter gray for shadow
+  for (let y = -ballRadius; y <= ballRadius; y += pixelSize) {
+    for (let x = -ballRadius; x <= ballRadius; x += pixelSize) {
+      // If this pixel is within the circle radius
+      if (x*x + y*y <= ballRadius*ballRadius) {
+        context.fillRect(
+          Math.floor(centerX + x + 4), 
+          Math.floor(centerY + y + 4), 
+          pixelSize, 
+          pixelSize
         );
-        
-        // Reset opacity
-        ctx.globalAlpha = 1.0;
       }
-      
-      ctx.restore();
     }
-
-  function drawLabels() {
-      ctx.save();
-      
-      circles.forEach((circle, index) => {
-        // Increased label sizes significantly - making them even bigger
-        ctx.font = circle.hovered ? "bold 38px 'Sunflower', Arial, sans-serif" : "bold 36px 'Sunflower', Arial, sans-serif";
-        ctx.textAlign = "center";
-        
-        // Position label - AI above circle, Complex Systems below circle
-        let labelY;
-        if (index === 0) {
-          // AI label above circle - changed to yellow color
-          labelY = circle.y - circle.r - 30;
-          ctx.fillStyle = "#fed802";
-        } else {
-          // Complex Systems label below circle - changed to yellow color
-          labelY = circle.y + circle.r + 55;
-          ctx.fillStyle = "#fed802";
-        }
-        
-        // Draw text without the outline for better visibility
-        ctx.fillText(circle.label, circle.x, labelY);
-      });
-      
-      // Draw intersection label if both hovered
-      if (circles[0].hovered && circles[1].hovered) {
-        // Rest of the intersection label code remains the same
-        const centerX = (circles[0].x + circles[1].x) / 2;
-        const centerY = circles[0].y;
-        
-        ctx.font = "bold 38px 'Sunflower', Arial, sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillStyle = "#fed802";
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-        ctx.shadowBlur = 5;
-        ctx.shadowOffsetX = 1;
-        ctx.shadowOffsetY = 1;
-        
-        // Changed to dark grey outline for intersection text
-        ctx.strokeStyle = 'rgba(50, 50, 50, 0.4)';
-        ctx.lineWidth = 9;
-        ctx.strokeText("AI + Complex Systems", centerX, centerY);
-        ctx.fillText("AI + Complex Systems", centerX, centerY);
-      }
-      
-      ctx.restore();
-    }
-
-  function getMousePos(canvas, evt) {
-    const rect = canvas.getBoundingClientRect();
-    return {
-      x: (evt.clientX - rect.left) * (canvas.width / rect.width),
-      y: (evt.clientY - rect.top) * (canvas.height / rect.height)
-    };
   }
+  
+  // Draw the white ball
+  context.fillStyle = 'white';
+  for (let y = -ballRadius; y <= ballRadius; y += pixelSize) {
+    for (let x = -ballRadius; x <= ballRadius; x += pixelSize) {
+      // If this pixel is within the circle radius
+      if (x*x + y*y <= ballRadius*ballRadius) {
+        context.fillRect(
+          Math.floor(centerX + x), 
+          Math.floor(centerY + y), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+  
+  // Add black pixel highlights for depth and dimension
+  context.fillStyle = 'black';
+  
+  // Top-left shadow (inner part of the ball)
+  for (let y = -ballRadius/2; y < 0; y += pixelSize) {
+    for (let x = -ballRadius/2; x < 0; x += pixelSize) {
+      // Only add highlights in certain areas for a 3D effect
+      if (x*x + y*y <= (ballRadius/2.5)*(ballRadius/2.5) && 
+          x*x + y*y >= (ballRadius/4)*(ballRadius/4)) {
+        context.fillRect(
+          Math.floor(centerX + x), 
+          Math.floor(centerY + y), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+  
+  // Bottom-right highlight (reflection)
+  context.fillStyle = 'white';
+  for (let y = ballRadius/6; y < ballRadius/2; y += pixelSize) {
+    for (let x = ballRadius/6; x < ballRadius/2; x += pixelSize) {
+      // Small bright spot for reflection
+      if (x*x + y*y <= (ballRadius/4)*(ballRadius/4)) {
+        context.fillRect(
+          Math.floor(centerX + x), 
+          Math.floor(centerY + y), 
+          pixelSize, 
+          pixelSize
+        );
+      }
+    }
+  }
+}
 
-  function updateHoverState(mousePos) {
-      let hoveredA = false, hoveredB = false;
-      let prevHoveredA = circles[0].hovered;
-      let prevHoveredB = circles[1].hovered;
+// Function to draw pixelated text with 3D effect
+function drawPixelText(text, x, y, size = 10) {
+  const pixelSize = 10; // Large text size
   
-      const dx0 = mousePos.x - circles[0].x;
-      const dy0 = mousePos.y - circles[0].y;
-      const dist0 = Math.sqrt(dx0 * dx0 + dy0 * dy0);
-      hoveredA = dist0 < circles[0].r;
+  // First draw gray shadow for 3D effect - using lighter gray
+  context.fillStyle = '#777777'; // Lighter gray for shadows
+  let shadowX = x + 3;
+  let shadowY = y + 3;
   
-      const dx1 = mousePos.x - circles[1].x;
-      const dy1 = mousePos.y - circles[1].y;
-      const dist1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
-      hoveredB = dist1 < circles[1].r;
+  // Pixel patterns for letters
+  const letters = {
+    'A': [
+      [0,1,1,0],
+      [1,0,0,1],
+      [1,1,1,1],
+      [1,0,0,1],
+      [1,0,0,1]
+    ],
+    'I': [
+      [1,1,1],
+      [0,1,0],
+      [0,1,0],
+      [0,1,0],
+      [1,1,1]
+    ],
+    'C': [
+      [0,1,1,1],
+      [1,0,0,0],
+      [1,0,0,0],
+      [1,0,0,0],
+      [0,1,1,1]
+    ],
+    'S': [
+      [0,1,1,1],
+      [1,0,0,0],
+      [0,1,1,0],
+      [0,0,0,1],
+      [1,1,1,0]
+    ]
+  };
   
-      // Only reset animation if hover state changed
-      if (prevHoveredA !== hoveredA || prevHoveredB !== hoveredB) {
-        animationProgress = 0;
-        startAnimation();
-      }
-  
-      circles[0].hovered = hoveredA;
-      circles[1].hovered = hoveredB;
-  
-      // Update tooltip content with improved formatting
-      if (hoveredA && hoveredB) {
-        tooltip.innerHTML = `
-          <div class="tooltip-title">AI + Complex Systems</div>
-          <div class="tooltip-content">${intersectionDesc}</div>
-        `;
-      } else if (hoveredA) {
-        tooltip.innerHTML = `
-          <div class="tooltip-title">${circles[0].label}</div>
-          <div class="tooltip-content">${circles[0].description}</div>
-        `;
-      } else if (hoveredB) {
-        tooltip.innerHTML = `
-          <div class="tooltip-title">${circles[1].label}</div>
-          <div class="tooltip-content">${circles[1].description}</div>
-        `;
-      }
+  // Draw shadow first
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
+    if (letters[letter]) {
+      const pattern = letters[letter];
       
-      // Show/hide tooltip with fade effect
-      if (hoveredA || hoveredB) {
-        tooltip.style.display = "block";
-        tooltip.style.opacity = 1;
-      } else {
-        tooltip.style.opacity = 0;
-        setTimeout(() => {
-          if (!circles[0].hovered && !circles[1].hovered) {
-            tooltip.style.display = "none";
+      // Draw shadow pixel by pixel
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          if (pattern[row][col] === 1) {
+            context.fillRect(
+              shadowX + col * pixelSize,
+              shadowY + row * pixelSize,
+              pixelSize,
+              pixelSize
+            );
           }
-        }, 300);
+        }
       }
-    }
-  
-    // Remove the tooltip positioning code from mousemove event
-    canvas.addEventListener("mousemove", function(evt) {
-      const mousePos = getMousePos(canvas, evt);
-      updateHoverState(mousePos);
       
-      if (!animationFrameId) {
-        draw();
+      // Move to the next letter position
+      shadowX += (pattern[0].length + 2) * pixelSize;
+    }
+  }
+  
+  // Now draw the white text on top
+  context.fillStyle = 'white';
+  let currentX = x;
+  
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
+    if (letters[letter]) {
+      const pattern = letters[letter];
+      
+      // Draw the letter pixel by pixel
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          if (pattern[row][col] === 1) {
+            context.fillRect(
+              currentX + col * pixelSize,
+              y + row * pixelSize,
+              pixelSize,
+              pixelSize
+            );
+          }
+        }
       }
-    });
+      
+      // Move to the next letter position
+      currentX += (pattern[0].length + 2) * pixelSize;
+    }
+  }
+}
 
-  function startAnimation() {
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
+// Draw the court with more detailed pixel art and 3D effects
+function drawCourt() {
+  // Now draw both walls in black without shadows
+  context.fillStyle = 'black';
+  
+  // Pixelated top wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x, 0, 3, grid);
+  }
+  
+  // Pixelated bottom wall also in black
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x, canvas.height - grid, 3, grid);
+  }
+  
+  // Center line with thicker pixelated dashes
+  const dashHeight = grid / 2;
+  const gapHeight = grid;
+  
+  // Draw white center line with thicker dashes
+  context.fillStyle = 'white';
+  for (let y = grid * 1.5; y < canvas.height - grid * 1.5; y += dashHeight + gapHeight) {
+    // Each dash is made of small pixel blocks, but thicker
+    for (let py = 0; py < dashHeight; py += 3) {
+      context.fillRect(canvas.width / 2 - 2, y + py, 4, 3); // Increased width from 2 to 4
     }
-    
-    function animate() {
-      if (animationProgress < animationDuration) {
-        animationProgress++;
-        draw();
-        animationFrameId = requestAnimationFrame(animate);
-      } else {
-        animationFrameId = null;
-      }
+  }
+  
+  // Draw pixelated "AI" and "CS" text with 3D effect
+  drawPixelText("AI", canvas.width / 4 - 60, 70);
+  drawPixelText("CS", canvas.width * 3/4 - 60, 70);
+}
+
+// Draw a more pixelated paddle with 3D effect
+function drawPaddle(paddle, isLeft) {
+  // Draw gray shadow for 3D effect - using lighter gray
+  context.fillStyle = '#777777'; // Lighter gray for shadows
+  
+  // Draw paddle shadow
+  for (let y = 0; y < paddle.height; y += 3) {
+    for (let x = 0; x < paddle.width; x += 3) {
+      context.fillRect(paddle.x + x + 3, paddle.y + y + 3, 3, 3);
     }
-    
-    animationFrameId = requestAnimationFrame(animate);
+  }
+  
+  // Draw the white paddle on top
+  context.fillStyle = 'white';
+  
+  // Draw paddle as a grid of pixels
+  for (let y = 0; y < paddle.height; y += 3) {
+    for (let x = 0; x < paddle.width; x += 3) {
+      context.fillRect(paddle.x + x, paddle.y + y, 3, 3);
+    }
+  }
+}
+
+// game loop
+function loop() {
+  requestAnimationFrame(loop);
+  
+  // Clear with screen shake effect
+  context.fillStyle = 'black';
+  context.save();
+  context.setTransform(1, 0, 0, 1, 0, 0);
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.restore();
+  
+  context.save();
+  applyScreenShake();
+
+  // Update paddle AI
+  updatePaddleAI();
+
+  // Update slow motion
+  updateSlowMotion();
+  
+  // Determine game speed based on slow motion
+  const gameSpeed = slowMotion > 0 ? 0.3 : 1;
+
+  // move paddles by their velocity
+  leftPaddle.y += leftPaddle.dy * gameSpeed;
+  rightPaddle.y += rightPaddle.dy * gameSpeed;
+
+  // prevent paddles from going through walls
+  if (leftPaddle.y < grid) {
+    leftPaddle.y = grid;
+  }
+  else if (leftPaddle.y > maxPaddleY) {
+    leftPaddle.y = maxPaddleY;
   }
 
-  // Consolidated mousemove event listener
-  canvas.addEventListener("mousemove", function(evt) {
-    const mousePos = getMousePos(canvas, evt);
-    updateHoverState(mousePos);
+  if (rightPaddle.y < grid) {
+    rightPaddle.y = grid;
+  }
+  else if (rightPaddle.y > maxPaddleY) {
+    rightPaddle.y = maxPaddleY;
+  }
+
+  // draw paddles
+  drawPaddle(leftPaddle, true);
+  drawPaddle(rightPaddle, false);
+  
+  // draw the court
+  drawCourt();
+
+  // move ball by its velocity
+  ball.x += ball.dx * gameSpeed;
+  ball.y += ball.dy * gameSpeed;
+
+  // prevent ball from going through walls by changing its velocity
+  if (ball.y < grid) {
+    ball.y = grid;
+    ball.dy *= -1;
+    screenShake = 3;
+  }
+  else if (ball.y + ball.height > canvas.height - grid) {
+    ball.y = canvas.height - grid - ball.height;
+    ball.dy *= -1;
+    screenShake = 3;
+  }
+
+  // Check if ball is close to edge for slow motion
+  if (!ball.resetting && 
+      ((ball.dx < 0 && ball.x < 100) || 
+       (ball.dx > 0 && ball.x > canvas.width - 100))) {
+    slowMotion = 30;
+  }
+
+  // reset ball if it goes past paddle (but only if we haven't already done so)
+  if (ball.x < 0 && !ball.resetting) {
+    rightScore++;
+    ball.resetting = true;
+    screenShake = 10;
+
+    // give some time for the player to recover before launching the ball again
+    setTimeout(() => {
+      ball.resetting = false;
+      ball.x = canvas.width / 2;
+      ball.y = canvas.height / 2;
+      // Alternate serve direction
+      ball.dx = ballSpeed * (rightScore % 2 === 0 ? 1 : -1);
+      ball.dy = (Math.random() * 2 - 1) * ballSpeed/2;
+    }, 1000);
+  } 
+  else if (ball.x > canvas.width && !ball.resetting) {
+    leftScore++;
+    ball.resetting = true;
+    screenShake = 10;
+
+    setTimeout(() => {
+      ball.resetting = false;
+      ball.x = canvas.width / 2;
+      ball.y = canvas.height / 2;
+      // Alternate serve direction
+      ball.dx = ballSpeed * (leftScore % 2 === 0 ? -1 : 1);
+      ball.dy = (Math.random() * 2 - 1) * ballSpeed/2;
+    }, 1000);
+  }
+
+  // check to see if ball collides with paddle. if they do change x velocity
+  if (collides(ball, leftPaddle)) {
+    ball.dx *= -1;
+
+    // move ball next to the paddle otherwise the collision will happen again
+    // in the next frame
+    ball.x = leftPaddle.x + leftPaddle.width;
     
-    // Position tooltip with minimal offset and ensure it's in the viewport
-    if (circles[0].hovered || circles[1].hovered) {
-      const tooltipWidth = 350;
-      const tooltipHeight = 170;
-      
-      // Calculate position to ensure tooltip stays in viewport
-      let leftPos = evt.pageX + 5;
-      let topPos = evt.pageY - 5;
-      
-      // Adjust if too close to right edge
-      if (leftPos + tooltipWidth > window.innerWidth) {
-        leftPos = evt.pageX - tooltipWidth - 5;
-      }
-      
-      // Adjust if too close to bottom edge
-      if (topPos + tooltipHeight > window.innerHeight) {
-        topPos = evt.pageY - tooltipHeight - 5;
-      }
-      
-      tooltip.style.left = leftPos + "px";
-      tooltip.style.top = topPos + "px";
-    }
+    // Slightly randomize the angle of the ball after paddle hit
+    ball.dy = (Math.random() * 10 - 5) * 0.5;
     
-    if (!animationFrameId) {
-      draw();
+    // Add particles and screen shake
+    createHitParticles(ball.x, ball.y, 1);
+    screenShake = 5;
+    
+    // Increase ball speed slightly with each hit
+    ball.dx *= 1.05;
+    if (Math.abs(ball.dx) > ballSpeed * 2) {
+      ball.dx = (ball.dx > 0 ? 1 : -1) * ballSpeed * 2;
     }
+  }
+  else if (collides(ball, rightPaddle)) {
+    ball.dx *= -1;
+
+    // move ball next to the paddle otherwise the collision will happen again
+    // in the next frame
+    ball.x = rightPaddle.x - ball.width;
+    
+    // Slightly randomize the angle of the ball after paddle hit
+    ball.dy = (Math.random() * 10 - 5) * 0.5;
+    
+    // Add particles and screen shake
+    createHitParticles(ball.x, ball.y, -1);
+    screenShake = 5;
+    
+    // Increase ball speed slightly with each hit
+    ball.dx *= 1.05;
+    if (Math.abs(ball.dx) > ballSpeed * 2) {
+      ball.dx = (ball.dx > 0 ? 1 : -1) * ballSpeed * 2;
+    }
+  }
+
+  // Update and draw particles
+  particles = particles.filter(p => {
+    const alive = p.update();
+    if (alive) p.draw();
+    return alive;
   });
 
-  canvas.addEventListener("mouseleave", () => {
-    circles.forEach(c => c.hovered = false);
-    tooltip.style.opacity = 0;
-    setTimeout(() => { tooltip.style.display = "none"; }, 300);
-    
-    animationProgress = 0;
-    startAnimation();
-  });
+  // draw ball
+  drawBall();
+  
+  context.restore();
+}
 
-  // Initial draw
-  draw();
-});
+// start the game
+requestAnimationFrame(loop);
 </script>
 </body>
 </html>

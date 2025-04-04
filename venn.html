@@ -1,578 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Canvas Venn Diagram</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      font-family: 'Sunflower', Arial, sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
-      padding: 50px;
-      color: #333;
-    }
-    canvas {
-      border: none;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-    }
-    canvas:hover {
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
-    .tooltip {
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 10px 15px;
-      border: none;
-      border-radius: 6px;
-      pointer-events: none;
-      font-size: 14px;
-      display: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: opacity 0.3s ease;
-      max-width: 200px;
-      line-height: 1.5;
-      color: #333;
-    }
-    .tooltip strong {
-      color: #505050;
-      font-size: 16px;
-      display: block;
-      margin-bottom: 5px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
-    }
-    h2 {
-      color: #333;
-      margin-bottom: 25px;
-      font-weight: 500;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <!-- Removing the title -->
-  <canvas id="vennCanvas" width="700" height="400"></canvas>
-  <div id="tooltip" class="tooltip"></div>
-</div>
-
-<script>
-const canvas = document.getElementById("vennCanvas");
-const ctx = canvas.getContext("2d");
-const tooltip = document.getElementById("tooltip");
-
-// Enhanced colors and descriptions with grey tones
-let circles = [
-  { 
-    x: 240, // Moved further left
-    y: 200, 
-    r: 120, 
-    baseColor: "rgba(80, 80, 80, 0.4)", 
-    hoverColor: "rgba(80, 80, 80, 0.6)",
-    label: "Artificial Intelligence", 
-    description: "Machine learning, neural networks, and algorithms that enable computers to perform tasks that typically require human intelligence.", 
-    hovered: false 
-  },
-  { 
-    x: 420, // Moved further right
-    y: 200, 
-    r: 120, 
-    baseColor: "rgba(180, 180, 180, 0.2)", // Made much lighter
-    hoverColor: "rgba(180, 180, 180, 0.35)", // Made much lighter
-    label: "Complex Systems", 
-    description: "Networks, emergent behaviors, and systems with many interacting components that exhibit non-linear dynamics.", 
-    hovered: false 
-  }
-];
-
-// Intersection description
-const intersectionDesc = "Research at the frontier of AI and complex systems, combining advanced algorithms with network analysis and emergent behavior studies.";
-
-// Animation variables
-let animationFrameId;
-let animationProgress = 0;
-const animationDuration = 15; // frames
-
-// After the logo loading code, add texture creation functions
-// Add logo image objects
-const logos = {
-  ai: new Image(),
-  complex: new Image()
-};
-
-// Set logo sources
-logos.ai.src = "ai-logo.png"; // Replace with your actual AI logo path
-logos.complex.src = "complex-logo.png"; // Replace with your actual Complex Systems logo path
-
-// Create textures for the circles
-const textures = {
-  ai: createNoiseTexture(200, 200, 0.1, "rgba(255, 255, 255, 0.05)"),
-  complex: createNoiseTexture(200, 200, 0.08, "rgba(255, 255, 255, 0.04)")
-};
-
-// Create a noise texture pattern
-function createNoiseTexture(width, height, density, color) {
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const ctx = canvas.getContext('2d');
+// Function to draw pixelated text with 3D effect
+function drawPixelText(text, x, y) {
+  const pixelSize = 10; // Large text size
+  context.fillStyle = 'white';
   
-  // Fill with transparent background
-  ctx.fillStyle = 'rgba(0, 0, 0, 0)';
-  ctx.fillRect(0, 0, width, height);
-  
-  // Add noise dots
-  ctx.fillStyle = color;
-  
-  const dotCount = Math.floor(width * height * density);
-  for (let i = 0; i < dotCount; i++) {
-    const x = Math.random() * width;
-    const y = Math.random() * height;
-    const size = Math.random() * 2 + 0.5;
-    
-    ctx.beginPath();
-    ctx.arc(x, y, size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  
-  // Create pattern from the canvas
-  return ctx.createPattern(canvas, 'repeat');
-}
-
-// Flag to track if images are loaded
-let imagesLoaded = false;
-
-// Load images before drawing
-function loadImages() {
-  let loadedCount = 0;
-  const totalImages = Object.keys(logos).length;
-  
-  function onImageLoad() {
-    loadedCount++;
-    if (loadedCount === totalImages) {
-      imagesLoaded = true;
-      draw(); // Redraw once images are loaded
-    }
-  }
-  
-  // Set load handlers for each image
-  logos.ai.onload = onImageLoad;
-  logos.complex.onload = onImageLoad;
-  
-  // Handle potential errors
-  logos.ai.onerror = () => console.error("Error loading AI logo");
-  logos.complex.onerror = () => console.error("Error loading Complex Systems logo");
-}
-
-// Call loadImages to start loading
-loadImages();
-
-function easeOutQuad(t) {
-  return t * (2 - t);
-}
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  // Removing the grid background function call
-  
-  // Draw intersection first (if both hovered)
-  if (circles[0].hovered && circles[1].hovered) {
-    // Calculate intersection area
-    drawIntersection();
-  }
-
-  // Draw circles
-  circles.forEach((circle, index) => {
-    drawCircle(circle, index);
-  });
-  
-  // Draw labels with better positioning
-  drawLabels();
-}
-
-// You can keep the drawGrid function in the code, but we're just not calling it
-function drawGrid() {
-  ctx.save();
-  ctx.strokeStyle = "rgba(200, 200, 200, 0.2)";
-  ctx.lineWidth = 1;
-  
-  const gridSize = 20;
-  for (let x = 0; x < canvas.width; x += gridSize) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, canvas.height);
-    ctx.stroke();
-  }
-  
-  for (let y = 0; y < canvas.height; y += gridSize) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(canvas.width, y);
-    ctx.stroke();
-  }
-  ctx.restore();
-}
-
-function drawIntersection() {
-  ctx.save();
-  ctx.globalCompositeOperation = "source-over";
-  
-  // Create clipping path for intersection
-  ctx.beginPath();
-  ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
-  ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-  // Changed to yellow-toned intersection with reduced opacity
-  ctx.fillStyle = "rgba(227, 181, 5, 0.25)"; // Reduced opacity from 0.4 to 0.25
-  ctx.fill("evenodd");
-  
-  // Add subtle gradient to intersection with yellow tones - reduced contrast
-  const gradient = ctx.createRadialGradient(
-    (circles[0].x + circles[1].x) / 2, 
-    (circles[0].y + circles[1].y) / 2, 
-    0,
-    (circles[0].x + circles[1].x) / 2, 
-    (circles[0].y + circles[1].y) / 2, 
-    80
-  );
-  gradient.addColorStop(0, "rgba(227, 181, 5, 0.3)"); // Reduced opacity from 0.5 to 0.3
-  gradient.addColorStop(1, "rgba(227, 181, 5, 0.2)"); // Reduced opacity from 0.3 to 0.2
-  
-  ctx.beginPath();
-  ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
-  ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-  ctx.fillStyle = gradient;
-  ctx.fill("evenodd");
-  
-  // Removed special texture for intersection
-  
-  ctx.restore();
-}
-
-function drawCircle(circle, index) {
-  ctx.save();
-  
-  // Calculate current radius based on hover state and animation
-  let currentRadius = circle.r;
-  if (circle.hovered) {
-    if (animationProgress < animationDuration) {
-      const progress = easeOutQuad(animationProgress / animationDuration);
-      currentRadius = circle.r + (circle.r * 0.1 * progress);
-    } else {
-      currentRadius = circle.r * 1.1;
-    }
-  } else {
-    if (animationProgress < animationDuration) {
-      const progress = easeOutQuad(animationProgress / animationDuration);
-      currentRadius = circle.r * 1.1 - (circle.r * 0.1 * progress);
-    } else {
-      currentRadius = circle.r;
-    }
-  }
-  
-  // Draw main circle
-  ctx.beginPath();
-  ctx.arc(circle.x, circle.y, currentRadius, 0, Math.PI * 2);
-  
-  // Enhanced gradient fill with more depth
-  const gradient = ctx.createRadialGradient(
-    circle.x - currentRadius * 0.2, // Offset light source for 3D effect
-    circle.y - currentRadius * 0.2,
-    0,
-    circle.x,
-    circle.y,
-    currentRadius * 1.2
-  );
-  
-  if (circle.hovered) {
-    gradient.addColorStop(0, circle.hoverColor);
-    gradient.addColorStop(0.7, circle.baseColor);
-    gradient.addColorStop(1, index === 0 ? "rgba(50, 50, 50, 0.3)" : "rgba(150, 150, 150, 0.25)");
-  } else {
-    // More interesting gradient even when not hovering
-    gradient.addColorStop(0, "rgba(255, 255, 255, 0.1)");
-    gradient.addColorStop(0.3, circle.baseColor);
-    gradient.addColorStop(1, index === 0 ? "rgba(50, 50, 50, 0.25)" : "rgba(150, 150, 150, 0.2)");
-  }
-  
-  ctx.fillStyle = gradient;
-  ctx.fill();
-  
-  // Removed texture overlay code
-  
-  // Enhanced shadow effect
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.15)';
-  ctx.shadowBlur = 20;
-  ctx.shadowOffsetX = 2;
-  ctx.shadowOffsetY = 3;
-  
-  // Draw border with consistent thickness but enhanced style
-  ctx.lineWidth = 7;
-  
-  // Create a subtle gradient for the stroke
-  const strokeGradient = ctx.createLinearGradient(
-    circle.x - currentRadius, 
-    circle.y - currentRadius,
-    circle.x + currentRadius, 
-    circle.y + currentRadius
-  );
-  
-  if (index === 1) {
-    strokeGradient.addColorStop(0, "rgba(160, 160, 170, 0.8)"); // Lighter stroke for right circle
-    strokeGradient.addColorStop(1, "rgba(130, 130, 150, 0.6)"); // Lighter stroke for right circle
-  } else {
-    strokeGradient.addColorStop(0, "rgba(70, 70, 70, 0.9)");
-    strokeGradient.addColorStop(1, "rgba(40, 40, 40, 0.7)");
-  }
-  
-  ctx.strokeStyle = strokeGradient;
-  ctx.stroke();
-  
-  // Draw logo if images are loaded
-  if (imagesLoaded) {
-    // Determine which logo to use based on index
-    const logo = index === 0 ? logos.ai : logos.complex;
-    
-    // Calculate logo size (proportional to circle size)
-    const logoSize = currentRadius * 1.8;
-    
-    // Center the logos in their circles (removing the offset)
-    // And add subtle glow effect to logos
-    ctx.shadowColor = index === 0 ? 'rgba(60, 60, 60, 0.2)' : 'rgba(80, 80, 100, 0.2)';
-    ctx.shadowBlur = 10;
-    
-    // Set lower opacity to make logos lighter and faded
-    ctx.globalAlpha = 0.5; // Reduced opacity for a faded look
-    
-    // Draw the logo centered in the circle
-    ctx.drawImage(
-      logo,
-      circle.x - logoSize/2,
-      circle.y - logoSize/2,
-      logoSize,
-      logoSize
-    );
-    
-    // Reset opacity
-    ctx.globalAlpha = 1.0;
-  }
-  
-  ctx.restore();
-}
-
-// Also update the intersection drawing to include texture
-function drawIntersection() {
-  ctx.save();
-  ctx.globalCompositeOperation = "source-over";
-  
-  // Create clipping path for intersection
-  ctx.beginPath();
-  ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
-  ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-  // Changed to yellow-toned intersection
-  ctx.fillStyle = "rgba(227, 181, 5, 0.4)";
-  ctx.fill("evenodd");
-  
-  // Add subtle gradient to intersection with yellow tones
-  const gradient = ctx.createRadialGradient(
-    (circles[0].x + circles[1].x) / 2, 
-    (circles[0].y + circles[1].y) / 2, 
-    0,
-    (circles[0].x + circles[1].x) / 2, 
-    (circles[0].y + circles[1].y) / 2, 
-    80
-  );
-  gradient.addColorStop(0, "rgba(227, 181, 5, 0.5)");
-  gradient.addColorStop(1, "rgba(227, 181, 5, 0.3)");
-  
-  ctx.beginPath();
-  ctx.arc(circles[0].x, circles[0].y, circles[0].r, 0, Math.PI * 2);
-  ctx.arc(circles[1].x, circles[1].y, circles[1].r, 0, Math.PI * 2);
-  ctx.fillStyle = gradient;
-  ctx.fill("evenodd");
-  
-  // Add a special texture to the intersection
-  const intersectionTexture = createNoiseTexture(200, 200, 0.15, "rgba(255, 255, 255, 0.07)");
-  ctx.fillStyle = intersectionTexture;
-  ctx.fill("evenodd");
-  
-  ctx.restore();
-}
-
-function drawLabels() {
-  ctx.save();
-  
-  circles.forEach((circle, index) => {
-    // Increased label sizes for both normal and hover states
-    ctx.font = circle.hovered ? "bold 24px 'Sunflower', Arial, sans-serif" : "bold 22px 'Sunflower', Arial, sans-serif";
-    ctx.textAlign = "center";
-    
-    // Position label - AI above circle, Complex Systems below circle
-    let labelY;
-    if (index === 0) {
-      // AI label above circle - grey color
-      labelY = circle.y - circle.r - 30; // Increased distance from circle
-      ctx.fillStyle = "rgba(60, 60, 60, 0.95)"; // Darker, more visible text
-    } else {
-      // Complex Systems label below circle - grey color
-      labelY = circle.y + circle.r + 40; // Increased distance from circle
-      ctx.fillStyle = "rgba(60, 60, 60, 0.95)"; // Darker, more visible text
-    }
-    
-    // Add subtle text shadow for all states (not just hover)
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.15)';
-    ctx.shadowBlur = 3;
-    ctx.shadowOffsetX = 1;
-    ctx.shadowOffsetY = 1;
-    
-    // Draw text with a subtle outline for better visibility
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.lineWidth = 3;
-    ctx.strokeText(circle.label, circle.x, labelY);
-    ctx.fillText(circle.label, circle.x, labelY);
-    
-    // Enhanced shadow for hover state
-    if (circle.hovered) {
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.25)';
-      ctx.shadowBlur = 5;
-      ctx.shadowOffsetX = 1;
-      ctx.shadowOffsetY = 1;
-    }
-  });
-  
-  // Draw intersection label if both hovered
-  if (circles[0].hovered && circles[1].hovered) {
-    const centerX = (circles[0].x + circles[1].x) / 2;
-    const centerY = circles[0].y;
-    
-    ctx.font = "bold 24px 'Sunflower', Arial, sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillStyle = "#E3B505"; // Keeping the intersection text yellow
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-    ctx.shadowBlur = 5;
-    ctx.shadowOffsetX = 1;
-    ctx.shadowOffsetY = 1;
-    
-    // Add white outline to intersection text for better visibility
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
-    ctx.lineWidth = 3;
-    ctx.strokeText("AI + Complex Systems", centerX, centerY);
-    ctx.fillText("AI + Complex Systems", centerX, centerY);
-  }
-  
-  ctx.restore();
-}
-
-function getMousePos(canvas, evt) {
-  const rect = canvas.getBoundingClientRect();
-  return {
-    x: evt.clientX - rect.left,
-    y: evt.clientY - rect.top
+  // Pixel patterns for letters
+  const letters = {
+    'A': [
+      [0,1,1,0],
+      [1,0,0,1],
+      [1,1,1,1],
+      [1,0,0,1],
+      [1,0,0,1]
+    ],
+    'I': [
+      [1,1,1],
+      [0,1,0],
+      [0,1,0],
+      [0,1,0],
+      [1,1,1]
+    ],
+    'C': [
+      [0,1,1,1],
+      [1,0,0,0],
+      [1,0,0,0],
+      [1,0,0,0],
+      [0,1,1,1]
+    ],
+    'S': [
+      [0,1,1,1],
+      [1,0,0,0],
+      [0,1,1,0],
+      [0,0,0,1],
+      [1,1,1,0]
+    ]
   };
-}
-
-function updateHoverState(mousePos) {
-  let hoveredA = false, hoveredB = false;
-  let prevHoveredA = circles[0].hovered;
-  let prevHoveredB = circles[1].hovered;
-
-  const dx0 = mousePos.x - circles[0].x;
-  const dy0 = mousePos.y - circles[0].y;
-  const dist0 = Math.sqrt(dx0 * dx0 + dy0 * dy0);
-  hoveredA = dist0 < circles[0].r;
-
-  const dx1 = mousePos.x - circles[1].x;
-  const dy1 = mousePos.y - circles[1].y;
-  const dist1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
-  hoveredB = dist1 < circles[1].r;
-
-  // Only reset animation if hover state changed
-  if (prevHoveredA !== hoveredA || prevHoveredB !== hoveredB) {
-    animationProgress = 0;
-    startAnimation();
-  }
-
-  circles[0].hovered = hoveredA;
-  circles[1].hovered = hoveredB;
-
-  // Update tooltip content
-  if (hoveredA && hoveredB) {
-    tooltip.innerHTML = "<strong>AI + Complex Systems</strong>" + intersectionDesc;
-  } else if (hoveredA) {
-    tooltip.innerHTML = `<strong>${circles[0].label}</strong>${circles[0].description}`;
-  } else if (hoveredB) {
-    tooltip.innerHTML = `<strong>${circles[1].label}</strong>${circles[1].description}`;
-  }
-
-  // Show/hide tooltip with fade effect
-  if (hoveredA || hoveredB) {
-    tooltip.style.display = "block";
-    tooltip.style.opacity = 1;
-  } else {
-    tooltip.style.opacity = 0;
-    setTimeout(() => {
-      if (!circles[0].hovered && !circles[1].hovered) {
-        tooltip.style.display = "none";
-      }
-    }, 300);
-  }
-}
-
-function startAnimation() {
-  if (animationFrameId) {
-    cancelAnimationFrame(animationFrameId);
-  }
   
-  function animate() {
-    if (animationProgress < animationDuration) {
-      animationProgress++;
-      draw();
-      animationFrameId = requestAnimationFrame(animate);
-    } else {
-      animationFrameId = null;
+  // First draw gray shadow for 3D effect
+  context.fillStyle = '#555555';
+  let shadowX = x + 3;
+  let shadowY = y + 3;
+  
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
+    if (letters[letter]) {
+      const pattern = letters[letter];
+      
+      // Draw shadow pixel by pixel
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          if (pattern[row][col] === 1) {
+            context.fillRect(
+              shadowX + col * pixelSize,
+              shadowY + row * pixelSize,
+              pixelSize,
+              pixelSize
+            );
+          }
+        }
+      }
+      
+      // Move to the next letter position
+      shadowX += (pattern[0].length + 2) * pixelSize;
     }
   }
   
-  animationFrameId = requestAnimationFrame(animate);
+  // Now draw the white text on top
+  context.fillStyle = 'white';
+  let currentX = x;
+  
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
+    if (letters[letter]) {
+      const pattern = letters[letter];
+      
+      // Draw the letter pixel by pixel
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          if (pattern[row][col] === 1) {
+            context.fillRect(
+              currentX + col * pixelSize,
+              y + row * pixelSize,
+              pixelSize,
+              pixelSize
+            );
+          }
+        }
+      }
+      
+      // Move to the next letter position
+      currentX += (pattern[0].length + 2) * pixelSize;
+    }
+  }
 }
 
-canvas.addEventListener("mousemove", function(evt) {
-  const mousePos = getMousePos(canvas, evt);
-  updateHoverState(mousePos);
+// Draw a more pixelated paddle with 3D effect
+function drawPaddle(paddle, isLeft) {
+  // Draw gray shadow for 3D effect
+  context.fillStyle = '#555555';
   
-  // Position tooltip with slight offset
-  if (circles[0].hovered || circles[1].hovered) {
-    tooltip.style.left = evt.pageX + 15 + "px";
-    tooltip.style.top = evt.pageY - 15 + "px";
+  // Draw paddle shadow as a grid of pixels
+  for (let y = 0; y < paddle.height; y += 3) {
+    for (let x = 0; x < paddle.width; x += 3) {
+      context.fillRect(paddle.x + x + 3, paddle.y + y + 3, 3, 3);
+    }
   }
   
-  if (!animationFrameId) {
-    draw();
-  }
-});
-
-canvas.addEventListener("mouseleave", () => {
-  circles.forEach(c => c.hovered = false);
-  tooltip.style.opacity = 0;
-  setTimeout(() => { tooltip.style.display = "none"; }, 300);
+  // Draw the white paddle on top
+  context.fillStyle = 'white';
   
-  animationProgress = 0;
-  startAnimation();
-});
+  // Draw paddle as a grid of pixels
+  for (let y = 0; y < paddle.height; y += 3) {
+    for (let x = 0; x < paddle.width; x += 3) {
+      context.fillRect(paddle.x + x, paddle.y + y, 3, 3);
+    }
+  }
+}
 
-// Initial draw
-draw();
-</script>
-
-</body>
-</html>
+// Draw the court with more detailed pixel art and 3D effects
+function drawCourt() {
+  // Top and bottom walls with 3D effect
+  
+  // Draw gray shadows for 3D effect
+  context.fillStyle = '#555555';
+  
+  // Shadow for top wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x + 3, 3, 3, grid);
+  }
+  
+  // Shadow for bottom wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x + 3, canvas.height - grid + 3, 3, grid);
+  }
+  
+  // Now draw the white walls
+  context.fillStyle = 'white';
+  
+  // Pixelated top wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x, 0, 3, grid);
+  }
+  
+  // Pixelated bottom wall
+  for (let x = 0; x < canvas.width; x += 3) {
+    context.fillRect(x, canvas.height - grid, 3, grid);
+  }
+  
+  // Center line with pixelated dashes
+  const dashHeight = grid / 2;
+  const gapHeight = grid;
+  
+  for (let y = grid * 1.5; y < canvas.height - grid * 1.5; y += dashHeight + gapHeight) {
+    // Each dash is made of small pixel blocks
+    for (let py = 0; py < dashHeight; py += 3) {
+      context.fillRect(canvas.width / 2 - 1, y + py, 2, 3);
+    }
+  }
+  
+  // Draw pixelated "AI" text on the left side with 3D effect
+  drawPixelText("AI", canvas.width / 4 - 60, 70);
+  
+  // Draw pixelated "CS" text on the right side with 3D effect
+  drawPixelText("CS", canvas.width * 3/4 - 60, 70);
+}
