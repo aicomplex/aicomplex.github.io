@@ -32,7 +32,7 @@
     .header h1 {
       margin-left: 20px;
       margin-bottom: 0;
-      font-size: 36px;
+      font-size: 48px;
       font-family: 'Sunflower', sans-serif;
     }
     .logo {
@@ -60,7 +60,7 @@
       text-align: center;
       padding: 20px 20px;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 22px;
       font-family: 'Sunflower', sans-serif;
     }
     .navbar a:hover {
@@ -71,11 +71,11 @@
       flex: 100%;
       background-color: white;
       padding: 40px;
-      max-width: 1100px;
+      /* Removing the max-width to make it full screen */
       margin: auto;
     }
     .section-title {
-      font-size: 32px;
+      font-size: 40px;
       font-weight: bold;
       border-bottom: 2px solid #ccc;
       padding-bottom: 10px;
@@ -89,17 +89,24 @@
       margin: 60px 0;
     }
     .pub-box {
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 40px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      /* Removing the box-shadow */
       display: flex;
       gap: 20px;
     }
+    
+    .project-divider {
+      height: 1px;
+      background-color: #ddd;
+      margin: 30px 0;
+      width: 100%;
+    }
     .pub-image {
       flex: 1;
-      max-width: 250px;
+      max-width: 550px;  /* Increased from 250px to 350px */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -107,30 +114,33 @@
     .pub-image img {
       width: 100%;
       height: auto;
-      border-radius: 6px;
+      border-radius: 0px;
     }
     .pub-content {
       flex: 3;
     }
     .pub-title {
-      font-size: 24px;
+      font-size: 36px;
       font-weight: bold;
       margin-bottom: 10px;
       font-family: 'Sunflower', sans-serif;
     }
     .pub-description {
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       font-family: Arial, Helvetica, sans-serif;
+    }
+    .pub-links {
+      margin-top: 20px;
     }
     .pub-links a {
       background-color: #333;
       color: white;
       padding: 8px 15px;
       margin-right: 10px;
-      border-radius: 4px;
+      border-radius: 20px;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 20px;
       display: inline-block;
       font-family: 'Sunflower', sans-serif;
       transition: all 0.3s ease;
@@ -165,7 +175,7 @@
 <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
   <span style="font-family: 'Sunflower', sans-serif;">Active Projects</span>
   <button onclick="document.getElementById('archived-projects').scrollIntoView({ behavior: 'smooth' });"
-    style="background: #fff; color: #333; border: 2px solid #333; border-radius: 20px; padding: 6px 14px; font-size: 16px; cursor: pointer; transition: 0.3s; font-family: 'Sunflower', sans-serif;">
+    style="background: #fff; color: #333; border: 2px solid #333; border-radius: 20px; padding: 6px 14px; font-size: 20px; cursor: pointer; transition: 0.3s; font-family: 'Sunflower', sans-serif;">
     ↓ Archived Projects
   </button>
 </div>
@@ -188,6 +198,8 @@
     </div>
   </div>
 
+  <div class="project-divider"></div>
+
   <div class="pub-box">
     <div class="pub-image">
       <img src="DSKG.png" alt="DSKG-icon">
@@ -205,6 +217,8 @@
       </div>
     </div>
   </div>
+
+  <div class="project-divider"></div>
 
   <div class="pub-box">
     <div class="pub-image">
@@ -224,6 +238,8 @@
     </div>
   </div>
 
+  <div class="project-divider"></div>
+
   <div class="pub-box">
     <div class="pub-image">
       <img src="CSS.png" alt="CSS-icon">
@@ -242,6 +258,8 @@
     </div>
   </div>
 
+  <div class="project-divider"></div>
+
   <div class="pub-box">
     <div class="pub-image">
       <img src="GenAI.png" alt="GenAI-icon">
@@ -259,7 +277,13 @@
       </div>
     </div>
   </div>
-  <div class="section-title" id="archived-projects">Archived Projects</div> 
+  <div class="section-title" id="archived-projects" style="display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-family: 'Sunflower', sans-serif;">Archived Projects</span>
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+      style="background: #fff; color: #333; border: 2px solid #333; border-radius: 20px; padding: 6px 14px; font-size: 20px; cursor: pointer; transition: 0.3s; font-family: 'Sunflower', sans-serif;">
+      ↑ Return to Top
+    </button>
+  </div> 
   <div class="pub-box">
   <div class="pub-image">
     <img src="OWL.png" alt="OWL-icon">
