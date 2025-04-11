@@ -167,6 +167,23 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       background-color: #777;
     } */
+    /* Add these new styles for the animation */
+    .pub-box {
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 20px;
+      opacity: 0; /* Start with 0 opacity */
+      transform: translateY(20px); /* Start slightly below final position */
+      transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+    }
+    
+    .pub-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
   <style>
     button:hover {
@@ -332,5 +349,38 @@
 </html>
   
 </div>
+</body>
+</html>
+
+<!-- Add this script at the end of your body tag, just before the closing </body> -->
+<script>
+  // Function to check if an element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 && 
+      rect.bottom >= 0
+    );
+  }
+  
+  // Function to handle scroll events
+  function handleScroll() {
+    const boxes = document.querySelectorAll('.pub-box');
+    
+    boxes.forEach(box => {
+      if (isInViewport(box)) {
+        box.classList.add('visible');
+      }
+    });
+  }
+  
+  // Add scroll event listener
+  window.addEventListener('scroll', handleScroll);
+  
+  // Trigger once on page load to show elements already in viewport
+  document.addEventListener('DOMContentLoaded', function() {
+    handleScroll();
+  });
+</script>
 </body>
 </html>
