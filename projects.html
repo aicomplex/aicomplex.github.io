@@ -77,15 +77,15 @@
     .section-title {
       font-size: 40px;
       font-weight: bold;
-      border-bottom: 2px solid #555;
+      border-bottom: 2px solid white;  /* Already 2px */
       padding-bottom: 10px;
-      margin-top: 20px;  /* Reduced from 40px to 20px */
+      margin-top: 20px;
       margin-bottom: 20px;
       font-family: 'Sunflower', sans-serif;
     }
     .divider {
       height: 2px;
-      background-color: #555;
+      background-color: white;
       margin: 60px 0;
     }
     .pub-box {
@@ -99,11 +99,19 @@
     }
     
     .project-divider {
-      height: 1px;
-      background-color: #555;
-      margin: 30px 0;
+      height: 2px;  /* Changed from 1px to 2px */
+      background-color: white;
+      margin: 60px 0;
       width: 100%;
     }
+    
+    /* Remove this duplicate project-divider class */
+    /* .project-divider {
+      height: 1px;
+      background-color: white;
+      margin: 60px 0;
+      width: 100%;
+    } */
     .pub-image {
       flex: 1;
       max-width: 550px;  /* Increased from 250px to 350px */
