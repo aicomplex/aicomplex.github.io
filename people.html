@@ -1,564 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS People</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
-<!-- Add favicon link -->
-<link rel="icon" href="AICS-logo.png" type="image/png">
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.header {
-  padding: 20px;
-  background: #000; 
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.header .left-content {
-  display: flex;
-  align-items: center;
-}
-
-.header h1 {
-  margin-left: 20px;
-  margin-bottom: 0;
-  font-size: 48px;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.logo {
-  height: 100%;
-  object-fit: contain;
-}
-
-#logo1 {
-  margin-left: -20px;
-  height: 115px; 
-  width: auto; 
-}
-#logo2 {
-  height: 140px; 
-  width: auto; 
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-  font-size: 22px;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.side {
-  -ms-flex: 30%; 
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
-  .header h1 {
-    font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-  .navbar a {
-    font-size: 16px;
-    padding: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .profile {
-    width: 100%; 
-    margin: 20px 0; 
-  }
-}
-
-.profile-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; 
-  align-items: flex-start; 
-  gap: 30px; 
-}
-
-.profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; 
-  width: 370px; 
-  height: auto;
-  min-height: 600px;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #FFF;
-  padding: 15px;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px; 
-  width: 100%; 
-  margin-top: 15px;
-  padding: 10px 0;
-}
-
-.profile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
-
-.profile-photo {
-  width: 100%; 
-  height: 300px; 
-  object-fit: cover; 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.profile-bio {
-  width: 100%; 
-  padding: 15px;
-  text-align: left;
-  margin-top: 10px;
-  line-height: 1.6;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.profile-bio h3 {
-  font-family: 'Sunflower', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  margin-bottom: 12px;
-  color: #333;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
-}
-
-.profile-bio p {
-  margin-top: 0;
-}
-
-.profile-bio h3 {
-  font-family: 'Sunflower', sans-serif;
-  font-weight: 500;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.profile-bio em {
-  font-style: italic; 
-  font-family: cursive; 
-  font-size: 20px;
-}
-
-.main {
-  background-color: white;
-  padding: 40px;
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-}
-
-.section-title {
-  font-size: 32px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 10px; 
-  width: 100%; 
-  margin-top: auto; 
-}
-
-.social-icons a {
-  margin-right: 2px; 
-  color: black; 
-  font-size: 24px; 
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #873e23; 
-  transform: scale(1.2);
-}
-
-.students-section {
-  margin-top: 40px;
-}
-
-.students-section h2 {
-  font-size: 32px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.students-section p {
-  font-family: 'Sunflower', sans-serif;
-  font-size: 24px; 
-}
-
-.students-list {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-.alumni-section {
-  margin-top: 40px;
-}
-
-.alumni-section h2 {
-  font-size: 32px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.alumni-section p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px; 
-}
-
-.alumni-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.alumni-column {
-  flex: 1;
-  min-width: 300px;
-}
-
-.alumni-column ul {
-  margin-top: 0;
-}
-
-.alumni-column li {
-  padding: 6px 0;
-  border-bottom: 1px dotted #eee;
-}
-
-/* Removing the hover background color effect */
-.alumni-column li:hover {
-  background-color: transparent;
-}
-
-@media screen and (max-width: 768px) {
-  .alumni-list {
-    flex-direction: column;
-  }
-}
-
-.partner-badge {
-  background-color: #000; 
-  color: white; 
-  padding: 50px; 
-  text-align: left; 
-  font-size: 28px; 
-  font-weight: bold; 
-  margin-top: 30px;
-  font-family: 'Sunflower', sans-serif;
-}
-
-.email-button {
-  background: transparent; 
-  display: inline-block;
-  color: white; 
-  padding: 10px 15px; 
-  margin-top: 10px;
-  text-decoration: none; 
-  border-radius: 5px; 
-  font-size: 30px; 
-  cursor: pointer; 
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>People — AICS</title>
+  <link rel="icon" href="assets/img/logos/AICS-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body data-page="people">
 
-  <div class="header">
-  <div class="left-content">
-          <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
-          <h1>Artificial Intelligence and Complex Systems (AICS)</h1>
-  </div>
-  <a href="https://www.isi.edu/" target="_blank" style="display: flex; align-items: center; padding: 0; margin-right: -10px;">
-          <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2" style="height: 160px; width: auto;">
-  </a>
-  </div>
+  <div data-include="header"></div>
 
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="people.html">People</a>
-  <a href="projects.html">Projects</a>
-  <a href="pubs.html">Publications</a>
-  <a href="press.html">Press</a>
-  <a href="talks.html">Academic Outreach</a>
-  <a href="gallery.html">Gallery</a>
-</div>
+  <main class="container section">
+    <div class="eyebrow">// Team</div>
+    <h1 style="margin-bottom: 12px;">People</h1>
+    <p style="color: var(--text-muted); max-width: 60ch; margin-bottom: 56px;">
+      AICS brings together faculty, students, and research interns working across artificial
+      intelligence, network science, and computational social science.
+    </p>
 
-<div class="main">
-  <div class="partner-badge" style="padding: 10px 15px; margin: 0px auto 20px; border-radius: 15px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; max-width: 1000px;">
-    <!-- Removing the icon -->
-    <div>
-        <p style="margin: 0; font-size: 18px; line-height: 1.4; color: #444; text-align: center;">We are always looking for good collaborations, directed research students and interns. If you're interested, <a href="mailto:kejriwal@isi.edu" style="color: #ffbf00; text-decoration: underline;">drop us a note!</a></p>
-    </div>
-  </div>
-
-    <h2 class="section-title">Group Members</h2>
-    <div class="profile-list">
-        <div class="profile">
-           <img src="people/mkejriwal.png" alt="Profile Photo" class="profile-photo">
-           <div class="profile-bio">
-               <h3>Mayank Kejriwal</h3>
-               <p>
-                 • Director of AICS<br>
-                 • Research Associate Professor, Department of Industrial & Systems Engineering, USC<br>
-                 • Ph.D. in Computer Science, University of Texas at Austin (2016)
-               </p>
-           </div>
-           <div class="social-icons">
-                <a href="https://github.com/mayankkejriwal" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mayankkejriwal/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://scholar.google.com/citations?user=fetkEu4AAAAJ&hl=en&oi=ao" target="_blank"><i class="fab fa-google"></i></a>
-                <a href="mailto:kejriwal@isi.edu"><i class="fas fa-envelope"></i></a>
-                <a href="https://viterbi.usc.edu/directory/faculty/Kejriwal/Mayank" target="_blank"><i class="fas fa-home"></i></a>
-                <a href="http://dblp.uni-trier.de/pers/hd/k/Kejriwal:Mayank" target="_blank"><i class="fas fa-database"></i></a>
-                <a href="https://usc-isi-i2.github.io/kejriwal/doc/kejriwal-CV-public.pdf" target="_blank"><i class="fas fa-file"></i></a>
-            </div>
-       </div>
-
-        <div class="profile">
-           <img src="people/navapat.png" alt="Profile Photo" class="profile-photo">
-           <div class="profile-bio">
-               <h3>Navapat Nananukul</h3>
-               <p>
-                 • Research Intern in AICS<br>
-                 • M.S. in Computer Science, USC
-               </p>
-           </div>
-           <div class="social-icons">
-                <a href="https://github.com/navapatn" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/navapat/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://scholar.google.com/citations?user=h_YWvdAAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-                <a href="mailto:nananuku@usc.edu"><i class="fas fa-envelope"></i></a>
-                <a href="https://navapatn.github.io/" target="_blank"><i class="fas fa-home"></i></a>
-            </div>
-       </div>
-
-        <div class="profile">
-           <img src="people/yidansun.png" alt="Profile Photo" class="profile-photo">
-           <div class="profile-bio">
-               <h3>Yidan Sun</h3>
-               <p>
-                 • Research Assistant in AICS<br>
-                 • Ph.D. Student in Industrial & Systems Engineering, USC
-               </p>
-           </div>
-           <div class="social-icons">
-                <a href="https://github.com/yidans" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/yidansun07/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                <a href="mailto:yidans@isi.edu"><i class="fas fa-envelope"></i></a>
-                <a href="https://yidans.github.io/" target="_blank"><i class="fas fa-home"></i></a>
-            </div>
-       </div>
-        
-        <div class="profile">
-           <img src="people/ztang.jpeg" alt="Profile Photo" class="profile-photo">
-           <div class="profile-bio">
-               <h3>Zhisheng Tang</h3>
-               <p>
-                 • Research Assistant in AICS<br>
-                 • Ph.D. Student in Industrial & Systems Engineering, USC
-               </p>
-           </div>
-           <div class="social-icons">
-                <a href="https://www.linkedin.com/in/zhisheng-tang-560b64232/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://scholar.google.com/citations?user=t-gO6wQAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-                <a href="mailto:zhisheng@isi.edu"><i class="fas fa-envelope"></i></a>
-                <a href="https://jasontangzs0.github.io/" target="_blank"><i class="fas fa-home"></i></a>
-
-            
-            </div>
-       </div>
-    </div>
-    
-    
-    <div class="students-section">
-      <h2>Master's Students</h2>
-      <ul class="students-list">
-        <li><strong>Daiqi He</strong> – M.S. in Analytics, USC</li>
-        <li><strong>Ashwath Vaithinathan Aravindan</strong> – M.S. in Computer Science, USC</li>
-      </ul>
-    </div>
-    
-    <div class="students-section">
-      <h2>Undergraduate Students</h2>
-      <ul class="students-list">
-        <li><strong>Cole Gawin</strong> – B.S. in Cognitive Science, USC</li>
-        <li><strong>Richard Joungyoon Kim</strong> – B.S. in Computer Science & Business Administration, USC</li>
-      </ul>
-    </div>
-  
-  
-    <div class="alumni-section">
-      <h2>Alumni</h2>
-      <p style="font-family: 'Sunflower', sans-serif; font-size: 20px;">AICS is fortunate to have hosted several valuable research contributors and students over the last few years.</p>
-      
-      <!-- New PhD Alumni Section -->
-      <h3 style="font-family: 'Sunflower', sans-serif; font-size: 26px; margin-top: 20px; color: #333;">PhD Alumni</h3>
-      <div class="alumni-column">
-      <ul class="students-list">
-        <li><strong>Ke Shen</strong> – Industrial and Systems Engineering, USC, Ph.D. (2025)</li>
-      </ul>
-      </div>
-      <!-- Master's Alumni Section with updated heading -->
-      <h3 style="font-family: 'Sunflower', sans-serif; font-size: 26px; margin-top: 20px; color: #333;">Master's Alumni</h3>
-      <div class="alumni-list">
-        <div class="alumni-column">
-          <ul class="students-list">
-            <li><strong>Vishal Patil</strong> – USC, Master's</li>
-            <li><strong>Min-Hsueh Chiu</strong> – Research Engineer in ISI, USC, Master's</li>
-            <li><strong>Shree Vaishnavi Bacha</strong> – USC, Master's</li>
-            <li><strong>Revanth Yamani</strong> – USC, Master's</li>
-            <li><strong>Yining Ma</strong> – USC, Master's</li>
-            <li><strong>Khanin Sisaengsuwanchai</strong> – USC, Master's</li>
-            <li><strong>Zhijie Lin</strong> – USC, Master's</li>
-            <li><strong>Yongyi Ji</strong> – USC, Master's</li>
-            <li><strong>Sara Melotte</strong> – USC, Master's</li>
-            <li><strong>Akarsh Nagaraj</strong> – USC, Master's</li>
-            <li><strong>Yuesheng Luo</strong> – USC, Master's</li>
-            <li><strong>Kyle Wang</strong> – USC, Master's</li>
-            <li><strong>Hongyu Li</strong> – USC, Master's</li>
-            <li><strong>Lu Wang</strong> – USC, Master's</li>
-            <li><strong>Shilpa Thomas</strong> – USC, Master's</li>
-            <li><strong>Akarsh Dang</strong> – USC, Master's</li>
-            <li><strong>Jiayuan Ding</strong> – USC, Master's</li>
-            <li><strong>Ravi Kiran Selvam</strong> – USC, Master's</li>
-            <li><strong>Minda Hu</strong> – USC, Master's</li>
-            <li><strong>Peilin Zhou</strong> – USC, Master's</li>
-          </ul>
-        </div>
-        <div class="alumni-column">
-          <ul class="students-list">
-            <li><strong>Shuo Zhang</strong> – USC, Master's</li>
-            <li><strong>Yao Gu</strong> – USC, Master's</li>
-            <li><strong>Mozhdeh Gheini</strong> – USC, Master's</li>
-            <li><strong>Fan Pan</strong> – USC, Master's</li>
-            <li><strong>Zihao Zhai</strong> – USC, Master's</li>
-            <li><strong>Haotian Zhang</strong> – USC, Master's</li>
-            <li><strong>Rahul Kapoor</strong> – USC, Master's</li>
-            <li><strong>Yixiang Yao</strong> – USC, Master's</li>
-            <li><strong>Pulkit Manocha</strong> – USC, Master's</li>
-            <li><strong>Jing Peng</strong> – USC, Master's</li>
-            <li><strong>Qiaozhi Song</strong> – USC, Master's</li>
-            <li><strong>Daye Nam</strong> – USC, Master's</li>
-            <li><strong>Runqi Shao</strong> – USC, Master's</li>
-            <li><strong>I-Hui Huang</strong> – USC, Master's</li>
-            <li><strong>Fanghao Luo</strong> – USC, Master's</li>
-            <li><strong>Pratik Kabara</strong> – USC, Master's</li>
-            <li><strong>Shixiang Zhu</strong> – USC, Master's</li>
-            <li><strong>Xin Huang</strong> – USC, Master's</li>
-            <li><strong>Xuefeng Yan</strong> – USC, Master's</li>
-            <li><strong>Jianheng Hou</strong> – USC, Master's</li>
-          </ul>
+    <!-- DIRECTOR -->
+    <section class="director" aria-label="Director">
+      <img src="people/mkejriwal.png" alt="Mayank Kejriwal, Director of AICS">
+      <div>
+        <h2>Mayank Kejriwal</h2>
+        <p class="director__role">Director · Research Associate Professor, Industrial &amp; Systems Engineering, USC</p>
+        <p class="director__bio">
+          Ph.D. in Computer Science, University of Texas at Austin (2016). Mayank's research focuses on
+          knowledge graphs, large language models, and AI for social good — with applied programs in
+          public health, computational social science, and human trafficking.
+        </p>
+        <div class="social">
+          <a href="https://github.com/mayankkejriwal" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mayankkejriwal/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://scholar.google.com/citations?user=fetkEu4AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+          <a href="mailto:kejriwal@isi.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://viterbi.usc.edu/directory/faculty/Kejriwal/Mayank" target="_blank" rel="noopener" aria-label="USC homepage"><i class="fa-solid fa-house"></i></a>
+          <a href="http://dblp.uni-trier.de/pers/hd/k/Kejriwal:Mayank" target="_blank" rel="noopener" aria-label="DBLP"><i class="fa-solid fa-database"></i></a>
+          <a href="https://usc-isi-i2.github.io/kejriwal/doc/kejriwal-CV-public.pdf" target="_blank" rel="noopener" aria-label="CV"><i class="fa-solid fa-file-lines"></i></a>
         </div>
       </div>
-      
-      <!-- Undergraduate and High School Alumni Section -->
-      <h3 style="font-family: 'Sunflower', sans-serif; font-size: 26px; margin-top: 20px; color: #333;">Undergraduate and High School Alumni</h3>
-      <div class="alumni-list">
-        <div class="alumni-column">
-          <ul class="students-list">
-            <li><strong>Erica Okeh</strong> – Howard University, Undergraduate</li>
-            <li><strong>John Lim</strong> – Northwestern, Undergraduate</li>
-            <li><strong>Adin Aberbach</strong> – Swarthmore, Undergraduate</li>
-            <li><strong>Anik Mandal</strong> – IIT Kharagpur, Undergraduate</li>
-            <li><strong>David Cody Lingan</strong> – Michigan State, Undergraduate</li>
-            <li><strong>Junyu Ren</strong> – Tsinghua, Undergraduate</li>
-            <li><strong>Bruce Deng</strong> – High School, Intern</li>
+    </section>
+
+    <!-- COLLAB CTA -->
+    <div class="callout" style="margin-bottom: 64px;">
+      We are always looking for good collaborations, directed-research students, and interns.
+      If you're interested, <a href="mailto:kejriwal@isi.edu">drop us a note</a>.
+    </div>
+
+    <!-- RESEARCH GROUP -->
+    <section class="tier" aria-labelledby="tier-research">
+      <div class="section-header"><h2 id="tier-research">Research group</h2></div>
+      <div class="grid grid--3">
+
+        <article class="person-card">
+          <img class="person-card__photo" src="people/navapat.png" alt="Navapat Nananukul, Research Assistant">
+          <div class="person-card__body">
+            <h3 class="person-card__name">Navapat Nananukul</h3>
+            <p class="person-card__role">
+              <span class="role-line">Research Assistant in AICS</span>
+              <span class="role-line">Ph.D. Student, Industrial &amp; Systems Engineering, USC</span>
+            </p>
+            <div class="social">
+              <a href="https://github.com/navapatn" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/navapat/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://scholar.google.com/citations?user=h_YWvdAAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+              <a href="mailto:nananuku@usc.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://navapatn.github.io/" target="_blank" rel="noopener" aria-label="Homepage"><i class="fa-solid fa-house"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-card__photo" src="people/yidansun.png" alt="Yidan Sun, Research Assistant">
+          <div class="person-card__body">
+            <h3 class="person-card__name">Yidan Sun</h3>
+            <p class="person-card__role">
+              <span class="role-line">Research Assistant in AICS</span>
+              <span class="role-line">Ph.D. Student, Industrial &amp; Systems Engineering, USC</span>
+            </p>
+            <div class="social">
+              <a href="https://github.com/yidans" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/yidansun07/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://scholar.google.com/citations?hl=en&user=nOQ5KMsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+              <a href="mailto:yidans@isi.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://yidans.github.io/" target="_blank" rel="noopener" aria-label="Homepage"><i class="fa-solid fa-house"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-card__photo" src="people/ztang.jpeg" alt="Zhisheng Tang, Research Assistant">
+          <div class="person-card__body">
+            <h3 class="person-card__name">Zhisheng Tang</h3>
+            <p class="person-card__role">
+              <span class="role-line">Research Assistant in AICS</span>
+              <span class="role-line">Ph.D. Student, Industrial &amp; Systems Engineering, USC</span>
+            </p>
+            <div class="social">
+              <a href="https://www.linkedin.com/in/zhisheng-tang-560b64232/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://scholar.google.com/citations?user=t-gO6wQAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+              <a href="mailto:zhisheng@isi.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://jasontangzs0.github.io/" target="_blank" rel="noopener" aria-label="Homepage"><i class="fa-solid fa-house"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MASTER'S STUDENTS -->
+    <section class="tier" aria-labelledby="tier-masters">
+      <div class="section-header"><h2 id="tier-masters">Master's students</h2></div>
+      <ul class="tier-list-compact">
+        <li><strong>Daiqi He</strong> — M.S. Analytics, USC</li>
+        <li><strong>Ashwath Vaithinathan Aravindan</strong> — M.S. Computer Science, USC</li>
+      </ul>
+    </section>
+
+    <!-- UNDERGRADS -->
+    <section class="tier" aria-labelledby="tier-undergrad">
+      <div class="section-header"><h2 id="tier-undergrad">Undergraduate students</h2></div>
+      <ul class="tier-list-compact">
+        <li><strong>Cole Gawin</strong> — B.S. Cognitive Science, USC</li>
+        <li><strong>Richard Joungyoon Kim</strong> — B.S. Computer Science &amp; Business Administration, USC</li>
+      </ul>
+    </section>
+
+    <!-- ALUMNI (collapsed accordions) -->
+    <section class="tier" aria-labelledby="tier-alumni">
+      <div class="section-header"><h2 id="tier-alumni">Alumni</h2></div>
+      <p style="color: var(--text-muted); margin-bottom: 24px; max-width: 60ch;">
+        AICS has been fortunate to host many talented research contributors and students over the years.
+      </p>
+
+      <details class="alumni" open>
+        <summary>PhD alumni · 1</summary>
+        <div class="alumni-body">
+          <ul class="tier-list-compact">
+            <li><strong>Ke Shen</strong> — Industrial &amp; Systems Engineering, USC, Ph.D. (2025)</li>
           </ul>
         </div>
-        <div class="alumni-column">
-          <ul class="students-list">
-            <li><strong>Gwen Fang</strong> – USC, Undergraduate</li>
-            <li><strong>Stephanie Kim</strong> – University of Chicago, Undergraduate</li>
-            <li><strong>Maia Nkonabang</strong> – USC, Undergraduate</li>
-            <li><strong>Daisy Zhou</strong> – USC, Undergraduate</li>
-            <li><strong>Herry Wang</strong> – USC, Undergraduate</li>
-            <li><strong>Sanya Khatter</strong> – USC, Undergraduate</li>
+      </details>
+
+      <details class="alumni">
+        <summary>Master's alumni · 40</summary>
+        <div class="alumni-body">
+          <ul class="tier-list-compact">
+            <li><strong>Vishal Patil</strong> — USC, Master's</li>
+            <li><strong>Min-Hsueh Chiu</strong> — Research Engineer, ISI/USC, Master's</li>
+            <li><strong>Shree Vaishnavi Bacha</strong> — USC, Master's</li>
+            <li><strong>Revanth Yamani</strong> — USC, Master's</li>
+            <li><strong>Yining Ma</strong> — USC, Master's</li>
+            <li><strong>Khanin Sisaengsuwanchai</strong> — USC, Master's</li>
+            <li><strong>Zhijie Lin</strong> — USC, Master's</li>
+            <li><strong>Yongyi Ji</strong> — USC, Master's</li>
+            <li><strong>Sara Melotte</strong> — USC, Master's</li>
+            <li><strong>Akarsh Nagaraj</strong> — USC, Master's</li>
+            <li><strong>Yuesheng Luo</strong> — USC, Master's</li>
+            <li><strong>Kyle Wang</strong> — USC, Master's</li>
+            <li><strong>Hongyu Li</strong> — USC, Master's</li>
+            <li><strong>Lu Wang</strong> — USC, Master's</li>
+            <li><strong>Shilpa Thomas</strong> — USC, Master's</li>
+            <li><strong>Akarsh Dang</strong> — USC, Master's</li>
+            <li><strong>Jiayuan Ding</strong> — USC, Master's</li>
+            <li><strong>Ravi Kiran Selvam</strong> — USC, Master's</li>
+            <li><strong>Minda Hu</strong> — USC, Master's</li>
+            <li><strong>Peilin Zhou</strong> — USC, Master's</li>
+            <li><strong>Shuo Zhang</strong> — USC, Master's</li>
+            <li><strong>Yao Gu</strong> — USC, Master's</li>
+            <li><strong>Mozhdeh Gheini</strong> — USC, Master's</li>
+            <li><strong>Fan Pan</strong> — USC, Master's</li>
+            <li><strong>Zihao Zhai</strong> — USC, Master's</li>
+            <li><strong>Haotian Zhang</strong> — USC, Master's</li>
+            <li><strong>Rahul Kapoor</strong> — USC, Master's</li>
+            <li><strong>Yixiang Yao</strong> — USC, Master's</li>
+            <li><strong>Pulkit Manocha</strong> — USC, Master's</li>
+            <li><strong>Jing Peng</strong> — USC, Master's</li>
+            <li><strong>Qiaozhi Song</strong> — USC, Master's</li>
+            <li><strong>Daye Nam</strong> — USC, Master's</li>
+            <li><strong>Runqi Shao</strong> — USC, Master's</li>
+            <li><strong>I-Hui Huang</strong> — USC, Master's</li>
+            <li><strong>Fanghao Luo</strong> — USC, Master's</li>
+            <li><strong>Pratik Kabara</strong> — USC, Master's</li>
+            <li><strong>Shixiang Zhu</strong> — USC, Master's</li>
+            <li><strong>Xin Huang</strong> — USC, Master's</li>
+            <li><strong>Xuefeng Yan</strong> — USC, Master's</li>
+            <li><strong>Jianheng Hou</strong> — USC, Master's</li>
           </ul>
+        </div>
+      </details>
+
+      <details class="alumni">
+        <summary>Undergraduate &amp; high-school alumni · 13</summary>
+        <div class="alumni-body">
+          <ul class="tier-list-compact">
+            <li><strong>Erica Okeh</strong> — Howard University, Undergraduate</li>
+            <li><strong>John Lim</strong> — Northwestern, Undergraduate</li>
+            <li><strong>Adin Aberbach</strong> — Swarthmore, Undergraduate</li>
+            <li><strong>Anik Mandal</strong> — IIT Kharagpur, Undergraduate</li>
+            <li><strong>David Cody Lingan</strong> — Michigan State, Undergraduate</li>
+            <li><strong>Junyu Ren</strong> — Tsinghua, Undergraduate</li>
+            <li><strong>Bruce Deng</strong> — High School, Intern</li>
+            <li><strong>Gwen Fang</strong> — USC, Undergraduate</li>
+            <li><strong>Stephanie Kim</strong> — University of Chicago, Undergraduate</li>
+            <li><strong>Maia Nkonabang</strong> — USC, Undergraduate</li>
+            <li><strong>Daisy Zhou</strong> — USC, Undergraduate</li>
+            <li><strong>Herry Wang</strong> — USC, Undergraduate</li>
+            <li><strong>Sanya Khatter</strong> — USC, Undergraduate</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- LAB IN ACTION (slideshow) -->
+    <section class="tier" aria-labelledby="tier-gallery">
+      <div class="section-header"><h2 id="tier-gallery">Lab in action</h2></div>
+      <p style="color: var(--text-muted); margin-bottom: 24px; max-width: 60ch;">
+        Moments from research events, conferences, retreats, group lunches, and graduations.
+      </p>
+
+      <div class="slideshow" id="slideshow" aria-roledescription="carousel" aria-label="Lab in action">
+        <div class="slideshow__years" id="ss-years" role="tablist" aria-label="Jump to year"></div>
+
+        <div class="slideshow__counter" id="ss-counter">1 / 19</div>
+
+        <div class="slideshow__stage" id="ss-stage">
+          <figure class="slideshow__slide is-active" data-year="2023" data-caption="AI Ethics & Safety Retreat · April 2023">
+            <img src="gallery/AI-Ethics-N-Safety-Retreat.jpeg" alt="AI Ethics and Safety Retreat, April 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="Viterbi IUSSTF Presentation Lunch · Summer 2023">
+            <img src="gallery/USC1-summer-2023.jpeg" alt="Viterbi IUSSTF Presentation Lunch, Summer 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="ICT Poster Session — John Lim · Summer 2023">
+            <img src="gallery/JohnLim-ICT-summer2023.png" alt="ICT Poster Session, John Lim, Summer 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="Annenberg Microseminar on AGI · Summer 2023">
+            <img src="gallery/annenberg-microseminar-1.jpg" alt="Annenberg Microseminar on AGI, Summer 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="Public goods game · Summer 2023">
+            <img src="gallery/public-goods-july14-2023.jpg" alt="Public goods game during AICS group session, Summer 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2024" data-caption="Viterbi Jenny Wang Teaching Award — Yidan Sun · Spring 2024">
+            <img src="gallery/thumbnails/JennyWang.JPG" alt="Yidan Sun receiving Viterbi Jenny Wang Teaching Award, Spring 2024">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="Viterbi Poster Session — Adin Aberbach · Summer 2023">
+            <img src="gallery/viterbi-poster-1.jpg" alt="Viterbi Poster Session, Adin Aberbach, Summer 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="AICS Group Lunch · Tiramisu edition · Spring 2023">
+            <img src="gallery/group-lunch-spring-2023-1.jpg" alt="AICS Group Lunch, Tiramisu edition, Spring 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="AICS Group Lunch · Chocolate Mousse edition · Spring 2023">
+            <img src="gallery/group-lunch-spring-2023-2.jpg" alt="AICS Group Lunch, Chocolate Mousse edition, Spring 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="Summer Institute in CSS — Ke Shen · Spring 2023">
+            <img src="gallery/ke-shen-CSS-1.jpeg" alt="Summer Institute in Computational Social Science, Ke Shen, Spring 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2022" data-caption="Diverse Intelligences Summer Institute · Summer 2022">
+            <img src="gallery/DISI2022-group.jpeg" alt="Diverse Intelligences Summer Institute, Summer 2022">
+          </figure>
+          <figure class="slideshow__slide" data-year="2023" data-caption="ASONAM 2023 · Kusadasi, Turkey · Fall 2023">
+            <img src="gallery/thumbnails/ASONAM2023.JPG" alt="ASONAM 2023, Kusadasi, Turkey, Yidan Sun, Fall 2023">
+          </figure>
+          <figure class="slideshow__slide" data-year="2019" data-caption="NUJS + IIT Kharagpur Trafficking Panel · Winter 2019">
+            <img src="gallery/NUJS-1.jpg" alt="NUJS and IIT Kharagpur Combating Human Trafficking Panel, Winter 2019">
+          </figure>
+          <figure class="slideshow__slide" data-year="2022" data-caption="DISI · Summer 2022">
+            <img src="gallery/DISI2022-mini.png" alt="Diverse Intelligences Summer Institute, Summer 2022">
+          </figure>
+          <figure class="slideshow__slide" data-year="2025" data-caption="Ke Shen's Graduation · Spring 2025">
+            <img src="gallery/ke_graduate.jpg" alt="Ke Shen's Graduation Commencement, Spring 2025">
+          </figure>
+          <figure class="slideshow__slide" data-year="2025" data-caption="2025 INFORMS Analytics+ Conference · Spring 2025">
+            <img src="gallery/informs.jpeg" alt="2025 INFORMS Analytics+ Conference, Mayank Kejriwal, Spring 2025">
+          </figure>
+          <figure class="slideshow__slide" data-year="2025" data-caption="The Web Conference 2025 · Yidan + koala · Spring 2025">
+            <img src="gallery/koala.JPG" alt="Yidan Sun meeting a koala at The Web Conference 2025, Spring 2025">
+          </figure>
+          <figure class="slideshow__slide" data-year="2025" data-caption="Finnish Consular Residence — AI & education talk · Spring 2025">
+            <img src="gallery/finnish.jpeg" alt="Invited talk on AI and education at the Finnish Consular Residence, Spring 2025">
+          </figure>
+          <figure class="slideshow__slide" data-year="2026" data-caption="High-Assurance Reasoning in AI — Navapat Nananukul presents to USC President Beong-Soo Kim · 2026">
+            <img src="gallery/talk-usc-president-source.png" alt="Navapat Nananukul presenting research on high-assurance reasoning in AI to USC President Beong-Soo Kim, 2026">
+          </figure>
+
+          <button class="slideshow__nav prev" id="ss-prev" aria-label="Previous slide">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="slideshow__nav next" id="ss-next" aria-label="Next slide">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="slideshow__caption" id="ss-caption">AI Ethics &amp; Safety Retreat · April 2023</div>
+
+        <div class="slideshow__thumbs" id="ss-thumbs">
+          <button class="slideshow__thumb is-active" data-i="0"  aria-label="Slide 1"><img src="gallery/thumbnails/AI-Ethics-N-Safety-Retreat.jpeg" alt=""></button>
+          <button class="slideshow__thumb" data-i="1"  aria-label="Slide 2"><img src="gallery/thumbnails/USC1-summer-2023.jpeg" alt=""></button>
+          <button class="slideshow__thumb" data-i="2"  aria-label="Slide 3"><img src="gallery/thumbnails/JohnLim-ICT-summer2023.png" alt=""></button>
+          <button class="slideshow__thumb" data-i="3"  aria-label="Slide 4"><img src="gallery/thumbnails/annenberg-microseminar-1.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="4"  aria-label="Slide 5"><img src="gallery/thumbnails/public-goods-july14-2023.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="5"  aria-label="Slide 6"><img src="gallery/thumbnails/JennyWang.JPG" alt=""></button>
+          <button class="slideshow__thumb" data-i="6"  aria-label="Slide 7"><img src="gallery/thumbnails/viterbi-poster-1.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="7"  aria-label="Slide 8"><img src="gallery/thumbnails/group-lunch-spring-2023-1.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="8"  aria-label="Slide 9"><img src="gallery/thumbnails/group-lunch-spring-2023-2.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="9"  aria-label="Slide 10"><img src="gallery/thumbnails/ke-shen-CSS-1.jpeg" alt=""></button>
+          <button class="slideshow__thumb" data-i="10" aria-label="Slide 11"><img src="gallery/thumbnails/DISI2022-group.jpeg" alt=""></button>
+          <button class="slideshow__thumb" data-i="11" aria-label="Slide 12"><img src="gallery/thumbnails/ASONAM2023.JPG" alt=""></button>
+          <button class="slideshow__thumb" data-i="12" aria-label="Slide 13"><img src="gallery/thumbnails/NUJS-1-thumbnail.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="13" aria-label="Slide 14"><img src="gallery/thumbnails/DISI2022-mini.png" alt=""></button>
+          <button class="slideshow__thumb" data-i="14" aria-label="Slide 15"><img src="gallery/ke_graduate.jpg" alt=""></button>
+          <button class="slideshow__thumb" data-i="15" aria-label="Slide 16"><img src="gallery/informs.jpeg" alt=""></button>
+          <button class="slideshow__thumb" data-i="16" aria-label="Slide 17"><img src="gallery/koala.JPG" alt=""></button>
+          <button class="slideshow__thumb" data-i="17" aria-label="Slide 18"><img src="gallery/finnish.jpeg" alt=""></button>
         </div>
       </div>
-    </div>
-    
+    </section>
+  </main>
 
-<!-- Remove the original partner badge that was here -->
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
+  <script>
+    (function () {
+      const root    = document.getElementById('slideshow');
+      if (!root) return;
+      const slides  = Array.from(root.querySelectorAll('.slideshow__slide'));
+      const thumbs  = Array.from(root.querySelectorAll('.slideshow__thumb'));
+      const caption = document.getElementById('ss-caption');
+      const counter = document.getElementById('ss-counter');
+      const prev    = document.getElementById('ss-prev');
+      const next    = document.getElementById('ss-next');
+      const yearsEl = document.getElementById('ss-years');
+      const thumbsEl = document.getElementById('ss-thumbs');
+      let index = 0;
+      const total = slides.length;
+      let timer = null;
 
+      // Build year chips from unique slide years (newest first)
+      const years = [...new Set(slides.map((s) => s.dataset.year))]
+        .sort((a, b) => Number(b) - Number(a));
+      years.forEach((y) => {
+        const btn = document.createElement('button');
+        btn.className = 'slideshow__year';
+        btn.type = 'button';
+        btn.textContent = y;
+        btn.dataset.year = y;
+        btn.setAttribute('role', 'tab');
+        btn.addEventListener('click', () => {
+          const i = slides.findIndex((s) => s.dataset.year === y);
+          if (i !== -1) { show(i); start(); }
+        });
+        yearsEl.appendChild(btn);
+      });
+      const yearButtons = Array.from(yearsEl.querySelectorAll('.slideshow__year'));
+
+      function show(i) {
+        index = (i + total) % total;
+        slides.forEach((s, k) => s.classList.toggle('is-active', k === index));
+        thumbs.forEach((t, k) => t.classList.toggle('is-active', k === index));
+        const currentYear = slides[index].dataset.year;
+        yearButtons.forEach((b) => b.classList.toggle('is-active', b.dataset.year === currentYear));
+        caption.textContent = slides[index].dataset.caption;
+        counter.textContent = (index + 1) + ' / ' + total;
+        // Horizontally center the active thumb inside its rail — without ever
+        // scrolling the page (scrollIntoView would).
+        const active = thumbs[index];
+        if (active && thumbsEl) {
+          const left = active.offsetLeft - (thumbsEl.clientWidth - active.offsetWidth) / 2;
+          thumbsEl.scrollTo({ left, behavior: 'smooth' });
+        }
+      }
+      function start() {
+        stop();
+        timer = setInterval(() => show(index + 1), 7000);
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      prev.addEventListener('click', () => { show(index - 1); start(); });
+      next.addEventListener('click', () => { show(index + 1); start(); });
+      thumbs.forEach((t) => t.addEventListener('click', () => { show(parseInt(t.dataset.i, 10)); start(); }));
+
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+
+      document.addEventListener('keydown', (e) => {
+        // only react when the slideshow is in viewport
+        const rect = root.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        if (e.key === 'ArrowLeft')  { show(index - 1); start(); }
+        else if (e.key === 'ArrowRight') { show(index + 1); start(); }
+      });
+
+      show(0);
+      start();
+    })();
+  </script>
 </body>
 </html>

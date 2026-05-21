@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funding — AICS</title>
+  <link rel="icon" href="assets/img/logos/AICS-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    /* ── Funder logo grid ── */
+    .funder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 96px;
+    }
+    .funder-tile {
+      background: var(--bg-elev-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      text-align: center;
+      min-height: 220px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .funder-tile:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .funder-tile img {
+      max-width: 200px;
+      max-height: 96px;
+      object-fit: contain;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .funder-tile:hover img { transform: scale(1.05); }
+    .funder-tile__name {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    /* tiles with no logo yet */
+    .funder-tile--text-only .funder-tile__name {
+      font-size: 16px;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Grant table ── */
+    .grant-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+    .grant-table th {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .grant-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .grant-table tr:last-child td { border-bottom: none; }
+    .grant-table tr:hover td { background: var(--bg-elev-2); }
+    .grant-table .col-title  { color: var(--text); }
+    .grant-table .col-funder { color: var(--text-muted); font-size: 14px; }
+    .grant-table .col-role   { color: var(--accent); font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+    .grant-table .col-dates  { color: var(--text-dim); font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+  </style>
+</head>
+<body data-page="funding">
+
+  <div data-include="header"></div>
+
+  <main class="container section">
+    <div class="eyebrow">// Research support</div>
+    <h1 style="margin-bottom:12px;">Funding &amp; Affiliations</h1>
+    <p style="color:var(--text-muted); max-width:60ch; margin-bottom:64px; font-size:16px; line-height:1.75;">
+      AICS research is supported by federal agencies, industry partners, and private foundations.
+      We are grateful to all our sponsors.
+    </p>
+
+    <!-- ══════════════════════════
+         ACTIVE GRANTS TABLE
+         ══════════════════════════ -->
+    <div class="section-header" style="margin-top:80px; margin-bottom:24px;">
+      <h2>Active grants</h2>
+    </div>
+
+    <table class="grant-table">
+      <thead>
+        <tr>
+          <th style="width:42%">Project</th>
+          <th style="width:32%">Funder</th>
+          <th style="width:14%">Role</th>
+          <th style="width:12%">Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-title">(AI)nthropology in Action: An Ethnographic Study of Human-AI Co-Evolution and Design in Applied Research Administration</td>
+          <td class="col-funder">Human-AI Kaizen Initiative · Toyota Research Institute</td>
+          <td class="col-role">—</td>
+          <td class="col-dates">Apr 2026–Apr 2027</td>
+        </tr>
+        <tr>
+          <td class="col-title">Machine Learning Prediction of Persistent Adverse Mental Health Outcomes for Autistic Children</td>
+          <td class="col-funder">NIH R01 · NICHD</td>
+          <td class="col-role">Co-Investigator</td>
+          <td class="col-dates">Jul 2025–Jun 2030</td>
+        </tr>
+        <tr>
+          <td class="col-title">Phase-Aware Dynamic Models for Characterizing Evolving Complex Networks</td>
+          <td class="col-funder">DARPA MAGICS</td>
+          <td class="col-role">Principal Investigator</td>
+          <td class="col-dates">Dec 2025–Dec 2026</td>
+        </tr>
+        <tr>
+          <td class="col-title">Generating Realistic Operations with Adaptable TTPs (GROAT)</td>
+          <td class="col-funder">DARPA A3ML</td>
+          <td class="col-role">Co-PI</td>
+          <td class="col-dates">Dec 2025–Jun 2027</td>
+        </tr>
+        <tr>
+          <td class="col-title">AI-Driven Hospital Safety Incident Reporting</td>
+          <td class="col-funder">SoCal Healthcare Delivery Science Center</td>
+          <td class="col-role">—</td>
+          <td class="col-dates">Aug 2025–Jul 2026</td>
+        </tr>
+        <tr>
+          <td class="col-title">A Hands-On Generative AI Laboratory for Applied LLM Practice and Experimentation</td>
+          <td class="col-funder">NSF ACCESS Explore</td>
+          <td class="col-role">Principal Investigator</td>
+          <td class="col-dates">Sep 2025–Apr 2026</td>
+        </tr>
+        <tr>
+          <td class="col-title">DROIDDS: Data-Efficient, Robust, Ontology Induction for Deontic-Compliant Decision Support</td>
+          <td class="col-funder">DARPA CODORD</td>
+          <td class="col-role">Co-PI</td>
+          <td class="col-dates">Feb 2025–Feb 2027</td>
+        </tr>
+        <tr>
+          <td class="col-title">Characterizing Gastrointestinal Disorder Trajectories for Autistic Sub-Groups</td>
+          <td class="col-funder">NIH R01 · NICHD</td>
+          <td class="col-role">Co-Investigator</td>
+          <td class="col-dates">Aug 2024–Aug 2029</td>
+        </tr>
+        <tr>
+          <td class="col-title">Combating Human Trafficking</td>
+          <td class="col-funder">Kroner Family Foundation</td>
+          <td class="col-role">Principal Investigator</td>
+          <td class="col-dates">Mar 2023–Dec 2025</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ══════════════════════════
+         PAST GRANTS
+         ══════════════════════════ -->
+    <details class="grants-archive" style="margin-bottom:96px;">
+      <summary>Past funded projects · 17</summary>
+      <table class="grant-table" style="margin-top:16px;">
+        <thead>
+          <tr>
+            <th style="width:42%">Project</th>
+            <th style="width:32%">Funder</th>
+            <th style="width:14%">Role</th>
+            <th style="width:12%">Period</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-title">Multi-modal Open World Grounded Learning and Inference (MOWGLI)</td><td class="col-funder">DARPA MCS</td><td class="col-role">Principal Investigator</td><td class="col-dates">Aug 2019–Aug 2025</td></tr>
+          <tr><td class="col-title">Characterizing Tobacco and Cannabis Retailers Using AI</td><td class="col-funder">—</td><td class="col-role">Co-PI</td><td class="col-dates">May–Aug 2025</td></tr>
+          <tr><td class="col-title">Healthcare Knowledge Graph</td><td class="col-funder">Kaiser Permanente</td><td class="col-role">Principal Investigator</td><td class="col-dates">Since Mar 2022</td></tr>
+          <tr><td class="col-title">CHAIKMAT: Commonsense Knowledge &amp; Hybrid AI for Trusted Flexible Manufacturing 4.0</td><td class="col-funder">ANR (France)</td><td class="col-role">Collaborating Researcher</td><td class="col-dates">Oct 2021</td></tr>
+          <tr><td class="col-title">Generating Novelty in Open-World Multi-Agent Environments (GNOME)</td><td class="col-funder">DARPA SAIL-ON</td><td class="col-role">Principal Investigator</td><td class="col-dates">Dec 2019–Jun 2023</td></tr>
+          <tr><td class="col-title">Developing Artificial Intelligence Forecasting Questions</td><td class="col-funder">Open Philanthropy / Univ. of Maryland</td><td class="col-role">Principal Investigator</td><td class="col-dates">Apr–Sep 2022</td></tr>
+          <tr><td class="col-title">A Global Study of Inclusion Correlates</td><td class="col-funder">USC Zumberge D&amp;I Fund</td><td class="col-role">Principal Investigator</td><td class="col-dates">Aug 2020–Sep 2021</td></tr>
+          <tr><td class="col-title">A COVID-19 Knowledge Graph Infrastructure for Assistive Expertise</td><td class="col-funder">Microsoft COVID-19 AI for Health</td><td class="col-role">Principal Investigator</td><td class="col-dates">Jul 2020–Feb 2021</td></tr>
+          <tr><td class="col-title">Representation Learning for Product Graphs</td><td class="col-funder">Yahoo! FREP</td><td class="col-role">Principal Investigator</td><td class="col-dates">Sep 2019–Sep 2020</td></tr>
+          <tr><td class="col-title">THOR: Text-enabled Humanitarian Operations in Real-time</td><td class="col-funder">DARPA LORELEI</td><td class="col-role">Principal Investigator</td><td class="col-dates">Jun 2016–Jan 2020</td></tr>
+          <tr><td class="col-title">Discovery and Dismantling of Human Trafficking Networks</td><td class="col-funder">Keston Research Project</td><td class="col-role">Principal Investigator</td><td class="col-dates">Jan 2019–Dec 2020</td></tr>
+          <tr><td class="col-title">Crisis Understanding using Intelligent Systems</td><td class="col-funder">USC URAP</td><td class="col-role">Principal Investigator</td><td class="col-dates">Jul 2019</td></tr>
+          <tr><td class="col-title">ELICIT: Extracting and Organizing Causal Information</td><td class="col-funder">DARPA CauseEx</td><td class="col-role">—</td><td class="col-dates">Aug 2017–Jan 2019</td></tr>
+          <tr><td class="col-title">DSBox: Data Scientist in a Box</td><td class="col-funder">DARPA D3M</td><td class="col-role">—</td><td class="col-dates">Mar 2017–Jan 2019</td></tr>
+          <tr><td class="col-title">GAIA: Generating Alternatives for Interpretation and Analysis</td><td class="col-funder">DARPA AIDA</td><td class="col-role">—</td><td class="col-dates">Jan–Aug 2018</td></tr>
+          <tr><td class="col-title">SAGE: Synergistic Anticipation of Geopolitical Events</td><td class="col-funder">IARPA HFC</td><td class="col-role">—</td><td class="col-dates">Aug 2017–May 2018</td></tr>
+          <tr><td class="col-title">DIG: Domain-specific Insight Graphs</td><td class="col-funder">DARPA MEMEX</td><td class="col-role">—</td><td class="col-dates">Jun 2016–Apr 2018</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <!-- ══════════════════════════
+         FUNDER LOGO GRID
+         ══════════════════════════ -->
+    <div class="section-header" style="margin-top:80px; margin-bottom:32px;">
+      <h2>Our sponsors</h2>
+    </div>
+
+    <div class="funder-grid">
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/darpa.png" onerror="this.style.display='none'" alt="DARPA">
+        <span class="funder-tile__name">DARPA</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/NIH-Symbol.png" onerror="this.style.display='none'" alt="NIH">
+        <span class="funder-tile__name">NIH / NICHD</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/NSF.png" onerror="this.style.display='none'" alt="NSF">
+        <span class="funder-tile__name">NSF</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/IARPA.png" onerror="this.style.display='none'" alt="IARPA">
+        <span class="funder-tile__name">IARPA</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/toyota-research.png" onerror="this.style.display='none'" alt="Toyota Research Institute">
+        <span class="funder-tile__name">Toyota Research Institute</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/kaiser.png" onerror="this.style.display='none'" alt="Kaiser Permanente">
+        <span class="funder-tile__name">Kaiser Permanente</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/microsoft.png" onerror="this.style.display='none'" alt="Microsoft">
+        <span class="funder-tile__name">Microsoft</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/yahoo.png" onerror="this.style.display='none'" alt="Yahoo">
+        <span class="funder-tile__name">Yahoo!</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/Open_Philanthropy.png" onerror="this.style.display='none'" alt="Open Philanthropy">
+        <span class="funder-tile__name">Open Philanthropy</span>
+      </div>
+      <div class="funder-tile">
+        <img src="assets/img/logos/funders/anr.png" onerror="this.style.display='none'" alt="ANR France">
+        <span class="funder-tile__name">ANR (France)</span>
+      </div>
+      <div class="funder-tile funder-tile--text-only">
+        <span class="funder-tile__name">Kroner Family Foundation</span>
+      </div>
+      <div class="funder-tile funder-tile--text-only">
+        <span class="funder-tile__name">Keston Research Project</span>
+      </div>
+    </div>
+
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>

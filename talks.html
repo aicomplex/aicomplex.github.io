@@ -1,404 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS Academic Outreach</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="AICS-logo.png" type="image/png">
-<style>
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-.header {
-  padding: 20px;
-  background: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Sunflower', sans-serif;
-}
-.header .left-content {
-  display: flex;
-  align-items: center;
-}
-.header h1 {
-  margin-left: 20px;
-  margin-bottom: 0;
-  font-size: 48px;
-  font-family: 'Sunflower', sans-serif;
-}
-.logo {
-  height: 100%;
-  object-fit: contain;
-}
-#logo1 {
-  margin-left: -20px;
-  height: 115px;
-  width: auto;
-}
-#logo2 {
-  height: 140px;
-  width: auto;
-}
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: 'Sunflower', sans-serif;
-}
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-  font-size: 22px;
-  font-family: 'Sunflower', sans-serif;
-}
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-.main {
-  flex: 100%;
-  background-color: white;
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
-}
-h2 {
-  font-size: 32px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  font-family: 'Sunflower', sans-serif;
-}
-h3 {
-  font-size: 24px;
-  margin-top: 40px;
-  color: #444;
-  border-left: 5px solid #ffbf00;
-  padding-left: 10px;
-  font-family: 'Sunflower', sans-serif;
-}
-.partner-badge {
-  background-color: #000; 
-  color: white; 
-  padding: 50px; 
-  text-align: left; 
-  font-size: 28px;
-  font-weight: bold;
-  font-family: 'Sunflower', sans-serif;
-}
-.talk-type {
-  font-weight: bold;
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-bottom: 5px;
-}
-
-.talk-type.invited {
-  background-color: #e8f4ff;
-  color: #2c5282;
-  border-left: 3px solid #4299e1;
-}
-
-.talk-type.tutorial {
-  background-color: #e6f6ef;
-  color: #276749;
-  border-left: 3px solid #48bb78;
-}
-
-.talk-type.demo {
-  background-color: #f5eeff;
-  color: #553c9a;
-  border-left: 3px solid #9f7aea;
-}
-
-ul.talk-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.talk-list li {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px dashed #ddd;
-}
-
-/* Remove these hover styles */
-ul.talk-list li:hover {
-  background-color: inherit;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transform: none;
-}
-.talk-type.invited {
-  color: blue;
-}
-.talk-type.tutorial {
-  color: teal;
-}
-.talk-type.demo {
-  color: purple;
-}
-.talk-type.case-study {
-  background-color: #fffbeb;
-  color: #92400e;
-  border-left: 3px solid #fbbf24;
-}
-.partner-badge {
-  background-color: #000; 
-  color: white; 
-  padding: 50px; 
-  text-align: left; 
-  font-size: 28px;
-  font-weight: bold; 
-}
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
-  .main {
-    padding: 20px;
-  }
-  .header h1 {
-    font-size: 28px;
-  }
-  .navbar a {
-    font-size: 16px;
-    padding: 15px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outreach — AICS</title>
+  <link rel="icon" href="assets/img/logos/AICS-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
-<div class="header">
-  <div class="left-content">
-          <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
-          <h1>Artificial Intelligence and Complex Systems (AICS)</h1>
-  </div>
-  <a href="https://www.isi.edu/" target="_blank" style="display: flex; align-items: center; padding: 0; margin-right: -10px;">
-          <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2" style="height: 160px; width: auto;">
-  </a>
-  </div>
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="people.html">People</a>
-  <a href="projects.html">Projects</a>
-  <a href="pubs.html">Publications</a>
-  <a href="press.html">Press</a>
-  <a href="talks.html">Academic Outreach</a>
-  <a href="gallery.html">Gallery</a>
-</div>
-<div class="row">
-  <div class="main">
-    <h2>Tutorials, Demonstrations and Other Outreach</h2>
-<h3>2025</h3>
+<body data-page="talks">
+
+  <div data-include="header"></div>
+
+  <main class="container--narrow container section">
+    <div class="eyebrow">// Outreach</div>
+    <h1 style="margin-bottom: 12px;">Tutorials, demos &amp; case studies</h1>
+    <p style="color: var(--text-muted); max-width: 60ch; margin-bottom: 56px;">
+      Conference tutorials, technical demos, micro-seminars, and case studies presented by
+      AICS. Tagged by type — Demo · Tutorial · Case Study · Micro-Seminar.
+    </p>
+
+<h3 class="pubs-year" id="year-2026">2026</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type demo">Demo: CAIS&#x27;26: The ACM Conference on AI and Agentic Systems, 2026</span><br>
+        <strong>A Compound AI Agent for Conversational Grant Discovery</strong>
+<br>        Zhisheng Tang and Mayank Kejriwal
+</li>
+<li>
+        <span class="talk-type demo">Demo: CAIS&#x27;26: The ACM Conference on AI and Agentic Systems, 2026</span><br>
+        <strong>ClinicBot: A Guideline-Grounded Clinical Chatbot with Prioritized Evidence RAG and Verifiable Citations</strong>
+<br>        Navapat Nananukul and Mayank Kejriwal
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2025">2025</h3>
 <ul class="talk-list">
 <li>
         <span class="talk-type tutorial">Tutorial: Ground System Architectures Workshop (GSAW)</span><br>
-        AI Aided Design and Development for Space Systems<br>Robert Lai, Alefiya Hussain, Mayank Kejriwal et al.
+        <strong>AI Aided Design and Development for Space Systems</strong>
+<br>        Robert Lai, Alefiya Hussain, Mayank Kejriwal et al.
+<br>        <span style="color: var(--text-dim); font-size: 12px;">Link</span>
 </li>
 </ul>
 
-<h3>2024</h3>
+<h3 class="pubs-year" id="year-2024">2024</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type invited">Invited Talk: Annenberg Micro-seminar, USC</span><br>
-        Will ChatGPT replace human skill?
+        <span class="talk-type invited">Micro-Seminar: Invited Annenberg Micro-seminar, University of Southern California</span><br>
+        <strong>Will ChatGPT replace human skill?</strong>
+<br>        Mayank Kejriwal
 </li>
 <li>
-        <span class="talk-type demo">Demo: IEEE/ACM ASONAM</span><br>
-        ISAC: An Interactive Hierarchical Interface for Efficient Structural Analysis and Vertex Search in Complex Networks<br>Navapat Nananukul, Khanin Sisaengsuwancha and Mayank Kejriwal
+        <span class="talk-type demo">Demo: The IEEE/ACM ASONAM Conference, 2024</span><br>
+        <strong>ISAC: An Interactive Hierarchical Interface for Efficient Structural Analysis and Vertex Search in Complex Networks</strong>
+<br>        Navapat Nananukul, Khanin Sisaengsuwancha and Mayank Kejriwal
 </li>
 </ul>
 
-<h3>2023</h3>
+<h3 class="pubs-year" id="year-2023">2023</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type demo">Demo: IEEE/ACM ASONAM</span><br>
-        DeepGraph: Multi-Cluster Interactive Visualization of Complex Networks in a Learned Representation Space<br>Yidan Sun and Mayank Kejriwal
+        <span class="talk-type demo">Demo: The IEEE/ACM ASONAM Conference, 2023</span><br>
+        <strong>DeepGraph: Multi-Cluster Interactive Visualization of Complex Networks in a Learned Representation Space</strong>
+<br>        Yidan Sun and Mayank Kejriwal
 </li>
-<li>
-        <span class="talk-type invited">Invited Talk: European Conference on Knowledge Management</span><br>
-        Knowledge Management during Crises using an Augmented Artificial Intelligence Framework<br>Final round, Knowledge Management and Intellectual Capital Excellence Awards at ECKM
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: Annenberg Micro-seminar, USC</span><br>
-        Artificial General Intelligence: Are we Close(r)?
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: AGI Conference, Stockholm</span><br>
-        Machine Intelligence for Open Worlds: A Multi-Domain Tutorial of Challenges and Opportunities
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: INAS Conference, Princeton</span><br>
-        A mathematical model of social utility under variable conditions of innovation and copying
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: Enabling Edge Computing Summit</span><br>
-        Open-world learning at the edge: the next stage of machine intelligence
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: AGI</span><br>
-        Machine Intelligence for Open Worlds: A Multi-Domain Tutorial of Challenges and Opportunities
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: Fidelity AI Center</span><br>
-        Knowledge Graphs and Large Language Models: Friends or Foes?
-</li>
-</ul>
-
-<h3>2022</h3>
-<ul class="talk-list">
-<li>
-        <span class="talk-type invited">Invited Keynote Talk: IEEE ICDM International Workshop on Knowledge Graphs</span><br>
-        Domain-Specific Knowledge Graph Construction: Opportunities and Challenges
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: Netflix</span><br>
-        Knowledge Graphs: Search, Personalization, and Analytics
-</li>
-</ul>
-
-<h3>2021</h3>
-<ul class="talk-list">
-<li>
-        <span class="talk-type tutorial">Tutorial: IEEE SSCI</span><br>
-        Knowledge Graphs: A Practical Introduction across Disciplines
-</li>
-<li>
-        <span class="talk-type demo">Demo: IEEE/ACM ASONAM</span><br>
-        Unsupervised real-time induction and interactive visualization of taxonomies over domain-specific concepts<br>Mayank Kejriwal and Ke Shen
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: AAAI</span><br>
-        Commonsense Knowledge Acquisition and Representation<br>Co-tutors: Antoine Bosselut, Filip Ilievsky, and Simon Razniewski
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: IEEE SSCI; ASONAM 2020</span><br>
-        Knowledge Graphs: A Practical Introduction across Disciplines
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: SAP Inspiration Sessions Community</span><br>
-        Artificial General Intelligence
-</li>
-<li>
-        <span class="talk-type invited">Invited Talk: ITU Focus Group on AI for Natural Disaster Management</span><br>
-        Detecting situational needs from digital messaging in real-time
-</li>
-</ul>
-
-<h3>2020</h3>
-<ul class="talk-list">
 <li>
         <span class="talk-type case-study">Case Study: European Conference on Knowledge Management</span><br>
-        AI and Social Good in the Context of Child Sex Trafficking: Design Space and Best Practices<br>Runner-up, Knowledge Management and Intellectual Capital Excellence Awards at ECKM
+        <strong>Knowledge Management during Crises using an Augmented Artificial Intelligence Framework</strong>
+<br>        Mayank Kejriwal
+<br>        <span style="color: var(--text-dim); font-size: 12px;">Final round, Knowledge Management and Intellectual Capital Excellence Awards at ECKM</span>
 </li>
 <li>
-        <span class="talk-type tutorial">Tutorial: ASONAM</span><br>
-        Knowledge Graphs: A Practical Introduction across Disciplines
+        <span class="talk-type invited">Micro-Seminar: Invited Annenberg Micro-seminar, University of Southern California</span><br>
+        <strong>Artificial General Intelligence: Are we Close(r)?</strong>
+<br>        Mayank Kejriwal
 </li>
 <li>
-        <span class="talk-type demo">Demo: NeurIPS</span><br>
-        Generating Novelty in Open-World Multi-Agent Environments<br>Mayank Kejriwal and Shilpa Thomas
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: ISWC</span><br>
-        Commonsense Knowledge Graphs<br>Co-tutors: Pedro Szekely and Filip Ilievsky
+        <span class="talk-type tutorial">Tutorial: Tutorial at the 16th annual Artificial General Intelligence (AGI) Conference in Stockholm, Sweden</span><br>
+        <strong>Machine Intelligence for Open Worlds: A Multi-Domain Tutorial of Challenges and Opportunities</strong>
+<br>        Mayank Kejriwal
 </li>
 </ul>
 
-<h3>2019</h3>
+<h3 class="pubs-year" id="year-2021">2021</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type invited">Invited Talk: Annenberg Micro-seminar, USC</span><br>
-        AI, Networks and Society
+        <span class="talk-type tutorial">Tutorial: Tutorial at the IEEE Symposium Series on Computational Intelligence (SSCI)</span><br>
+        <strong>Knowledge Graphs: A Practical Introduction across Disciplines</strong>
+<br>        Mayank Kejriwal
 </li>
 <li>
-        <span class="talk-type demo">Demo: IEEE/ASONAM</span><br>
-        SAVIZ: Interactive Exploration and Visualization of Social Media over Crisis Data<br>Mayank Kejriwal and Peilin Zhou
+        <span class="talk-type demo">Demo: The IEEE/ACM ASONAM Conference (held virtually), 2021</span><br>
+        <strong>Unsupervised real-time induction and interactive visualization of taxonomies over domain-specific concepts</strong>
+<br>        Mayank Kejriwal and Ke Shen
 </li>
 <li>
-        <span class="talk-type invited">Invited Talk: National University for Juridical Sciences (NUJS), Kolkata, India</span><br>
-        Fighting Human Trafficking with Technology
-</li>
-<li>
-        <span class="talk-type demo">Demo: ACM SIGIR</span><br>
-        Expert-Guided Entity Extraction using Expressive Rules<br>Mayank Kejriwal, Runqi Shao and Pedro Szekely
+        <span class="talk-type tutorial">Tutorial: Tutorial at the AAAI Conference</span><br>
+        <strong>Commonsense Knowledge Acquisition and Representation</strong>
+<br>        Antoine Bosselut, Filip Ilievsky, Mayank Kejriwal, Simon Razniewski
+<br>        <span style="color: var(--text-dim); font-size: 12px;">YouTube Link</span>
 </li>
 </ul>
-<h3>2018</h3>
+
+<h3 class="pubs-year" id="year-2020">2020</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type case-study">Case Study: Figshare</span><br>
-        Reusing data and building upon it<br>Mayank Kejriwal, Megan Hardeman and Team Figshare
+        <span class="talk-type case-study">Case Study: 21st European Conference on Knowledge Management</span><br>
+        <strong>AI and Social Good in the Context of Child Sex Trafficking: Design Space and Best Practices</strong>
+<br>        Mayank Kejriwal
+<br>        <span style="color: var(--text-dim); font-size: 12px;">Runner-up, Knowledge Management and Intellectual Capital Excellence Awards at ECKM</span>
 </li>
 <li>
-        <span class="talk-type demo">Demo: ACM WebConf</span><br>
-        THOR: Text-enabled Humanitarian Operations in Real-time<br>Mayank Kejriwal, Daniel Gilley, Pedro Szekely, Jill Crisman
+        <span class="talk-type tutorial">Tutorial: Tutorial at the ASONAM Conference</span><br>
+        <strong>Knowledge Graphs: A Practical Introduction across Disciplines</strong>
+<br>        Mayank Kejriwal
 </li>
 <li>
-        <span class="talk-type tutorial">Tutorial: ACM WebConf</span><br>
-        Social Media Analysis for Situation Awareness during Crises<br>Gregoire Burel, Mayank Kejriwal, Prashant Khare, Pedro Szekely
+        <span class="talk-type demo">Demo: NeurIPS Conference, 2020</span><br>
+        <strong>Generating Novelty in Open-World Multi-Agent Environments</strong>
+<br>        Mayank Kejriwal and Shilpa Thomas
 </li>
 <li>
-        <span class="talk-type case-study">Case Study: ACM CHI</span><br>
-        Technology-assisted Investigative Search: A Case Study from an Illicit Domain<br>Mayank Kejriwal, Pedro Szekely
-</li>
-<li>
-        <span class="talk-type demo">Demo: SWDM Workshop, ACM WSDM</span><br>
-        Unsupervised Hashtag Retrieval and Visualization for Crisis Informatics<br>Yao Gu, Mayank Kejriwal
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: AAAI</span><br>
-        Knowledge Graph Construction from Web Corpora<br>Co-tutors: Pedro Szekely and Craig Knoblock
-</li>
-<li>
-        <span class="talk-type demo">Demo: AAAI</span><br>
-        Constructing Domain-specific Search Engines with No Programming<br>
-                <b>Nominated for best demo</b>
+        <span class="talk-type tutorial">Tutorial: Tutorial at the International Semantic Web Conference (ISWC) in Athens, Greece</span><br>
+        <strong>Commonsense Knowledge Graphs</strong>
+<br>        Filip Ilievsky, Mayank Kejriwal, Pedro Szekely
 </li>
 </ul>
 
-<h3>2017</h3>
+<h3 class="pubs-year" id="year-2019">2019</h3>
 <ul class="talk-list">
 <li>
-        <span class="talk-type demo">Demo: ISWC</span><br>
-        A Semantic Search Engine for Investigating Human Trafficking<br>Mayank Kejriwal, Pedro Szekely
+        <span class="talk-type invited">Micro-Seminar: Invited Annenberg Micro-seminar, University of Southern California</span><br>
+        <strong>AI, Networks and Society</strong>
+<br>        Mayank Kejriwal
 </li>
 <li>
-        <span class="talk-type tutorial">Tutorial: ISWC</span><br>
-        Constructing Domain-Specific Knowledge Graphs<br>Co-tutors: Pedro Szekely, Craig Knoblock
+        <span class="talk-type demo">Demo: The IEEE/ACM ASONAM Conference in Vancouver, Canada 2019</span><br>
+        <strong>SAVIZ: Interactive Exploration and Visualization of Social Media over Crisis Data</strong>
+<br>        Mayank Kejriwal and Peilin Zhou
 </li>
 <li>
-        <span class="talk-type tutorial">Tutorial: KDD</span><br>
-        Data Mining in Unusual Domains with Information-rich Knowledge Graph Construction, Inference and Search<br>Co-tutor: Pedro Szekely
-</li>
-<li>
-        <span class="talk-type tutorial">Tutorial: IS-GEO Summer Institute</span><br>
-        Information Integration<br>Mayank Kejriwal
+        <span class="talk-type demo">Demo: The ACM SIGIR Conference in Paris, France 2019</span><br>
+        <strong>Expert-Guided Entity Extraction using Expressive Rules</strong>
+<br>        Mayank Kejriwal, Runqi Shao and Pedro Szekely
 </li>
 </ul>
-  </div>
-</div>
 
-<div class="partner-badge" style="padding: 30px; font-size: 22px;">
-  We are always looking for good collaborations, directed research students
-  and interns. If you're interested, drop us a note!
-</div>
+<h3 class="pubs-year" id="year-2018">2018</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type case-study">Case Study: Figshare case study accessed online</span><br>
+        <strong>Reusing data and building upon it</strong>
+<br>        Mayank Kejriwal, Megan Hardeman and Team Figshare
+</li>
+<li>
+        <span class="talk-type demo">Demo: The ACM Web Conference (formerly known as ACM WWW) in Lyon, France 2018</span><br>
+        <strong>THOR: Text-enabled Humanitarian Operations in Real-time</strong>
+<br>        Mayank Kejriwal, Daniel Gilley, Pedro Szekely, Jill Crisman
+</li>
+<li>
+        <span class="talk-type tutorial">Tutorial: Tutorial at the ACM Web Conference (formerly known as ACM WWW) in Lyon, France 2018</span><br>
+        <strong>Social Media Analysis for Situation Awareness during Crises</strong>
+<br>        Gregoire Burel, Mayank Kejriwal, Prashant Khare, Pedro Szekely
+</li>
+<li>
+        <span class="talk-type case-study">Case Study: Case Study at the ACM CHI Conference on Human Factors in Computing Systems in Montreal, Canada 2018</span><br>
+        <strong>Technology-assisted Investigative Search: A Case Study from an Illicit Domain</strong>
+<br>        Mayank Kejriwal, Pedro Szekely
+</li>
+<li>
+        <span class="talk-type demo">Demo: Workshop on Social Web in Emergency and Disaster Management (SWDM), co-held with the</span><br>
+        <strong>Unsupervised Hashtag Retrieval and Visualization for Crisis Informatics</strong>
+<br>        Yao Gu, Mayank Kejriwal
+<br>        <span style="color: var(--text-dim); font-size: 12px;">ACM Web Search and Data Mining (WSDM) Conference in Los Angeles, California</span>
+</li>
+<li>
+        <span class="talk-type tutorial">Tutorial: AAAI Conference, held in New Orleans</span><br>
+        <strong>Knowledge Graph Construction from Web Corpora</strong>
+<br>        Mayank Kejriwal, Craig Knoblock and Pedro Szekely
+</li>
+<li>
+        <span class="talk-type demo">Demo: AAAI Conference, held in New Orleans</span><br>
+        <strong>Constructing Domain-specific Search Engines with No Programming</strong>
+<br>        Mayank Kejriwal, Pedro Szekely
+<br>        <span style="color: var(--text-dim); font-size: 12px;">Nominated for Best Demo</span>
+</li>
+</ul>
 
+<h3 class="pubs-year" id="year-2017">2017</h3>
+<ul class="talk-list">
+<li>
+        <span class="talk-type demo">Demo: International Semantic Web Conference (ISWC), held in Vienna, Austria</span><br>
+        <strong>A Semantic Search Engine for Investigating Human Trafficking</strong>
+<br>        Mayank Kejriwal, Pedro Szekely
+</li>
+<li>
+        <span class="talk-type tutorial">Tutorial: Full-day tutorial at International Semantic Web Conference (ISWC), 2017, held in Vienna, Austria</span><br>
+        <strong>Constructing Domain-specific Knowledge Graphs (KGC)</strong>
+<br>        Mayank Kejriwal, Craig Knoblock, and Pedro Szekely
+</li>
+<li>
+        <span class="talk-type tutorial">Tutorial: </span><br>
+        <strong>Data Mining in Unusual Domains with Information-rich Knowledge Graph Construction, Inference and Search Mayank Kejriwal and Pedro Szekely</strong>
+<br>        Conventional Tutorial at KDD, 2017, held in Halifax, Canada
+</li>
+<li>
+        <span class="talk-type tutorial">Tutorial: Tutorial at IS-GEO Summer Institute, 2017 held in Austin, TX</span><br>
+        <strong>Information Integration</strong>
+<br>        Mayank Kejriwal
+<br>        <span style="color: var(--text-dim); font-size: 12px;">BOOKS AND BOOK CHAPTERS</span>
+</li>
+</ul>
+    <div class="callout" style="margin-top: 48px;">
+      We are always looking for good collaborations, directed-research students, and interns.
+      If you're interested, <a href="mailto:kejriwal@isi.edu">drop us a note</a>.
+    </div>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
 </body>
 </html>

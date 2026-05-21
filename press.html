@@ -1,467 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AICS Press</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Add Google Fonts import for Sunflower -->
-<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
-<!-- Add favicon link -->
-<link rel="icon" href="AICS-logo.png" type="image/png">
-<style>
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-.header {
-  padding: 20px;
-  background: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Sunflower', sans-serif;
-}
-.header .left-content {
-  display: flex;
-  align-items: center;
-}
-.header h1 {
-  margin-left: 20px;
-  margin-bottom: 0;
-  font-size: 48px;
-  font-family: 'Sunflower', sans-serif;
-}
-.logo {
-  height: 100%;
-  object-fit: contain;
-}
-#logo1 {
-  margin-left: -20px;
-  height: 115px;
-  width: auto;
-}
-#logo2 {
-  height: 140px;
-  width: auto;
-}
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: 'Sunflower', sans-serif;
-}
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-  font-size: 22px;
-  font-family: 'Sunflower', sans-serif;
-}
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-.main {
-  flex: 100%;
-  background-color: white;
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
-}
-h2 {
-  font-size: 32px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  font-family: 'Sunflower', sans-serif;
-}
-h3 {
-  font-size: 24px;
-  margin-top: 40px;
-  color: #444;
-  border-left: 5px solid #ffbf00;
-  padding-left: 10px;
-  font-family: 'Sunflower', sans-serif;
-}
-.publication-date {
-  font-weight: bold;
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  background-color: #f2f2f2;
-  color: #444;
-  border-left: 3px solid #888;
-}
-
-ul.publication-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.publication-list li {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px dashed #ddd;
-}
-.publication-links a {
-  margin-right: 10px;
-  color: #1a0dab;
-  text-decoration: none;
-}
-.publication-links a:hover {
-  text-decoration: underline;
-}
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
-  .main {
-    padding: 20px;
-  }
-  .header h1 {
-    font-size: 28px;
-  }
-  .navbar a {
-    font-size: 16px;
-    padding: 15px;
-  }
-}
-.publication-venue {
-  font-style: italic;
-  font-weight: bold;
-  color: #555;
-  background-color: #f8f8f8;
-  padding: 2px 6px;
-  border-radius: 3px;
-  border-left: 2px solid #666;
-  margin: 3px 0;
-  display: inline-block;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Press — AICS</title>
+  <link rel="icon" href="assets/img/logos/AICS-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
-<div class="header">
-  <div class="left-content">
-          <img src="AICS-logo.png" alt="AICS logo" class="logo" id="logo1">
-          <h1>Artificial Intelligence and Complex Systems (AICS)</h1>
-  </div>
-  <a href="https://www.isi.edu/" target="_blank" style="display: flex; align-items: center; padding: 0; margin-right: -10px;">
-          <img src="ISI-logo.png" alt="ISI logo" class="logo" id="logo2" style="height: 160px; width: auto;">
-  </a>
-  </div>
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="people.html">People</a>
-  <a href="projects.html">Projects</a>
-  <a href="pubs.html">Publications</a>
-  <a href="press.html">Press</a>
-  <a href="talks.html">Academic Outreach</a>
-  <a href="gallery.html">Gallery</a>
-</div>
-<div class="row">
-  <div class="main">
-    <h2>Press, Blogs, and Abstracts</h2>
-<h3>2025</h3>
-<ul class="publication-list">
-<li>
-<span class="publication-date">Mar. 2025</span> <a href="https://thesciencearchive.org/2502-14086v1/" target="_blank">AIs Common Sense Conundrum: Challenges and Potential Solutions</a><br>
-<strong><em>The Science Archive</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2025</span> <a href="https://www.ctpublic.org/show/the-colin-mcenroe-show/2025-03-06/turns-out-common-sense-isnt-all-that-common" target="_blank">Turns out common sense isn't all that common</a><br>
-<strong><em>Interview on The Colin McEnroe Show, Connecticut Public Radio</em></strong><br></li>
-</ul>
+<body data-page="press">
 
-<h3>2024</h3>
+  <div data-include="header"></div>
+
+  <main class="container--narrow container section">
+    <div class="eyebrow">// Coverage</div>
+    <h1 style="margin-bottom: 12px;">Press, blogs &amp; abstracts</h1>
+    <p style="color: var(--text-muted); max-width: 60ch; margin-bottom: 56px;">
+      Media coverage, podcast interviews, blog appearances, and accepted abstracts
+      featuring AICS research.
+    </p>
+
+<h3 class="pubs-year" id="year-2026">2026</h3>
 <ul class="publication-list">
 <li>
-<span class="publication-date">Oct. 2024</span> <a href="https://creators.spotify.com/pod/profile/vaibhava-lakshmi-ravidesh/" target="_blank">Interview: AI, Startups, and the Power of Knowledge Graphs</a><br>
-<strong><em>GraphCast: AI, Data and Impact</em></strong><br></li>
+        <strong>ARIS Announces the 2026 Aris Award Winners</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Sep. 2024</span> <a href="https://www.theiet.org/membership/member-news/member-news-september-2024-issue/could-ai-systems-solve-our-global-issues" target="_blank">Could AI systems solve our global issues?</a><br>
-<strong><em>IET Member News/Magazine, September Issue</em></strong><br></li>
+        <strong>ASU-Science Prize winners talk transforming messy datasets into solutions</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Lab Coat Optional Podcast (ASU)</span>
+</li>
 <li>
-<span class="publication-date">Jul. 2024</span> <a href="https://www.isi.edu/news/70114/why-did-the-chicken-cross-the-road-to-evaluate-your-llm/" target="_blank">Why Did the Chicken Cross the Road? To Evaluate Your LLM</a><br>
-<strong><em>USC Viterbi, Information Sciences Institute</em></strong><br></li>
+        <strong>GRAIL featured on Morning Trojan newsletter</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">May 2024</span> <a href="https://www.quirks.com/articles/the-capabilities-and-limitations-and-ll-ms" target="_blank">The capabilities and limitations of LLMs</a><br>
-<strong><em>Quirk's Media</em></strong><br></li>
+        <strong>The End of Academic Writer’s Block? This Tool by USC Scientists Writes Research Papers in Under an Hour</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">USC Viterbi Information Sciences Institute News</span>
+</li>
 <li>
-<span class="publication-date">Feb. 2024</span> <a href="https://podcasts.apple.com/us/podcast/i-want-to-help-a-student-write-a-thesis-on/id1713875706?i=1000644372435" target="_blank">"I want to help a student write a thesis on artificial general intelligence"</a><br>
-<strong><em>AI/nsiders podcast with Adam Russell @ USC Information Sciences Institute</em></strong><br></li>
+        <strong>Protostar interview, ScienceAdviser newsletter (AAAS)</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Jan. 2024</span> <a href="https://igamingexpress.com/there-is-a-lot-of-similarity-between-investing-and-being-a-professional-poker-player/" target="_blank">Interview on ChatGPT and gambling</a><br>
-<strong><em>Interview on iGaming Express</em></strong><br></li>
+        <strong>AI System Built at USC Helps Investigators Track Down and Convict Sex Traffickers</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">USC Viterbi Information Sciences Institute News · Examining Rating Variability, Reviewer Confidence, and Sentiment Prediction</span>
+</li>
+<li>
+        <strong>Characterizing Robustness of Strategies to Novelty in Zero-Sum Open Worlds</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal, Shilpa Thomas and Hongyu Li</span>
 </li>
 </ul>
 
-<h3>2023</h3>
+<h3 class="pubs-year" id="year-2025">2025</h3>
 <ul class="publication-list">
 <li>
-<span class="publication-date">Dec. 2023</span> <a href="https://theconversation.com/chatgpt-and-its-ai-chatbot-cousins-ruled-2023-4-essential-reads-that-puncture-the-hype-220035" target="_blank">Featured in "ChatGPT and its AI chatbot cousins rules 2023: 4 essential reads that puncture the hype"</a><br>
-<strong><em>The Conversation</em></strong><br></li>
+        <strong>in OpenReview: Insights from a Machine Learning Conference</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Yidan Sun and Mayank Kejriwal · The 10th International Congress on Peer Review and Scientific Publication · Collaboration Diversity and Paper Success: Network Analysis of Co-authorship in a</span>
+</li>
 <li>
-<span class="publication-date">Nov. 2023</span> <a href="https://economychosun.com/site/data/html_dir/2023/11/19/2023111900008.html" target="_blank">Interview on GenAI</a><br>
-<strong><em>Cover story, Economy Chosun</em></strong><br></li>
+        <strong>Major Machine Learning Conference</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Oct. 2023</span> <a href="https://www.youtube.com/watch?v=5ikIvcku_Rk" target="_blank">Interview on human trafficking and DIG</a><br>
-<strong><em>The Circuit News</em></strong><br></li>
+        <strong>Yidan Sun and Mayank Kejriwal INSNA Sunbelt</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Oct. 2023</span> <a href="https://www.youtube.com/watch?v=I9tic-AeReQ" target="_blank">Interview on Artificial General Intelligence and AI for Social Good</a><br>
-<strong><em>"The ONE'S Changing the WORLD" 1st Future Tech Meets Sustainability Podcast</em></strong><br></li>
+        <strong>Ontological Modeling of Drug Trafficking in the Global South Using Newspaper Data</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Sanju Tiwari, Mayank Kejriwal, and Nandana Mihindukulasooriya · ESWC Posters &amp; Demo Track</span>
+</li>
 <li>
-<span class="publication-date">Oct. 2023</span> On using Fodor's theory of modularity for situating large language models within a larger artificial general intelligence architecture<br>
-<strong><em>Abstract accepted for oral presentation, 4th International Conference on the Mathematics of Neuroscience</em></strong><br></li>
+        <strong>AIs Common Sense Conundrum: Challenges and Potential Solutions</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">The Science Archive</span>
+</li>
 <li>
-<span class="publication-date">Sep. 2023</span> Towards a Domain-Agnostic Knowledge Graph-as-a-Service Infrastructure for Active Cyber Defense with Intelligent Agents<br>
-<strong><em>Poster at the IEEE 52nd Applied Imagery Pattern Recognition Workshop</em></strong><br></li>
+        <strong>Turns out common sense isn’t all that common</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Interview on The Colin McEnroe Show, Connecticut Public Radio</span>
+</li>
 <li>
-<span class="publication-date">Aug. 2023</span> <a href="https://omny.fm/shows/fun-kids/artificial-intelligence" target="_blank">Podcast/radio interview on Artificial Intelligence</a><br>
-<strong><em>Fun Kids</em></strong><br></li>
+        <strong>Generating Novelty in Open-World Multi-Agent Strategic Board Games</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal, Shilpa Thomas</span>
+</li>
 <li>
-<span class="publication-date">Aug. 2023</span> <a href="https://arxiv.org/abs/2310.05258" target="_blank">A Knowledge Graph-Based Search Engine for Robustly Finding Doctors and Locations in the Healthcare Domain</a><br>
-<strong><em>Accepted poster and extended abstract, KDD Southern California Data Science Day, Long Beach</em></strong><br></li>
-<li>
-<span class="publication-date">Jul. 2023</span> <a href="https://www.route-fifty.com/emerging-tech/2022/07/-crowds-power-couples-network-science-uncovers-hidden-structure-community-dynamics/374812/" target="_blank">From in-crowds to power couples, network science uncovers the hidden structure of community dynamics</a><br>
-<strong><em>Route Fifty</em></strong><br></li>
-<li>
-<span class="publication-date">May 2023</span> <a href="https://www.isi.edu/news/56585/putting-the-rational-thinking-skills-of-language-models-to-the-test/" target="_blank">Putting the Rational Thinking Skills of Language Models to the Test</a><br>
-<strong><em>USC Viterbi Information Sciences Institute Research News</em></strong><br></li>
-<li>
-<span class="publication-date">May 2023</span> <a href="https://www.isi.edu/news/57178/are-you-more-vaccine-hesitant-than-a-57-year-old/" target="_blank">Are You More Vaccine Hesitant Than A 57-Year-Old?</a><br>
-<strong><em>USC Viterbi Information Sciences Institute Research News</em></strong><br></li>
-<li>
-<span class="publication-date">May 2023</span> <a href="https://podcasts.apple.com/us/podcast/folksalert/id1441824655" target="_blank">INTERVIEW: Unleashing the Potential of AI</a><br>
-<strong><em>Folksalert podcast episode</em></strong><br></li>
-<li>
-<span class="publication-date">May 2023</span> <a href="https://www.rhsmith.umd.edu/departments/decision-operations-information-technologies/impact-workshop" target="_blank">Designing Artificial Intelligence for the Long Tail</a><br>
-<strong><em>Accepted abstract in the Workshop on AI and Analytics for Social Good, Robert H. Smith School of Business, University of Maryland</em></strong><br></li>
-<li>
-<span class="publication-date">Apr. 2023</span> <a href="https://theconversation.com/dont-bet-with-chatgpt-study-shows-language-ais-often-make-irrational-decisions-202936" target="_blank">Don't bet with ChatGPT – study shows language AIs often make irrational decisions</a><br>
-<strong><em>The Conversation</em></strong><br>Republished in Gizmodo, NextGov, Lifehacker (Australia), Wyborcza (Poland), MyBroadBand (South Africa)<br></li>
+        <strong>Modeling Inequality in Complex Networks of Strategic Agents using Iterative Game-Theoretic Transactions</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal, Yuesheng Luo</span>
+</li>
 </ul>
 
-<h3>2022</h3>
+<h3 class="pubs-year" id="year-2024">2024</h3>
 <ul class="publication-list">
 <li>
-<span class="publication-date">Oct. 2022</span> <a href="https://www.isi.edu/news/50922/what-will-2072-look-like-recorded-dreams-and-ai-friends/" target="_blank">Quoted in What will 2072 look like? Recorded dreams and AI friends!</a><br>
-<strong><em>Julia Cohen</em></strong><br></li>
+        <strong>Interview: AI, Startups, and the Power of Knowledge Graphs</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">GraphCast: AI, Data and Impact</span>
+</li>
 <li>
-<span class="publication-date">Sep. 2022</span> <a href="https://www.theguardian.com/books/2022/apr/27/four-times-more-male-characters-in-literature-than-female-research-suggests" target="_blank">AI study finds that males are represented four times more than females in literature</a><br>
-<strong><em>The Guardian</em></strong><br>Republished in The Print, Free Press Journal, National Herald, Daily Mail, Paneta, BBC, SBS News (Korea), World Economic Forum and Press Trust of India<br></li>
+        <strong>Could AI systems solve our global issues?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">IET Member News/Magazine, September Issue</span>
+</li>
 <li>
-<span class="publication-date">Sep. 2022</span> <a href="https://theprint.in/india/male-female-character-ratio-in-books-41-says-study/1141425/" target="_blank">Male-female character ratio in books 4:1, says study</a><br>
-<strong><em>The Print, National Herald, Free Press Journal, Press Trust of India</em></strong><br></li>
+        <strong>Why Did the Chicken Cross the Road? To Evaluate Your LLM</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">USC Viterbi, Information Sciences Institute</span>
+</li>
 <li>
-<span class="publication-date">Jul. 2022</span> Evaluating Language Representation Models on Approximately Rational Decision Making Problems<br>
-<strong><em>Accepted abstract and presentation in CogSci2022</em></strong><br></li>
+        <strong>The capabilities and limitations of LLMs</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Quirk&#x27;s Media</span>
+</li>
 <li>
-<span class="publication-date">Jun. 2022</span> <a href="https://vimeo.com/728636355" target="_blank">Live interview on AI and Bias</a><br>
-<strong><em>Appearance on KABC (ABC7 Los Angeles) live web streaming</em></strong><br></li>
+        <strong>&quot;I want to help a student write a thesis on artificial general intelligence&quot;</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">AI/nsiders podcast with Adam Russell @ USC Information Sciences Institute</span>
+</li>
 <li>
-<span class="publication-date">Jun. 2022</span> <a href="https://www.youtube.com/watch?v=QYnHZaobHYo" target="_blank">MLOps for Environmental Disaster Relief</a><br>
-<strong><em>Podcast hosted by Petuum</em></strong><br></li>
+        <strong>Interview on iGaming Express</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Featured in &quot;ChatGPT and its AI chatbot cousins rules 2023: 4 essential</span>
+</li>
 <li>
-<span class="publication-date">Jun. 2022</span> Knowledge Graphs in Media and E-Commerce<br>
-<strong><em>INFORMS/CORS, held in Vancouver, Canada</em></strong><br></li>
-<li>
-<span class="publication-date">May 2022</span> <a href="https://resoundinglyhuman.com/episodes/can-you-teach-ai-common-sense/" target="_blank">Can we really teach AI common sense?</a><br>
-<strong><em>Interview on INFORMS Resoundingly Human Podcast</em></strong><br></li>
-<li>
-<span class="publication-date">May 2022</span> <a href="https://www.isi.edu/news/46910/where-does-vaccine-hesitancy-exist-usc-ai-researchers-can-predict-on-the-zip-code-level-in-real-time/" target="_blank">Where Does Vaccine Hesitancy Exist? USC AI Researchers Can Predict on the Zip Code-Level, in Real-Time</a><br>
-<strong><em>Article on USC Viterbi News</em></strong><br>Featured in ACM Tech News weekly newsletter sent on May 20, 2022</li>
-<li>
-<span class="publication-date">Apr. 2022</span> <a href="https://viterbischool.usc.edu/news/2022/04/ai-study-finds-that-males-are-represented-four-times-more-than-females-in-literature/" target="_blank">AI study finds that males are represented four times more than females in literature</a><br>
-<strong><em>Article on USC Viterbi News</em></strong><br>Other press: The Guardian, Daily Mail, Planeta, BBC, SBS News (Korea), World Economic Forum</li>
-<li>
-<span class="publication-date">Apr. 2022</span> <a href="https://www.techtarget.com/iotagenda/feature/Analytics-software-unlocks-the-benefits-of-IoT-data-collection" target="_blank">Analytics software unlocks the benefits of IoT data collection</a><br>
-<strong><em>Contributed Article on TechTarget</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2022</span> <a href="https://encyclopedia.pub/entry/21241" target="_blank">Community-Specific Overview of Knowledge Graph Research</a><br>
-<strong><em>Scholarly Community Encyclopedia</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2022</span> <a href="#" target="_blank">Productivity Imposterism</a><br>
-<strong><em>Medium blog post</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2022</span>Stop fighting it. Reality television is all set to become the new high art<br>
-<strong><em>L.A. Mentary (The Greater Los Angeles Mensa Commentary), Volume LXI No. 3</em></strong><br></li>
-<li>
-<span class="publication-date">Feb. 2022</span> <a href="https://www.educationtimes.com/article/job-trends-market-mantra/89883138/portal-exclusive-a-blueprint-for-teaching-common-sense-to-machines" target="_blank">Portal exclusive: A blueprint for teaching common sense to machines</a><br>
-<strong><em>Education Times</em></strong><br></li>
-<li>
-<span class="publication-date">Jan. 2022</span> <a href="https://viterbischool.usc.edu/news/2022/01/information-is-powerful-but-only-if-we-can-organize-it-right-new-ai-potential-boon-to-businesses/" target="_blank">'Information Is Powerful, But Only If We Can Organize It Right' — New AI Potential Boon to Businesses</a><br>
-<strong><em>USC Viterbi News</em></strong><br><br>Featured in ACM Tech News weekly newsletter sent on Jan. 24, 2022; USC Viterbi Communications newsletter sent on Feb. 2, 2022</li>
+        <strong>Modeling and Simulating Agent-based City Migration Using Conway’s Game of Life</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Bruce Deng, Mayank Kejriwal</span>
+</li>
 </ul>
 
-<h3>2021</h3>
+<h3 class="pubs-year" id="year-2023">2023</h3>
 <ul class="publication-list">
 <li>
-<span class="publication-date">Nov. 2021</span> <a href="https://internetofthingsagenda.techtarget.com/feature/IoT-drives-sustainable-development-and-the-bottom-line" target="_blank">IoT drives sustainable development and the bottom line</a><br>
-<strong><em>Invited feature in IoT Agenda, TechTarget</em></strong><br></li>
+        <strong>reads that puncture the hype&quot;</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">The Conversation</span>
+</li>
 <li>
-<span class="publication-date">Nov. 2021</span> <a href="https://theconversation.com/matching-tweets-to-zip-codes-can-spotlight-hot-spots-of-covid-19-vaccine-hesitancy-169596" target="_blank">Matching tweets to ZIP codes can spotlight hot spots of COVID-19 vaccine hesitancy</a><br>
-<strong><em>The Conversation</em></strong><br>Republished in 20+ press outlets<br></li>
+        <strong>Interview on GenAI</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Cover story, Economy Chosun</span>
+</li>
 <li>
-<span class="publication-date">Nov. 2021</span> <a href="https://opendatascience.com/graph-representation-learning-from-simple-to-higher-order-structures/" target="_blank">Graph Representation Learning: From Simple to Higher-order Structures</a><br>
-<strong><em>Invited blog post, Open Data Science Conference (ODSC)</em></strong><br></li>
+        <strong>Interview on human trafficking and DIG</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">The Circuit News</span>
+</li>
 <li>
-<span class="publication-date">Oct. 2021</span> <a href="https://www.templetonworldcharity.org/our-priorities/human-flourishing" target="_blank">A Global Study of the Impacts of Diversity, Equity and Inclusion on Human Flourishing and Wellbeing</a><br>
-<strong><em>Included in Grand Challenges in Human Flourishing, Templeton World Charity Foundation public database</em></strong><br></li>
+        <strong>Interview on Artificial General Intelligence and AI for Social Good</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">&quot;The ONE&#x27;S Changing the WORLD&quot;  1st Future Tech Meets Sustainability Podcast</span>
+</li>
 <li>
-<span class="publication-date">Oct. 2021</span> <a href="https://formtek.com/blog/ai-dealing-with-advanced-intelligence-that-is-unpredictable-and-inscrutable/" target="_blank">Quoted in "AI: Dealing with Advanced Intelligence that is Unpredictable and Inscrutable"</a><br>
-<strong><em>Article by Dick Weisinger</em></strong><br></li>
+        <strong>On using Fodor&#x27;s theory of modularity for situating large language models within a larger artificial general intelligence architecture</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Abstract accepted for oral presentation · 4th International Conference on the Mathematics of Neuroscience · Towards a Domain-Agnostic Knowledge Graph-as-a-Service Infrastructure for</span>
+</li>
 <li>
-<span class="publication-date">Sep. 2021</span> <a href="https://shows.acast.com/learning-more/episodes/ai-common-sense" target="_blank">AI and Common Sense</a><br>
-<strong><em>Learning More Podcast</em></strong><br></li>
+        <strong>Podcast/radio interview on Artificial Intelligence</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Fun Kids · A Knowledge Graph-Based Search Engine for Robustly Finding Doctors and Locations</span>
+</li>
 <li>
-<span class="publication-date">Aug. 2021</span> <a href="https://theconversation.com/an-ai-expert-explains-why-its-hard-to-give-computers-something-you-take-for-granted-common-sense-165600" target="_blank">An AI expert explains why it's hard to give computers something you take for granted: Common sense</a><br>
-<strong><em>Big Think</em></strong><br>Republished in The Conversation, TechXPlore, Code Project Insider Daily Newsletter, HowStuffWorks, Britannica's Forum, The Next Web<br></li>
+        <strong>Putting the Rational Thinking Skills of Language Models to the Test</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">USC Viterbi Information Sciences Institute Research News · Other links: USC Viterbi news</span>
+</li>
 <li>
-<span class="publication-date">Jul. 2021</span> <a href="https://www.popsci.com/technology/most-popular-emojis-twitter/" target="_blank">The world uses one emoji more than all others. Here's why</a><br>
-<strong><em>Popular Science</em></strong><br>Republished in Global News Canada, CNN Indonesia, IT-daily.net, Diario De Cuyo (Argentina), Scientias.nl, phys.org, PresseText, then24.com, Market Research Telecast, FTD (Germany), Forosocuellamos (Spain), exame.com, Upgrade Magazine, Psychomedia, Samachar Central (Canada), NewsBeezer, IFL Science, studyfinds.org, UniVistaTV<br></li>
+        <strong>Are You More Vaccine Hesitant Than A 57-Year-Old?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">USC Viterbi Information Sciences Institute Research News</span>
+</li>
 <li>
-<span class="publication-date">Jul. 2021</span> <a href="https://theconversation.com/new-york-city-or-los-angeles-where-you-live-says-a-lot-about-what-and-when-you-tweet-162912" target="_blank">New York City or Los Angeles? Where you live says a lot about what and when you tweet</a><br>
-<strong><em>The Conversation</em></strong><br>Re-posted on Medium as 'Computational social science has arrived'<br></li>
+        <strong>INTERVIEW: Unleashing the Potential of AI</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Folksalert podcast episode featuring Mayank Kejriwal</span>
+</li>
 <li>
-<span class="publication-date">Jun. 2021</span> <a href="https://dataethics4all.org/portfolio-item/can-ai-stop-the-erosion-of-7000-human-languages/" target="_blank">Can AI Stop the Erosion of 7,000 Human Languages?</a><br>
-<strong><em>Dataethics4all.org</em></strong><br></li>
+        <strong>Designing Artificial Intelligence for the Long Tail</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Accepted abstract in the Workshop on AI and Analytics for Social Good · Robert H. Smith School of Business, University of Maryland</span>
+</li>
 <li>
-<span class="publication-date">May 2021</span> <a href="https://www.weforum.org/agenda/2021/04/reinforcement-learning-how-board-games-could-help-ai-handle-the-unexpected/" target="_blank">How Monopoly is helping create the AI of the future</a><br>
-<strong><em>World Economic Forum</em></strong><br></li>
+        <strong>Don’t bet with ChatGPT – study shows language AIs often make irrational decisions</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">The Conversation · Republished in Gizmodo, NextGov, Lifehacker (Australia), Wyborcza (Poland), MyBroadBand (South Africa)</span>
+</li>
 <li>
-<span class="publication-date">Apr. 2021</span> <a href="https://theconversation.com/embrace-the-unexpected-to-teach-ai-how-to-handle-new-situations-change-the-rules-of-the-game-157560" target="_blank">Embrace the unexpected: To Teach AI how to handle new situations, change the rules of the game</a><br>
-<strong><em>The Conversation Magazine</em></strong><br>Republished in 20+ press outlets<br></li>
+        <strong>A structural study of Big Tech firm-switching of inventors in the post-recession era</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Yidan Sun, Mayank Kejriwal</span>
+</li>
 <li>
-<span class="publication-date">Mar. 2021</span> <a href="https://tunein.com/podcasts/Science/Data-Skeptic-p618623/" target="_blank">Social Networks</a><br>
-<strong><em>Podcast on Data Skeptic</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2021</span> <a href="https://viterbischool.usc.edu/news/2021/03/mayank-kejriwal-recognized-for-public-engagement-work/" target="_blank">Mayank Kejriwal recognized for public engagement work</a><br>
-<strong><em>Article on USC Viterbi News</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2021</span> <a href="https://drive.google.com/file/d/1XnzD_-ZC1k9YdsyOUHE54TkmLQ5TeR_t/view?usp=sharing" target="_blank">Detecting situational needs from digital messaging in real-time</a><br>
-<strong><em>Invited discussion article (no. FG-AI4NDM-I-012), Focus Group on AI for Natural Disaster Management, International Telecommunication Union</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2021</span> <a href="https://mkejriwal1.medium.com/on-wisdom-wealth-and-berkshire-hathaway-86ee95174f3a" target="_blank">On Wisdom, Wealth and…Berkshire Hathaway</a><br>
-<strong><em>Medium Post</em></strong><br></li>
-<li>
-<span class="publication-date">Feb. 2021</span> <a href="https://searchdatamanagement.techtarget.com/feature/The-top-5-graph-database-advantages-for-enterprises" target="_blank">The Top 5 graph database advantages for enterprises</a><br>
-<strong><em>News Article in SearchDataManagement</em></strong><br></li>
-<li>
-<span class="publication-date">Feb. 2021</span> <a href="https://mkejriwal1.medium.com/artificial-intelligence-needs-to-be-more-context-aware-ecc3097ee2ea" target="_blank">Artificial Intelligence needs to be more context-aware</a><br>
-<strong><em>Medium Post</em></strong><br></li>
-<li>
-<span class="publication-date">Apr. 2021</span> <a href="https://viterbischool.usc.edu/news/2020/11/usc-isi-researcher-uses-ai-to-combat-covid-19-under-the-microsoft-ai-for-health-program/" target="_blank">How Monopoly is helping create the AI of the future</a><br>
-<strong><em>World Economic Forum</em></strong><br>Republished in The Conversation newsletter, reposted in 20+ press outlets<br></li>
-</ul>
-<h3>2020</h3>
-<ul class="publication-list">
-<li>
-<span class="publication-date">Nov. 2020</span> <a href="https://viterbischool.usc.edu/news/2020/11/usc-isi-researcher-uses-ai-to-combat-covid-19-under-the-microsoft-ai-for-health-program/" target="_blank">USC ISI Researcher Uses AI to Combat COVID-19 Under the Microsoft AI for Health Program</a><br>
-<strong><em>Article on USC Viterbi News</em></strong><br></li>
-<li>
-<span class="publication-date">Oct. 2020</span> <a href="https://viterbischool.usc.edu/news/2020/10/urgent-times-call-for-urgent-measures/" target="_blank">Urgent times call for urgent measures</a><br>
-<strong><em>Article on USC Viterbi News</em></strong><br></li>
-<li>
-<span class="publication-date">Oct. 2020</span> <a href="https://thedataexchange.media/building-and-deploying-knowledge-graphs/" target="_blank">Building and deploying knowledge graphs</a><br>
-<strong><em>Interview on the Data Exchange Podcast</em></strong><br></li>
-<li>
-<span class="publication-date">Oct. 2020</span> <a href="https://www.fastcompany.com/90558559/computer-scientists-tracked-sophisticated-money-networks-to-learn-how-rich-people-hide-fortunes-offshore?icid=dan902:754:0:editRecirc" target="_blank">Computer scientists tracked sophisticated money networks to learn how rich people hide fortunes offshore</a><br>
-<strong><em>Fast Company</em></strong><br></li>
-<li>
-<span class="publication-date">Sep. 2020</span> <a href="https://www.eurekalert.org/news-releases/929267" target="_blank">The secretive networks used to move money offshore</a><br>
-<strong><em>News Release, EurekAlert!</em></strong><br></li>
-<li>
-<span class="publication-date">Sep. 2020</span> <a href="https://dataethics4all.org/ai-summit/" target="_blank">Invited Panelist</a><br>
-<strong><em>DataEthics4AIl AI Summit</em></strong><br></li>
-<li>
-<span class="publication-date">Sep. 2020</span> Panelist<br>
-<strong><em>Cambridge Semantics Invited Tweetchat</em></strong><br></li>
-<li>
-<span class="publication-date">Aug. 2020</span> <a href="https://techxplore.com/news/2020-08-sex-trafficking-networks.html" target="_blank">New Research May Help Identify Trafficking Networks</a><br>
-<strong><em>TechXplore</em></strong><br>Republished in EurekAlert, USC Viterbi News<br></li>
-<li>
-<span class="publication-date">Jul. 2020</span> <a href="https://viterbischool.usc.edu/news/2020/07/want-to-teach-an-ai-novelty-first-teach-it-monopoly-then-throw-out-the-rules/" target="_blank">Want to Teach An AI Novelty? First, Teach It Monopoly. Then Throw Out the Rules</a><br>
-<strong><em>Article on USC Viterbi News</em></strong><br></li>
-<li>
-<span class="publication-date">Jul. 2020</span> <a href="https://www.openaccessgovernment.org/innovative-technology-for-natural-disasters/89723/" target="_blank">Innovative technology for natural disasters and other crises</a><br>
-<strong><em>Article in Open Access Government</em></strong><br></li>
-<li>
-<span class="publication-date">May 2020</span> <a href="https://www.openaccessgovernment.org/innovative-technology-for-natural-disasters/89723/" target="_blank">Innovative technology for natural disasters and other crises</a><br>
-<strong><em>Open Access News</em></strong><br></li>
-<li>
-<span class="publication-date">May 2020</span> <a href="https://establishingyourempire.com/podcast/using-ai-knowledge-graphs-to-understand-historically-document-covid-19/" target="_blank">Using AI & Knowledge Graphs to Understand & Historically Document COVID-19</a><br>
-<strong><em>Establishing Your Empire Podcast</em></strong><br></li>
-<li>
-<span class="publication-date">Apr. 2020</span> <a href="https://impact-creators.ieee.org/creator/mayank-kejriwal/" target="_blank">IEEE Impact Creator</a><br>
-<strong><em>Interview Link</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2020</span> <a href="https://ai4.io/understanding-and-tackling-social-problems-through-networks-and-ai/" target="_blank">Understanding and Tackling Social Problems through Networks and AI</a><br>
-<strong><em>Interview and Podcast in Ai4.io by Jason Jepson</em></strong><br></li>
-</ul>
-<h3>2019</h3>
-<ul class="publication-list">
-<li>
-<span class="publication-date">Nov. 2019</span> <a href="https://cra.org/ccc/great-innovative-idea-co-lod-continuous-space-linked-open-data/" target="_blank">Great Innovative Idea: Co-LOD: Continuous Space Linked Open Data</a><br>
-<strong><em>Computing Community Consortium (CCC) Blog</em></strong><br>Post by Helen Wright</li>
-<li>
-<span class="publication-date">Oct. 2019</span> <a href="https://365datascience.com/career-advice/interviews/mayank-kejriwal/" target="_blank">Interview</a><br>
-<strong><em>365 Data Science</em></strong><br></li>
-<li>
-<span class="publication-date">Aug. 2019</span> Featured Interview<br>
-<strong><em>ISI quarterly newsletter</em></strong><br></li>
-<li>
-<span class="publication-date">Aug. 2019</span> <a href="https://www.globalbigdataconference.com/santa-clara/global-artificial-intelligence-conference/speaker-details/mayank-kejriwal-108393.html" target="_blank">Interview</a><br>
-<strong><em>Global Big Data Conference</em></strong><br></li>
-<li>
-<span class="publication-date">Jul. 2019</span> <a href="https://www.springeropen.com/blog/measuring-without-labels-a-different-approach-to-information-extraction" target="_blank">Measuring without labels: a different approach to information extraction</a><br>
-<strong><em>SpringerOpen invited blog post</em></strong><br></li>
-<li>
-<span class="publication-date">Jun. 2019</span> <a href="https://www.mensafoundation.org/what-we-do/awards-and-recognition/award-for-excellence-in-research/mayank-kejriwal-2019-copper-black-award-winner/" target="_blank">Mayank Kejriwal, 2019 Copper Black Award winner</a><br>
-<strong><em>Press release by Mensa Foundation</em></strong><br></li>
-<li>
-<span class="publication-date">Apr. 2019</span> <a href="https://podcasts.apple.com/us/podcast/ep-50-artificial-intelligence-fighting-human-trafficking/id1441824655?i=1000435272448" target="_blank">Ep 50: Artificial Intelligence – Fighting Human Trafficking</a><br>
-<strong><em>Folksalert podcast episode featuring Mayank Kejriwal</em></strong><br></li>
-<li>
-<span class="publication-date">Mar. 2019</span> <a href="https://encyclopedia.pub/entry/1234" target="_blank">myDIG: A system for building domain-specific search engines</a><br>
-<strong><em>Contributed article to encyclopedia.pub</em></strong><br></li>
-<li>
-<span class="publication-date">Feb. 2019</span> <a href="https://opendatascience.com/lets-embed-everything/" target="_blank">Let's embed everything!</a><br>
-<strong><em>Featured post on Open Data Science</em></strong><br></li>
+        <strong>A pilot evaluation of ChatGPT and DALL-E 2 on decision making and spatial reasoning</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Zhisheng Tang, Mayank Kejriwal</span>
+</li>
 </ul>
 
-<h3>2018</h3>
+<h3 class="pubs-year" id="year-2022">2022</h3>
 <ul class="publication-list">
 <li>
-<span class="publication-date">Nov. 2018</span> <a href="https://www.youtube.com/watch?v=Wy_oLvgP8Zg" target="_blank">Video Interview on AI for Social Good</a><br>
-<strong><em>Pioneer Ventures: AI Frontiers</em></strong><br></li>
+        <strong>Quoted in What will 2072 look like? Recorded dreams and AI friends!</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Julia Cohen</span>
+</li>
 <li>
-<span class="publication-date">Oct. 2018</span> <a href="https://sites.google.com/site/socaldb2018/" target="_blank">Projects featured in SoCal DB Day talk</a><br>
-<strong><em>Talk by Shahram Ghandeharizadeh (USC)</em></strong><br></li>
+        <strong>Male-female character ratio in books 4:1, says study</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">The Print, National Herald, Free Press Journal, Press Trust of India</span>
+</li>
 <li>
-<span class="publication-date">Aug. 2018</span> <a href="https://www.ivy.com/magazine/technology-for-good-fighting-human-trafficking-with-artificial-intelligence" target="_blank">Technology for Good: Fighting Human Trafficking with Artificial Intelligence</a><br>
-<strong><em>Invited piece written by Mayank Kejriwal, IVY Magazine</em></strong><br></li>
+        <strong>Evaluating Language Representation Models on Approximately Rational Decision Making Problems</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Jul. 2018</span> <a href="https://www.ondacorp.com/blog/making-waves-onda-news-july-2018/" target="_blank">Making Waves - ONDA News</a><br>
-<strong><em>Featured on Patron Spotlight</em></strong><br></li>
+        <strong>Accepted abstract and presentation in CogSci</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Jun. 2018</span> <a href="https://www.computer.org/csdl/magazine/ex/2018/03/mex2018030008/13rRUxZRbES" target="_blank">Fighting Human Traffickers</a><br>
-<strong><em>Press feature written by Lori Cameron, IEEE Intelligent Systems</em></strong><br></li>
+        <strong>Live interview on AI and Bias</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
 <li>
-<span class="publication-date">Apr. 2018</span> <a href="https://viterbischool.usc.edu/news/2018/04/breaking-cycle-victimization/" target="_blank">Breaking the Cycle of Victimization</a><br>
-<strong><em>Press feature written by Marc Ballon, USC Viterbi Magazine</em></strong><br></li>
+        <strong>Appearance on KABC (ABC7 Los Angeles) live web streaming Jun. 30,</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>MLOps for Environmental Disaster Relief</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Podcast hosted by Petuum</span>
+</li>
+<li>
+        <strong>Knowledge Graphs in Media and E-Commerce</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>INFORMS/CORS, held in Vancouver, Canada Can we really teach AI common sense?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Interview on INFORMS Resoundingly Human Podcast</span>
+</li>
+<li>
+        <strong>Where Does Vaccine Hesitancy Exist? USC AI Researchers Can Predict on the Zip Code-Level, in Real-Time</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article on USC Viterbi News</span>
+</li>
+<li>
+        <strong>Featured in ACM Tech News weekly newsletter sent on May 20,</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>AI study finds that males are represented four times more than females in literature</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article on USC Viterbi News · Other press: The Guardian, Daily Mail, Planeta, BBC, SBS News (Korea), World Economic Forum</span>
+</li>
+<li>
+        <strong>10k upvotes and 1.1k comments on book sub-reddit Analytics software unlocks the benefits of IoT data collection</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Contributed Article on TechTarget</span>
+</li>
+<li>
+        <strong>Community-Specific Overview of Knowledge Graph Research</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · Scholarly Community Encyclopedia</span>
+</li>
+<li>
+        <strong>Productivity Imposterism</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · Medium blog post</span>
+</li>
+<li>
+        <strong>Stop fighting it. Reality television is all set to become the new high art</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>L.A. Mentary (The Greater Los Angeles Mensa Commentary), Volume LXI No. 3 Portal exclusive: A blueprint for teaching common sense to machines</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Education Times</span>
+</li>
+<li>
+        <strong>‘Information Is Powerful, But Only If We Can Organize It Right’ — New AI Potential Boon to Businesses</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Greg Hardesty · USC Viterbi News · Featured in ACM Tech News weekly newsletter sent on Jan. 24, 2022;</span>
+</li>
+<li>
+        <strong>USC Viterbi Communications newsletter sent on Feb. 2,</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>On the Empirical Association between Trade Network Complexity and Global Gross Domestic Product</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal, Yuesheng Luo</span>
+</li>
+<li>
+        <strong>Can Language Representation Models Think in Bets?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Zhisheng Tang, Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>Understanding Substructures in Commonsense Relations in ConceptNet</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Ke Shen, Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>Understanding Prior Bias and Choice Paralysis in Transformer-based Language Representation Models through Four Experimental Probes</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Ke Shen, Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>Robust Quantification of Gender Disparity in Pre-Modern English Literature using Natural Language Processing?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Akarsh Nagaraj, Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>Can Scale-free Network Growth with Triad Formation Capture Simplicial Complex Distributions in Real Communication Networks?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal, Ke Shen</span>
+</li>
 </ul>
-</div>
-</div>
+
+<h3 class="pubs-year" id="year-2021">2021</h3>
+<ul class="publication-list">
+<li>
+        <strong>IoT drives sustainable development and the bottom line</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · Invited feature in IoT Agenda, TechTarget</span>
+</li>
+<li>
+        <strong>Matching tweets to ZIP codes can spotlight hot spots of COVID-19 vaccine hesitancy</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · The Conversation Magazine</span>
+</li>
+<li>
+        <strong>The Conversation newsletter sent on April 7,</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">2000+ readers within 48 hours of publication, re-posted in 20+ press outlets</span>
+</li>
+<li>
+        <strong>Graph Representation Learning: From Simple to Higher-order Structures</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Invited blog post, Open Data Science Conference (ODSC)</span>
+</li>
+<li>
+        <strong>A Global Study of the Impacts of Diversity, Equity and Inclusion on Human Flourishing and Wellbeing</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Included in Grand Challenges in Human Flourishing, Templeton World Charity Foundation public database</span>
+</li>
+<li>
+        <strong>Quoted in “AI: Dealing with Advanced Intelligence that is Unpredictable and Inscrutable”</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article by Dick Weisinger</span>
+</li>
+<li>
+        <strong>AI and Common Sense</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Learning More Podcast</span>
+</li>
+<li>
+        <strong>An AI expert explains why it’s hard to give computers something you take for granted: Common sense</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">The Conversation · Also featured in Big Think, TechXPlore, Code Project Insider Daily Newsletter (August 18, 2021),</span>
+</li>
+<li>
+        <strong>HowStuffWorks, Britannica’s Forum (August 19, 2021), The Next Web The world uses one emoji more than all others. Here’s why</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Charlotte Hu · Popular Science</span>
+</li>
+<li>
+        <strong>New York City or Los Angeles? Where you live says a lot about what and when you tweet</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · The Conversation</span>
+</li>
+<li>
+        <strong>The Conversation newsletter sent on July 2,</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Re-posted on Medium as ‘Computational social science has arrived’ · San Francisco Times: Article Link</span>
+</li>
+<li>
+        <strong>Can AI Stop the Erosion of 7,000 Human Languages?</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Dataethics4all.org</span>
+</li>
+<li>
+        <strong>How Monopoly is helping create the AI of the future</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">World Economic Forum</span>
+</li>
+<li>
+        <strong>Embrace the unexpected: To Teach AI how to handle new situations, change the rules of the game</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · The Conversation Magazine</span>
+</li>
+<li>
+        <strong>The Conversation newsletter sent on April 7,</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">1600+ readers within 72 hours of publication, re-posted in 20+ press outlets</span>
+</li>
+<li>
+        <strong>Social Networks</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Podcast on Data Skeptic</span>
+</li>
+<li>
+        <strong>Mayank Kejriwal recognized for public engagement work</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article on USC Viterbi News</span>
+</li>
+<li>
+        <strong>Detecting situational needs from digital messaging in real-time</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Invited discussion article (no. FG-AI4NDM-I-012) · Focus Group on AI for Natural Disaster Management, International Telecommunication Union</span>
+</li>
+<li>
+        <strong>On Wisdom, Wealth and…Berkshire Hathaway</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Medium Post</span>
+</li>
+<li>
+        <strong>The Top 5 graph database advantages for enterprises</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">News Article in SearchDataManagement</span>
+</li>
+<li>
+        <strong>Artificial Intelligence needs to be more context-aware</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Medium Post · Mentions: Year of the Graph</span>
+</li>
+<li>
+        <strong>Understanding COVID-19 Vaccine Reaction through Comparative Analysis on Twitter</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Yuesheng Luo, Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>Predicting Zip Code-Level Vaccine Hesitancy in US Metropolitan Areas Using Machine Learning Models on Public Tweets</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Sara Melotte, Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>Affective Correlates of Metropolitan Food Insecurity and Misery during COVID-19</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2020">2020</h3>
+<ul class="publication-list">
+<li>
+        <strong>USC ISI Researcher Uses AI to Combat COVID-19 Under the Microsoft AI for Health Program</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article on USC Viterbi News</span>
+</li>
+<li>
+        <strong>Urgent times call for urgent measures</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article on USC Viterbi News</span>
+</li>
+<li>
+        <strong>Building and deploying knowledge graphs Interview on the Data Exchange Podcast</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Computer scientists tracked sophisticated money networks to learn how rich people hide fortunes offshore</span>
+</li>
+<li>
+        <strong>Press article on Fast Company</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>The secretive networks used to move money offshore News Release, EurekAlert!</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Invited Panelist</span>
+</li>
+<li>
+        <strong>DataEthics4AIl AI Summit</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Website</span>
+</li>
+<li>
+        <strong>Panelist Cambridge Semantics Invited Tweetchat</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>Want to Teach An AI Novelty? First, Teach It Monopoly. Then Throw Out the Rules Article on USC Viterbi News</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>New Research May Help Identify Trafficking Networks</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Article Link on Information Sciences Institute News · Article Link on USC Viterbi News · Article Link on TechXplore · Article Link on EurekAlert · Innovative technology for natural disasters and other crises</span>
+</li>
+<li>
+        <strong>Article in Open Access Government</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>Open Access News</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>Using AI &amp; Knowledge Graphs to Understand &amp; Historically Document COVID-19</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Establishing Your Empire Podcast</span>
+</li>
+<li>
+        <strong>IEEE Impact Creator</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>Understanding and Tackling Social Problems through Networks and AI</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Interview and Podcast in Ai4.io by Jason Jepson</span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2019">2019</h3>
+<ul class="publication-list">
+<li>
+        <strong>Computing Community Consortium (CCC) Blog</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Great Innovative Idea: Co-LOD: Continuous Space Linked Open Data · Post by Helen Wright</span>
+</li>
+<li>
+        <strong>Interview</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">365 Data Science</span>
+</li>
+<li>
+        <strong>Featured Interview</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">ISI quarterly newsletter</span>
+</li>
+<li>
+        <strong>Interview</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Global Big Data Conference</span>
+</li>
+<li>
+        <strong>Measuring without labels: a different approach to information extraction</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">SpringerOpen invited blog post</span>
+</li>
+<li>
+        <strong>Mayank Kejriwal, 2019 Copper Black Award winner</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Press release by Mensa Foundation</span>
+</li>
+<li>
+        <strong>Ep 50: Artificial Intelligence – Fighting Human Trafficking</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Folksalert podcast episode featuring Mayank Kejriwal</span>
+</li>
+<li>
+        <strong>myDIG: A system for building domain-specific search engines</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Contributed article to encyclopedia.pub</span>
+</li>
+<li>
+        <strong>Let’s embed everything!</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Featured post on Open Data Science</span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2018">2018</h3>
+<ul class="publication-list">
+<li>
+        <strong>Video Interview on AI for Social Good</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Pioneer Ventures: AI Frontiers</span>
+</li>
+<li>
+        <strong>Projects featured in SoCal DB Day talk</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Talk by Shahram Ghandeharizadeh (USC) · SoCal DB 2018 Link</span>
+</li>
+<li>
+        <strong>Technology for Good: Fighting Human Trafficking with Artificial Intelligence Invited piece written by Mayank Kejriwal</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">IVY Magazine</span>
+</li>
+<li>
+        <strong>Making Waves - ONDA News</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Featured on Patron Spotlight · Fighting Human Traffickers</span>
+</li>
+<li>
+        <strong>Press feature written by Lori Cameron</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">IEEE Intelligent Systems</span>
+</li>
+<li>
+        <strong>Breaking the Cycle of Victimization Press feature written by Marc Ballon</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">USC Viterbi Magazine</span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2017">2017</h3>
+<ul class="publication-list">
+<li>
+        <strong>ISI press release on winning best dissertation award</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+<li>
+        <strong>Semi-automatic Data Integration using Karma</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal, Daniel Garijo, Yolanda Gil, Daniel Hardesty Lewis, Perry Ivan Quinto Houser, · Craig Knoblock, Scott Dale Peckham, Deana Pennington, Suzanne Pierce, Zachary Stanko</span>
+</li>
+<li>
+        <strong>Authored piece on Games and AI published on the AI Topics website</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;"></span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2016">2016</h3>
+<ul class="publication-list">
+<li>
+        <strong>End Human Trafficking Hackathon</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Hackathon was featured in NY Daily News; served as mentor to students</span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2015">2015</h3>
+<ul class="publication-list">
+<li>
+        <strong>The Summer of Data Science</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Quoted in blog post by Kristin Tolle, Director of Data Science at Microsoft Research</span>
+</li>
+<li>
+        <strong>The Math Behind…The Web of Linked Data</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Mayank Kejriwal · Poster for the SIAM: Math Matters, Apply It! program</span>
+</li>
+</ul>
+
+<h3 class="pubs-year" id="year-2011">2011</h3>
+<ul class="publication-list">
+<li>
+        <strong>Toward Free and Searchable Historical Census Images</strong><br>
+        <span style="color: var(--text-muted); font-size: 13px;">Kenton McHenry, Luigi Marini, Mayank Kejriwal, Rob Kooper and Peter Bajcsy · Published as an article in the Electronic Imaging &amp; Signal Processing section by the International Society for Optics and Photonics · Published as a technical article in infoDOCKET</span>
+</li>
+</ul>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
 </body>
 </html>
